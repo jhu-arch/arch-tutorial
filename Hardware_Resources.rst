@@ -7,12 +7,9 @@ Hardware Resources
      ===========  ====== ==========                =======
       Partition   Nodes  Processors                 Cores
      -----------  ------ ----------                -------
-     defq          496   Intel(R) Xeon(R)
-                         Gold 6248R CPU @ 3.00GHz
-     bigmem        13    Intel(R) Xeon(R)
-                         Gold 6248R CPU @ 3.00GHz    48
-     a100          10    Intel(R) Xeon(R)
-                         Gold 6248R CPU @ 3.00GHz
+     defq          496   Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz
+     bigmem        13    Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz    48
+     a100          10    Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz
      -----        -----  -----                     -------
      Total         519                              24,912
      =====        =====  ======                    =======
