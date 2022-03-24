@@ -1,8 +1,6 @@
 Hardware Resources
 
-Compute Nodes
-
-.. list-table:: Title
+.. list-table:: Compute Nodes
    :widths: 25 25 50
    :header-rows: 1
 
