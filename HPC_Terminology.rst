@@ -25,3 +25,15 @@ In the past, a CPU (Central Processing Unit) was a singular execution component 
 .. image:: images/picture1.png
   :width: 800
   :alt: Multicore CPU (NUMA system)
+
+---------------------------
+GPU
+---------------------------
+
+Short for Graphics Processing Unit. It is a specialized processor with thousands of small CPU cores. It can run multiple processes and perform many pieces of data in parallel. It is useful for machine learning, video editing, and gaming applications.
+
+---------------------------
+Task/Process
+---------------------------
+
+A process or running process refers to a set of programmed instructions currently being processed by the computer CPU. A process may be made up of multiple threads of execution that execute instructions concurrently.
