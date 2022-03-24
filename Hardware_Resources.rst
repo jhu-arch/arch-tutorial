@@ -45,6 +45,17 @@ Hardware Resources
      - 40*A100
      -
 
+     =====  =====  ======
+        Inputs     Output
+     ------------  ------
+       A      B    A or B
+     =====  =====  ======
+     False  False  False
+     True   False  True
+     False  True   True
+     True   True   True
+     =====  =====  ======
+
  More defq nodes (about 8,500 cores) as well as a few bigmem and a100 nodes will be added to the Rockfish cluster.
 
 -----------------------------------
