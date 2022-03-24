@@ -6,7 +6,7 @@ This is a high-level overview of features of Rockfish Cluster at ARCH.
 
 ----
 Node
------
+----
 
 A standalone "computer in a box". Usually comprised of multiple CPUs/processors/cores, memory, network interfaces, etc.
 
