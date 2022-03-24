@@ -4,15 +4,15 @@ Hardware Resources
 
 
 
-     ===========  ====== ==========                =======
-      Partition   Nodes  Processors                 Cores
-     -----------  ------ ----------                -------
+     =========== ======= ============                =======
+      Partition   Nodes   Processors                  Cores
+     ----------- ------- ------------                -------
      defq          496   Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz
      bigmem        13    Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz    48
      a100          10    Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz
-     -----        -----  -----                     -------
+     ----------- -------  ------------             -------
      Total         519                              24,912
-     =====        =====  ======                    =======
+     =========== =======  ============             =======
 
  More defq nodes (about 8,500 cores) as well as a few bigmem and a100 nodes will be added to the Rockfish cluster.
 
