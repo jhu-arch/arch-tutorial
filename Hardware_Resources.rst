@@ -1,8 +1,6 @@
+==================
 Hardware Resources
-
-
-
-
+==================
 
 +-----------+--------+--------------------------+--------+---------+------------+---------+------------------+
 | Partition |  Nodes |  Processors              | Cores  | Memory  | Local Disk |  GPUs   |  Job Time Limit  |
@@ -23,8 +21,7 @@ Hardware Resources
 | Total     |   519  |                          | 24,912 |         |            | 40*A100 |                  |
 +-----------+--------+--------------------------+--------+---------+------------+---------+------------------+
 
-
- More defq nodes (about 8,500 cores) as well as a few bigmem and a100 nodes will be added to the Rockfish cluster.
+More defq nodes (about 8,500 cores) as well as a few bigmem and a100 nodes will be added to the Rockfish cluster.
 
 -----------------------------------
 Home, Data and Scratch File Systems
