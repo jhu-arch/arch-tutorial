@@ -6,7 +6,7 @@ Hardware Resources
 | Partition |  Nodes |  Processors              | Cores  | Memory  | Local Disk |  GPUs   |  Job Time Limit  |
 |           |        |                          |        |         |            |         |  & Node Names    |
 +===========+========+==========================+========+=========+============+=========+==================+
-| defq      |   496  | Intel(R) Xeon(R)         |   48   | 189 GB  |   915 GB   |  N/A    |3 days            |
+| defq      |   496  | Intel(R) Xeon(R)         |   48   | 189 GB  |   915 GB   |   N/A   |3 days            |
 |           |        | Gold 6248R CPU @ 3.00GHz |        |         |            |         |c[001-232,241-280,|
 |           |        |                          |        |         |            |         |289-328,337-376,  |
 |           |        |                          |        |         |            |         |385-424,433-440,  |
