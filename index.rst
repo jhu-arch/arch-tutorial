@@ -27,7 +27,9 @@ Rockfish User Guide: https://www.arch.jhu.edu/access/user-guide/
    Storage_Allocations
    Allocation_and_Account_Management
 
+==================
 Indices and tables
+==================
 
-:ref:`genindex`
-:ref:`search`
+* :ref:`genindex`
+* :ref:`search`
