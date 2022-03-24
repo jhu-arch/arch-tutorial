@@ -15,14 +15,14 @@ Rockfish User Guide: https://www.arch.jhu.edu/access/user-guide/
    :maxdepth: 2
    :caption: Resources at Rockfish
 
-   HPC Terminology
-   Hardware Resources
-   Why Use ARCH
+   HPC_Terminology
+   Hardware_Resources
+   Why_Use_ARCH
 
 .. toctree::
    :maxdepth: 2
    :caption: Allocations on Rockfish
 
-   Computing Allocations
-   Storage Allocations
-   Allocation and Account Management
+   Computing_Allocations
+   Storage_Allocations
+   Allocation_and_Account_Management
