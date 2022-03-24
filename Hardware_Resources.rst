@@ -33,6 +33,7 @@ Home, Data and Scratch File Systems
 Users can use df command below to get a list of file systems mounted on a node:
 
 .. code-block:: console
+
   [userid@login02 ~]$ df -h|grep -e 'Mounted' -e 'T'
   Filesystem                          Size  Used Avail Use% Mounted on
   storage01.ib.cluster:/s1draid/home   20T  2.8T   18T  14% /home
