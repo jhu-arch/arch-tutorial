@@ -10,7 +10,6 @@ More details about The Rockfish cluster at ARCH.
 #. **Website**: https://www.arch.jhu.edu/
 #. **User Guide**: https://www.arch.jhu.edu/access/user-guide/
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Resources on Rockfish
