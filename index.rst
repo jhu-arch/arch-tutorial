@@ -8,7 +8,7 @@ More details about The Rockfish cluster at ARCH.
 #. **HELP**: mail to help@rockfish.jhu.edu (ticketing system)
 #. **Portal**: https://coldfront.rockfish.jhu.edu/
 #. **Website**: https://www.arch.jhu.edu/
-#. **User Guide*: https://www.arch.jhu.edu/access/user-guide/
+#. **User Guide**: https://www.arch.jhu.edu/access/user-guide/
 
 
 .. toctree::
