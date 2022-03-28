@@ -30,7 +30,7 @@ More details about The Rockfish cluster at ARCH.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Connecting and transfering to Rockfish
+   :caption: Connect and transfer to Rockfish
 
    Connecting_to_Rockfish
    Storage_Allocations
@@ -41,6 +41,7 @@ More details about The Rockfish cluster at ARCH.
   :caption: Management Software via Lua Modules
 
   Software
+  Slurm
 
 Indices and tables
 ##################
