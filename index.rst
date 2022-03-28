@@ -36,6 +36,12 @@ More details about The Rockfish cluster at ARCH.
    Storage_Allocations
    Allocation_and_Account_Management
 
+.. toctree::
+  :maxdepth: 2
+  :caption: Management Software via Lua Modules
+
+  Software
+
 Indices and tables
 ##################
 
