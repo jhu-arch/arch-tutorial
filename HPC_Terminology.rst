@@ -23,6 +23,10 @@ In the past, a CPU (Central Processing Unit) was a singular execution component 
 
 Short for Graphics Processing Unit. It is a specialized processor with thousands of small CPU cores. It can run multiple processes and perform many pieces of data in parallel. It is useful for machine learning, video editing, and gaming applications.
 
+**HPC**
+
+High Performance Computing
+
 **Task/Process**
 
 A process or running process refers to a set of programmed instructions currently being processed by the computer CPU. A process may be made up of multiple threads of execution that execute instructions concurrently.
