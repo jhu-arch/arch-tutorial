@@ -4,9 +4,9 @@ Introduction and How-to on the Rockfish Cluster at The Advanced Research Computi
 
 More details about The Rockfish cluster at ARCH.
 
-#. **HELP**: mail to help@rockfish.jhu.edu (ticketing system)
-#. Portal: https://coldfront.rockfish.jhu.edu/
-#. Website: https://www.arch.jhu.edu/
-#. User Guide: https://www.arch.jhu.edu/access/user-guide/
-#. Terms of Use: https://www.arch.jhu.edu/access/jhu-user-accounts/terms-of-use/
-#. Rockfish Citizen:  https://www.arch.jhu.edu/access/jhu-user-accounts/rockfish-citizen/
+* **HELP**: mail to help@rockfish.jhu.edu (ticketing system)
+* Portal: https://coldfront.rockfish.jhu.edu/
+* Website: https://www.arch.jhu.edu/
+* User Guide: https://www.arch.jhu.edu/access/user-guide/
+* Terms of Use: https://www.arch.jhu.edu/access/jhu-user-accounts/terms-of-use/
+* Rockfish Citizen:  https://www.arch.jhu.edu/access/jhu-user-accounts/rockfish-citizen/
