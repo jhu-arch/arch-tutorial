@@ -31,7 +31,8 @@ Computing Allocations
 #. **GPU allocation**: This allocation will allow users to submit jobs to the GPU nodes. Maximum allocation is 50,000 core hours.
 #. **Startup/Trial allocations**: PIs can request a one-time only startup allocation to gain access to try Rockfish resources. Users will be able to quickly (i) run small scale jobs or activities to familiarize with the new environment and (ii) benchmark and evaluate different resources and collected data to support their proposals for allocations. The allocation time limit is 50,000 core-hours for one quarter. No proposal is needed. Please send an email to the rockfish help system for approval and then use the rockfish `portal`_ to request an allocation and accounts.
 
-Condo-related allocations:
+**Condo-related allocations**
+
 #. PIs who contribute condos will have an allocation (or additional allocation) equivalent to the size of the condo. For example a one node condo is equivalent to 100,000 core-hours per quarter.
 #. Condo storage and purchased storage: This allocation is composed of the storage given by default plus the size of the storage purchased. It may cover different file sets.
 #. Morgan State University allocations: A subset of allocations will follow a model developed at Morgan State University as a partner for this grant.
