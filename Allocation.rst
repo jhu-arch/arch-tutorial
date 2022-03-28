@@ -10,6 +10,5 @@ Allocation / Account Management
   * Management / add / delete accounts
   * ROI: upload pubications, grants
   * Account / Allocation request (PI
-  * Video, Rockfish portal navigation `PORTAL`_
-
-  .. _PORTAL: https://www.youtube.com/watch?v=L6zvLBK5Mss
+  * Video, Rockfish portal navigation <https://www.youtube.com/watch?v=L6zvLBK5Mss>
+`_
