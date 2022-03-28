@@ -7,9 +7,9 @@ In order to use the Rockfish cluster robustly by command lines.
 
 * OpenSSH SSH client (remote login program)
 
-  * ssh -XY login.rockfish.jhu.edu -l userid
+  * ssh -XY login.rockfish.jhu.edu -l <userid>
 
-  * ssh -XY userid@login.rockfish.jhu.edu
+  * ssh -XY <userid>@login.rockfish.jhu.edu
 
 * Login nodes [01 - 03]
 
