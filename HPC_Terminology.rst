@@ -1,7 +1,7 @@
 HPC Terminology
 ###############
 
-This is a high-level overview of features of Rockfish Cluster at ARCH.
+This is a high-level overview of features on the Rockfish Cluster at ARCH.
 
 **ARCH**
 
