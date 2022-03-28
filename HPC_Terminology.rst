@@ -3,6 +3,10 @@ HPC Terminology
 
 This is a high-level overview of features of Rockfish Cluster at ARCH.
 
+**ARCH**
+
+The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– is a shared computing facility at Johns Hopkins University that enables research, discovery, and learning, relying on the use and development of advanced computing.
+
 **Node**
 
 A standalone "computer in a box". Usually comprised of multiple CPUs/processors/cores, memory, network interfaces, etc.
@@ -26,6 +30,10 @@ Short for Graphics Processing Unit. It is a specialized processor with thousands
 **HPC**
 
 High Performance Computing
+
+**Slurm**
+
+Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
 
 **Task/Process**
 
