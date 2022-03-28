@@ -1,7 +1,7 @@
 Connect and Transfer to Rockfish
 ======================
 
-In order to use the Rockfish system robustly by command lines.
+In order to use the Rockfish cluster robustly by command lines.
 
 * gateway: login.rockfish.jhu.edu
 * OpenSSH SSH client (remote login program)
@@ -86,6 +86,10 @@ The syntax for rsync command is similar to scp command. rsync [OPTION...] SRC...
 Globus
 ******
 
-`Rockfish Globus instructions`_
+Globus makes it much easier to work with data. To large amounts of data see `Rockfish Globus instructions`_
+
+.. image:: images/globus.png
+  :width: 200
+  :alt: Globus
 
 .. _Rockfish Globus instructions: https://www.arch.jhu.edu/data-transfer-with-globus/
