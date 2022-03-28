@@ -17,7 +17,7 @@ Rockfish User Guide: https://www.arch.jhu.edu/access/user-guide/
    :maxdepth: 2
    :caption: Resources at Rockfish
 
-   HPC_Terminology
+   Allocation
    Hardware_Resources
    Why_Use_ARCH
 
