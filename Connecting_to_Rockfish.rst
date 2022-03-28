@@ -72,14 +72,14 @@ Synchronize Files via rsync command
 ***********************************
 
 Using rsync command, you can copy and synchronize your files and directories between two different locations.
-The syntax for rsync command is similar to scp command. rsync [OPTION...] SRC... [DEST]
+The syntax for rsync command is similar to scp command.
 
 .. code-block:: console
   :linenos:
   $ rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
   $ rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
 
-.. note:: $
+.. note::
   --delete                delete extraneous files from dest dirs
   --exclude-from=FILE     read exclude patterns from FILE
 
