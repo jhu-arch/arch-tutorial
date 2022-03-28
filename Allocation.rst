@@ -20,7 +20,7 @@ Please refer to `allocations`_ web site.
 Storage Allocations
 *********************
 
-.. csv-table:: Storage Allocations
+.. csv-table:: 
    :header: File Systems,Quota (default),Usage,Back-Up,System Type
    :widths: 30, 15, 15, 15, 20
 
