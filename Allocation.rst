@@ -40,6 +40,14 @@ Computing Allocations
 #. New faculty members will have allocations equivalent to the size of the condo in their LOI, or as offered by the Dean’s office.
 #. XSEDE allocations will follow the process established for XSEDE allocations (XRAC).
 
-Please refer to allocations web site.
+Please refer to `allocations`_ web site.
 
 .. _allocations: https://www.arch.jhu.edu/policies/allocations
+
+Storage Allocations
+*********************
+
+.. csv-table:: Storage Allocations
+   :file: tables/StorageAllocations.csv
+   :widths: 30, 70
+   :header-rows: 1
