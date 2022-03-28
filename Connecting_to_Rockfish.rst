@@ -89,7 +89,7 @@ Globus
 Globus makes it much easier to work with data. To large amounts of data see `Rockfish Globus instructions`_
 
 .. image:: images/globus.png
-  :width: 200
+  :width: 300
   :alt: Globus
 
 .. _Rockfish Globus instructions: https://www.arch.jhu.edu/data-transfer-with-globus/
