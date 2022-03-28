@@ -1,4 +1,4 @@
-HPC Terminology
+ARCH Terminology
 ###############
 
 This is a high-level overview of features on the Rockfish Cluster at ARCH.
