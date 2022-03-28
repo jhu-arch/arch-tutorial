@@ -64,7 +64,6 @@ Copy files via scp command
 Users can use ``scp`` command to copy a file or a directory from any computer to the Rockfish cluster via command line.
 
 .. code-block:: console
-  :linenos:
   $ scp -r DIR <userid>@rfdtn1.rockfish.jhu.edu:/scratch16/<PI-id>/<user-id>/
 
 
@@ -75,7 +74,6 @@ Using ``rsync`` command, you can copy and synchronize your files and directories
 The syntax for rsync command is similar to scp command.
 
 .. code-block:: console
-  :linenos:
   $ rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
   $ rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
 
