@@ -6,9 +6,18 @@ The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– 
 More details about The Rockfish cluster at ARCH.
 
 #. **HELP**: mail to help@rockfish.jhu.edu (ticketing system)
-#. **Portal**: https://coldfront.rockfish.jhu.edu/
-#. **Website**: https://www.arch.jhu.edu/
-#. **User Guide**: https://www.arch.jhu.edu/access/user-guide/
+#. `**Portal**`_
+#. `**Website**`_
+#. `**User Guide**`_
+#. `**Terms of Use**`_
+#. `**Rockfish Citizen**`_
+
+.. _Rockfish Citizen:https://www.arch.jhu.edu/access/jhu-user-accounts/rockfish-citizen/
+.. _Portal: https://coldfront.rockfish.jhu.edu/
+.. _Website: https://www.arch.jhu.edu/
+.. _User Guide: https://www.arch.jhu.edu/access/user-guide/
+.. _Terms of Use: https://www.arch.jhu.edu/access/jhu-user-accounts/terms-of-use/
+
 
 .. toctree::
    :maxdepth: 2
