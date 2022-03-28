@@ -1,4 +1,3 @@
-======================
 Connecting to Rockfish
 ======================
 
@@ -16,3 +15,6 @@ In order to use the Rockfish system robustly by command lines.
   You can use Terminal program (installed within MacOS) for your SSH client. (In the taskbar, search for “terminal”.) However, for running graphical user interface (GUI) programs on Rockfish login nodes, the X11-server program XQuartz needs to be installed. See XQuartz for download instructions.
 
   .. warning:: Make sure you have a SSH client and X11 server installed in your computer (Linux/MacOS).
+
+Access to login Node
+********************

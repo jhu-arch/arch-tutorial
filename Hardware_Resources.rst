@@ -1,6 +1,5 @@
-==================
 Hardware Resources
-==================
+##################
 
 +-----------+--------------------------+-------+--------------------------+--------+---------+------------+---------+------------------+
 | Partition |  `Running Jobs`_         | Nodes |  Processors              | Cores  | Memory  | Local Disk |  GPUs   |  Job Time Limit  |
@@ -25,9 +24,8 @@ Hardware Resources
 
 More defq nodes (about 8,500 cores) as well as a few bigmem and a100 nodes will be added to the Rockfish cluster.
 
------------------------------------
 Home, Data and Scratch File Systems
------------------------------------
+***********************************
 
 Users can use ``df`` command below to get a list of file systems mounted on a node:
 
@@ -43,3 +41,14 @@ Users can use ``df`` command below to get a list of file systems mounted on a no
   scratch4                            2.0P  250T  1.7P  13% /scratch4
 
 Note: the size of the file systems will change in the near future.
+
+Software
+********
+
+You can use various software with different versions installed in HPCC:
+
+*	Compilers —   GNU, intel, CUDA, ...
+* Parallel  —   OpenMPI, Intel-MPI, ...
+* Bioinformatics  —  BLAST, Trinity, Mothur, Samtools, Trimmomatic, ...
+* Libraries  —  MKL, OpenBLAS, HDF5ls , FFTW, ...
+*Commercial  —  MATLAB, ABINIT, COMSOL, TotalView, ...

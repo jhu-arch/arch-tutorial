@@ -15,17 +15,21 @@ Rockfish User Guide: https://www.arch.jhu.edu/access/user-guide/
 
 .. toctree::
    :maxdepth: 2
-   :caption: Resources at Rockfish
+   :caption: Resources on Rockfish
 
    Allocation
    Hardware_Resources
    Why_Use_ARCH
+   Computing_Allocations
+   Storage_Allocations
+   Allocation_and_Account_Management
 
 .. toctree::
    :maxdepth: 2
    :caption: Allocations on Rockfish
 
    Computing_Allocations
+   Connecting_to_Rockfish
    Storage_Allocations
    Allocation_and_Account_Management
 
