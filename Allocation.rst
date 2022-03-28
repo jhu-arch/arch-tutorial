@@ -20,7 +20,11 @@ Please refer to `allocations`_ web site.
 Storage Allocations
 *********************
 
+.. tabularcolumns:: |p{5cm}|p{7cm}|p{10cm}|p{10cm}|p{7cm}|
+
+
 .. csv-table:: Storage Allocations
    :file: tables/StorageAllocations.csv
-   :widths: 30, 70
    :header-rows: 1
+   :class: longtable
+   :widths: 1 1
