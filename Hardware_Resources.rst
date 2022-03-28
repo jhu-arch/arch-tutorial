@@ -57,9 +57,6 @@ To check the allocation and usage of their job accounts, users can use sbalance 
   [BALANCE] used/quarter, user:            userid 9468.7 / 143750.0 (SU)
 
 
-
-
-
 Software
 ********
 
