@@ -42,6 +42,24 @@ Users can use ``df`` command below to get a list of file systems mounted on a no
 
 Note: the size of the file systems will change in the near future.
 
+Check Storage and Account Allocations
+*************************************
+
+To check the allocation and usage of their job accounts, users can use sbalance command.
+
+.. code-block:: console
+
+$ sbalance
+[USAGE] sbalance slurm_account [username]
+
+$ sbalance PI-userid userid
+[BALANCE] used/quarter, account:         PI-userid 64406.4 / 143750.0 (SU)
+[BALANCE] used/quarter, user:            userid 9468.7 / 143750.0 (SU)
+
+
+
+
+
 Software
 ********
 
