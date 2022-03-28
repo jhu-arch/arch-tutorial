@@ -1,4 +1,4 @@
-Connecting to Rockfish
+Connecting and Transfering to Rockfish
 ======================
 
 In order to use the Rockfish system robustly by command lines.
@@ -21,3 +21,74 @@ In order to use the Rockfish system robustly by command lines.
 
 Access to login Node
 ********************
+
+Once you establish a connection, SSH will prompt for your password. Once sign into the login node, you should see the welcome messages
+
+.. code-block:: console
+
+Thu Mar 10 09:45:29 2022 from 172.28.3.75
+ ____            _    _____ _     _
+|  _ \ ___   ___| | _|  ___(_)___| |__
+| |_) / _ \ / __| |/ / |_  | / __| |_ \
+|  _ < (_) | (__|   <|  _| | \__ \ | | |
+|_| \_\___/ \___|_|\_\_|   |_|___/_| |_|
+[STATUS] loading software modules
+[STATUS] modules are Lmod (https://lmod.readthedocs.io/en/latest/)
+[STATUS] software is Spack (https://spack.readthedocs.io/en/latest/)
+[STATUS] the default modules ("module restore") use GCC 9 and OpenMPI 3.1
+[STATUS] you can search available modules with: module spider <name>
+[STATUS] you can list available modules with: module avail
+[STATUS] loading a compiler, MPI, Python, or R will reveal new packages
+[STATUS] and you can check your loaded modules with: module list --terse
+[STATUS] to hide this message in the future: touch ~/.no_rf_banner
+[STATUS] restoring your default module collection now
+
+Quota and usage information. Updated hourly. Use 'gpfsquota'
+Usage for group MyGroup
+FS         Usage   Quota  Files_Count  File_Quota
+---        ---     ---    ---          ---
+data       5.07T   10T    2287948      4194304
+scratch16  1.939T  10T    1005210      10240000
+scratch4   4.177T  10T    1159700      20480000
+[userid@login02 ~]$
+
+
+Transfer files
+********************
+
+Copy file from Bluecrab cluster or any computer.
+
+Copy files via scp command
+******************************
+
+Users can use scp command to copy a file or a directory from any computer to the Rockfish cluster via command line.
+
+.. code-block:: command
+  :linenos:
+scp -r DIR <userid>@rfdtn1.rockfish.jhu.edu:/scratch16/<PI-id>/<user-id>/
+
+
+Synchronize Files via rsync command
+***********************************
+
+With rsync command, you can copy and synchronize your files and directories between two different locations.
+It can be used for mirroring data and transferring only the differences between the source and the destination.
+The syntax for rsync command is similar to scp command.
+
+.. code-block:: command
+  :linenos:
+rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
+rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
+
+.. note::
+--delete                delete extraneous files from dest dirs
+--exclude-from=FILE     read exclude patterns from FILE
+
+Globus
+******
+
+`Rockfish Globus instructions`_
+
+.. _Rockfish Globus instructions: https://www.arch.jhu.edu/data-transfer-with-globus/
+
+from Bluecrab
