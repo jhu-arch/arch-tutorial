@@ -13,7 +13,7 @@ Allocation / Account Management
 
   .. _portal: https://www.youtube.com/watch?v=L6zvLBK5Mss
 
-<!---
+<
 Computing Allocations
 *********************
 
@@ -40,7 +40,7 @@ Computing Allocations
 #. Deans’ allocations: The Dean’s office will offer small/startup faculty members allocations. These allocations WILL follow the MRI-topics and will be part of the annual report to the funding agency.
 #. New faculty members will have allocations equivalent to the size of the condo in their LOI, or as offered by the Dean’s office.
 #. XSEDE allocations will follow the process established for XSEDE allocations (XRAC).
--->
+>
 
 
 
