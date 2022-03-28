@@ -20,7 +20,7 @@ Please refer to `allocations`_ web site.
 Storage Allocations
 *********************
 
-.. csv-table:: 
+.. csv-table:: Storage Allocations
    :header: File Systems,Quota (default),Usage,Back-Up,System Type
    :widths: 30, 15, 15, 15, 20
 
@@ -30,5 +30,3 @@ Storage Allocations
    scratch4 (/scratch4/PI-userid),10 TB (per group),Scratch for small files,N/A,GPFS (parallel file system 4MB block size)
 
  where "userid" is the user's account name and PI-userid is the account name of the user's PI.
-
- 
