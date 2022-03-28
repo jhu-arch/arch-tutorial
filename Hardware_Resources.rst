@@ -27,7 +27,7 @@ More defq nodes (about 8,500 cores) as well as a few bigmem and a100 nodes will 
 Home, Data and Scratch File Systems
 -----------------------------------
 
-Users can use df command below to get a list of file systems mounted on a node:
+Users can use ``df`` command below to get a list of file systems mounted on a node:
 
 .. code-block:: console
 
