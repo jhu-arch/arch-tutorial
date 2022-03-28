@@ -6,6 +6,8 @@ The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– 
 
 See About ARCH.
 
+HELP: mail to help@rockfish.jhu.edu (ticketing system)
+
 Rockfish website: https://www.arch.jhu.edu/
 
 Rockfish User Guide: https://www.arch.jhu.edu/access/user-guide/
