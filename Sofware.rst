@@ -1,7 +1,7 @@
 Software
 ########
 
-You can use various software with different versions installed in HPCC:
+You can use several software in different versions installed on the Rockfish cluster:
 
 *	Compilers —   GNU, intel, CUDA, ...
 * Parallel  —   OpenMPI, Intel-MPI, ...
