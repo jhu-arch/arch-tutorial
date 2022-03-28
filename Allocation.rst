@@ -22,7 +22,7 @@ Storage Allocations
 
 .. csv-table:: Storage Allocations
    :header: File Systems,Quota (default),Usage,Back-Up,System Type
-   :widths: 30, 30, 30, 15, 20
+   :widths: 30, 15, 15, 15, 20
 
    HOME (/home/<user id>),50 GB (per user),Keep commonly used applications,backed up on a weekly basis to an off-site location,NMVe SSD
    data (/data/<PI-userid>),10 TB (per group),Store files for a longer time,N/A,GPFS (parallel file system)
