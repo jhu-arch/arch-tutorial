@@ -2,6 +2,7 @@ Connecting to Rockfish
 ======================
 
 In order to use the Rockfish system robustly by command lines.
+
 * gateway: login.rockfish.jhu.edu
 * OpenSSH SSH client (remote login program)
   * ssh -XY login.rockfish.jhu.edu -l userid
