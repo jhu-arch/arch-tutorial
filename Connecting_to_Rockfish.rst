@@ -79,7 +79,7 @@ The syntax for rsync command is similar to scp command. rsync [OPTION...] SRC...
   $ rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
   $ rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
 
-.. note:: $ rsync [**OPTION**...]
+.. note:: $ 
   --delete                delete extraneous files from dest dirs
   --exclude-from=FILE     read exclude patterns from FILE
 
