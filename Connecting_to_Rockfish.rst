@@ -86,7 +86,7 @@ The syntax for rsync command is similar to scp command.
 Globus
 ******
 
-Globus makes it much easier to work with data. To large amounts of data see `Rockfish Globus instructions`_
+Globus makes it much easier to work with data. How to transfer a large amounts of data using Globus see `Rockfish Globus instructions`_
 
 .. image:: images/globus.png
   :width: 300
