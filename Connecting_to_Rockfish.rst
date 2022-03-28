@@ -87,7 +87,7 @@ Globus
 ******
 
 Globus makes it much easier to work with data.
-How to transfer a large amounts of data using Globus see `Rockfish Globus instructions`_
+How to transfer a large amounts of data using Globus see `Rockfish Globus instructions`_.
 
 .. image:: images/globus.png
   :width: 300
