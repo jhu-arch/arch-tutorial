@@ -65,7 +65,7 @@ Users can use scp command to copy a file or a directory from any computer to the
 
 .. code-block:: command
   :linenos:
-scp -r DIR <userid>@rfdtn1.rockfish.jhu.edu:/scratch16/<PI-id>/<user-id>/
+  scp -r DIR <userid>@rfdtn1.rockfish.jhu.edu:/scratch16/<PI-id>/<user-id>/
 
 
 Synchronize Files via rsync command
@@ -77,8 +77,8 @@ The syntax for rsync command is similar to scp command.
 
 .. code-block:: command
   :linenos:
-rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
-rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
+  rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
+  rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
 
 .. note::
 --delete                delete extraneous files from dest dirs
@@ -90,5 +90,3 @@ Globus
 `Rockfish Globus instructions`_
 
 .. _Rockfish Globus instructions: https://www.arch.jhu.edu/data-transfer-with-globus/
-
-from Bluecrab
