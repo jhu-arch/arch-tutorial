@@ -49,12 +49,12 @@ To check the allocation and usage of their job accounts, users can use sbalance 
 
 .. code-block:: console
 
-$ sbalance
-[USAGE] sbalance slurm_account [username]
+  $ sbalance
+  [USAGE] sbalance slurm_account [username]
 
-$ sbalance PI-userid userid
-[BALANCE] used/quarter, account:         PI-userid 64406.4 / 143750.0 (SU)
-[BALANCE] used/quarter, user:            userid 9468.7 / 143750.0 (SU)
+  $ sbalance PI-userid userid
+  [BALANCE] used/quarter, account:         PI-userid 64406.4 / 143750.0 (SU)
+  [BALANCE] used/quarter, user:            userid 9468.7 / 143750.0 (SU)
 
 
 
