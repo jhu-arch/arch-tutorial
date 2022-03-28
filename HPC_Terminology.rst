@@ -3,7 +3,7 @@ HPC Terminology
 
 This is a high-level overview of features on the Rockfish Cluster at ARCH.
 
-`**ARCH**`_
+`ARCH`_
 
 The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– is a shared computing facility at Johns Hopkins University that enables research, discovery, and learning, relying on the use and development of advanced computing.
 
