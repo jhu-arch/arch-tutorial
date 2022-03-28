@@ -26,31 +26,31 @@ Once you establish a connection, SSH will prompt for your password. Once sign in
 
 .. code-block:: console
 
-Thu Mar 10 09:45:29 2022 from 172.28.3.75
- ____            _    _____ _     _
-|  _ \ ___   ___| | _|  ___(_)___| |__
-| |_) / _ \ / __| |/ / |_  | / __| |_ \
-|  _ < (_) | (__|   <|  _| | \__ \ | | |
-|_| \_\___/ \___|_|\_\_|   |_|___/_| |_|
-[STATUS] loading software modules
-[STATUS] modules are Lmod (https://lmod.readthedocs.io/en/latest/)
-[STATUS] software is Spack (https://spack.readthedocs.io/en/latest/)
-[STATUS] the default modules ("module restore") use GCC 9 and OpenMPI 3.1
-[STATUS] you can search available modules with: module spider <name>
-[STATUS] you can list available modules with: module avail
-[STATUS] loading a compiler, MPI, Python, or R will reveal new packages
-[STATUS] and you can check your loaded modules with: module list --terse
-[STATUS] to hide this message in the future: touch ~/.no_rf_banner
-[STATUS] restoring your default module collection now
+  Thu Mar 10 09:45:29 2022 from 172.28.3.75
+   ____            _    _____ _     _
+  |  _ \ ___   ___| | _|  ___(_)___| |__
+  | |_) / _ \ / __| |/ / |_  | / __| |_ \
+  |  _ < (_) | (__|   <|  _| | \__ \ | | |
+  |_| \_\___/ \___|_|\_\_|   |_|___/_| |_|
+  [STATUS] loading software modules
+  [STATUS] modules are Lmod (https://lmod.readthedocs.io/en/latest/)
+  [STATUS] software is Spack (https://spack.readthedocs.io/en/latest/)
+  [STATUS] the default modules ("module restore") use GCC 9 and OpenMPI 3.1
+  [STATUS] you can search available modules with: module spider <name>
+  [STATUS] you can list available modules with: module avail
+  [STATUS] loading a compiler, MPI, Python, or R will reveal new packages
+  [STATUS] and you can check your loaded modules with: module list --terse
+  [STATUS] to hide this message in the future: touch ~/.no_rf_banner
+  [STATUS] restoring your default module collection now
 
-Quota and usage information. Updated hourly. Use 'gpfsquota'
-Usage for group MyGroup
-FS         Usage   Quota  Files_Count  File_Quota
----        ---     ---    ---          ---
-data       5.07T   10T    2287948      4194304
-scratch16  1.939T  10T    1005210      10240000
-scratch4   4.177T  10T    1159700      20480000
-[userid@login02 ~]$
+  Quota and usage information. Updated hourly. Use 'gpfsquota'
+  Usage for group MyGroup
+  FS         Usage   Quota  Files_Count  File_Quota
+  ---        ---     ---    ---          ---
+  data       5.07T   10T    2287948      4194304
+  scratch16  1.939T  10T    1005210      10240000
+  scratch4   4.177T  10T    1159700      20480000
+  [userid@login02 ~]$
 
 
 Transfer files
