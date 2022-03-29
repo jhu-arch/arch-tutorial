@@ -58,4 +58,4 @@ More details about The Rockfish cluster at ARCH.
 
 .. |pic3| image:: images/jhu_logo.png
   :alt: JHU
-  :width: 18 %
+  :width: 16 %
