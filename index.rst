@@ -55,6 +55,6 @@ More details about The Rockfish cluster at ARCH.
   :alt: DOD
   :width: 13 %
 
-.. |pic3| image:: images/JHU.png
+.. |pic3| image:: images/jhu_logo.png
   :alt: JHU
   :width: 13 %
