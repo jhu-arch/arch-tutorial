@@ -1,5 +1,5 @@
-Management job scheduling with SLURM
-####################################
+Management jobs with SLURM
+##########################
 
 * interact -usage
 * interact-p defq -n 12 -t 120
