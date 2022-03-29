@@ -75,10 +75,10 @@ The job script is supposed to contain three parts:
 
 .. code-block:: console
 
-  # Part 1
+  # -------- Part 1 --------
   #!/bin/bash
 
-  # Part 2
+  # -------- Part 2 --------
   #SBATCH --job-name=MyTest                    # Job name (-J MyTest)
   #SBATCH --time=4:00:00                       # Time limit (-t 4:00:00)
   #SBATCH --nodes=1                            # Number of nodes (-N 1)
@@ -87,7 +87,7 @@ The job script is supposed to contain three parts:
   #SBATCH --partition=defq                     # Used partition (-p defq)
   #SBATCH --mem-per-cpu=4GB                    # Define memory per core
 
-  # Part 3
+  # -------- Part 3 --------
   module load intel/2020.2 intel-mpi/2020.2
   module load quantum-espresso/6.6
 
