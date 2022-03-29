@@ -232,7 +232,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide Documentation',
-     [u'Software Team'], 1)
+     [u'Cyberinfrastructure research support'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -246,7 +246,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide Documentation',
-   u'Software Team', 'RockfishClusterGuidelines', 'One line description of project.',
+   u'Cyberinfrastructure research support', 'RockfishClusterGuidelines', 'One line description of project.',
    'Miscellaneous'),
 ]
 
