@@ -122,7 +122,7 @@ By default, the job standard output and standard error will be sent to the SLURM
   #SBATCH -o /home/userid/%j/%x.out
   #SBATCH -e /home/userid/%j/%x.err
 
-It will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err`` , where ``<JobID>`` and ``<JobName>`` are the ``ID`` and the ``name`` of the job respectively.
+It will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err`` , where ``<JobID>`` and ``<JobName>`` are the ``ID`` and ``name`` of the job respectively.
 
 .. note::
   If there is a file with the same filename as the output filenam, the job output will be appended to it.
