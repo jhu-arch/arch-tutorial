@@ -5,8 +5,7 @@ The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– 
 
 **ARCH is supported by**:
 
-.. class:: center
-|pic1| |pic2| |pic3|
+                  |pic1| |pic2| |pic3|
 
 More details about The Rockfish cluster at ARCH.
 
