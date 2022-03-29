@@ -1,8 +1,12 @@
 Managing jobs using SLURM
 #########################
 
-* interact -usage
-* interact-p defq -n 12 -t 120
+Users can request interactive sessions to compute nodes via the "interact" command (based on srun) on The Rockfish Cluster.
+
+.. code-block:: console
+
+  $ interact -usage
+  $ interact-p defq -n 12 -t 120 ("time in minutes")
 
 Request Interactive jobs
 ************************

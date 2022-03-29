@@ -51,7 +51,7 @@ More details about The Rockfish cluster at ARCH.
     :maxdepth: 2
     :caption: Sample Job Scripts
 
-    R-StudioServer
+    RStudioServer
     JupyterLab
 
 
