@@ -21,7 +21,7 @@ A group of nodes networked together so a program can run on them in parallel.
 
 In the past, a CPU (Central Processing Unit) was a singular execution component for a computer. Then, multiple-core CPU is incorporated into a node. It is subdivided into multiple "cores" inside processors (or sockets). Each core is a unique execution unit like a CPU in the past. RAM memory between different sockets is connected with a bus interface.
 
-.. image:: images/picture1.png
+.. image:: images/multi_core.png
   :width: 800
   :alt: Multicore CPU (NUMA system)
 
