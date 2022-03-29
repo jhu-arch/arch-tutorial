@@ -51,14 +51,19 @@ Indices and tables
 
 **ARCH is supported by**:
 
-.. image:: images/NFS.png
-  :width: 250
+|pic1| |pic2| |pic3|
+
+.. |pic1| image:: images/NSF.png
+  :width: 150
   :alt: NFS
+  :align: center
 
-.. image:: images/DOD.png
-  :width: 250
+.. |pic2| image:: images/DOD.png
+  :width: 150
   :alt: DOD
+  :align: center
 
-.. image:: images/JHU.png
-  :width: 250
+.. |pic3| image:: images/JHU.png
+  :width: 150
   :alt: JHU
+  :align: center
