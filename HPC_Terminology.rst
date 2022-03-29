@@ -33,9 +33,12 @@ Short for Graphics Processing Unit. It is a specialized processor with thousands
 
 High Performance Computing
 
-**Slurm**
+`Slurm`_
 
 Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
+
+.. Slurm: https://slurm.schedmd.com
+
 
 **Task/Process**
 
