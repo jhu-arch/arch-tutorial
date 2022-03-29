@@ -4,23 +4,7 @@ Rockfish Cluster Software Guide
 The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– is a shared computing facility at Johns Hopkins University that enables research, discovery, and learning, relying on the use and development of advanced computing.
 
 **ARCH is supported by**:
-
-.. image:: images/NSF.png
-  :width: 150
-  :alt: NFS
-  :align: left
-  :width: 20 %
-
-.. image:: images/DOD.png
-  :width: 150
-  :alt: DOD
-  :width: 20 %
-
-.. image:: images/JHU.png
-  :width: 150
-  :alt: JHU
-  :align: right
-  :width: 20 %
+|pic1| |pic2| |pic3|
 
 More details about The Rockfish cluster at ARCH.
 
@@ -61,3 +45,18 @@ More details about The Rockfish cluster at ARCH.
 
   Software
   Slurm
+
+  .. |pic1| image:: images/NSF.png
+    :width: 150
+    :alt: NFS
+    :width: 20 %
+
+  .. |pic2| image:: images/DOD.png
+    :width: 150
+    :alt: DOD
+    :width: 20 %
+
+  .. |pic3| image:: images/JHU.png
+    :width: 150
+    :alt: JHU
+    :width: 20 %
