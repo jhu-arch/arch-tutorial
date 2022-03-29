@@ -202,7 +202,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'RockfishClusterGuidelines.tex', u'Rockfish Cluster Software Guide Documentation',
-   u'Ricardo S. Jacomini', 'manual'),
+   u'Software Team', 'Software Guide'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -232,7 +232,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide Documentation',
-     [u'Ricardo S. Jacomini'], 1)
+     [u'Software Team'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -246,7 +246,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide Documentation',
-   u'Ricardo S. Jacomini', 'RockfishClusterGuidelines', 'One line description of project.',
+   u'Software Team', 'RockfishClusterGuidelines', 'One line description of project.',
    'Miscellaneous'),
 ]
 
