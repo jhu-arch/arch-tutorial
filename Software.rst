@@ -10,8 +10,8 @@ You can use several software in different versions installed on the Rockfish clu
 * Commercial  —  MATLAB, ABINIT, COMSOL, TotalView, ...
 
 
-* Management using Lua modules
-  * module available
-  * module spider [application]
-  * module show [application]
-  * ml [application]
+**Management using Lua modules**
+* module available
+* module spider [application]
+* module show [application]
+* ml [application]
