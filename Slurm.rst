@@ -103,7 +103,7 @@ The job script is supposed to contain three parts:
 
 In this example, it will use 2 processes in parallel in a node with the ``defq` partition using 6 threads in each process.
 
-.. note::
+.. warning::
   The maximum memory usaged is 4GB per CPU and maximum running time is 4 hours (``Time limit``).
 
 **3**. ( `Loading and Unloading Modules`_ ) This script will run on the compute nodes.
