@@ -19,6 +19,7 @@ build:
 sphinx:
    configuration: conf.py
 
+# https://docs.readthedocs.io/en/stable/config-file/v2.html
 # If using Sphinx, optionally build your docs in additional formats such as PDF
 formats:
     - all
