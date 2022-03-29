@@ -1,7 +1,7 @@
 Allocation / Account Management
 ###############################
 
-* Rockfish portal: https://www.arch.jhu.edu/
+* Rockfish `Portal`_
 
   * Account / Allocation request (PI)
   * User account request
@@ -11,7 +11,8 @@ Allocation / Account Management
   * Account / Allocation request (PI
   * Video -> Rockfish portal `navigation`_
 
-  .. _navigation: https://www.youtube.com/watch?v=L6zvLBK5Mss
+.. _Portal: https://coldfront.rockfish.jhu.edu/
+.. _navigation: https://www.youtube.com/watch?v=L6zvLBK5Mss
 
 Please refer to `allocations`_ web site.
 
