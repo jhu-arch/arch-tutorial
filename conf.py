@@ -202,7 +202,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'RockfishClusterGuidelines.tex', u'Rockfish Cluster Software Guide Documentation',
-   u'Software Team', 'Software Guide'),
+   u'Cyberinfrastructure research support', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
