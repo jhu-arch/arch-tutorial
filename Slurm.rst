@@ -104,7 +104,7 @@ The job script is supposed to contain three parts:
 In this example, it will use 2 processes in parallel in a node with the ``defq` partition using 6 threads in each process.
 
 .. note::
-  The maximum memory usaged is 4GB per CPU and maximum running time is 4 hours.
+  The maximum memory usaged is 4GB per CPU and maximum running time is 4 hours (``Time limit``).
 
 **3**. ( `Loading and Unloading Modules`_ ) This script will run on the compute nodes.
 The command lines should include all commands of job workflow after logging into a node, such as: module loading, environment setting and running application commands.
@@ -122,6 +122,6 @@ By default, the job standard output and standard error will be sent to the SLURM
   #SBATCH -o /home/userid/%j/%x.out
   #SBATCH -e /home/userid/%j/%x.err
 
-It will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err#` , where ``<JobID>`` and ``<JobName>`` are the ``ID`` and name of the job respectively.
+It will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err#`` , where ``<JobID>`` and ``<JobName>`` are the ``ID`` and name of the job respectively.
 
 If there is a file with the same filename as the output filenam, the job output will be appended to it.
