@@ -47,6 +47,14 @@ More details about The Rockfish cluster at ARCH.
   Software
   Slurm
 
+  .. toctree::
+    :maxdepth: 2
+    :caption: Sample Job Scripts
+
+    R-StudioServer
+    JupyterLab
+
+
 .. |pic1| image:: images/NSF.png
   :alt: NFS
   :width: 21 %
