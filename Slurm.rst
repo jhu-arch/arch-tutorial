@@ -1,4 +1,4 @@
-Managing jobs using SLURM
+Managing Jobs using SLURM
 #########################
 
 Users can request interactive sessions to compute nodes via the "interact" command (based on srun) on The Rockfish Cluster.

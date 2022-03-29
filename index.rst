@@ -47,12 +47,12 @@ More details about The Rockfish cluster at ARCH.
   Software
   Slurm
 
-  .. toctree::
-    :maxdepth: 2
-    :caption: Sample Job Scripts
+.. toctree::
+  :maxdepth: 2
+  :caption: Common Tasks and Workflows
 
-    RStudioServer
-    JupyterLab
+  RStudioServer
+  JupyterLab
 
 
 .. |pic1| image:: images/NSF.png
