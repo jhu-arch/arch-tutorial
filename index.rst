@@ -47,12 +47,6 @@ More details about The Rockfish cluster at ARCH.
   Software
   Slurm
 
-Indices and tables
-##################
-
-* :ref:`genindex`
-* :ref:`search`
-
 .. |pic1| image:: images/NSF.png
   :width: 150
   :alt: NFS
