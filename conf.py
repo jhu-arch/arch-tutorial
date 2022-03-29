@@ -201,7 +201,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'RockfishClusterGuidelines.tex', u'Rockfish Cluster Software Guide Documentation',
+  ('index', 'RockfishClusterGuidelines.tex', u'Rockfish Cluster Software Guide',
    u'Cyberinfrastructure research support team', 'howto'),
 ]
 
@@ -231,7 +231,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide Documentation',
+    ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide',
      [u'Cyberinfrastructure research support team'], 1)
 ]
 
@@ -245,7 +245,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide Documentation',
+  ('index', 'RockfishClusterGuidelines', u'Rockfish Cluster Software Guide',
    u'Cyberinfrastructure research support', 'RockfishClusterGuidelines', 'One line description of project.',
    'Miscellaneous'),
 ]
