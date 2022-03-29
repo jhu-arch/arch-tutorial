@@ -53,8 +53,14 @@ where the real command executed is:
 
 .. code-block:: console
 
-  salloc -J interact -N 1-1 -n 1 --time=30:00 -p defq srun --pty bash
+  [userid@login02 ~]$ salloc -J interact -N 1-1 -n 1 --time=30:00 -p defq srun --pty bash
 
 In other words, the interact command uses the syntax:
 
 ``salloc <Job Options> srun --pty bash``to request an interactive job. A list of available job options is mentioned in the next section, and we can use them for job submission.
+
+Here is a example to to request an interactive mode to GPU node.
+
+.. code-block:: console
+
+  [userid@login02 ~]$ salloc -J test -N 1 -n 12 --time=1:00:00 -p a100 -q qos_gpu -A <PI-userid_gpu> --gres=gpu:1 srun --pty bash
