@@ -48,3 +48,17 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`search`
+
+**ARCH is supported by**:
+
+.. image:: images/NFS.png
+  :width: 250
+  :alt: NFS
+
+.. image:: images/DOD.png
+  :width: 250
+  :alt: DOD
+
+.. image:: images/JHU.png
+  :width: 250
+  :alt: JHU
