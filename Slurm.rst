@@ -70,7 +70,7 @@ Batch Job Script
 To submit a batch job and run it on a compute node, users need to use sbatch command with a job script file.
 The job script is supposed to contain three parts:
 
-**1**. ( `Shell script instruction`_ ) The first line of the file which specifies the shell to run the script ``#!/bin/bash``.
+**1**. ( `Shell Script`_ ) The first line of the file which specifies the shell to run the script ``#!/bin/bash``.
 **2**. ( `SLURM input environment variables`_ ) The second part contains the lines of resource requests and job options. Each of the lines must start with the words ``#SBATCH`` so the job scheduler (SLURM) can read and manage the resources.
 
 .. code-block:: console
@@ -97,7 +97,7 @@ The job script is supposed to contain three parts:
   scontrol show job $SLURM_JOBID
 
 .. _Loading and Unloading Modules: https://www.arch.jhu.edu/access/user-guide/
-.. _Shell script instruction: https://www.tutorialspoint.com/unix/unix-getting-started.htm
+.. _Shell Script: https://www.tutorialspoint.com/unix/unix-getting-started.htm
 .. _Slurm input environment variables: https://slurm.schedmd.com/sbatch.html
 
 In this example, it will use 2 processes in parallel in a node with the ``defq` partition using 6 threads in each process.
