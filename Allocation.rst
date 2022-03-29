@@ -30,4 +30,5 @@ Storage Allocations
    scratch16 (/scratch16/PI-userid>),10 TB (per group),Scratch for large files,N/A,GPFS (parallel file system 16MB blocksize)
    scratch4 (/scratch4/PI-userid),10 TB (per group),Scratch for small files,N/A,GPFS (parallel file system 4MB block size)
 
-where "userid" is the user's account name and PI-userid is the account name of the user's PI.
+.. note::
+  The ``<userid>`` is the user's account name and ``<PI-userid>`` is the account name of the user's PI.
