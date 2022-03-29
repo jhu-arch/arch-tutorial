@@ -1,5 +1,5 @@
-Management jobs with SLURM
-##########################
+Management jobs using SLURM
+###########################
 
 * interact -usage
 * interact-p defq -n 12 -t 120
