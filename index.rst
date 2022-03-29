@@ -47,16 +47,13 @@ More details about The Rockfish cluster at ARCH.
   Slurm
 
 .. |pic1| image:: images/NSF.png
-  :width: 150
   :alt: NFS
   :width: 20 %
 
 .. |pic2| image:: images/DOD.png
-  :width: 150
   :alt: DOD
   :width: 20 %
 
 .. |pic3| image:: images/JHU.png
-  :width: 150
   :alt: JHU
   :width: 20 %
