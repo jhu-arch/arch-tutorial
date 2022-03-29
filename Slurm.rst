@@ -71,6 +71,7 @@ To submit a batch job and run it on a compute node, users need to use sbatch com
 The job script is supposed to contain three parts:
 
 **1**. ( `Shell Script`_ ) The first line of the file which specifies the shell to run the script ``#!/bin/bash``.
+
 **2**. ( `SLURM input environment variables`_ ) The second part contains the lines of resource requests and job options. Each of the lines must start with the words ``#SBATCH`` so the job scheduler (SLURM) can read and manage the resources.
 
 .. code-block:: console
