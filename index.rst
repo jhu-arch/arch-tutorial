@@ -5,7 +5,22 @@ The Advanced Research Computing at Hopkins (ARCH) –formerly known as MARCC– 
 
 **ARCH is supported by**:
 
-|pic1| |pic2| |pic3|
+.. image:: images/NSF.png
+  :width: 150
+  :alt: NFS
+  :align: left
+  :width: 20 %
+
+.. image:: images/DOD.png
+  :width: 150
+  :alt: DOD
+  :width: 20 %
+
+.. image:: images/JHU.png
+  :width: 150
+  :alt: JHU
+  :align: right
+  :width: 20 %
 
 More details about The Rockfish cluster at ARCH.
 
@@ -46,18 +61,3 @@ More details about The Rockfish cluster at ARCH.
 
   Software
   Slurm
-
-.. |pic1| image:: images/NSF.png
-  :width: 150
-  :alt: NFS
-  :align: center
-
-.. |pic2| image:: images/DOD.png
-  :width: 150
-  :alt: DOD
-  :align: center
-
-.. |pic3| image:: images/JHU.png
-  :width: 150
-  :alt: JHU
-  :align: center
