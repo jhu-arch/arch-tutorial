@@ -69,14 +69,14 @@ Batch Job Script
 
 To submit a batch job and run it on a compute node, users need to use sbatch command with a job script file.
 The job script is supposed to contain three parts:
-**1**. The first line of the file which specifies the shell to run the script ``#!/bin/bash``. **2**. second part contains the lines of resource requests and job options. Each of the lines must start with the words ``#SBATCH`` so the job scheduler (SLURM) can read and manage the resources.
+**1**. ( `Shell script instruction`_ ) The first line of the file which specifies the shell to run the script ``#!/bin/bash``. **2**. ( `SLURM input environment variables`_ ) The second part contains the lines of resource requests and job options. Each of the lines must start with the words ``#SBATCH`` so the job scheduler (SLURM) can read and manage the resources.
 
 .. code-block:: console
 
-  # Part 1       ( `Shell script instruction`_ )
+  # Part 1
   #!/bin/bash
 
-  # Part 2       ( `SLURM input environment variables`_ )
+  # Part 2
   #SBATCH --job-name=MyTest                    # Job name (-J MyTest)
   #SBATCH --time=4:00:00                       # Time limit (-t 4:00:00)
   #SBATCH --nodes=1                            # Number of nodes (-N 1)
@@ -85,7 +85,7 @@ The job script is supposed to contain three parts:
   #SBATCH --partition=defq                     # Used partition (-p defq)
   #SBATCH --mem-per-cpu=4GB                    # Define memory per core
 
-  # Part 3      ( `Loading and Unloading Modules`_ )
+  # Part 3
   module load intel/2020.2 intel-mpi/2020.2
   module load quantum-espresso/6.6
 
@@ -101,7 +101,7 @@ The job script is supposed to contain three parts:
 This example above will use 2 processes simultaneously (in parallel) on one node in the ``defq` partition with 6 threads in each process. The maximum memory usage is 4GB per CPU and maximum running time is 4 hours. The third part is the command lines which will be run on the compute nodes when the job starts.
 The command lines should include all commands of job workflow after logging into a node, such as module loading, environment setting and running application commands.
 
-The first 2 command lines load the necessary modules to run the QuantumESPRESSO software. The export command sets the environment variable ``OMP_NUM_THREADS`input  as the SLURM environment variable ``SLURM_CPUS_PER_TASK`` which is the requested number of CPUs per task. The setting allows the application to run with multiple threads. The mpirun command starts to run the ``pw.x`` command in parallel with the number of the processes the same as the SLURM variable ``$SLURM_NTASKS`` set to be the requested number of tasks. The last command will print the job information to the SLURM output file, where the environment variable ``$SLURM_JOBID`` is set to be the job ID of the job. More SLURM variables can be seen in the SLURM Environment Variables section.
+**3**. ( `Loading and Unloading Modules`_ ) The first 2 command lines load the necessary modules to run the QuantumESPRESSO software. The export command sets the environment variable ``OMP_NUM_THREADS`input  as the SLURM environment variable ``SLURM_CPUS_PER_TASK`` which is the requested number of CPUs per task. The setting allows the application to run with multiple threads. The mpirun command starts to run the ``pw.x`` command in parallel with the number of the processes the same as the SLURM variable ``$SLURM_NTASKS`` set to be the requested number of tasks. The last command will print the job information to the SLURM output file, where the environment variable ``$SLURM_JOBID`` is set to be the ``job ID`` of that job. More SLURM variables can be seen in the SLURM Environment Variables section.
 By default, the job standard output and standard error will be sent to the SLURM output file ``slurm-<JobID>.out`` in the directory where you run the job submission command. Users can use the ``-o`` or ``-e`` option to specify a different output or a different error file name with a preferred location. If the ``-e`` option is not specified, both messages are sent to the output file. Users can also use the filename pattern to name the file. For example, using the specifications:
 
 .. code-block:: console
