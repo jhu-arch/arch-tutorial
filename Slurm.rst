@@ -69,7 +69,9 @@ Batch Job Script
 
 To submit a batch job and run it on a compute node, users need to use sbatch command with a job script file.
 The job script is supposed to contain three parts:
-**1**. ( `Shell script instruction`_ ) The first line of the file which specifies the shell to run the script ``#!/bin/bash``. **2**. ( `SLURM input environment variables`_ ) The second part contains the lines of resource requests and job options. Each of the lines must start with the words ``#SBATCH`` so the job scheduler (SLURM) can read and manage the resources.
+
+**1**. ( `Shell script instruction`_ ) The first line of the file which specifies the shell to run the script ``#!/bin/bash``.
+**2**. ( `SLURM input environment variables`_ ) The second part contains the lines of resource requests and job options. Each of the lines must start with the words ``#SBATCH`` so the job scheduler (SLURM) can read and manage the resources.
 
 .. code-block:: console
 
@@ -98,10 +100,19 @@ The job script is supposed to contain three parts:
 .. _Shell script instruction: https://www.tutorialspoint.com/unix/unix-getting-started.htm
 .. _Slurm input environment variables: https://slurm.schedmd.com/sbatch.html
 
-This example above will use 2 processes simultaneously (in parallel) on one node in the ``defq` partition with 6 threads in each process. The maximum memory usage is 4GB per CPU and maximum running time is 4 hours. The third part is the command lines which will be run on the compute nodes when the job starts.
-The command lines should include all commands of job workflow after logging into a node, such as module loading, environment setting and running application commands.
+In this example, it will use 2 processes in parallel in a node with the ``defq` partition using 6 threads in each process.
 
-**3**. ( `Loading and Unloading Modules`_ ) The first 2 command lines load the necessary modules to run the QuantumESPRESSO software. The export command sets the environment variable ``OMP_NUM_THREADS`input  as the SLURM environment variable ``SLURM_CPUS_PER_TASK`` which is the requested number of CPUs per task. The setting allows the application to run with multiple threads. The mpirun command starts to run the ``pw.x`` command in parallel with the number of the processes the same as the SLURM variable ``$SLURM_NTASKS`` set to be the requested number of tasks. The last command will print the job information to the SLURM output file, where the environment variable ``$SLURM_JOBID`` is set to be the ``job ID`` of that job. More SLURM variables can be seen in the SLURM Environment Variables section.
+.. note: The maximum memory usaged is 4GB per CPU and maximum running time is 4 hours.
+
+**3**. ( `Loading and Unloading Modules`_ ) This script will run on the compute nodes.
+The command lines should include all commands of job workflow after logging into a node, such as: module loading, environment setting and running application commands.
+
+* The first 2 command lines load the necessary modules to run the QuantumESPRESSO software.
+* The export command sets the environment variable ``OMP_NUM_THREADS`input  as the SLURM environment variable ``SLURM_CPUS_PER_TASK`` which is the requested number of CPUs per task. The setting allows the application to run with multiple threads.
+* The mpirun command starts to run the ``pw.x`` command in parallel with the number of the processes the same as the SLURM variable ``$SLURM_NTASKS`` set to be the requested number of tasks. The last command will print the job information to the SLURM output file, where the environment variable ``$SLURM_JOBID`` is set to be the ``job ID`` of that job.
+
+More SLURM variables can be seen in the SLURM Environment Variables section.
+
 By default, the job standard output and standard error will be sent to the SLURM output file ``slurm-<JobID>.out`` in the directory where you run the job submission command. Users can use the ``-o`` or ``-e`` option to specify a different output or a different error file name with a preferred location. If the ``-e`` option is not specified, both messages are sent to the output file. Users can also use the filename pattern to name the file. For example, using the specifications:
 
 .. code-block:: console
@@ -109,6 +120,6 @@ By default, the job standard output and standard error will be sent to the SLURM
   #SBATCH -o /home/userid/%j/%x.out
   #SBATCH -e /home/userid/%j/%x.err
 
-It will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err`` , where ``<JobID>`` and ``<JobName>`` are the ``ID`` and name of the job respectively.
+It will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err#` , where ``<JobID>`` and ``<JobName>`` are the ``ID`` and name of the job respectively.
 
 If there is a file with the same filename as the output filenam, the job output will be appended to it.
