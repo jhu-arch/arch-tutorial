@@ -4,7 +4,6 @@ Slurm
 * interact -usage
 * interact-p defq -n 12 -t 120
 
-
 Request Interactive jobs
 ************************
 
@@ -64,3 +63,42 @@ Here is a example to to request an interactive mode to GPU node.
 .. code-block:: console
 
   [userid@login02 ~]$ salloc -J test -N 1 -n 12 --time=1:00:00 -p a100 -q qos_gpu -A <PI-userid_gpu> --gres=gpu:1 srun --pty bash
+
+Batch Job Script
+****************
+
+To submit a batch job and run it on a compute node, users need to use sbatch command with a job script file. The job script is supposed to contain three parts. The first part is the first line of the file which specifies the shell to run the script. By default, bash shell is generally used to run our command lines. The first line should be like
+
+.. code-block:: console
+
+  #!/bin/bash
+  The second part contains the lines of resource requests and job options. Each of the lines must start with the words #SBATCH so the job scheduler (SLURM) can read and manage the resources. For example, the following SBATCH lines:
+  #SBATCH --job-name=MyTest                    # Job name (-J MyTest)
+  #SBATCH --time=4:00:00                       # Time limit (-t 4:00:00)
+  #SBATCH --nodes=1                            # Number of nodes (-N 1)
+  #SBATCH --ntasks=2                           # Number of processors (-n 2)
+  #SBATCH --cpus-per-task=6                    # Threads per process (-c 6)
+  #SBATCH --partition=defq                     # Used partition (-p defq)
+  #SBATCH --mem-per-cpu=4GB                    # Define memory per core
+
+Specify the job name to be MyTest. It can use 2 processes simultaneously (in parallel) on one node in the defq partition with 6 threads in each process. The maximum memory usage is 4GB per CPU and maximum running time is 4 hours. The third part is the command lines which will be run on the compute nodes when the job starts. The command lines should include all commands of job workflow after logging into a node, such as module loading, environment setting and running application commands. An example of the command lines are:
+
+.. code-block:: console
+
+  module load intel/2020.2 intel-mpi/2020.2
+  module load quantum-espresso/6.6
+
+  export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+  mpirun -n $SLURM_NTASKS pw.x < scf.in > scf.out
+
+  scontrol show job $SLURM_JOBID
+
+The first 2 command lines load the necessary modules to run the QuantumESPRESSO software. The export command sets the environment variable OMP_NUM_THREADS as the SLURM environment variable ``SLURM_CPUS_PER_TASK`` which is the requested number of CPUs per task. The setting allows the application to run with multiple threads. The mpirun command starts to run the pw.x command in parallel with the number of the processes the same as the SLURM variable ``$SLURM_NTASKS`` set to be the requested number of tasks. The last command will print the job information to the SLURM output file, where the environment variable ``$SLURM_JOBID`` is set to be the job ID of the job. More SLURM variables can be seen in the SLURM Environment Variables section.
+By default, the job standard output and standard error will be sent to the SLURM output file slurm-<JobID>.out in the directory where you run the job submission command. Users can use the -o or -e option to specify a different output or a different error file name with a preferred location. If the -e option is not specified, both messages are sent to the output file. Users can also use the filename pattern to name the file. For example, using the specifications:
+
+.. code-block:: console
+
+  #SBATCH -o /home/userid/%j/%x.out
+  #SBATCH -e /home/userid/%j/%x.err
+
+will send the output to the file ``/home/userid/<JobID>/<JobName>.out`` and the error to the file ``/home/userid/<JobID>/<JobName>.err``, where <JobID> and <JobName> are the ID and name of the job respectively. If there exists a file with the same file name as the output file name, the job output will append to it.
