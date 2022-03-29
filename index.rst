@@ -50,14 +50,11 @@ More details about The Rockfish cluster at ARCH.
 .. |pic1| image:: images/NSF.png
   :alt: NFS
   :width: 20 %
-  :align: center
 
 .. |pic2| image:: images/DOD.png
   :alt: DOD
   :width: 20 %
-  :align: center
 
 .. |pic3| image:: images/jhu_logo.png
   :alt: JHU
   :width: 20 %
-  :align: center
