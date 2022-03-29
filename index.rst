@@ -38,7 +38,7 @@ More details about The Rockfish cluster at ARCH.
 
 .. toctree::
   :maxdepth: 2
-  :caption: Management Software via Lua Modules
+  :caption: Management Software and Jobs
 
   Software
   Slurm
