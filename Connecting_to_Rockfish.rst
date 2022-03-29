@@ -65,7 +65,7 @@ Users can use ``scp`` command to copy a file or a directory from any computer to
 
 .. code-block:: console
 
-  $ scp -r DIR <userid>@rfdtn1.rockfish.jhu.edu:/scratch16/<PI-id>/<user-id>/
+  $ scp -r <DIR> <userid>@rfdtn1.rockfish.jhu.edu:/scratch16/<PI-id>/<user-id>/
 
 
 Synchronize Files via rsync command
@@ -75,7 +75,7 @@ Using ``rsync`` command, you can copy and synchronize your files and directories
 The syntax for rsync command is similar to scp command.
 
 .. code-block:: console
-  
+
   $ rsync -rav  ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
   $ rsync -rav --delete --exclude-from=~/exclude.txt ~/data <user-id>@rfdtn1.rockfish.jhu.edu:~/data/
 

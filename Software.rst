@@ -1,5 +1,5 @@
-Software
-########
+Management Softwares with Lmod
+##############################
 
 You can use several software in different versions installed on the Rockfish cluster:
 
