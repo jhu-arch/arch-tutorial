@@ -8,7 +8,6 @@ The users can access RStudio Server on Rockfish using the r-studio-server.sh com
 Usage examples to start the RStudio service:
 
 .. code-block:: console
-  :emphasize-lines: 2
 
   $ r-studio-server.sh -h
   $ r-studio-server.sh -n 1 -c 2 -m 4G -t 0-02:0:0 -p defq (default)
