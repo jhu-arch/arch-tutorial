@@ -62,7 +62,7 @@ In other words, the interact command uses the syntax:
 
 ``salloc <Job Options> srun --pty bash`` to request an interactive job. A list of available job options is mentioned in the next section, and we can use them for job submission.
 
-Here is a example to to request an interactive mode to GPU node.
+Here is a example to request an interactive mode to GPU node.
 
 .. code-block:: console
 
