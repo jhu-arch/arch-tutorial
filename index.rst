@@ -49,7 +49,7 @@ More details about The Rockfish cluster at ARCH.
 
 .. toctree::
   :maxdepth: 2
-  :caption: How-to on the Rockfish Cluster #Common Tasks and Workflows
+  :caption: Common Tasks and Workflows
 
   RStudioServer
   JupyterLab
