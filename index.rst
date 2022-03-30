@@ -42,14 +42,14 @@ More details about The Rockfish cluster at ARCH.
 
 .. toctree::
   :maxdepth: 2
-  :caption: Management Software and Jobs
+  :caption: Manage Software and Jobs
 
   Software
   Slurm
 
 .. toctree::
   :maxdepth: 2
-  :caption: Common Tasks and Workflows
+  :caption: How-to on the Rockfish Cluster #Common Tasks and Workflows
 
   RStudioServer
   JupyterLab

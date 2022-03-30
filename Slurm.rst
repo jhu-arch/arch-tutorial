@@ -1,7 +1,7 @@
 Managing Jobs using SLURM
 #########################
 
-Users can request interactive sessions to compute nodes via the "interact" command (based on srun) on The Rockfish Cluster.
+Users can request interactive sessions to compute nodes via the ``interact`` command (based on srun) on The Rockfish Cluster.
 
 .. code-block:: console
 
@@ -34,7 +34,7 @@ It is helpful to run your work and get the response of the commands right away t
                     (default: none, use any available node)
     -g gpus         specify GRES for GPU-based resources
 
-As mentioned in the results, this command is related to 'salloc' and 'srun' commands. We can see how it works by requesting an interactive job:
+As mentioned in the results, this command is related to ``salloc`` and ``srun`` commands. We can see how it works by requesting an interactive job:
 
 .. code-block:: console
 
@@ -60,7 +60,7 @@ where the real command executed is:
 
 In other words, the interact command uses the syntax:
 
-``salloc <Job Options> srun --pty bash``to request an interactive job. A list of available job options is mentioned in the next section, and we can use them for job submission.
+``salloc <Job Options> srun --pty bash`` to request an interactive job. A list of available job options is mentioned in the next section, and we can use them for job submission.
 
 Here is a example to to request an interactive mode to GPU node.
 
@@ -105,7 +105,7 @@ The job script is supposed to contain three parts:
 .. _Shell Script: https://www.tutorialspoint.com/unix/unix-getting-started.htm
 .. _Slurm input environment variables: https://slurm.schedmd.com/sbatch.html
 
-In this example, it will use 2 processes in parallel in a node with the ``defq` partition using 6 threads in each process.
+In this example, it will use 2 processes in parallel in a node with the ``defq`` partition using 6 threads in each process.
 
 .. warning::
   The maximum memory usaged is 4GB per CPU and maximum running time is 4 hours (``Time limit``).
