@@ -13,7 +13,7 @@ Usage examples to start the RStudio service:
   $ r-studio-server.sh -n 1 -c 2 -m 4G -t 0-02:0:0 -p defq (default)
   $ r-studio-server.sh -c 2 -t 4:0:0 -p defq -e <userid>@jhu.edu
 
-After running ``r-studio-server.sh`` you will see details about the script created.
+After running ``r-studio-server.sh`` you will see details about the script created, like this next block code below.
 
 .. note::
 
