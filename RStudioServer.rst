@@ -23,7 +23,6 @@ After running ``r-studio-server.sh`` you will see details about the script creat
 
   Creating slurm script: R-Studio-Server.slurm.script
 
-
   The Advanced Research Computing at Hopkins (ARCH)
   SLURM job script for run RStudio into Singularity container
   Support:  help@rockfish.jhu.edu
@@ -48,7 +47,7 @@ After running ``r-studio-server.sh`` you will see details about the script creat
 
  	 $ scontrol show jobid <SLURM_JOB_ID>
 
-Example the slurm script create by ``r-studio-server.sh`` command.
+Example the R-Studio-Server slurm script created by ``r-studio-server.sh`` command.
 
 .. code-block:: console
 
