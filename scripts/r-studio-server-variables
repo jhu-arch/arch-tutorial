@@ -49,9 +49,8 @@ readonly export PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 
 # Alternative to setting session-timeout-minutes=0 in /etc/rstudio/rsession.conf
 # https://github.com/rstudio/rstudio/blob/v1.4.1106/src/cpp/server/ServerSessionManager.cpp#L126
 
-# A certificate file is only required if mandated by the LDAP host
-and the default system certificate store is not accepted by the LDAP
-server
+# the CA certificates used by the LDAP server (default: use system CA certificates)
+
 cat > ${workdir}/.ca.pem <<END
 -----BEGIN CERTIFICATE-----
 
@@ -73,6 +72,9 @@ export SINGULARITYENV_LDAP_CERT_FILE=/etc/rstudio/ca-certs.pem
 export SINGULARITYENV_PATH=/usr/lib/rstudio-server/bin:${PATH}
 export SINGULARITYENV_USER=$(id -un)
 export SINGULARITY_BIND="${workdir}/run:/run,${workdir}/tmp:/tmp,${workdir}/database.conf:/etc/rstudio/database.conf,${workdir}/rsession.sh:/etc/rstudio/rsession.sh,${workdir}/var/log/:/var/log/rstudio/,${workdir}/var/lib/rstudio-server:/var/lib/rstudio-server,${workdir}/.ca.pem:/etc/rstudio/ca-certs.pem"
+
+
+# https://hub.docker.com/repository/docker/archrockfish/rstudio
 
 image=rstudio_1.4.463_1.sif
 
