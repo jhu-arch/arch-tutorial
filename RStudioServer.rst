@@ -10,8 +10,9 @@ Usage examples to start the RStudio service:
 .. code-block:: console
 
   $ r-studio-server.sh -h
-  $ r-studio-server.sh -n 1 -c 2 -m 8G -t 0-02:0:0 -p defq (default)
+  $ r-studio-server.sh -n 1 -c 2 -m 8G -t 1-02:0 -p defq (default)
   $ r-studio-server.sh -c 2 -t 4:0:0 -p defq -e <userid>@jhu.edu
+  $ r-studio-server.sh -c 24 -g 2 -p a100 -a <PI-userid>_gpu
 
 After running ``r-studio-server.sh`` you will see details about the script created, like this next block code below.
 
@@ -46,18 +47,20 @@ After running ``r-studio-server.sh`` you will see details about the script creat
 
  	 $ scontrol show jobid <SLURM_JOB_ID>
 
-Example the R-Studio-Server slurm script created by ``r-studio-server.sh`` command.
+Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c 2 -m 8G -t 1-02:0 -p defq`` command.
+
 
 .. code-block:: console
 
   #!/bin/bash
   #####################################
   #SBATCH --job-name=rstudio_container_$user
-  #SBATCH --time=00-02:00
+  #SBATCH --time==1-02:0
   #SBATCH --partition=defq
   #SBATCH --signal=USR2
   #SBATCH --nodes=1
-  #SBATCH --cpus-per-task=4
+  #SBATCH --cpus-per-task=2
+  #SBATCH --mem=8G
   #SBATCH --mail-type=END,FAIL
   #SBATCH --mail-user=$user@jhu.edu
   #SBATCH --output=rstudio-server.job.%j.out
