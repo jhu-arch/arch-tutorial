@@ -3,7 +3,7 @@ RStudio Server
 
 The open-source RStudio Server provides a fully-featured IDE for R users.
 
-The users can access RStudio Server on Rockfish using the ``r-studio-server.sh`` command. It will submit a SLURM job to system.
+The ARCH users can access RStudio Server on Rockfish using the ``r-studio-server.sh`` command. It will submit a SLURM job to system.
 
 Usage examples to start the RStudio service:
 
@@ -16,7 +16,6 @@ Usage examples to start the RStudio service:
 After running ``r-studio-server.sh`` you will see details about the script created, like this next block code below.
 
 .. note::
-
 ``#SBATCH`` tags can be customized.
 
 .. code-block:: console
