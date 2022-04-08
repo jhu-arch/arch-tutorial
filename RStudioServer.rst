@@ -15,13 +15,12 @@ Usage examples to start the RStudio service:
 
 .. code-block:: console
 
-
   #!/bin/bash
   #####################################
   #SBATCH --job-name=rstudio_container_$user
   #SBATCH --time=00-02:00
   #SBATCH --partition=defq
-  #SBATCH --mem=4G
+  #SBATCH --mem=16G
   #SBATCH --signal=USR2
   #SBATCH --nodes=1
   #SBATCH --cpus-per-task=4
@@ -30,9 +29,12 @@ Usage examples to start the RStudio service:
   #SBATCH --output=rstudio-server.job.%j.out
   #####################################
 
+  #module load r/4.0.2
+
+  # R_LIBS_USER directives for installing and using packages
   export R_LIBS_USER=${HOME}/R/rstudio/4.0
 
-  # include singularity environment variables
+  # do not remove or change any lines below - include singularity environment variables
   source /data/apps/helpers/.r-studio-server-variables
 
   cat 1>&2 <<END
