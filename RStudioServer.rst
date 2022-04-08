@@ -65,7 +65,7 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
   #SBATCH --output=rstudio-server.job.%j.out
   #####################################
 
-  #module load r/4.0.2
+  # module load r/4.0.2
 
   # R_LIBS_USER directives for installing and using packages
   export R_LIBS_USER=${HOME}/R/rstudio/4.0
