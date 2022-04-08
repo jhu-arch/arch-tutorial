@@ -3,7 +3,7 @@ RStudio Server
 
 The open-source RStudio Server provides a fully-featured IDE for R users.
 
-The users can access RStudio Server on Rockfish using the r-studio-server.sh command. It will submit a SLURM job to system.
+The users can access RStudio Server on Rockfish using the ``r-studio-server.sh`` command. It will submit a SLURM job to system.
 
 Usage examples to start the RStudio service:
 
@@ -13,6 +13,42 @@ Usage examples to start the RStudio service:
   $ r-studio-server.sh -n 1 -c 2 -m 4G -t 0-02:0:0 -p defq (default)
   $ r-studio-server.sh -c 2 -t 4:0:0 -p defq -e <userid>@jhu.edu
 
+After running ``r-studio-server.sh`` you will see details about the script created.
+
+.. note::
+
+``#SBATCH`` tags can be customized.
+
+.. code-block:: console
+
+  Creating slurm script: R-Studio-Server.slurm.script
+
+
+  The Advanced Research Computing at Hopkins (ARCH)
+  SLURM job script for run RStudio into Singularity container
+  Support:  help@rockfish.jhu.edu
+
+  Nodes:       	2
+  Cores/task:  	4
+  Total cores: 	8
+  Walltime:    	00-02:00
+  Queue:       	defq
+
+  The R-Studio-Server is ready to run.
+
+  1 - Usage:
+
+ 	 $ sbatch R-Studio-Server.slurm.script
+
+  2 - How to login see login file (after step 1):
+
+ 	 $ cat rstudio-server.job.<SLURM_JOB_ID>.out
+
+  3 - More information about the job (after step 1):
+
+ 	 $ scontrol show jobid <SLURM_JOB_ID>
+
+
 .. code-block:: console
 
   #!/bin/bash
@@ -20,7 +56,6 @@ Usage examples to start the RStudio service:
   #SBATCH --job-name=rstudio_container_$user
   #SBATCH --time=00-02:00
   #SBATCH --partition=defq
-  #SBATCH --mem=16G
   #SBATCH --signal=USR2
   #SBATCH --nodes=1
   #SBATCH --cpus-per-task=4
