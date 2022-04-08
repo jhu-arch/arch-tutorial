@@ -48,6 +48,7 @@ After running ``r-studio-server.sh`` you will see details about the script creat
 
  	 $ scontrol show jobid <SLURM_JOB_ID>
 
+Example the slurm script create by ``r-studio-server.sh`` command.
 
 .. code-block:: console
 
