@@ -16,9 +16,6 @@ Usage examples to start the RStudio service:
 
 After running ``r-studio-server.sh`` you will see details about the script created, like this next block code below.
 
-.. note::
-``#SBATCH`` tags can be customized.
-
 .. code-block:: console
 
   Creating slurm script: R-Studio-Server.slurm.script
@@ -48,6 +45,9 @@ After running ``r-studio-server.sh`` you will see details about the script creat
  	 $ scontrol show jobid <SLURM_JOB_ID>
 
 Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c 2 -m 8G -t 1-02:0 -p defq`` command.
+
+.. note::
+  The ``#SBATCH`` tags can be customized.
 
 .. code-block:: console
 
