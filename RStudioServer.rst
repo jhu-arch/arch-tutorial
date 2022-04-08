@@ -30,8 +30,6 @@ Usage examples to start the RStudio service:
   #SBATCH --output=rstudio-server.job.%j.out
   #####################################
 
-  #module load r/4.0.2
-
   export R_LIBS_USER=${HOME}/R/rstudio/4.0
 
   # include singularity environment variables
