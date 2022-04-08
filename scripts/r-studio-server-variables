@@ -75,6 +75,7 @@ export SINGULARITY_BIND="${workdir}/run:/run,${workdir}/tmp:/tmp,${workdir}/data
 
 
 # https://hub.docker.com/repository/docker/archrockfish/rstudio
+# sudo singularity pull rstudio_1.4.1106_3.sif docker://archrockfish/rstudio:1.4.1106_3
 
 image=rstudio_1.4.463_1.sif
 
