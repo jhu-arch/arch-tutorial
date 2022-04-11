@@ -42,7 +42,7 @@ Usage examples to start the JupyterLab service:
       $ cat Jupyter_lab.job..login
       Further information
       $ cat Jupyter_lab.info
-     
+
     Instructions for adding multiple envs:
 
     First, change to the proper version of Python or Conda
