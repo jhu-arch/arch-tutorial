@@ -1,7 +1,7 @@
+.. _Reproducibility-Framework:
+
 Reproducibility Framework (RF)
 ##############################
-
-.. _Reproducibility-Framework:
 
 Analysis data usually involves the use of many software packages and in-house software. For each analysis step, there are many software tool options available, each with its proper capabilities, restrictions, and assumptions on input and output data.
 

@@ -6,7 +6,7 @@ The `Snakemake`_ workflows management system is a tool to create reproducible an
 .. warning::
   The $SM_ARGS env variable used in the scripts below is still under evaluation.
 
-This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`use the Reproducibility Framework (RF)
+This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
 .. note::
