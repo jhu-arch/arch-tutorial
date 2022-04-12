@@ -60,11 +60,11 @@ Consider the following directory structure:
       │           ├── _h
       │
 
-__Principle 1__ Each node has two special subdirectories: ``_h`` and ``_m`` with well-defined purposes. The documentation, codes, and other human-generated data that describe this analysis step are put in the _h directory. For this reason, it is called _h the "human" directory. Likewise, the _m directory store the computation results of this analysis step. For this reason, it is called _m the "machine" directory.
+**Principle 1** Each node has two special subdirectories: ``_h`` and ``_m`` with well-defined purposes. The documentation, codes, and other human-generated data that describe this analysis step are put in the _h directory. For this reason, it is called _h the "human" directory. Likewise, the _m directory store the computation results of this analysis step. For this reason, it is called _m the "machine" directory.
 
-__Principle 2__ In the "human" directory is required a file named run. It is a script that is supposed to be performed without arguments. It is responsible to call the necessary programs that will do the computation in the analysis step and generate the contents/results on _m, "machine" directory.
+**Principle 2** In the "human" directory is required a file named run. It is a script that is supposed to be performed without arguments. It is responsible to call the necessary programs that will do the computation in the analysis step and generate the contents/results on _m, "machine" directory.
 
-__Principle 3__ A directory structure is an intuitive way to represent data dependencies. Let's consider you are at any _m directory looking at output files, and you examine how these results were generated. A pwd command will display the full path to that directory, which has a sequence of names of analysis steps involved in the generation of these files.
+**Principle 3** A directory structure is an intuitive way to represent data dependencies. Let's consider you are at any _m directory looking at output files, and you examine how these results were generated. A pwd command will display the full path to that directory, which has a sequence of names of analysis steps involved in the generation of these files.
 
 The separation of computer-generated data from human-generated data is also helpful. It is a way to make sure that users may not edit output files. It is also useful to know which files are program-generated and know which files are OK to delete, given they can be computed again.
 
@@ -87,7 +87,7 @@ The version control is not covered in this tutorial, see the `Preprint`_ for mor
 Tutorials
 **********
 
-__Tutorial 1.1__: Runs driver scripts to generate the _m directories (results/contents)
+**Tutorial 1.1** : Runs driver scripts to generate the _m directories (results/contents)
 
 Let's create a directory structure called repro to put this Reproducibility Framework (``rf``) into practice.
 
@@ -113,7 +113,7 @@ Let’s create a simple run file to learn how ``rf`` works. Then, change the per
   14. $ ls _m/*
   15.   _m/date.txt  _m/nohup.out  _m/SUCCESS
 
-__Tutorial 1.2__: Runs driver scripts to generate the _m directories (results/contents) via containers
+**Tutorial 1.2** : Runs driver scripts to generate the _m directories (results/contents) via containers
 
 .. code-block:: console
 
