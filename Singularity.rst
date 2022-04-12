@@ -46,10 +46,10 @@ The next steps used to create it on Rockfish, after completing Non-root users st
   [userid@login03 ~]$ interact -c 2 -t 120
   [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
-1. `Dockerfile`_
-----------------
+1. Create a file named `Dockerfile`_
+************************************
 
-Create a file named Dockerfile. Docker builds images automatically by reading the instructions from a ``Dockerfile``.
+Docker builds images automatically by reading the instructions from a ``Dockerfile``.
 
 .. note::
   Dockerfile is a text file that contains all commands, in order, needed to build a given image.
@@ -155,22 +155,18 @@ Create a file named Dockerfile. Docker builds images automatically by reading th
   RUN rm *.tar.*
 
 
-2. `Docker`_ `build`_
----------------------
+2. `Build`_ an image from a Dockerfile
+**************************************
 
-Build an image from a Dockerfile.
-
-  **Usage** : $ docker build [OPTIONS] PATH | URL | -
+  **Usage** : $ `docker`_ build [OPTIONS] PATH | URL | -
 
 .. code-block:: console
 
   [userid@local ~]$  docker build - < Dockerfile
 
 
-3. Docker `tag`_
-----------------
-
-Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
+3. Create a `tag`_ `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
+****************************************************************
 
   **Usage** : $ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 
@@ -188,10 +184,8 @@ Tag an image referenced by ID.
   REPOSITORY                               TAG               IMAGE ID       CREATED        SIZE
   archrockfish/nanopolish                  0.13.3            540135da7ceb   49 minutes ago   1.96GB
 
-4. Docker `run`_
-----------------
-
-Run a command in a new container.
+4. `Run`_ a command in a new container
+**************************************
 
   **Usage** : $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
@@ -217,10 +211,8 @@ or you can Run it will create a container named nanopolish using REPOSITORY, if 
   CONTAINER ID   IMAGE                            COMMAND   CREATED         STATUS          PORTS     NAMES
   0c192de0b227   archrockfish/nanopolish:0.13.3   "bash"    3 minutes ago   Up 44 seconds             nanopolish
 
-5. Docker `start`_
-------------------
-
-Start one or more stopped containers.
+5. `Start`_ one or more stopped containers
+******************************************
 
   **Usage** : $ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
@@ -233,10 +225,8 @@ Start one or more stopped containers.
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS         PORTS     NAMES
   0c192de0b227   540135da7ceb   "bash"    46 seconds ago   Up 5 seconds             nanopolish
 
-6. Docker `exec`_
------------------
-
-Run a command in a running container.
+6. `Exec`_ (perform) a command into a running container
+*******************************************************
 
   **Usage** : $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
@@ -262,12 +252,10 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
   root@a3dcaa776090:/opt/nanopolish#
 
 
-7. Docker `commit`_
--------------------
+7. Create a new image from a container’s changes
+************************************************
 
-Create a new image from a container’s changes.
-
-  **Usage** : $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+  **Usage** : $ docker `commit`_ [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 
 .. code-block:: console
 
@@ -285,10 +273,8 @@ Create a new image from a container’s changes.
   REPOSITORY                               TAG               IMAGE ID       CREATED         SIZE
   archrockfish/nanopolish                  0.13.3            0375e5f8a31d   4 minutes ago   1.96GB
 
-8. Docker `push`_
------------------
-
-Push an image or a repository to a registry.
+8. `Push`_ an image or a repository to a registry
+*************************************************
 
   **Usage** : $ docker push [OPTIONS] NAME[:TAG]
 
@@ -305,12 +291,12 @@ Push an image or a repository to a registry.
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository.
 
 .. _Dockerfile: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
-.. _Docker: https://docs.docker.com/engine/reference/builder/
-.. _build: https://docs.docker.com/engine/reference/commandline/build/
+.. _docker: https://docs.docker.com/engine/reference/builder/
+.. _Build: https://docs.docker.com/engine/reference/commandline/build/
 .. _tag: https://docs.docker.com/engine/reference/commandline/tag/
-.. _run: https://docs.docker.com/engine/reference/commandline/run/
-.. _start: https://docs.docker.com/engine/reference/commandline/start/
-.. _exec: https://docs.docker.com/engine/reference/commandline/exec/
+.. _Run: https://docs.docker.com/engine/reference/commandline/run/
+.. _Start: https://docs.docker.com/engine/reference/commandline/start/
+.. _Exec: https://docs.docker.com/engine/reference/commandline/exec/
 .. _commit: https://docs.docker.com/engine/reference/commandline/commit/
-.. _push: https://docs.docker.com/engine/reference/commandline/push/
+.. _Push: https://docs.docker.com/engine/reference/commandline/push/
 .. _contributors: https://docs.docker.com/docker-hub/repos/
