@@ -78,7 +78,7 @@ Docker images, opening up access to a large number of existing container images 
   $ singularity pull docker://ubuntu:latest
   $ singularity shell ubuntu_latest.sif
 
-However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, :ref:`see note about fakeroot <fakeroot>. 
+However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, :ref:`see note about fakeroot <fakeroot>.
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
@@ -100,8 +100,8 @@ The Nanopolish package calculates an improved consensus sequence for a draft gen
 .. note::
   To create this this container, we used the latest Nanopolish version 0.13.3 and Ubuntu 21.04. Also, you can use different platform GNU/Linux, Ubuntu, ArchLinux, Debian, Centos, etc.
 
-Non-root users:
-***************
+Non-root users
+^^^^^^^^^^^^^^
 
 The next steps were used to create it.
 
@@ -115,7 +115,7 @@ The next steps were used to create it.
   8. Push an image or a repository to a registry ( docker `push`_ )
 
 1. Create a file named Dockerfile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""
 
 Docker builds images automatically by reading the instructions from a ``Dockerfile``.
 
@@ -224,7 +224,7 @@ Docker builds images automatically by reading the instructions from a ``Dockerfi
 
 
 2. Build an image from a Dockerfile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker build [OPTIONS] PATH | URL | -
 
@@ -234,7 +234,7 @@ Docker builds images automatically by reading the instructions from a ``Dockerfi
 
 
 3. Create a tag target image that refers to source image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 
@@ -253,7 +253,7 @@ Tag an image referenced by ID.
   archrockfish/nanopolish                  0.13.3            540135da7ceb   49 minutes ago   1.96GB
 
 4. Run a command in a new container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
@@ -280,7 +280,7 @@ or you can Run it will create a container named nanopolish using ``REPOSITORY``,
   0c192de0b227   archrockfish/nanopolish:0.13.3   "bash"    3 minutes ago   Up 44 seconds             nanopolish
 
 5. Start one or more stopped containers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
@@ -294,7 +294,7 @@ or you can Run it will create a container named nanopolish using ``REPOSITORY``,
   0c192de0b227   540135da7ceb   "bash"    46 seconds ago   Up 5 seconds             nanopolish
 
 6. Exec (perform) a command into a running container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
@@ -321,7 +321,7 @@ First, start a container (``step 5``), or keep the container running (``step 4``
 
 
 7. Create a new image from a container’s changes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 
@@ -342,7 +342,7 @@ First, start a container (``step 5``), or keep the container running (``step 4``
   archrockfish/nanopolish                  0.13.3            0375e5f8a31d   4 minutes ago   1.96GB
 
 8. Push an image or a repository to a registry
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 
   **Usage** : $ docker push [OPTIONS] NAME[:TAG]
 
@@ -356,7 +356,7 @@ First, start a container (``step 5``), or keep the container running (``step 4``
   ...
 
 Root users
-**********
+^^^^^^^^^^
 
 The next steps used to create a singularity container on Rockfish, after completing Non-root users steps.
 
