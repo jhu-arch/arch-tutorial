@@ -60,7 +60,7 @@ Consider the following directory structure:
       │       ├── _m
       │       └── nodeC
       │           ├── _h
-      │
+
 
 **Principle 1** Each node has two special subdirectories: ``_h`` and ``_m`` with well-defined purposes. The documentation, codes, and other human-generated data that describe this analysis step are put in the _h directory. For this reason, it is called _h the "human" directory. Likewise, the _m directory store the computation results of this analysis step. For this reason, it is called _m the "machine" directory.
 
