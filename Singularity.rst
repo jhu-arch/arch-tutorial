@@ -7,7 +7,7 @@ This tutorials will allow you to run `Singularity`_ containers on computers wher
 A container allows you to put an application and all of its dependencies in a single package. Ensure portability and reproducibility of all dependency packages of an application.
 Here are some examples of things you can do with containers:
 
-* Package an analysis pipeline so that it runs on your computer, in the cloud, and in a high performance computing (HPC) environment to produce the same result.
+* Package an analysis pipeline so that it runs on your computer, in the cloud, and in a High Performance Computing (HPC) environment to produce the same result.
 * Publish a paper and include a link to a container with all of the data and software that you used so that others can easily reproduce your results.
 * Install and run an application that requires a complicated stack of dependencies with a few keystrokes.
 * Create a pipeline or complex workflow where each individual program is meant to run on a different operating system.
