@@ -145,7 +145,6 @@ If you return a level (repro directory) and check the execution status of this p
   [userid@login01 repro]$    .                      done      (level 1 of the pipeline)
   [userid@login01 repro]$    └── bedtools   ready to run      (level 2 of the pipeline)
 
-
 .. warning::
   The ``rf`` command is validated to run in interactive mode, so far.
 
