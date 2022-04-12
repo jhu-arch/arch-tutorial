@@ -78,7 +78,7 @@ Version control
 
 The division of human-generated data ( ``_h`` ) from machine-generated data ( ``_m`` ) makes it easy to use version control systems for an analysis tree.
 
-In the current implementation, it is used git for _h  and git-annex for _m.
+In the current implementation, it is used ``git`` for ``_h`` and ``git-annex`` for ``_m``.
 
 The ``rf`` command provides a wrapper for some operations that involve more than one call to git or git-annex. Users can collaborate and share analyses trees in a similar they can do with code.
 
@@ -89,7 +89,7 @@ The version control is not covered in this tutorial, see the `Preprint`_ for mor
 Tutorials
 **********
 
-**Tutorial 1.1** : Runs driver scripts to generate the _m directories (results/contents)
+**Tutorial 1.1** : Runs driver scripts to generate the ``_m`` directories (results/contents)
 
 Let's create a directory structure called repro to put this Reproducibility Framework (``rf``) into practice.
 
