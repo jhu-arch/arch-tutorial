@@ -9,11 +9,11 @@ The pipeline development, e.g. the application of Bioinformatics, involves a lot
 
 In this tutorial, a set of methods and code examples are used to train the user on how to install and experiment extensively, keeping the healthy reproducible and organized in an intuitive way to organize computational analyzes using a directory structure constructed according to 3 simple principles.
 
-1: Use of a directory structure to represent dependencies between analysis steps.
+  1. Use of a directory structure to represent dependencies between analysis steps.
 
-2: Separation of user-generated data from program-generated data.
+  2. Separation of user-generated data from program-generated data.
 
-3: Use of driver scripts.
+  3. Use of driver scripts.
 
 These 3 principles are desirable to help keep analysis organized, reproducible, and easier to understand.
 
@@ -24,7 +24,7 @@ The data analysis is structured in a way that emphasizes reproducibility, organi
 
 How to set up the framework on the system run Steps 1 and 2.
 
-Step 1: Install the Reproducibility Framework (rf) on Rockfish
+**Step 1** : Install the Reproducibility Framework (rf) on Rockfish
 
 Follow the preprint to install the ``rf`` on Linux. Make sure do you have a python 3.6 (preferably 3.6.2 or later) installed.
 
@@ -36,7 +36,7 @@ Then, run ``rf --help`` and ``rf run --help`` to verify the installation.
   $ rf --help
   $ rf run --help
 
-Step 2: Install the tree command for non-root users
+**Step 2** : Install the tree command for non-root users
 
 To support the framework functionalities, it is necessary to install the tree command on GNU/Linux or macOS (brew install tree). If you do not have permission to install it on the system (root), you must install the tree command as a non-root user.
 
