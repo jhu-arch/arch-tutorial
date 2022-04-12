@@ -1,7 +1,7 @@
 Singularity
 ###########
 
-This tutorial is for prepare a `Singularity`_ conatainer on a computer where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
+This tutorials are prepared `Singularity`_ conatainers on a computer where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
 A container allows you to put an application and all of its dependencies in a single package. Ensure portability and reproducibility of all dependency packages of an application.
 Here are some examples of things you can do with containers:
@@ -10,6 +10,75 @@ Here are some examples of things you can do with containers:
 * Publish a paper and include a link to a container with all of the data and software that you used so that others can easily reproduce your results.
 * Install and run an application that requires a complicated stack of dependencies with a few keystrokes.
 * Create a pipeline or complex workflow where each individual program is meant to run on a different operating system.
+
+Building a Singularity Container Image from definitions file
+************************************************************
+
+Bootstrapping a `Singularity`_ container allows using a file called ``definitions file`` which can reproduce container configurations on demand.
+
+.. code-block:: console
+
+  $ cd bedtools/
+  $ vi _h/ubuntu_bedtools.def
+
+Let’s first create a container with Ubuntu 20.10 and the `bedtools`_ command (toolset). Below are the contents of how the definitions file should look like.
+
+.. code-block:: console
+
+  Bootstrap: docker
+  From: ubuntu:20.10
+
+  %post
+      apt-get -y update
+      apt-get -y install bedtools
+
+  %environment
+      export LC_ALL=C
+
+Now let’s use this definition file as a starting point to build the ``ubuntu_bedtools.sif`` container. Note that the build command requires ``sudo`` privileges.
+
+.. code-block:: console
+
+  $ sudo singularity build _h/ubuntu_bedtools.sif _h/ubuntu_bedtools.def
+
+Now let’s enter the new container and look around.
+
+.. code-block:: console
+
+  $ singularity shell ubuntu_bedtools.sif
+
+  Singularity>
+  Singularity> bedtools --version
+  bedtools v2.29.2
+
+Depending on the environment on your host system you may see your prompt change.
+Let’s exit the container and re-enter as root.
+
+.. code-block:: console
+
+  Singularity> exit
+  $ sudo singularity shell --writable ubuntu_bedtools.sif
+
+Now as a root user inside the container. Note also the addition of the ```--writable`` option, it allows us to modify the container, and the changes will be saved into the container persisting across uses.
+
+.. _fakeroot
+.. note:
+   The ``--fakeroot`` option provided in Singularity version 3.6.x (for use with the singularity ``build``, ``shell``, and ``exec`` commands) is not supported on Rockfish systems for security reasons.
+
+Building a Singularity Container Image from Docker Hub
+******************************************************
+
+Singularity can also use containers directly from Docker images. You can ``shell``, ``import``, ``run``, and ``exec`` Docker images directly from the ``Docker Registry``. This feature was included because developers have been using Docker and scientists have already put many resources into creating Docker images.
+Docker images, opening up access to a large number of existing container images available on Docker Hub and other registries.
+
+.. code-block:: console
+
+  $ mkdir ~/images_singularity
+  $ cd images_singularity/
+  $ singularity pull docker://ubuntu:latest
+  $ singularity shell ubuntu_latest.sif
+
+However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, :ref:`see note about fakeroot <fakeroot>. 
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
@@ -299,6 +368,8 @@ The next steps used to create a singularity container on Rockfish, after complet
 .. warning::
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository, before tag an image referenced by ID (``step 3``).
 
+.. _bedtools: https://bedtools.readthedocs.io/en/latest/
+.. _Singularity: https://singularity-tutorial.github.io/
 .. _Dockerfile: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 .. _docker: https://docs.docker.com/engine/reference/builder/
 .. _Build: https://docs.docker.com/engine/reference/commandline/build/
