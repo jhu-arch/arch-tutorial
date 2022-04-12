@@ -55,13 +55,13 @@ More details about The Rockfish cluster at ARCH.
   RStudioServer
   JupyterLab
 
-  .. toctree::
-    :maxdepth: 2
-    :caption: How to do Reproducible Research
+.. toctree::
+  :maxdepth: 2
+  :caption: How to do Reproducible Research
 
-    Reproducibility Framework (RF)
-    Snakemake
-    Singularity
+  Reproducibility Framework (RF)
+  Snakemake
+  Singularity
 
 
 .. |pic1| image:: images/NSF.png
