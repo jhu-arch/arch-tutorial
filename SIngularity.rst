@@ -169,7 +169,6 @@ Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
 Tag an image referenced by ID.
 
 .. code-block:: console
-
   user@local ~ % docker image ls
   REPOSITORY                               TAG               IMAGE ID       CREATED          SIZE
   <none>                                   <none>            540135da7ceb   47 minutes ago   1.96GB
@@ -215,7 +214,6 @@ Start one or more stopped containers.
   _Usage_ : $ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
 .. code-block:: console
-
   user@local ~ % docker start nanopolish
   nanopolish
 
@@ -236,7 +234,6 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
   You need to delete that first before you can re-create a container with the same name with.
 
 .. code-block:: console
-
   user@local ~ %  docker stop nanopolish
   nanopolish
 
@@ -260,7 +257,6 @@ Create a new image from a container’s changes.
   _Usage_ : $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 
 .. code-block:: console
-
   user@local ~ % docker ps -all
   CONTAINER ID   IMAGE                            COMMAND   CREATED          STATUS                      PORTS     NAMES
   a3dcaa776090   archrockfish/nanopolish:0.13.3   "bash"    18 seconds ago   Exited (0) 14 seconds ago             nanopolish_local
@@ -283,7 +279,6 @@ Push an image or a repository to a registry.
   _Usage_ : $ docker push [OPTIONS] NAME[:TAG]
 
 .. code-block:: console
-
   user@local ~ % docker push archrockfish/nanopolish:0.13.3
   The push refers to repository [docker.io/archrockfish/nanopolish]
   ee33934ad57b: Layer already exists
@@ -297,6 +292,7 @@ Push an image or a repository to a registry.
 .. _Dockerfile: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 .. _Docker: https://docs.docker.com/engine/reference/builder/
 .. _build: https://docs.docker.com/engine/reference/commandline/build/
+.. _tag:https://docs.docker.com/engine/reference/commandline/tag/
 .. _run: https://docs.docker.com/engine/reference/commandline/run/
 .. _start: https://docs.docker.com/engine/reference/commandline/start/
 .. _exec: https://docs.docker.com/engine/reference/commandline/exec/
