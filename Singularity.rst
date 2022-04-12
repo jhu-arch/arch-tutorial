@@ -79,7 +79,7 @@ Docker images, opening up access to a large number of existing container images 
   [userid@local ~]$ singularity pull docker://ubuntu:latest
   [userid@local ~]$ singularity shell ubuntu_latest.sif
 
-However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, :ref:`see note about fakeroot option<fakeroot_option>`.
+However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, see :ref:`fakeroot option <fakeroot_option>`.
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
