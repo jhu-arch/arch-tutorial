@@ -3,7 +3,7 @@ Singularity
 
 This tutorial is for running `Singularity`_ on a computer where you do not have root (administrative) privileges.
 
-You will prepare an image using `Docker`_ container, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to you run it on Rockfish using your ready-made container.
+You will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to you run it on Rockfish using your ready-made container.
 
 We will use `Nanopolish`_ as an example. It is a software package for signal-level analysis of Oxford Nanopore sequencing data.
 
@@ -12,7 +12,7 @@ We will use `Nanopolish`_ as an example. It is a software package for signal-lev
 
 .. _Nanopolish: https://github.com/jts/nanopolish
 .. _Singularity: https://singularity-user-docs.readthedocs.io/en/latest/quick_start.html
-.. _Docker: https://docs.docker.com
+.. _Docker container: https://docs.docker.com
 .. _Docker Hub: https://hub.docker.com
 
 
