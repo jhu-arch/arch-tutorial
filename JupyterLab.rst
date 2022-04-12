@@ -1,3 +1,6 @@
+JupyterLab
+##########
+
 The JupyterLab is the latest web-based interactive development environment for notebooks, code, and data. Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning.
 
 The users can access the JupyterLab on Rockfish using the ``jupyterlab.sh`` command. It will create a SLURM script.
