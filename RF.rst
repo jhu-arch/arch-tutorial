@@ -92,10 +92,10 @@ Tutorials
 
 Let's create a directory structure called repro to put this Reproducibility Framework (``rf``) into practice.
 
-Let’s create a simple run file to learn how ``rf`` works. Then, change the permissions on the run file to make it executable (row # 5). Once it has been assigned, the run file is ready to be executed using the ``rf`` command (``row # 8``).
+Let’s create a simple run file to learn how ``rf`` works. Then, change the permissions on the run file to make it executable (``row # 5``). Once it has been assigned, the run file is ready to be executed using the ``rf`` command (``row # 8``).
 
 .. note::
-  Since ``rf`` was designed to work collaboratively and have version control, it is necessary to create a new Git repository local (row # 9).
+  Since ``rf`` was designed to work collaboratively and have version control, it is necessary to create a new Git repository local (``row # 9``).
 
 .. code-block:: console
 
@@ -118,21 +118,20 @@ Let’s create a simple run file to learn how ``rf`` works. Then, change the per
 
 .. code-block:: console
 
-  1.  [userid@login01 repro]$ mkdir -p bedtools/_h
-  2.  [userid@login01 repro]$ cd bedtools/
+  [userid@login01 repro]$ mkdir -p bedtools/_h
+  [userid@login01 repro]$ cd bedtools/
 
 Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ script as follows:
 
 .. code-block:: console
 
-  3.  #!/bin/bash
-  4.  set -o errexit -euo pipefail
-  5.
+  #!/bin/bash
+  set -o errexit -euo pipefail
 
 .. code-block:: console
 
-  6. [userid@login01 bedtools]$ bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
-  7. [userid@login01 bedtools]$ chmod +x _h/run
+  [userid@login01 bedtools]$ bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
+  [userid@login01 bedtools]$ chmod +x _h/run
 
 If you return a level (repro directory) and check the execution status of this pipeline (``rf status``), you can see that step 1 (repro) is done, and step 2 (``bedtools``) is ready to run. It is important to mind will be run the ``bedtoots`` via container (singularity).
 
@@ -141,9 +140,9 @@ If you return a level (repro directory) and check the execution status of this p
 
 .. code-block:: console
 
-  8. [userid@login01 bedtools]$ cd ..
-  9. [userid@login01 repro]$ rf status
- 10. [userid@login01 repro]$    .                      done      (level 1 of the pipeline)
- 11. [userid@login01 repro]$    └── bedtools   ready to run      (level 2 of the pipeline)
+  [userid@login01 bedtools]$ cd ..
+  [userid@login01 repro]$ rf status
+  [userid@login01 repro]$    .                      done      (level 1 of the pipeline)
+  [userid@login01 repro]$    └── bedtools   ready to run      (level 2 of the pipeline)
 
 .. _bedtools: https://bedtools.readthedocs.io/en/latest/
