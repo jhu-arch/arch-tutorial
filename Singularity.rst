@@ -1,7 +1,7 @@
 Singularity
 ###########
 
-This tutorials can be run `Singularity`_ containers on computers where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
+This tutorials will allow you to run `Singularity`_ containers on computers where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
 A container allows you to put an application and all of its dependencies in a single package. Ensure portability and reproducibility of all dependency packages of an application.
 Here are some examples of things you can do with containers:
@@ -14,7 +14,7 @@ Here are some examples of things you can do with containers:
 Building a Singularity Container Image from definitions file
 ************************************************************
 
-Bootstrapping a `Singularity`_ container allows using a file called ``definitions file`` which can reproduce container configurations on demand.
+Bootstrapping a Singularity container allows using a file called ``definitions file`` which can reproduce container configurations on demand.
 
 .. code-block:: console
 
