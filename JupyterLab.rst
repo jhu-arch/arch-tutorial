@@ -62,27 +62,27 @@ After running ``jupyterlab.sh`` you will see details about the script created in
 
   Instructions for adding multiple envs:
 
-     # change to the proper version of python or conda
+  # change to the proper version of python or conda
 
-  ## For Python Virtual environment
+  # For Python Virtual environment
 
-  	 $ module load python; source <myenv>/bin/activate
+ 	 $ module load python; source <myenv>/bin/activate
 
-  ## For Conda environment
+  # For Conda environment
 
-  	 $ module load conda; conda activate <myenv>
+ 	 $ module load conda; conda activate <myenv>
 
   then:
 
-  	 (myenv)$ pip install ipykernel
+ 	 (myenv)$ pip install ipykernel
 
   # Install Jupyter kernel
 
-  	 (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
+ 	 (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
 
   # List kernels
 
-  	 (myenv)$ jupyter kernelspec list
+ 	 (myenv)$ jupyter kernelspec list
 
 .. note::
   The jupyterlab.sh script will create a slurm script for multiple environments with jupyterlab and #SBATCH with default parameters.
