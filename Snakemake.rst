@@ -18,8 +18,8 @@ This tutorial presents a bioinformatics pipeline using Snakemake.
 We will create a hypothetical scenario with precedent steps, where for example the Level 5 (tabix) depends on the Level 4 (tags), and so on.
 
 .. note::
-  Level 1     Level 2    Level 3   Level 4  Level 5
-  cutadapt -> bwamem  -> rmdup  -> tags  -> tabix
+  **Level 1  ->   Level 2 ->   Level 3 ->  Level 4 ->  Level 5**
+  cutadapt ->   bwamem  ->   rmdup   ->  tags    ->  tabix
 
 cutadapt
 ********
