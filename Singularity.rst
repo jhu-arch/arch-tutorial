@@ -1,7 +1,7 @@
 Singularity
 ###########
 
-This tutorial is for running `Singularity`_ on a computer where you do not have root (administrative) privileges.
+This tutorial is for running `Singularity`_ on a computer node where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
 You will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to you run it on Rockfish using your ready-made container.
 
