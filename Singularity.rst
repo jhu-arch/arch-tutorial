@@ -62,7 +62,7 @@ Let’s exit the container and re-enter as root.
 
 Now as a root user inside the container. Note also the addition of the ``--writable`` option, it allows us to modify the container, and the changes will be saved into the container persisting across uses.
 
-.. _fakeroot_option
+.. _fakeroot_option:
 .. note:
    The ``--fakeroot`` option provided in Singularity version 3.6.x (for use with the singularity ``build``, ``shell``, and ``exec`` commands) is not supported on Rockfish systems for security reasons.
 
