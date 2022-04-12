@@ -1,7 +1,7 @@
 Singularity
 ###########
 
-This tutorials are prepared `Singularity`_ conatainers on a computer where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
+This tutorials can be run `Singularity`_ containers on computers where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
 A container allows you to put an application and all of its dependencies in a single package. Ensure portability and reproducibility of all dependency packages of an application.
 Here are some examples of things you can do with containers:
