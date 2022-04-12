@@ -62,7 +62,7 @@ Let’s exit the container and re-enter as root.
 
 Now as a root user inside the container. Note also the addition of the ``--writable`` option, it allows us to modify the container, and the changes will be saved into the container persisting across uses.
 
-.. _fakeroot
+.. _fakeroot_option
 .. note:
    The ``--fakeroot`` option provided in Singularity version 3.6.x (for use with the singularity ``build``, ``shell``, and ``exec`` commands) is not supported on Rockfish systems for security reasons.
 
@@ -79,7 +79,7 @@ Docker images, opening up access to a large number of existing container images 
   [userid@local ~]$ singularity pull docker://ubuntu:latest
   [userid@local ~]$ singularity shell ubuntu_latest.sif
 
-However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, :ref:`see note about fakeroot <fakeroot>`.
+However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, :ref:`see note about fakeroot option<fakeroot_option>`.
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
