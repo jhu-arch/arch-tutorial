@@ -25,13 +25,13 @@ This image used was the latest version 0.13.3.
 
 * The next steps were used to create it (non-root users).
 
-  1. Dockerfile
-  2. Docker build
-  3. Docker run
-  4. Docker start
-  5. Docker exec
-  6. Docker commit
-  7. Docker push
+1. Dockerfile
+2. Docker build
+3. Docker run
+4. Docker start
+5. Docker exec
+6. Docker commit
+7. Docker push
 
 * The next steps  used to create it on Rockfish (root users).
 
