@@ -221,7 +221,7 @@ Remove duplicates
 Add tags
 ***************
 
-_tags is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into bam files.
+`tags`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into bam files.
 
 .. code-block:: console
 
