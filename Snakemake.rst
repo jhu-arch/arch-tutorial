@@ -397,7 +397,7 @@ You run one level at a time, or you can use the ``-r`` option for recursive. It 
   [userid@local ~]$ cd pipeline
   [userid@local ~]$ rf run -r .
 
-.. note::
+.. warning::
   For now the ``rf` command is only validated to run in interactive mode.
 
 
