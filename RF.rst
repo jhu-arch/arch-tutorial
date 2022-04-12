@@ -20,7 +20,7 @@ These 3 principles are desirable to help keep analysis organized, reproducible, 
 The data analysis is structured in a way that emphasizes reproducibility, organization, and clarity. Being simple and intuitive, adding and modifying analysis steps can be done easily with little extra effort.
 
 .. note::
-  This framework supports containers, docker and :ref:`singularity <singularity-container>`.
+  This framework supports containers, docker and :ref:`singularity <singularity_container>`.
 
 How to set up the framework on the system run Steps 1 and 2.
 
