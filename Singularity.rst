@@ -36,16 +36,6 @@ The next steps were used to create it.
   6. Docker commit
   7. Docker push
 
-Root users
-**********
-
-The next steps used to create it on Rockfish, after completing Non-root users steps.
-
-.. code-block:: console
-
-  [userid@login03 ~]$ interact -c 2 -t 120
-  [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
-
 1. Create a file named `Dockerfile`_
 ************************************
 
@@ -286,6 +276,18 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
   ...
   ...
   ...
+
+
+Root users
+**********
+
+The next steps used to create it on Rockfish, after completing Non-root users steps.
+
+.. code-block:: console
+
+  [userid@login03 ~]$ interact -c 2 -t 120
+  [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
+
 
 .. warning::
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository.
