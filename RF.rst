@@ -101,25 +101,25 @@ Let’s create a simple run file to learn how ``rf`` works. Then, change the per
 
   1.  [userid@login01 ~]$ mkdir tutorials/repro/_h -p
   2.  [userid@login01 ~]$ cd tutorials/repro/
-  3.  [userid@login01 ~]$ echo "date > date.txt" > _h/run
-  4.  [userid@login01 ~]$ rf status
-  5.  [userid@login01 ~]$  .  no run script
-  6.  [userid@login01 ~]$ chmod +x _h/run
-  7.  [userid@login01 ~]$ rf status
-  8.  [userid@login01 ~]$  .   ready to run
-  9.  [userid@login01 ~]$ git init .
-  10. [userid@login01 ~]$ rf run .          # use: ( nohup rf run . & ) to 11. run the rf immune to hangups
-  12. [userid@login01 ~]$ rf status
-  13. [userid@login01 ~]$  .           done
-  14. [userid@login01 ~]$ ls _m/*
-  15. [userid@login01 ~]$  _m/date.txt  _m/nohup.out  _m/SUCCESS
+  3.  [userid@login01 repro]$ echo "date > date.txt" > _h/run
+  4.  [userid@login01 repro]$ rf status
+  5.  [userid@login01 repro]$  .  no run script
+  6.  [userid@login01 repro]$ chmod +x _h/run
+  7.  [userid@login01 repro]$ rf status
+  8.  [userid@login01 repro]$  .   ready to run
+  9.  [userid@login01 repro]$ git init .
+  10. [userid@login01 repro]$ rf run .          # use: ( nohup rf run . & ) to 11. run the rf immune to hangups
+  12. [userid@login01 repro]$ rf status
+  13. [userid@login01 repro]$  .           done
+  14. [userid@login01 repro]$ ls _m/*
+  15. [userid@login01 repro]$  _m/date.txt  _m/nohup.out  _m/SUCCESS
 
 **Tutorial 1.2** : Runs driver scripts to generate the _m directories (results/contents) via containers
 
 .. code-block:: console
 
-  1.  [userid@login01 ~]$ mkdir -p bedtools/_h
-  2.  [userid@login01 ~]$ cd bedtools/
+  1.  [userid@login01 repro]$ mkdir -p bedtools/_h
+  2.  [userid@login01 repro]$ cd bedtools/
 
 Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ script as follows:
 
@@ -131,8 +131,8 @@ Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ scrip
 
 .. code-block:: console
 
-  6. [userid@login01 ~]$ bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
-  7. [userid@login01 ~]$ chmod +x _h/run
+  6. [userid@login01 bedtools]$ bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
+  7. [userid@login01 bedtools]$ chmod +x _h/run
 
 If you return a level (repro directory) and check the execution status of this pipeline (``rf status``), you can see that step 1 (repro) is done, and step 2 (``bedtools``) is ready to run. It is important to mind will be run the ``bedtoots`` via container (singularity).
 
@@ -141,9 +141,9 @@ If you return a level (repro directory) and check the execution status of this p
 
 .. code-block:: console
 
-  8. [userid@login01 ~]$ cd ..
-  9. [userid@login01 ~]$ rf status
- 10. [userid@login01 ~]$    .                      done      (level 1 of the pipeline)
- 11. [userid@login01 ~]$    └── bedtools   ready to run      (level 2 of the pipeline)
+  8. [userid@login01 bedtools]$ cd ..
+  9. [userid@login01 repro]$ rf status
+ 10. [userid@login01 repro]$    .                      done      (level 1 of the pipeline)
+ 11. [userid@login01 repro]$    └── bedtools   ready to run      (level 2 of the pipeline)
 
 .. _bedtools: https://bedtools.readthedocs.io/en/latest/
