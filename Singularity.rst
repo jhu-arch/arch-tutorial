@@ -5,7 +5,7 @@ This tutorial is for running `Singularity`_ on a computer where you do not have 
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
-We will use `Nanopolish`_ as an example. It is a software package for signal-level analysis of Oxford Nanopore sequencing data.
+In order to build the application, we need to use a Dockerfile, using `Nanopolish`_ as an example. It is a software package for signal-level analysis of Oxford Nanopore sequencing data.
 
 .. note::
   There are different ways to run Nanopolish: via conda, via installation source or container. This tutorial will cover how to install it using singularity, via docker hub repository.
@@ -21,29 +21,34 @@ We will use `Nanopolish`_ as an example. It is a software package for signal-lev
 The Nanopolish package calculates an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more modules.
 
 .. note::
-  To create this this container, we use the latest version 0.13.3.
+  To create this this container, we used the latest Nanopolish version 0.13.3 and Ubuntu 21.04. Also, you can use different platform GNU/Linux, Ubuntu, ArchLinux, Debian, Centos, etc.
 
-The next steps were used to create it (non-root users).
+Non-root users:
+***************
 
-1. Dockerfile
-2. Docker build
-3. Docker run
-4. Docker start
-5. Docker exec
-6. Docker commit
-7. Docker push
+The next steps were used to create it.
 
-The next steps  used to create it on Rockfish (root users).
+  1. Dockerfile
+  2. Docker build
+  3. Docker run
+  4. Docker start
+  5. Docker exec
+  6. Docker commit
+  7. Docker push
+
+Root users
+**********
+
+The next steps  used to create it on Rockfish.
 
 .. code-block:: console
 
   [userid@login03 ~]$ interact -c 2 -t 120
   [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
-1. `Dockerfile`_
-****************
+## 1. `Dockerfile`_
 
-Docker builds images automatically by reading the instructions from a ``Dockerfile``.
+Create a file named Dockerfile. Docker builds images automatically by reading the instructions from a ``Dockerfile``.
 
 .. note::
   Dockerfile is a text file that contains all commands, in order, needed to build a given image.
@@ -149,8 +154,7 @@ Docker builds images automatically by reading the instructions from a ``Dockerfi
   RUN rm *.tar.*
 
 
-2. `Docker`_ `build`_
-*********************
+## 2. `Docker`_ `build`_
 
 Build an image from a Dockerfile.
 
@@ -161,8 +165,7 @@ Build an image from a Dockerfile.
   [userid@local ~]$  docker build - < Dockerfile
 
 
-3. Docker `tag`_
-****************
+## 3. Docker `tag`_
 
 Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
 
@@ -182,8 +185,7 @@ Tag an image referenced by ID.
   REPOSITORY                               TAG               IMAGE ID       CREATED        SIZE
   archrockfish/nanopolish                  0.13.3            540135da7ceb   49 minutes ago   1.96GB
 
-4. Docker `run`_
-****************
+## 4. Docker `run`_
 
 Run a command in a new container.
 
@@ -211,8 +213,7 @@ or you can Run it will create a container named nanopolish using REPOSITORY, if 
   CONTAINER ID   IMAGE                            COMMAND   CREATED         STATUS          PORTS     NAMES
   0c192de0b227   archrockfish/nanopolish:0.13.3   "bash"    3 minutes ago   Up 44 seconds             nanopolish
 
-5. Docker `start`_
-******************
+## 5. Docker `start`_
 
 Start one or more stopped containers.
 
@@ -227,8 +228,7 @@ Start one or more stopped containers.
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS         PORTS     NAMES
   0c192de0b227   540135da7ceb   "bash"    46 seconds ago   Up 5 seconds             nanopolish
 
-6. Docker `exec`_
-******************
+## 6. Docker `exec`_
 
 Run a command in a running container.
 
@@ -256,8 +256,7 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
   root@a3dcaa776090:/opt/nanopolish#
 
 
-7. Docker `commit`_
-*******************
+## 7. Docker `commit`_
 
 Create a new image from a container’s changes.
 
@@ -279,8 +278,7 @@ Create a new image from a container’s changes.
   REPOSITORY                               TAG               IMAGE ID       CREATED         SIZE
   archrockfish/nanopolish                  0.13.3            0375e5f8a31d   4 minutes ago   1.96GB
 
-8. Docker `push`_
-*****************
+## 8. Docker `push`_
 
 Push an image or a repository to a registry.
 
