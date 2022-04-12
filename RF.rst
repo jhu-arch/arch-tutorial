@@ -32,7 +32,7 @@ Then, run ``rf --help`` and ``rf run --help`` to verify the installation.
 
 .. code-block:: console
 
-  $ pip3 install git+git://github.com/apuapaquola/rf.git --upgrade --user
+  $ pip3 install git+https://github.com/apuapaquola/rf.git --upgrade --user
   $ rf --help
   $ rf run --help
 
