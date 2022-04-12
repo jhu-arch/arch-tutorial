@@ -37,8 +37,8 @@ This image used was the latest version 0.13.3.
 
 .. code-block:: console
 
-  user@login03 $ interact -c 2 -t 120
-  user@c010    $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
+  [userid@login03 ~]$ interact -c 2 -t 120
+  [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
 1. `Dockerfile`_
 ****************
@@ -158,7 +158,7 @@ Build an image from a Dockerfile.
 
 .. code-block:: console
 
-  user@local ~ %  docker build - < Dockerfile
+  [userid@local ~]$  docker build - < Dockerfile
 
 
 3. Docker `tag`_
@@ -172,13 +172,13 @@ Tag an image referenced by ID.
 
 .. code-block:: console
 
-  user@local ~ % docker image ls
+  [userid@local ~]$ docker image ls
   REPOSITORY                               TAG               IMAGE ID       CREATED          SIZE
   <none>                                   <none>            540135da7ceb   47 minutes ago   1.96GB
 
-  user@local ~ % docker tag 540135da7ceb archrockfish/nanopolish:0.13.3
+  [userid@local ~]$ docker tag 540135da7ceb archrockfish/nanopolish:0.13.3
 
-  user@local ~ % docker image ls
+  [userid@local ~]$ docker image ls
   REPOSITORY                               TAG               IMAGE ID       CREATED        SIZE
   archrockfish/nanopolish                  0.13.3            540135da7ceb   49 minutes ago   1.96GB
 
@@ -193,10 +193,10 @@ Run it will create a container and start a Bash session to a specified image usi
 
 .. code-block:: console
 
-  user@local ~ % docker run --name -it 540135da7ceb bash
+  [userid@local ~]$ docker run --name -it 540135da7ceb bash
   root@421451a1f942:/opt/nanopolish#
 
-  user@local ~ % docker ps -all
+  [userid@local ~]$ docker ps -all
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS                     PORTS     NAMES
   421451a1f942   540135da7ceb   "bash"    22 seconds ago   Exited (0) 5 seconds ago             stupefied_johnson
 
@@ -204,10 +204,10 @@ or you can Run it will create a container named nanopolish using REPOSITORY, if 
 
 .. code-block:: console
 
-  user@local ~ % docker run --name nanopolish -it archrockfish/nanopolish:0.13.3 bash
+  [userid@local ~]$ docker run --name nanopolish -it archrockfish/nanopolish:0.13.3 bash
   root@0c192de0b227:/#
 
-  user@local ~ % docker ps --all
+  [userid@local ~]$ docker ps --all
   CONTAINER ID   IMAGE                            COMMAND   CREATED         STATUS          PORTS     NAMES
   0c192de0b227   archrockfish/nanopolish:0.13.3   "bash"    3 minutes ago   Up 44 seconds             nanopolish
 
@@ -220,10 +220,10 @@ Start one or more stopped containers.
 
 .. code-block:: console
 
-  user@local ~ % docker start nanopolish
+  [userid@local ~]$ docker start nanopolish
   nanopolish
 
-  user@local ~ % docker ps
+  [userid@local ~]$ docker ps
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS         PORTS     NAMES
   0c192de0b227   540135da7ceb   "bash"    46 seconds ago   Up 5 seconds             nanopolish
 
@@ -241,18 +241,18 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
 
 .. code-block:: console
 
-  user@local ~ %  docker stop nanopolish
+  [userid@local ~]$  docker stop nanopolish
   nanopolish
 
-  user@local ~ %  docker rm nanopolish
+  [userid@local ~]$  docker rm nanopolish
   nanopolish
   or simply choose a different name for the new container.
 
-  user@local ~ % docker run --name nanopolish_local -dit archrockfish/nanopolish:0.13.3
+  [userid@local ~]$ docker run --name nanopolish_local -dit archrockfish/nanopolish:0.13.3
   a3dcaa7760906861250329dca37b01f79caec10310e1bc37b7fdf6f341de5d27
   Then, execute an interactive bash shell on the new container.
 
-  user@local ~ % docker exec -it nanopolish_local bash
+  [userid@local ~]$ docker exec -it nanopolish_local bash
   root@a3dcaa776090:/opt/nanopolish#
 
 
@@ -265,17 +265,17 @@ Create a new image from a container’s changes.
 
 .. code-block:: console
 
-  user@local ~ % docker ps -all
+  [userid@local ~]$ docker ps -all
   CONTAINER ID   IMAGE                            COMMAND   CREATED          STATUS                      PORTS     NAMES
   a3dcaa776090   archrockfish/nanopolish:0.13.3   "bash"    18 seconds ago   Exited (0) 14 seconds ago             nanopolish_local
 
-  user@local ~ %  docker commit a3dcaa776090 archrockfish/nanopolish:0.13.3
+  [userid@local ~]$  docker commit a3dcaa776090 archrockfish/nanopolish:0.13.3
   sha256:b379b32916535b146b1fce63a14fade2cdf60bbaacf36625732cec379e03dd96
 
-  user@local ~ % docker inspect -f "{{ .Config.Env }}" a3dcaa776090
+  [userid@local ~]$ docker inspect -f "{{ .Config.Env }}" a3dcaa776090
   [PATH=/opt/nanopolish:/opt/nanopolish/bin:/opt/canu/build/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin TZ=America/New_York LD_LIBRARY_PATH=/opt/nanopolish/lib: C_INCLUDE_PATH==/opt/nanopolish/include:/opt/nanopolish/lib:]
 
-  user@local ~ % docker image ls
+  [userid@local ~]$ docker image ls
   REPOSITORY                               TAG               IMAGE ID       CREATED         SIZE
   archrockfish/nanopolish                  0.13.3            0375e5f8a31d   4 minutes ago   1.96GB
 
@@ -288,7 +288,7 @@ Push an image or a repository to a registry.
 
 .. code-block:: console
 
-  user@local ~ % docker push archrockfish/nanopolish:0.13.3
+  [userid@local ~]$ docker push archrockfish/nanopolish:0.13.3
   The push refers to repository [docker.io/archrockfish/nanopolish]
   ee33934ad57b: Layer already exists
   ...
