@@ -37,8 +37,8 @@ The next steps were used to create it.
   7. Create a new image from a container’s changes ( docker `commit`_ )
   8. Push an image or a repository to a registry ( docker `push`_ )
 
-1. Create a file named `Dockerfile`_
-************************************
+1. Create a file named Dockerfile
+**********************************
 
 Docker builds images automatically by reading the instructions from a ``Dockerfile``.
 
