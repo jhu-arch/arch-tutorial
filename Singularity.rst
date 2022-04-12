@@ -39,14 +39,14 @@ The next steps were used to create it.
 Root users
 **********
 
-The next steps  used to create it on Rockfish.
+The next steps used to create it on Rockfish, after completing Non-root users steps.
 
 .. code-block:: console
 
   [userid@login03 ~]$ interact -c 2 -t 120
   [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
-## 1. `Dockerfile`_
+### 1. `Dockerfile`_
 
 Create a file named Dockerfile. Docker builds images automatically by reading the instructions from a ``Dockerfile``.
 
@@ -154,7 +154,7 @@ Create a file named Dockerfile. Docker builds images automatically by reading th
   RUN rm *.tar.*
 
 
-## 2. `Docker`_ `build`_
+### 2. `Docker`_ `build`_
 
 Build an image from a Dockerfile.
 
@@ -165,7 +165,7 @@ Build an image from a Dockerfile.
   [userid@local ~]$  docker build - < Dockerfile
 
 
-## 3. Docker `tag`_
+### 3. Docker `tag`_
 
 Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
 
@@ -185,7 +185,7 @@ Tag an image referenced by ID.
   REPOSITORY                               TAG               IMAGE ID       CREATED        SIZE
   archrockfish/nanopolish                  0.13.3            540135da7ceb   49 minutes ago   1.96GB
 
-## 4. Docker `run`_
+### 4. Docker `run`_
 
 Run a command in a new container.
 
@@ -213,7 +213,7 @@ or you can Run it will create a container named nanopolish using REPOSITORY, if 
   CONTAINER ID   IMAGE                            COMMAND   CREATED         STATUS          PORTS     NAMES
   0c192de0b227   archrockfish/nanopolish:0.13.3   "bash"    3 minutes ago   Up 44 seconds             nanopolish
 
-## 5. Docker `start`_
+### 5. Docker `start`_
 
 Start one or more stopped containers.
 
@@ -228,7 +228,7 @@ Start one or more stopped containers.
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS         PORTS     NAMES
   0c192de0b227   540135da7ceb   "bash"    46 seconds ago   Up 5 seconds             nanopolish
 
-## 6. Docker `exec`_
+### 6. Docker `exec`_
 
 Run a command in a running container.
 
@@ -256,7 +256,7 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
   root@a3dcaa776090:/opt/nanopolish#
 
 
-## 7. Docker `commit`_
+### 7. Docker `commit`_
 
 Create a new image from a container’s changes.
 
@@ -278,7 +278,7 @@ Create a new image from a container’s changes.
   REPOSITORY                               TAG               IMAGE ID       CREATED         SIZE
   archrockfish/nanopolish                  0.13.3            0375e5f8a31d   4 minutes ago   1.96GB
 
-## 8. Docker `push`_
+### 8. Docker `push`_
 
 Push an image or a repository to a registry.
 
