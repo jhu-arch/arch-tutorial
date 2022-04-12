@@ -16,14 +16,14 @@ We will use `Nanopolish`_ as an example. It is a software package for signal-lev
 .. _Docker Hub: https://hub.docker.com
 
 
-Nanopolish
-**********
+## Nanopolish
 
-Nanopolish can calculate an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more modules.
+The Nanopolish can calculate an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more modules.
 
-This image used was the latest version 0.13.3.
+.. note::
+  To create this this container, we use the latest version 0.13.3.
 
-* The next steps were used to create it (non-root users).
+The next steps were used to create it (non-root users).
 
 1. Dockerfile
 2. Docker build
@@ -33,7 +33,7 @@ This image used was the latest version 0.13.3.
 6. Docker commit
 7. Docker push
 
-* The next steps  used to create it on Rockfish (root users).
+The next steps  used to create it on Rockfish (root users).
 
 .. code-block:: console
 
