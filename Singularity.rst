@@ -1,9 +1,9 @@
 Singularity
 ###########
 
-This tutorial is for running `Singularity`_ on a computer node where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
+This tutorial is for running `Singularity`_ on a computer where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
-You will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to you run it on Rockfish using your ready-made container.
+We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
 We will use `Nanopolish`_ as an example. It is a software package for signal-level analysis of Oxford Nanopore sequencing data.
 
