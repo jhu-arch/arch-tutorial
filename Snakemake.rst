@@ -10,9 +10,9 @@ This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`the R
 <Reproducibility-Framework>`.
 
 .. note::
-  * **Writing Workflows** : In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules.
+  * **Writing Workflows** : "In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules."
 
-  * **Snakefiles and Rules** : A Snakemake workflow defines a data analysis in terms of rules that are specified in the Snakefile.
+  * **Snakefiles and Rules** : "A Snakemake workflow defines a data analysis in terms of rules that are specified in the Snakefile."
 
 We will create a hypothetical scenario with precedent steps, where for example the Level 5 (tabix) depends on the Level 4 (tags), and so on.
 
