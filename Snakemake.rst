@@ -404,7 +404,7 @@ You run one level at a time, or you can use the ``-r`` option for recursive. It 
 .. _Cutadapt: https://cutadapt.readthedocs.io/en/stable/
 .. _BWA: http://bio-bwa.sourceforge.net/bwa.shtml
 .. _rmdup: https://github.com/apuapaquola/slavseq_rf/blob/master/pipeline/fastq/cutadapt/bwamem/rmdup/_h/slavseq_rmdup.pl
-.. _tags:https://github.com/apuapaquola/slavseq_rf/blob/master/pipeline/fastq/cutadapt/bwamem/rmdup/tags/_h/add_tags.pl
+.. _tags: https://github.com/apuapaquola/slavseq_rf/blob/master/pipeline/fastq/cutadapt/bwamem/rmdup/tags/_h/add_tags.pl
 .. _tabix: http://www.htslib.org/doc/tabix.html
 .. _Snakemake: https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html
 .. _Snakefile: ttps://snakemake.readthedocs.io/en/stable/snakefiles/rules.html
