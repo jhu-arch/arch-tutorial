@@ -236,10 +236,10 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
 
 .. code-block:: console
 
-  [userid@local ~]$  docker stop nanopolish
+  [userid@local ~]$ docker stop nanopolish
   nanopolish
 
-  [userid@local ~]$  docker rm nanopolish
+  [userid@local ~]$ docker rm nanopolish
   nanopolish
   or simply choose a different name for the new container.
 
