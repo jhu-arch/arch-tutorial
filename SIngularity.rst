@@ -153,7 +153,7 @@ Docker builds images automatically by reading the instructions from a ``Dockerfi
 
 Build an image from a Dockerfile.
 
-  _Usage_: $ docker build [OPTIONS] PATH | URL | -
+  _Usage_ : $ docker build [OPTIONS] PATH | URL | -
 
 .. code-block:: console
   user@local ~ %  docker build - < Dockerfile
@@ -164,7 +164,7 @@ Build an image from a Dockerfile.
 
 Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
 
-  _Usage_: $ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+  _Usage_ : $ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 
 Tag an image referenced by ID.
 
@@ -185,7 +185,7 @@ Tag an image referenced by ID.
 
 Run a command in a new container.
 
-  _Usage_: $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+  _Usage_ : $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 Run it will create a container and start a Bash session to a specified image using IMAGE ID.
 
@@ -212,7 +212,7 @@ or you can Run it will create a container named nanopolish using REPOSITORY, if 
 
 Start one or more stopped containers.
 
-  _Usage: $ docker start [OPTIONS] CONTAINER [CONTAINER...]
+  _Usage_ : $ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
 .. code-block:: console
 
@@ -228,7 +228,7 @@ Start one or more stopped containers.
 
 Run a command in a running container.
 
-  _Usage: $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+  _Usage_ : $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
 First, start a container (`step 5`), or keep the container running (`step 4`) in the background, to run it with `--detach` (or `-d`) argument.
 
@@ -257,7 +257,7 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
 
 Create a new image from a container’s changes.
 
-  _Usage: $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+  _Usage_ : $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 
 .. code-block:: console
 
@@ -280,7 +280,7 @@ Create a new image from a container’s changes.
 
 Push an image or a repository to a registry.
 
-  _Usage: $ docker push [OPTIONS] NAME[:TAG]
+  _Usage_ : $ docker push [OPTIONS] NAME[:TAG]
 
 .. code-block:: console
 
