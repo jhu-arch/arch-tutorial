@@ -18,7 +18,7 @@ We will use `Nanopolish`_ as an example. It is a software package for signal-lev
 
 ## Nanopolish
 
-The Nanopolish can calculate an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more modules.
+The Nanopolish package calculates an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more modules.
 
 .. note::
   To create this this container, we use the latest version 0.13.3.
