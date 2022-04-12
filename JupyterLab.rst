@@ -14,7 +14,7 @@ Usage examples to start the JupyterLab service:
   $ jupyterlab.sh -c 2 -t 4:0:0 -p defq -e <userid>@jhu.edu
   $ jupyterlab.sh -c 24 -g 2 -p a100 -a <PI-userid>_gpu
 
-After running ``jupyterlab.sh`` you will see details about the script created, like this next code-block below.
+After running ``jupyterlab.sh`` you will see details about the script created, in current directory, like this next code-block below.
 
 .. warning::
   Once run the ``jupyterlab.sh`` command for the first time, a python virtual environment (~/jp_lab) will be installed with needed packages to run JupyterLab in your HOME directory.
