@@ -281,7 +281,7 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
 Root users
 **********
 
-The next steps used to create it on Rockfish, after completing Non-root users steps.
+The next steps used to create a singularity container on Rockfish, after completing Non-root users steps.
 
 .. code-block:: console
 
