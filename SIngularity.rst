@@ -36,6 +36,7 @@ This image used was the latest version 0.13.3.
 * The next steps  used to create it on Rockfish (root users).
 
 .. code-block:: console
+
   $ interact -c 2 -t 120
   $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
@@ -156,6 +157,7 @@ Build an image from a Dockerfile.
   _Usage_ : $ docker build [OPTIONS] PATH | URL | -
 
 .. code-block:: console
+
   user@local ~ %  docker build - < Dockerfile
 
 
@@ -169,6 +171,7 @@ Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`.
 Tag an image referenced by ID.
 
 .. code-block:: console
+
   user@local ~ % docker image ls
   REPOSITORY                               TAG               IMAGE ID       CREATED          SIZE
   <none>                                   <none>            540135da7ceb   47 minutes ago   1.96GB
@@ -189,6 +192,7 @@ Run a command in a new container.
 Run it will create a container and start a Bash session to a specified image using IMAGE ID.
 
 .. code-block:: console
+
   user@local ~ % docker run --name -it 540135da7ceb bash
   root@421451a1f942:/opt/nanopolish#
 
@@ -199,6 +203,7 @@ Run it will create a container and start a Bash session to a specified image usi
 or you can Run it will create a container named nanopolish using REPOSITORY, if it was tagged. (steps 3)
 
 .. code-block:: console
+
   user@local ~ % docker run --name nanopolish -it archrockfish/nanopolish:0.13.3 bash
   root@0c192de0b227:/#
 
@@ -214,6 +219,7 @@ Start one or more stopped containers.
   _Usage_ : $ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
 .. code-block:: console
+
   user@local ~ % docker start nanopolish
   nanopolish
 
@@ -234,6 +240,7 @@ First, start a container (`step 5`), or keep the container running (`step 4`) in
   You need to delete that first before you can re-create a container with the same name with.
 
 .. code-block:: console
+
   user@local ~ %  docker stop nanopolish
   nanopolish
 
@@ -257,6 +264,7 @@ Create a new image from a container’s changes.
   _Usage_ : $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 
 .. code-block:: console
+
   user@local ~ % docker ps -all
   CONTAINER ID   IMAGE                            COMMAND   CREATED          STATUS                      PORTS     NAMES
   a3dcaa776090   archrockfish/nanopolish:0.13.3   "bash"    18 seconds ago   Exited (0) 14 seconds ago             nanopolish_local
@@ -279,6 +287,7 @@ Push an image or a repository to a registry.
   _Usage_ : $ docker push [OPTIONS] NAME[:TAG]
 
 .. code-block:: console
+
   user@local ~ % docker push archrockfish/nanopolish:0.13.3
   The push refers to repository [docker.io/archrockfish/nanopolish]
   ee33934ad57b: Layer already exists
