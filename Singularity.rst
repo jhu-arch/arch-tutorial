@@ -15,7 +15,7 @@ Here are some examples of things you can do with containers:
 Building a Singularity Container Image from definitions file
 ************************************************************
 
-Bootstrapping a `singularity _container`_ allows using a file called ``definitions file`` which can reproduce container configurations on demand.
+Bootstrapping a singularity `container`_ allows using a file called ``definitions file`` which can reproduce container configurations on demand.
 
 .. code-block:: console
 
