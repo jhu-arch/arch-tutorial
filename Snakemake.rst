@@ -6,7 +6,8 @@ The `Snakemake`_ workflows management system is a tool to create reproducible an
 .. warning::
   The $SM_ARGS is still under evaluation.
 
-This tutorial presents a bioinformatics pipeline using Snakemake.
+This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`use the Reproducibility Framework (RF)
+<Reproducibility-Framework>`.
 
 .. note::
   * **Writing Workflows** : In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules.
