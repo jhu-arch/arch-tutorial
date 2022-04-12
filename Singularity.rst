@@ -165,7 +165,7 @@ Docker builds images automatically by reading the instructions from a ``Dockerfi
 
 
 3. Create a tag target image that refers to source image
-*********************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   **Usage** : $ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 
