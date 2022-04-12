@@ -4,7 +4,7 @@ Snakemake Workflows
 The `Snakemake`_ workflows management system is a tool to create reproducible and scalable data analyses.
 
 .. warning::
-  This tutorial is still under evaluation.
+  The $SM_ARGS is still under evaluation.
 
 This tutorial presents a bioinformatics pipeline using Snakemake.
 
