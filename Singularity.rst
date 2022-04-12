@@ -1,6 +1,6 @@
 .. _singularity_container
-Singularity
-###########
+Singularity container
+######################
 
 This tutorials will allow you to run `Singularity`_ containers on computers where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
