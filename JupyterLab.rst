@@ -16,6 +16,9 @@ Usage examples to start the JupyterLab service:
 
 After running ``jupyterlab.sh`` you will see details about the script created, like this next code-block below.
 
+.. warning::
+  Once run the ``jupyterlab.sh`` command for the first time, a python virtual environment (~/jp_lab) will be installed with needed packages to run JupyterLab in your HOME directory.
+
 .. code-block:: console
 
   Use jupyterlab.sh –help for more details.
@@ -30,6 +33,13 @@ After running ``jupyterlab.sh`` you will see details about the script created, l
 
   Sign in with your Rockfish Login credentials:
 
+	Enter the $USER password:
+
+  Attempt 1 of 3
+  ?
+
+  Sign in with your Rockfish Login credentials:
+
   Enter the $USER password:
 
   Creating slurm script: /home/$USER/jupyter_lab.slurm.script
@@ -38,29 +48,41 @@ After running ``jupyterlab.sh`` you will see details about the script created, l
 
   The Jupyter Lab is ready to run.
 
-  Usage:
+  1 - Usage:
 
-    $ sbatch jupyter_lab.slurm.script
-    How to login see login file (after step 1)
-    $ cat Jupyter_lab.job..login
-    Further information
-    $ cat Jupyter_lab.info
+ 	 $ sbatch jupyter_lab.slurm.script
+
+  2 - How to login see login file (after step 1):
+
+ 	 $ cat Jupyter_lab.job.<SLURM_JOB_ID>.login
+
+  3 - Further information:
+
+ 	 $ cat Jupyter_lab.info
 
   Instructions for adding multiple envs:
 
-  First, change to the proper version of Python or Conda
+     # change to the proper version of python or conda
 
-    For Python Virtual environment
-    $ module load python; source /bin/activate
-    For Conda environment
-    $ module load conda; conda activate
-    then:
+  ## For Python Virtual environment
 
-    (myenv)$ pip install ipykernel
-    # Install Jupyter kernel
-    (myenv)$ ipython kernel install –user –name= –display-name “Python (myenv)”
-    # List kernels
-    (myenv)$ jupyter kernelspec list
+  	 $ module load python; source <myenv>/bin/activate
+
+  ## For Conda environment
+
+  	 $ module load conda; conda activate <myenv>
+
+  then:
+
+  	 (myenv)$ pip install ipykernel
+
+  # Install Jupyter kernel
+
+  	 (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
+
+  # List kernels
+
+  	 (myenv)$ jupyter kernelspec list
 
 .. note::
   The jupyterlab.sh script will create a slurm script for multiple environments with jupyterlab and #SBATCH with default parameters.
