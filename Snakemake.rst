@@ -6,25 +6,22 @@ The `Snakemake`_ `workflows`_ management system is a tool to create reproducible
 .. warning::
   This tutorial is still under evaluation.
 
-This tutorial presents a bioinformatics pipeline using Snakemake.
+This tutorial presents a bioinformatics pipeline using Snakemake, via `Snakefiles`_ .
 
 .. note::
-  * Writing Workflows
-    In Snakemake, workflows are specified as Snakefiles. Inspired by GNU Make, a Snakefile contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules.
+  * **Writing Workflows** : In Snakemake, workflows are specified as Snakefiles. Inspired by GNU Make, a Snakefile contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules.
 
-  * Snakefiles and Rules
-    A Snakemake workflow defines a data analysis in terms of rules that are specified in the `Snakefile`_ .
+  * **Snakefiles and Rules** : A Snakemake workflow defines a data analysis in terms of rules that are specified in the Snakefile.
 
 We will create a hypothetical scenario with precedent steps, where for example the Level 5 (tabix) depends on the Level 4 (tags), and so on.
 
 .. note::
-  **Level 1  ->   Level 2 ->   Level 3 ->  Level 4 ->  Level 5**
-  cutadapt ->   bwamem  ->   rmdup   ->  tags    ->  tabix
+  **Level 1 (cutadapt)  ->   Level 2 (bwamem) ->   Level 3 (rmdup) ->  Level 4 (tags) ->  Level 5 (tabix)**
 
-cutadapt
+Cutadapt
 ********
 
-Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.
+Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads. It helps with these trimming tasks by finding the adapter or primer sequences in an error-tolerant way.
 
 .. code-block:: console
 
@@ -170,7 +167,7 @@ Burrows-Wheeler Alignment Tool
 Remove duplicates
 ***************
 
-`rmdup`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to read .bam input files and apply samtools software to treat paired-end reads and single-end reads
+`rmdup`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to read .bam input files and apply samtools software to treat paired-end reads and single-end reads.
 
 .. code-block:: console
 
@@ -223,7 +220,7 @@ Remove duplicates
 Add tags
 ***************
 
-_tags is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into the bam file.
+_tags is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into bam files.
 
 .. code-block:: console
 
