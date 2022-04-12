@@ -1,15 +1,15 @@
 Snakemake Workflows
 ###################
 
-The `Snakemake`_ `workflows`_ management system is a tool to create reproducible and scalable data analyses.
+The `Snakemake`_ workflows management system is a tool to create reproducible and scalable data analyses.
 
 .. warning::
   This tutorial is still under evaluation.
 
-This tutorial presents a bioinformatics pipeline using Snakemake, via `Snakefiles`_ .
+This tutorial presents a bioinformatics pipeline using Snakemake.
 
 .. note::
-  * **Writing Workflows** : In Snakemake, workflows are specified as Snakefiles. Inspired by GNU Make, a Snakefile contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules.
+  * **Writing Workflows** : In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules.
 
   * **Snakefiles and Rules** : A Snakemake workflow defines a data analysis in terms of rules that are specified in the Snakefile.
 
