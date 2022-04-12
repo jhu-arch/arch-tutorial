@@ -199,7 +199,7 @@ Run it will create a container and start a Bash session to a specified image usi
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS                     PORTS     NAMES
   421451a1f942   540135da7ceb   "bash"    22 seconds ago   Exited (0) 5 seconds ago             stupefied_johnson
 
-or you can Run it will create a container named nanopolish using REPOSITORY, if it was tagged. (``step 3``)
+or you can Run it will create a container named nanopolish using ``REPOSITORY``, if it was tagged. (``step 3``)
 
 .. code-block:: console
 
@@ -229,7 +229,7 @@ or you can Run it will create a container named nanopolish using REPOSITORY, if 
 
   **Usage** : $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
-First, start a container (``step 5``), or keep the container running (``step 4``) in the background, to run it with `--detach` (or `-d`) argument.
+First, start a container (``step 5``), or keep the container running (``step 4``) in the background, to run it with ```--detach`` (or ``-d``) argument.
 
 .. note::
   You need to delete that first before you can re-create a container with the same name with.
