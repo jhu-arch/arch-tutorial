@@ -297,7 +297,7 @@ The next steps used to create a singularity container on Rockfish, after complet
   [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
 .. warning::
-  You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository.
+  You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository, before tag an image referenced by ID (``step 3``).
 
 .. _Dockerfile: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 .. _docker: https://docs.docker.com/engine/reference/builder/
