@@ -11,53 +11,53 @@ Usage examples to start the JupyterLab service:
   $ jupyterlab.sh -c 2 -t 4:0:0 -p defq -e <userid>@jhu.edu
   $ jupyterlab.sh -c 24 -g 2 -p a100 -a <PI-userid>_gpu
 
-  After running ``jupyterlab.sh`` you will see details about the script created, like this next code-block below.
+After running ``jupyterlab.sh`` you will see details about the script created, like this next code-block below.
 
-  .. code-block:: console
+.. code-block:: console
 
-    Use jupyterlab.sh –help for more details.
+  Use jupyterlab.sh –help for more details.
 
-    1) Slurm script to run jupyterlab (jupyter_lab.slurm.script)
-    2) File with login information (Jupyter_lab.job..login)
-    3) File related to slurm INPUT ENVIRONMENT VARIABLES and HTTPS server information (Jupyter_lab.info)
-    4) Notebook server file (.jupyter/jupyter_notebook_config.py)
-    5) The jupyter-lab, ipykernal, pip will be installed/updated in: /home/$USER/jp_lab
+  1) Slurm script to run jupyterlab (jupyter_lab.slurm.script)
+  2) File with login information (Jupyter_lab.job..login)
+  3) File related to slurm INPUT ENVIRONMENT VARIABLES and HTTPS server information (Jupyter_lab.info)
+  4) Notebook server file (.jupyter/jupyter_notebook_config.py)
+  5) The jupyter-lab, ipykernal, pip will be installed/updated in: /home/$USER/jp_lab
 
-    <Ctrl+C> to cancel
+  <Ctrl+C> to cancel
 
-    Sign in with your Rockfish Login credentials:
+  Sign in with your Rockfish Login credentials:
 
-    Enter the $USER password:
+  Enter the $USER password:
 
-    Creating slurm script: /home/$USER/jupyter_lab.slurm.script
+  Creating slurm script: /home/$USER/jupyter_lab.slurm.script
 
-    SLURM job script for run Jupyter Lab
+  SLURM job script for run Jupyter Lab
 
-    The Jupyter Lab is ready to run.
+  The Jupyter Lab is ready to run.
 
-    Usage:
+  Usage:
 
-      $ sbatch jupyter_lab.slurm.script
-      How to login see login file (after step 1)
-      $ cat Jupyter_lab.job..login
-      Further information
-      $ cat Jupyter_lab.info
+    $ sbatch jupyter_lab.slurm.script
+    How to login see login file (after step 1)
+    $ cat Jupyter_lab.job..login
+    Further information
+    $ cat Jupyter_lab.info
 
-    Instructions for adding multiple envs:
+  Instructions for adding multiple envs:
 
-    First, change to the proper version of Python or Conda
+  First, change to the proper version of Python or Conda
 
-      For Python Virtual environment
-      $ module load python; source /bin/activate
-      For Conda environment
-      $ module load conda; conda activate
-      then:
+    For Python Virtual environment
+    $ module load python; source /bin/activate
+    For Conda environment
+    $ module load conda; conda activate
+    then:
 
-      (myenv)$ pip install ipykernel
-      # Install Jupyter kernel
-      (myenv)$ ipython kernel install –user –name= –display-name “Python (myenv)”
-      # List kernels
-      (myenv)$ jupyter kernelspec list
+    (myenv)$ pip install ipykernel
+    # Install Jupyter kernel
+    (myenv)$ ipython kernel install –user –name= –display-name “Python (myenv)”
+    # List kernels
+    (myenv)$ jupyter kernelspec list
 
-  .. note::
+.. note::
   The jupyterlab.sh script will create a slurm script for multiple environments with jupyterlab and #SBATCH with default parameters.
