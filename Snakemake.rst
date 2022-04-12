@@ -358,6 +358,48 @@ Tabix
 
   '''
 
+Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
+<Reproducibility-Framework>`.
+
+.. code-block:: console
+
+    ├── pipeline
+    │   └── cutadapt
+    │       ├── _h
+    │       │   ├── rename_cutadapt.sh
+    │       │   └── run
+    │       └── bwamem
+    │           ├── _h
+    │           │   ├── check_ok.sh
+    │           │   ├── run
+    │           │   ├── run.hg19
+    │           │   └── run.hs37d5
+    │           └── rmdup
+    │               ├── _h
+    │               │   ├── run
+    │               │   ├── slavseq_rmdup.pl
+    │               │   └── slavseq_rmdup_hts.pl
+    │               └── tags
+    │                   ├── _h
+    │                   │   ├── add_tags.pl
+    │                   │   ├── add_tags_hts.pl
+    │                   │   └── run
+    │                   └── tabix
+    │                       └── _h
+    │                           ├── run
+    │                           └── sam_to_tabix.py
+
+You run one level at a time, or you can use the ``-r`` option for recursive. It will perform the ``rf`` command, once the level 1 is finishes, it will run next level, so consecutively.
+
+.. code-block:: console
+
+  [userid@local ~]$ interact -p defq -n 12 -t 120
+  [userid@local ~]$ cd pipeline
+  [userid@local ~]$ rf run -r .
+
+.. note::
+  For now the ``rf` command is only validated to run in interactive mode.
+
 
 .. _Cutadapt: https://cutadapt.readthedocs.io/en/stable/
 .. _BWA: http://bio-bwa.sourceforge.net/bwa.shtml
