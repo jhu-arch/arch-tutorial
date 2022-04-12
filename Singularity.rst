@@ -14,7 +14,7 @@ Here are some examples of things you can do with containers:
 Building a Singularity Container Image from definitions file
 ************************************************************
 
-Bootstrapping a Singularity container allows using a file called ``definitions file`` which can reproduce container configurations on demand.
+Bootstrapping a `singularity`_ container allows using a file called ``definitions file`` which can reproduce container configurations on demand.
 
 .. code-block:: console
 
@@ -86,12 +86,6 @@ In order to build the application, we need to use a Docker Desktop. Then, we wil
 
 .. note::
   There are different ways to run Nanopolish: via conda, via installation source or container. This tutorial will cover how to install it using singularity, via docker hub repository.
-
-.. _Nanopolish: https://github.com/jts/nanopolish
-.. _Singularity: https://singularity-user-docs.readthedocs.io/en/latest/quick_start.html
-.. _Docker container: https://docs.docker.com
-.. _Docker Hub: https://hub.docker.com
-
 
 **Nanopolish**
 
@@ -368,8 +362,12 @@ The next steps used to create a singularity container on Rockfish, after complet
 .. warning::
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository, before tag an image referenced by ID (``step 3``).
 
+.. _Nanopolish: https://github.com/jts/nanopolish
+.. _Singularity: https://singularity-user-docs.readthedocs.io/en/latest/quick_start.html
+.. _Docker container: https://docs.docker.com
+.. _Docker Hub: https://hub.docker.com
 .. _bedtools: https://bedtools.readthedocs.io/en/latest/
-.. _Singularity: https://singularity-tutorial.github.io/
+.. _singularity: https://singularity-tutorial.github.io/
 .. _Dockerfile: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 .. _docker: https://docs.docker.com/engine/reference/builder/
 .. _Build: https://docs.docker.com/engine/reference/commandline/build/
