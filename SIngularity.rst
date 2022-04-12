@@ -301,7 +301,7 @@ Push an image or a repository to a registry.
 .. _Dockerfile: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 .. _Docker: https://docs.docker.com/engine/reference/builder/
 .. _build: https://docs.docker.com/engine/reference/commandline/build/
-.. _tag:https://docs.docker.com/engine/reference/commandline/tag/
+.. _tag: https://docs.docker.com/engine/reference/commandline/tag/
 .. _run: https://docs.docker.com/engine/reference/commandline/run/
 .. _start: https://docs.docker.com/engine/reference/commandline/start/
 .. _exec: https://docs.docker.com/engine/reference/commandline/exec/
