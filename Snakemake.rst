@@ -393,9 +393,9 @@ You run one level at a time, or you can use the ``-r`` option for recursive. It 
 
 .. code-block:: console
 
-  [userid@local ~]$ interact -p defq -n 12 -t 120
-  [userid@local ~]$ cd pipeline
-  [userid@local ~]$ rf run -r .
+  [userid@login03 ~]$ interact -c 2 -t 120
+  [userid@c010 ~]$ cd pipeline
+  [userid@c010 ~]$ rf run -r .
 
 .. warning::
   For now the ``rf`` command is only validated to run in interactive mode, so far.

@@ -32,9 +32,9 @@ Then, run ``rf --help`` and ``rf run --help`` to verify the installation.
 
 .. code-block:: console
 
-  $ pip3 install git+https://github.com/apuapaquola/rf.git --upgrade --user
-  $ rf --help
-  $ rf run --help
+  [userid@login01 ~]$ pip3 install git+https://github.com/apuapaquola/rf.git --upgrade --user
+  [userid@login01 ~]$ rf --help
+  [userid@login01 ~]$ rf run --help
 
 **Step 2** : Install the tree command for non-root users
 
@@ -42,25 +42,24 @@ To support the framework functionalities, it is necessary to install the tree co
 
 .. code-block:: console
 
-  $ curl -OL https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh
-  $ rm install_tree_non_root.sh (optional)
-  $ rf status
-  $ rf status -p
+  [userid@login01 ~]$ curl -OL https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh
+  [userid@login01 ~]$ rm install_tree_non_root.sh (optional)
+  [userid@login01 ~]$ rf status
+  [userid@login01 ~]$ rf status -p
 
 Consider the following directory structure:
 
 .. code-block:: console
 
-  1.  $ tree
-      ├── nodeA
-      │   ├── _h         (human-generated data)
-      │   ├── _m         (machine-generated data)
-      │   └── nodeB
-      │       ├── _h
-      │       ├── _m
-      │       └── nodeC
-      │           ├── _h
-
+  1. [userid@login01 ~]$ tree
+                          ├── nodeA
+                          │   ├── _h         (human-generated data)
+                          │   ├── _m         (machine-generated data)
+                          │   └── nodeB
+                          │       ├── _h
+                          │       ├── _m
+                          │       └── nodeC
+                          │           ├── _h
 
 **Principle 1** Each node has two special subdirectories: ``_h`` and ``_m`` with well-defined purposes. The documentation, codes, and other human-generated data that describe this analysis step are put in the _h directory. For this reason, it is called _h the "human" directory. Likewise, the _m directory store the computation results of this analysis step. For this reason, it is called _m the "machine" directory.
 
@@ -100,40 +99,40 @@ Let’s create a simple run file to learn how ``rf`` works. Then, change the per
 
 .. code-block:: console
 
-  1.  $ mkdir tutorials/repro/_h -p
-  2.  $ cd tutorials/repro/
-  3.  $ echo "date > date.txt" > _h/run
-  4.  $ rf status
-  5.    .  no run script
-  6.  $ chmod +x _h/run
-  7.  $ rf status
-  8.    .   ready to run
-  9.  $ git init .
-  10. $ rf run .          # use: ( nohup rf run . & ) to 11. run the rf immune to hangups
-  12. $ rf status
-  13.   .           done
-  14. $ ls _m/*
-  15.   _m/date.txt  _m/nohup.out  _m/SUCCESS
+  1.  [userid@login01 ~]$ mkdir tutorials/repro/_h -p
+  2.  [userid@login01 ~]$ cd tutorials/repro/
+  3.  [userid@login01 ~]$ echo "date > date.txt" > _h/run
+  4.  [userid@login01 ~]$ rf status
+  5.  [userid@login01 ~]$  .  no run script
+  6.  [userid@login01 ~]$ chmod +x _h/run
+  7.  [userid@login01 ~]$ rf status
+  8.  [userid@login01 ~]$  .   ready to run
+  9.  [userid@login01 ~]$ git init .
+  10. [userid@login01 ~]$ rf run .          # use: ( nohup rf run . & ) to 11. run the rf immune to hangups
+  12. [userid@login01 ~]$ rf status
+  13. [userid@login01 ~]$  .           done
+  14. [userid@login01 ~]$ ls _m/*
+  15. [userid@login01 ~]$  _m/date.txt  _m/nohup.out  _m/SUCCESS
 
 **Tutorial 1.2** : Runs driver scripts to generate the _m directories (results/contents) via containers
 
 .. code-block:: console
 
-  1.  $ mkdir -p bedtools/_h
-  2.  $ cd bedtools/
+  1.  [userid@login01 ~]$ mkdir -p bedtools/_h
+  2.  [userid@login01 ~]$ cd bedtools/
 
-Let's fire up our text editor (vim/nano/emacs) and type in our bedtools1 script as follows:
+Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ script as follows:
 
 .. code-block:: console
 
-  1.  $ vi _h/run
-  2.
   3.  #!/bin/bash
   4.  set -o errexit -euo pipefail
   5.
-  6.  bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
-  7.
-  8.  $ chmod +x _h/run
+
+.. code-block:: console
+
+  6. [userid@login01 ~]$ bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
+  7. [userid@login01 ~]$ chmod +x _h/run
 
 If you return a level (repro directory) and check the execution status of this pipeline (``rf status``), you can see that step 1 (repro) is done, and step 2 (``bedtools``) is ready to run. It is important to mind will be run the ``bedtoots`` via container (singularity).
 
@@ -142,7 +141,9 @@ If you return a level (repro directory) and check the execution status of this p
 
 .. code-block:: console
 
-  1.  $ cd ..
-  2.  $ rf status
-  3.    .                      done      (step 1 of the pipeline)
-  4.    └── bedtools   ready to run      (step 2 of the pipeline)
+  8. [userid@login01 ~]$ cd ..
+  9. [userid@login01 ~]$ rf status
+ 10. [userid@login01 ~]$    .                      done      (level 1 of the pipeline)
+ 11. [userid@login01 ~]$    └── bedtools   ready to run      (level 2 of the pipeline)
+
+.. _bedtools: https://bedtools.readthedocs.io/en/latest/
