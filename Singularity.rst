@@ -5,7 +5,7 @@ This tutorial is for running `Singularity`_ on a computer where you do not have 
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
-In order to build the application, we need to use a Docker Desktop. The, we generated a Dockerfile to created `Nanopolish`_ application as an example. It is a software package for signal-level analysis of Oxford Nanopore sequencing data.
+In order to build the application, we need to use a Docker Desktop. Then, we will generate a Dockerfile to create `Nanopolish`_ application as an example. The Nanopolish is a software package for signal-level analysis of Oxford Nanopore sequencing data.
 
 .. note::
   There are different ways to run Nanopolish: via conda, via installation source or container. This tutorial will cover how to install it using singularity, via docker hub repository.
