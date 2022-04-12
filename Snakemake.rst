@@ -367,5 +367,5 @@ Tabix
 .. _tags:https://github.com/apuapaquola/slavseq_rf/blob/master/pipeline/fastq/cutadapt/bwamem/rmdup/tags/_h/add_tags.pl
 .. _tabix: http://www.htslib.org/doc/tabix.html
 .. _Snakemake: https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html
-.._Snakefile: ttps://snakemake.readthedocs.io/en/stable/snakefiles/rules.html
+.. _Snakefile: ttps://snakemake.readthedocs.io/en/stable/snakefiles/rules.html
 .. _workflows: https://snakemake.readthedocs.io/en/stable/snakefiles/writing_snakefiles.html
