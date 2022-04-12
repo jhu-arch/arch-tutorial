@@ -83,7 +83,7 @@ However, you will not be able to change this image on Rockfish cluster, because 
 
 We will prepare an image using `Docker container`_, and make it available on `Docker Hub`_ and then an administrator will create a Singularity container to run it on Rockfish.
 
-In order to build the application, we need to use a Docker Desktop. Then, we will generate a Dockerfile to create `Nanopolish`_ application as an example. The Nanopolish is a software package for signal-level analysis of Oxford Nanopore sequencing data.
+In order to build the application, we need to use a `Docker Desktop`_. Then, we will generate a Dockerfile to create `Nanopolish`_ application as an example. The Nanopolish is a software package for signal-level analysis of Oxford Nanopore sequencing data.
 
 .. note::
   There are different ways to run Nanopolish: via conda, via installation source or container. This tutorial will cover how to install it using singularity, via docker hub repository.
@@ -363,6 +363,7 @@ The next steps used to create a singularity container on Rockfish, after complet
 .. warning::
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository, before tag an image referenced by ID (``step 3``).
 
+.. _Docker Desktop: https://www.docker.com/products/docker-desktop/
 .. _Nanopolish: https://github.com/jts/nanopolish
 .. _Singularity: https://singularity-user-docs.readthedocs.io/en/latest/quick_start.html
 .. _singularity container: https://singularity-tutorial.github.io/
