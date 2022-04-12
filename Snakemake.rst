@@ -398,7 +398,7 @@ You run one level at a time, or you can use the ``-r`` option for recursive. It 
   [userid@c010 ~]$ rf run -r .
 
 .. warning::
-  For now the ``rf`` command is only validated to run in interactive mode, so far.
+  The ``rf`` command is validated to run in interactive mode, so far.
 
 
 .. _Cutadapt: https://cutadapt.readthedocs.io/en/stable/
