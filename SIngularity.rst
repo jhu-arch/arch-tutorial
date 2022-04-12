@@ -37,8 +37,8 @@ This image used was the latest version 0.13.3.
 
 .. code-block:: console
 
-  $ interact -c 2 -t 120
-  $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
+  user@login03 $ interact -c 2 -t 120
+  user@c010    $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
 1. `Dockerfile`_
 ****************
