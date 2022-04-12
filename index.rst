@@ -59,7 +59,7 @@ More details about The Rockfish cluster at ARCH.
   :maxdepth: 2
   :caption: How to do Reproducible Research
 
-  Reproducibility Framework (RF)
+  RF
   Snakemake
   Singularity
 
