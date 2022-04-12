@@ -15,7 +15,7 @@ Here are some examples of things you can do with containers:
 Building a Singularity Container Image from definitions file
 ************************************************************
 
-Bootstrapping a singularity `container`_ allows using a file called ``definitions file`` which can reproduce container configurations on demand.
+Bootstrapping a `singularity container`_ allows using a file called ``definitions file`` which can reproduce container configurations on demand.
 
 .. code-block:: console
 
@@ -365,7 +365,7 @@ The next steps used to create a singularity container on Rockfish, after complet
 
 .. _Nanopolish: https://github.com/jts/nanopolish
 .. _Singularity: https://singularity-user-docs.readthedocs.io/en/latest/quick_start.html
-.. _container: https://singularity-tutorial.github.io/
+.. _singularity container: https://singularity-tutorial.github.io/
 .. _Docker container: https://docs.docker.com
 .. _Docker Hub: https://hub.docker.com
 .. _bedtools: https://bedtools.readthedocs.io/en/latest/
