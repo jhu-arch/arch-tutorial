@@ -200,7 +200,7 @@ Run it will create a container and start a Bash session to a specified image usi
   CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS                     PORTS     NAMES
   421451a1f942   540135da7ceb   "bash"    22 seconds ago   Exited (0) 5 seconds ago             stupefied_johnson
 
-or you can Run it will create a container named nanopolish using REPOSITORY, if it was tagged. (steps 3)
+or you can Run it will create a container named nanopolish using REPOSITORY, if it was tagged. (`step 3`)
 
 .. code-block:: console
 
