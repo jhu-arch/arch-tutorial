@@ -18,7 +18,7 @@ This tutorial presents a bioinformatics pipeline using Snakemake.
   A Snakemake workflow defines a data analysis in terms of rules that are specified in the `Snakefile`_ .
 
 
-We will create a hypothetical scenario with precedent steps, where for example the tabix step depends on the eta tags, and so on.
+We will create a hypothetical scenario with precedent steps, where for example the tabix step depends on the tags step, and so on.
 cutadapt -> bwamem -> rmdup -> tags -> tabix
 
 cutadapt
