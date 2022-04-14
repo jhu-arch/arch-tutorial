@@ -92,7 +92,7 @@ In order to build the application, we need to use a `Docker Desktop`_. Then, we 
 
 The Nanopolish package calculates an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more modules.
 
-.. note::
+.. tip::
   To create this this container, we used the latest Nanopolish version 0.13.3 and Ubuntu 21.04. Also, you can use different platform GNU/Linux: Ubuntu, ArchLinux, Debian, Centos, etc.
 
 Non-root users

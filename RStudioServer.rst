@@ -46,7 +46,7 @@ After running ``r-studio-server.sh`` you will see details about the script creat
 
 Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c 2 -m 8G -t 1-02:0 -p defq`` command.
 
-.. note::
+.. tip::
   The ``#SBATCH`` tags can be customized.
 
 .. code-block:: console

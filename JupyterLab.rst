@@ -16,7 +16,7 @@ Usage examples to start the JupyterLab service:
 
 After running ``jupyterlab.sh`` you will see details about the script created in the current directory, like this next code-block below.
 
-.. warning::
+.. tip::
   Once run the ``jupyterlab.sh`` command for the first time, a python virtual environment (~/jp_lab) will be installed with needed packages to run JupyterLab in your HOME directory.
 
 .. code-block:: console
