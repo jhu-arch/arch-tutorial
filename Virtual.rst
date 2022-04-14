@@ -87,7 +87,7 @@ pip
 pip is a package manager. If more packages are needed, the ``pip`` command to install them.
 
 .. warning::
-   Users are not able to install packages in the python installed as part of your operating system .
+   Users are not able to install packages in the python installed as part of your operating system.
 
 Users can use the ``pip`` with ``--user`` option to install in the hidden directory ~/.local.
 
