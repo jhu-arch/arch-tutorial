@@ -1,13 +1,100 @@
 Virtual Environment
 ###################
 
+A virtual environment is isolating an interpreter like python, libraries and scripts, from those that are installed as part of your operating system.
+
 Python
 ******
+
+There are several python versions installed in the Rockfish cluster. Users can use ``module spider`. command to check the installed versions:
+
+.. code-block:: console
+
+  [userid@login03 ~]$ ml spider python
+  -------------------------------------------------------------------------
+    python:
+  -------------------------------------------------------------------------
+       Versions:
+          python/3.7.9
+          python/3.8.6
+          python/3.9.0
+
+Once you have a version of python loaded, you can use ``module avail`` command to check if any python packages are available to load.
+
+.. code-block:: console
+
+  [userid@login03 ~]$ module load python/3.8.6
+  [userid@login03 ~]$ module avail
+
+  *** RockFish Software ***
+  Use "module spider <name>" to search all software.
+  The available software depends on the compiler, MPI,
+  Python, and R modules you have already loaded.
+  https://lmod.readthedocs.io/en/latest/010_user.html
+
+  ------------------------------ python (3.8) ------------------------------
+     py-cython/0.29.21    py-pip/20.2               py-scipy/1.5.3
+     py-joblib/0.14.0     py-pybind11/2.5.0         py-setuptools/50.1.0
+     py-numpy/1.18.5      py-scikit-learn/0.23.2    py-threadpoolctl/2.0.0
+
+To create a virtual environment, users can check the python version used and create a directory.
+
+.. code-block:: console
+
+  [userid@login03 ~]$ module list python
+
+  Currently Loaded Modules Matching: python
+   1) python/3.8.6
+  [userid@login03 ~]$ mkdir python3.8
+  [userid@login03 ~]$ cd python3.8/
+  [userid@login03 python3.8]$
+
+Once enter the directory, users can run the ``python3 -m venv`` command to create a virtual environment. For example, to create a virtual environment with a name math-packages.
+
+.. code-block:: console
+
+  [userid@login03 python3.8]$ python3 -m venv math-packages
+  [userid@login03 python3.8]$ ls math-packages/
+  bin  include  lib  lib64  pyvenv.cfg
+
+the environment is created under the math-packages directory. You can use activate the environment by sourcing the ``activate`` script under the bin directory.
+
+Once it is activated, the name of the environment ``math-packages``will be displayed the prompt.
+
+.. code-block:: console
+
+  [userid@login03 python3.8]$ source math-packages/bin/activate
+  (math-packages) [userid@login03 python3.8]$
+
+Also, the python packages can be installed under this environment using the ``pip`` command.
+
+.. code-block:: console
+
+  (math-packages) [userid@login03 python3.8]$ pip install numpy
+  Collecting numpy
+    Downloading numpy-1.22.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+       |████████████████████████████████| 16.8 MB 85 kB/s
+  Installing collected packages: numpy
+  Successfully installed numpy-1.22.3
+
+We can also install multiple python packages with your specific versions.
 
 PIP
 ^^^
 
-pip is a package manager.
+pip is a package manager. If more packages are needed, you can also use the pip command to install them. Since users are not able to install packages in the python installed directory, You could use the pip command with --user option to install in the hidden directory ~/.local of your home space. However, as more python packages are installed, It is difficult to meet all of their requirements by one global installation. Users are strongly suggested to create virtual environments and install python packages in a self-contained directory. In this way, different applications can use different virtual environments to avoid their conflict.
+
+How to install pip
+""""""""""""""""""
+
+Install pip for non-root users.
+
+.. code-block:: console
+
+  [userid@login03 ~]$ ml python/3.9.0
+  [userid@login03 ~]$ curl -O https://bootstrap.pypa.io/get-pip.py
+  [userid@login03 ~]$ python get-pip.py;  rm get-pip.py
+  [userid@login03 ~]$ ml -python/3.9.0
 
 Anaconda
 ********
@@ -53,9 +140,6 @@ Users can now activate the environment by the conda activate command with the di
   [userid@login03 conda]$ cd conda
   [userid@login03 conda]$ conda activate ./my_env
   (/home/userid/conda/my_env) [userid@login03 conda]$
-
-
-
 
 Conda-Pack
 ^^^^^^^^^^
