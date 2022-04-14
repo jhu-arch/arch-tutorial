@@ -63,7 +63,7 @@ More details about The Rockfish cluster at ARCH.
   RF
   Snakemake
   Singularity
-
+  Virtual
 
 .. |pic1| image:: images/NSF.png
   :alt: NFS
