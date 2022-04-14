@@ -1,7 +1,7 @@
 Virtual Environment
 ###################
 
-
+Reproducibility is an important characteristic of a good data science project. 
 
 Python
 ******
@@ -13,6 +13,16 @@ pip is a package manager.
 
 Anaconda
 ********
+
+The Rockfish cluster also has versions of anaconda installed. After you load a version of anaconda, you can use conda command to create conda environments and install python packages.
+
+.. code-block:: console
+
+  [userid@login03 conda]$ module load anaconda
+  [userid@login03 conda]$ conda -V
+  conda 4.8.3
+
+Users are suggested to use conda environments for installing and running packages as mentioned in the python section.
 
 Conda
 ^^^^^
@@ -44,6 +54,7 @@ Install from source
 It can be installed from source.
 
 .. code-block:: console
+
   pip install git+https://github.com/conda/conda-pack.git
 
 **Usage**
