@@ -37,7 +37,6 @@ Distributed Memory with Tasks
   :guilabel:`1` - Multiple tasks can reside on the same physical machine and/or across an arbitrary number of machines.
   :guilabel:`2` - For example, a send operation must have a matching receive operation.
 
-
 Example: Message Passing Interface (MPI)
 
 An example of MPI resource request.
