@@ -1,9 +1,12 @@
 Parallel Computing Jobs
 ***********************
 
-The simplest way to do work in parallel is to run many jobs independently at a time. However, to perform many operations coherently and concurrently on multiple CPUs in one or multiple nodes, an application needs to be programmed with a parallel model and compiled by certain libraries. For HPC software, there are three basic parallel models: Shared Memory, Distributed Memory and Hybrid Model are usually used.
+The simplest way to run  jobs in parallel is perform many jobs independently at a time.
+
+However, to run many operations coherently and concurrently on multiple CPUs in one or multiple nodes, an application needs to be programmed with a parallel model and compiled by certain libraries. In HPC environment, there are three basic parallel models: Shared Memory, Distributed Memory and Hybrid Model are usually used.
 
 Shared Memory with Threads
+**************************
 
 It performs any serial work, and then creates a number of threads running by CPU (or GPU) cores concurrently.
 Each thread can have local data, but also, shares the entire resources, including RAM memory of the main program.
@@ -12,3 +15,29 @@ Threads can come and go, but the main program remains present to provide the nec
 
 .. sidebar:: Note
   * This requires synchronization operations to ensure that no more than one thread is updating the same RAM address at any time.
+
+Examples: POSIX Threads, OpenMP, CUDA threads for GPUs
+
+An example of OpenMP resource request.
+
+.. code-block:: console
+
+  #SBATCH --ntasks=1
+  #SBATCH --cpu-per-task=8                     # run 8 threads
+
+Distributed Memory with Tasks
+*****************************
+
+A main program creates a set of tasks (processes) that use their own local memory during computation. Multiple tasks can reside on the same physical machine and/or across an arbitrary number of machines.
+Tasks exchange data through communications by sending and receiving messages through a fast network (e.g. infinite band).
+Data transfer usually requires cooperative operations to be performed by each process. For example, a send operation must have a matching receive operation.
+Synchronization operations are also required to prevent race conditions.
+
+Example: Message Passing Interface (MPI)
+
+An example of MPI resource request
+
+.. code-block:: console
+
+  #SBATCH --ntasks=8                           # mpirun -np 8
+  #SBATCH --cpu-per-task=1
