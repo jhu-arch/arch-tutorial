@@ -1,5 +1,5 @@
 Parallel Computing Jobs
-***********************
+#######################
 
 The simplest way to run  jobs in parallel is perform many jobs independently at a time.
 
