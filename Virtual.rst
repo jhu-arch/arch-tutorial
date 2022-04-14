@@ -49,7 +49,7 @@ To create a virtual environment, users can check the python version used and cre
   [userid@login03 ~]$ cd python3.8/
   [userid@login03 python3.8]$
 
-Once enter the directory, users can run the ``python3 -m venv`` command to create a virtual environment. For example, to create a virtual environment with a name math-packages.
+Once enter the directory, users can run the ``python3 -m venv`` command to create a virtual environment.
 
 .. code-block:: console
 
@@ -57,7 +57,7 @@ Once enter the directory, users can run the ``python3 -m venv`` command to creat
   [userid@login03 python3.8]$ ls math-packages/
   bin  include  lib  lib64  pyvenv.cfg
 
-the environment is created under the math-packages directory. You can use activate the environment by sourcing the ``activate`` script under the bin directory.
+the environment will be created under the ``math-packages`` directory. You can use activate the environment by sourcing the ``activate`` script under the bin directory.
 
 Once it is activated, the name of the environment ``math-packages``will be displayed the prompt.
 
@@ -77,18 +77,19 @@ Also, the python packages can be installed under this environment using the ``pi
   Installing collected packages: numpy
   Successfully installed numpy-1.22.3
 
-We can also install multiple python packages with your specific versions.
+It multiple python packages with your specific versions can be installed.
 
 PIP
 ^^^
 
-pip is a package manager. If more packages are needed, you can use the ``pip`` command to install them.
+pip is a package manager. If more packages are needed, the ``pip`` command to install them.
 
-Since users are not able to install packages in the python installed directory, You could use the ``pip`` with ``--user`` option to install in the hidden directory ~/.local of your home space.
+.. warning::
+   Users are not able to install packages in the python installed as part of your operating system .
 
-However, as more python packages are installed, It is difficult to meet all of their requirements by one global installation.
+Users can use the ``pip`` with ``--user`` option to install in the hidden directory ~/.local.
 
-Users are strongly suggested to create virtual environments and install python packages in a self-contained directory. In this way, you may create multiple environments to avoid their conflict and ensure reproducibility.
+However, many packages can be installed. It is difficult to gathering all requirements in a global installation. Users has autonomy to create virtual environments, install packages and manage them. In this way, multiple environments can be created to avoid conflicts and ensure reproducibility.
 
 How to install pip
 """"""""""""""""""
