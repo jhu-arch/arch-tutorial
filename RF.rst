@@ -98,7 +98,7 @@ Let's create a directory structure called repro to put this Reproducibility Fram
 
 Let’s create a simple run file to learn how ``rf`` works. Then, change the permissions on the run file to make it executable (``row # 5``). Once it has been assigned, the run file is ready to be executed using the ``rf`` command (``row # 8``).
 
-.. note::
+.. tip::
   Since ``rf`` was designed to work collaboratively and have version control, it is necessary to create a new Git repository local (``row # 9``).
 
 .. code-block:: console
