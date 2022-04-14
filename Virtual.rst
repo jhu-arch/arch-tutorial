@@ -20,11 +20,42 @@ The Rockfish cluster also has versions of anaconda installed. After you load a v
   [userid@login03 conda]$ conda -V
   conda 4.8.3
 
-Users are suggested to use conda environments for installing and running packages as mentioned in the python section.
+Users are suggested to use conda environments for installing and running packages. For example, to create an environment called my_conda, execute the command with -p option.
+
+.. code-block:: console
+
+  [userid@login03 ~]$ conda create -p conda/my_env
+  Collecting package metadata (current_repodata.json): done
+  Solving environment: done
+
+  ==> WARNING: A newer version of conda exists. <==
+    current version: 4.8.3
+    latest version: 4.11.0
+
+  Please update conda by running
+
+      $ conda update -n base -c defaults conda
+
+  ## Package Plan ##
+
+    environment location: /home/userid/conda/my_env
+
+  Proceed ([y]/n)? y
 
 Conda
 ^^^^^
 Conda is a tool to manager virtual environments, it allows to create, removing or packaging virtual environments, as well as package manager.
+
+Users can now activate the environment by the conda activate command with the directory path:
+
+.. code-block:: console
+
+  [userid@login03 conda]$ cd conda
+  [userid@login03 conda]$ conda activate ./my_env
+  (/home/userid/conda/my_env) [userid@login03 conda]$
+
+
+
 
 Conda-Pack
 ^^^^^^^^^^
