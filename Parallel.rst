@@ -10,7 +10,7 @@ Shared Memory with Threads
 
 * It performs any serial work, and then creates a number of threads running by CPU (or GPU) cores concurrently.
 * Each thread can have local data, but also, shares the entire resources, including RAM memory of the main program.
-* Threads communicate with each other through global memory (RAM). $^1$
+* Threads communicate with each other through global memory (RAM). :guilabel:`1`
 * Threads can come and go, but the main program remains present to provide the necessary shared resources until the application has completed.
 
 .. sidebar:: Note
@@ -28,14 +28,14 @@ An example of OpenMP resource request.
 Distributed Memory with Tasks
 *****************************
 
-* A main program creates a set of tasks (processes) that use their own local memory during computation. $^1$
+* A main program creates a set of tasks (processes) that use their own local memory during computation. :guilabel:`1`
 * Tasks exchange data through communications by sending and receiving messages through a fast network (e.g. infinite band).
-* Data transfer usually requires cooperative operations to be performed by each process. $^2$
+* Data transfer usually requires cooperative operations to be performed by each process. :guilabel:`2`
 * Synchronization operations are also required to prevent race conditions.
 
 .. sidebar:: Note
-  1. Multiple tasks can reside on the same physical machine and/or across an arbitrary number of machines.
-  2. For example, a send operation must have a matching receive operation.
+  :guilabel:`1` - Multiple tasks can reside on the same physical machine and/or across an arbitrary number of machines.
+  :guilabel:`2` - For example, a send operation must have a matching receive operation.
 
 
 Example: Message Passing Interface (MPI)
