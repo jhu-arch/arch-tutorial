@@ -30,7 +30,7 @@ Conda-Pack
 ^^^^^^^^^^
 =conda-pack`_ is a command line tool for creating relocatable conda environments. This is useful for deploying code in a consistent environment, potentially in a location where python/conda isn't already installed.
 
-Install via conda
+**Install via conda**
 
 conda-pack is available from `Anaconda`_ as well as from conda-forge:
 
@@ -39,7 +39,7 @@ conda-pack is available from `Anaconda`_ as well as from conda-forge:
   conda install conda-pack
   conda install -c conda-forge conda-pack
 
-Install via pip
+**Install via pip**
 
 While conda-pack requires an existing conda install, it can also be installed from PyPI:
 
@@ -47,7 +47,7 @@ While conda-pack requires an existing conda install, it can also be installed fr
 
   pip install conda-pack
 
-Install from source
+**Install from source**
 
 It can be installed from source.
 
