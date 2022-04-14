@@ -52,6 +52,7 @@ More details about The Rockfish cluster at ARCH.
   :maxdepth: 2
   :caption: Common Tasks and Workflows
 
+  Linux
   RStudioServer
   JupyterLab
 

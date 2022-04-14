@@ -11,12 +11,7 @@ Allocation / Account Management
   * Account / Allocation request (PI
   * Video -> Rockfish portal `navigation`_
 
-.. _Portal: https://coldfront.rockfish.jhu.edu/
-.. _navigation: https://www.youtube.com/watch?v=L6zvLBK5Mss
-
 Please refer to `allocations`_ web site.
-
-.. _allocations: https://www.arch.jhu.edu/policies/allocations
 
 Storage Allocations
 *********************
@@ -32,3 +27,7 @@ Storage Allocations
 
 .. note::
   The ``<userid>`` is the user's account name and ``<PI-userid>`` is the account name of the user's PI.
+
+  .. _Portal: https://coldfront.rockfish.jhu.edu/
+  .. _navigation: https://www.youtube.com/watch?v=L6zvLBK5Mss
+  .. _allocations: https://www.arch.jhu.edu/policies/allocations

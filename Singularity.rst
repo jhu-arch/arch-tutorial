@@ -1,4 +1,4 @@
-.. _singularity_container
+.. _singularity_container:
 Singularity container
 ######################
 
