@@ -13,7 +13,7 @@ Shared Memory with Threads
 * Threads communicate with each other through global memory (RAM). :guilabel:`1`
 * Threads can come and go, but the main program remains present to provide the necessary shared resources until the application has completed.
 
-.. sidebar:: Note
+.. note::
   1. This requires synchronization operations to ensure that no more than one thread is updating the same RAM address at any time.
 
 Examples: POSIX Threads, OpenMP, CUDA threads for GPUs
@@ -33,7 +33,7 @@ Distributed Memory with Tasks
 * Data transfer usually requires cooperative operations to be performed by each process. :guilabel:`2`
 * Synchronization operations are also required to prevent race conditions.
 
-.. sidebar:: Note
+.. note::
   :guilabel:`1` - Multiple tasks can reside on the same physical machine and/or across an arbitrary number of machines.
   :guilabel:`2` - For example, a send operation must have a matching receive operation.
 
