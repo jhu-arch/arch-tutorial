@@ -3,10 +3,12 @@ Virtual Environment
 
 A virtual environment is used to isolating projects, interpreters like python, libraries and scripts, from those that are installed as part of your operating system.
 
+There are ``Python`` and ``Anaconda`` installed on Rockfish cluster. The environments and packages that can be installed using ``pip`` and/or ``conda``. They differ in how dependency relationships within an environment are performed.
+
 Python
 ******
 
-There are several python versions installed in the Rockfish cluster. Users can use ``module spider`. command to check the installed versions:
+There are several python versions installed. Users can use ``module spider`. command to check the installed versions:
 
 .. code-block:: console
 
