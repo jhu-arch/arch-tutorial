@@ -1,7 +1,7 @@
 Virtual Environment
 ###################
 
-A virtual environment is isolating an interpreter like python, libraries and scripts, from those that are installed as part of your operating system.
+A virtual environment is used to isolating projects, interpreters like python, libraries and scripts, from those that are installed as part of your operating system.
 
 Python
 ******
@@ -82,7 +82,13 @@ We can also install multiple python packages with your specific versions.
 PIP
 ^^^
 
-pip is a package manager. If more packages are needed, you can also use the pip command to install them. Since users are not able to install packages in the python installed directory, You could use the pip command with --user option to install in the hidden directory ~/.local of your home space. However, as more python packages are installed, It is difficult to meet all of their requirements by one global installation. Users are strongly suggested to create virtual environments and install python packages in a self-contained directory. In this way, different applications can use different virtual environments to avoid their conflict.
+pip is a package manager. If more packages are needed, you can use the ``pip`` command to install them.
+
+Since users are not able to install packages in the python installed directory, You could use the ``pip`` with ``--user`` option to install in the hidden directory ~/.local of your home space.
+
+However, as more python packages are installed, It is difficult to meet all of their requirements by one global installation.
+
+Users are strongly suggested to create virtual environments and install python packages in a self-contained directory. In this way, you may create multiple environments to avoid their conflict and ensure reproducibility.
 
 How to install pip
 """"""""""""""""""
@@ -99,7 +105,7 @@ Install pip for non-root users.
 Anaconda
 ********
 
-The Rockfish cluster also has versions of anaconda installed. After you load a version of anaconda, you can use conda command to create conda environments and install python packages.
+There are many ananconda installed on the Rockfish cluster. Once loaded a anaconda, you can use conda command to create conda environments.
 
 .. code-block:: console
 
@@ -107,7 +113,10 @@ The Rockfish cluster also has versions of anaconda installed. After you load a v
   [userid@login03 conda]$ conda -V
   conda 4.8.3
 
-Users are suggested to use conda environments for installing and running packages. For example, to create an environment called my_conda, execute the command with -p option.
+Users are suggested to use conda environments for installing and running packages.
+
+
+For example, to create an environment called ``my_tensorflow``, execute ``$ conda create --name my_tensorflow -y``. Also, for example, to create an environment called ``my_conda``, execute the command with ``-p`` option.
 
 .. code-block:: console
 
@@ -143,7 +152,7 @@ Users can now activate the environment by the conda activate command with the di
 
 Conda-Pack
 ^^^^^^^^^^
-=conda-pack`_ is a command line tool for creating relocatable conda environments. This is useful for deploying code in a consistent environment, potentially in a location where python/conda isn't already installed.
+=conda-pack`_ is a command line tool for creating relocatable conda environments. This is useful for deploying code in a consistent environment, potentially in a location where python/conda is not installed.
 
 **Install via conda**
 
