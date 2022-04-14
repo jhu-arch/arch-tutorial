@@ -116,7 +116,7 @@ There are many ananconda installed on the Rockfish cluster. Once loaded a anacon
 Users are suggested to use conda environments for installing and running packages.
 
 
-For example, to create an environment called ``my_tensorflow``, execute ``$ conda create --name my_tensorflow -y``. Also, for example, to create an environment called ``my_conda``, execute the command with ``-p`` option.
+For example, to create an environment called ``my_tensorflow``, execute ``conda create --name my_tensorflow -y``. Also, for example, to create an environment called ``my_conda``, execute the command with ``-p`` option.
 
 .. code-block:: console
 
@@ -152,7 +152,7 @@ Users can now activate the environment by the conda activate command with the di
 
 Conda-Pack
 ^^^^^^^^^^
-=conda-pack`_ is a command line tool for creating relocatable conda environments. This is useful for deploying code in a consistent environment, potentially in a location where python/conda is not installed.
+`conda-pack`_ is a command line tool for creating relocatable conda environments. This is useful for deploying code in a consistent environment, potentially in a location where python/conda is not installed.
 
 **Install via conda**
 
