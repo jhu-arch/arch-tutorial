@@ -55,6 +55,7 @@ More details about The Rockfish cluster at ARCH.
   Linux
   RStudioServer
   JupyterLab
+  Parallel
 
 .. toctree::
   :maxdepth: 2
