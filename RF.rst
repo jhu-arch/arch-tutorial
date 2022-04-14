@@ -1,6 +1,6 @@
 .. _Reproducibility-Framework:
 
-Reproducibility is an important characteristic of a good scientific project. Factors, like random seeds, versioning data to using virtual environments, might influence the reproducibility of science projects.
+Reproducibility is an important characteristic of a good scientific project. Factors, like random seeds, versioning data to using virtual environments, might influence the reproducibility of scientific projects.
 
 This topic aims to present some tools to guarantee the pipeline reproducible.
 

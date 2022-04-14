@@ -1,8 +1,6 @@
 Virtual Environment
 ###################
 
-Reproducibility is an important characteristic of a good data science project. 
-
 Python
 ******
 
