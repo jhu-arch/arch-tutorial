@@ -24,7 +24,7 @@ Cutadapt
 
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads. It helps with these trimming tasks by finding the adapter or primer sequences in an error-tolerant way.
 
-.. code-block:: console
+.. code-block:: python
 
   #!/bin/bash
 
@@ -107,7 +107,7 @@ Burrows-Wheeler Alignment Tool
 
 `BWA`_ is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM.
 
-.. code-block:: console
+.. code-block:: python
 
 
   #!/bin/bash
@@ -170,7 +170,7 @@ Remove duplicates
 
 `rmdup`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to read .bam input files and apply samtools software to treat paired-end reads and single-end reads.
 
-.. code-block:: console
+.. code-block:: python
 
   #!/bin/bash
 
@@ -223,7 +223,7 @@ Add tags
 
 `tags`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into bam files.
 
-.. code-block:: console
+.. code-block:: python
 
   #!/bin/bash
 
@@ -291,7 +291,7 @@ Tabix
 
 `Tabix`_ indexes a TAB-delimited genome position file in.tab.bgz and creates an index file (in.tab.bgz.tbi or in.tab.bgz.csi) when region is absent from the command-line.
 
-.. code-block:: console
+.. code-block:: python
 
   #!/bin/bash
 
@@ -361,7 +361,7 @@ Tabix
 Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
-.. code-block:: console
+.. code-block:: python
 
     ├── pipeline
     │   └── cutadapt
