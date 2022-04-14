@@ -81,7 +81,7 @@ Also, the python packages can be installed under this environment using the ``pi
 
 It multiple python packages with your specific versions can be installed.
 
-PIP
+pip
 ^^^
 
 pip is a package manager. If more packages are needed, the ``pip`` command to install them.

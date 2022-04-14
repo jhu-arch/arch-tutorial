@@ -35,7 +35,7 @@ Synchronization operations are also required to prevent race conditions.
 
 Example: Message Passing Interface (MPI)
 
-An example of MPI resource request
+An example of MPI resource request.
 
 .. code-block:: console
 
