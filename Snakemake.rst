@@ -120,15 +120,25 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 Burrows-Wheeler Alignment Tool
 ******************************
 
-[![Build Status](https://github.com/lh3/bwa/actions/workflows/ci.yaml/badge.svg)](https://github.com/lh3/bwa/actions)
-[![SourceForge Downloads](https://img.shields.io/sourceforge/dt/bio-bwa.svg?label=SF%20downloads)](https://sourceforge.net/projects/bio-bwa/files/?source=navbar)
-[![GitHub Downloads](https://img.shields.io/github/downloads/lh3/bwa/total.svg?style=flat&label=GitHub%20downloads)](https://github.com/lh3/bwa/releases)
-[![BioConda Install](https://img.shields.io/conda/dn/bioconda/bwa.svg?style=flag&label=BioConda%20install)](https://anaconda.org/bioconda/bwa)
+.. image:: https://github.com/lh3/bwa/actions/workflows/ci.yaml/badge.svg
+    :target: https://github.com/lh3/bwa/actions
+    :alt: Build Status
+
+.. image:: https://img.shields.io/sourceforge/dt/bio-bwa.svg
+    :target: https://sourceforge.net/projects/bio-bwa/files/?source=navbar
+    :alt: SourceForge Downloads
+
+.. image:: https://img.shields.io/github/downloads/lh3/bwa/total.svg
+    :target: https://github.com/lh3/bwa/releases
+    :alt: GitHub Downloads
+
+.. image:: https://img.shields.io/conda/dn/bioconda/bwa.svg
+    :target: https://anaconda.org/bioconda/bwa
+    :alt: BioConda Install
 
 `BWA`_ is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM.
 
 .. code-block:: python
-
 
   #!/bin/bash
 
