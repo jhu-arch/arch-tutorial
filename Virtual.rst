@@ -8,6 +8,10 @@ There are ``Python`` and ``Anaconda`` installed on Rockfish cluster. The environ
 Python
 ******
 
+.. image:: https://readthedocs.org/projects/python/badge/?version=latest
+  :target: https://python.readthedocs.io/en/latest/?badge=latest
+  :alt: The Python programming language
+
 There are several python versions installed. Users can use ``module spider`. command to check the installed versions:
 
 .. code-block:: console
@@ -84,6 +88,13 @@ It multiple python packages with your specific versions can be installed.
 pip
 ^^^
 
+.. image:: https://img.shields.io/pypi/v/pip.svg
+   :target: https://pypi.org/project/pip/
+
+.. image:: https://readthedocs.org/projects/pip/badge/?version=latest
+   :target: https://pip.pypa.io/en/latest
+
+
 pip is a package manager. If more packages are needed, the ``pip`` command to install them.
 
 .. warning::
@@ -107,6 +118,22 @@ Install pip for non-root users.
 
 Anaconda
 ********
+
+.. image:: https://copr.fedorainfracloud.org/coprs/g/rhinstaller/Anaconda/package/anaconda/status_image/last_build.png
+    :alt: Build status
+    :target: https://copr.fedorainfracloud.org/coprs/g/rhinstaller/Anaconda/package/anaconda/
+
+.. image:: https://readthedocs.org/projects/anaconda-installer/badge/?version=latest
+    :alt: Documentation Status
+    :target: https://anaconda-installer.readthedocs.io/en/latest/?badge=latest
+
+.. image:: https://codecov.io/gh/rhinstaller/anaconda/branch/master/graph/badge.svg
+    :alt: Coverage status
+    :target: https://codecov.io/gh/rhinstaller/anaconda
+
+.. image:: https://translate.fedoraproject.org/widgets/anaconda/-/master/svg-badge.svg
+    :alt: Translation status
+    :target: https://translate.fedoraproject.org/engage/anaconda/?utm_source=widget
 
 There are many ananconda installed on the Rockfish cluster. Once loaded a anaconda, you can use conda command to create conda environments.
 
@@ -143,6 +170,23 @@ For example, to create an environment called ``my_tensorflow``, execute ``conda 
 
 Conda
 ^^^^^
+
+.. image:: https://github.com/conda/conda/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/conda/conda/actions/workflows/ci.yml
+    :alt: CI Tests (GitHub Actions)
+
+.. image:: https://github.com/conda/conda/actions/workflows/ci-images.yml/badge.svg
+    :target: https://github.com/conda/conda/actions/workflows/ci-images.yml
+    :alt: CI Images (GitHub Actions)
+
+.. image:: https://img.shields.io/codecov/c/github/conda/conda/master.svg?label=coverage
+   :alt: Codecov Status
+   :target: https://codecov.io/gh/conda/conda/branch/master
+
+.. image:: https://img.shields.io/github/release/conda/conda.svg
+   :alt: latest release version
+   :target: https://github.com/conda/conda/releases
+
 Conda is a tool to manager virtual environments, it allows to create, removing or packaging virtual environments, as well as package manager.
 
 Users can now activate the environment by the conda activate command with the directory path:
