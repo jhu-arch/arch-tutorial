@@ -22,8 +22,15 @@ We will create a hypothetical scenario with precedent steps, where for example t
 Cutadapt
 ********
 
+.. image:: https://github.com/marcelm/cutadapt/workflows/CI/badge.svg
+    :alt:
+
 .. image:: https://img.shields.io/pypi/v/cutadapt.svg?branch=master
     :target: https://pypi.python.org/pypi/cutadapt
+    :alt:
+
+.. image:: https://codecov.io/gh/marcelm/cutadapt/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/marcelm/cutadapt
     :alt:
 
 .. image:: https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat
@@ -112,6 +119,11 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
 Burrows-Wheeler Alignment Tool
 ******************************
+
+[![Build Status](https://github.com/lh3/bwa/actions/workflows/ci.yaml/badge.svg)](https://github.com/lh3/bwa/actions)
+[![SourceForge Downloads](https://img.shields.io/sourceforge/dt/bio-bwa.svg?label=SF%20downloads)](https://sourceforge.net/projects/bio-bwa/files/?source=navbar)
+[![GitHub Downloads](https://img.shields.io/github/downloads/lh3/bwa/total.svg?style=flat&label=GitHub%20downloads)](https://github.com/lh3/bwa/releases)
+[![BioConda Install](https://img.shields.io/conda/dn/bioconda/bwa.svg?style=flag&label=BioConda%20install)](https://anaconda.org/bioconda/bwa)
 
 `BWA`_ is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM.
 
