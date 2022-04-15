@@ -22,6 +22,14 @@ We will create a hypothetical scenario with precedent steps, where for example t
 Cutadapt
 ********
 
+.. image:: https://img.shields.io/pypi/v/cutadapt.svg?branch=master
+    :target: https://pypi.python.org/pypi/cutadapt
+    :alt:
+
+.. image:: https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat
+    :target: http://bioconda.github.io/recipes/cutadapt/README.html
+    :alt: install with bioconda
+
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads. It helps with these trimming tasks by finding the adapter or primer sequences in an error-tolerant way.
 
 .. code-block:: python
