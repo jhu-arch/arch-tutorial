@@ -47,6 +47,7 @@ More details about The Rockfish cluster at `ARCH`_.
 
   Software
   Slurm
+  Bill
 
 .. toctree::
   :maxdepth: 2
