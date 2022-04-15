@@ -2,6 +2,10 @@
 Singularity container
 ######################
 
+.. image:: https://readthedocs.org/projects/singularity-user-docs/badge/?version=latest
+   :target: https://singularity-user-docs.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
 This tutorials will allow you to run `Singularity`_ containers on computers where you do not have root (administrative) privileges, like the Rockfish cluster at ARCH.
 
 A container allows you to put an application and all of its dependencies in a single package. Ensure portability and reproducibility of all dependency packages of an application.
