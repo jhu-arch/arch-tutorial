@@ -4,7 +4,7 @@ Introduction and How-to on the Rockfish Cluster to the Advanced Research Computi
 
 This is a software guide and tutorials used in training sessions to The Rockfish cluster at `ARCH`, for more details:
 
-* `**HELP**`: mail to help@rockfish.jhu.edu (ticketing system)
+* **`HELP`**: mail to help@rockfish.jhu.edu (ticketing system)
 * Portal: https://coldfront.rockfish.jhu.edu/
 * Website: https://www.arch.jhu.edu/
 * User Guide: https://www.arch.jhu.edu/access/user-guide/
