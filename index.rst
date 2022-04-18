@@ -7,7 +7,7 @@ The Advanced Research Computing at Hopkins (  :guilabel:`ARCH` ) – formerly kn
 
   |pic1| |pic2| |pic3|
 
-More details about The Rockfish cluster at `ARCH`_.
+This is a software guide and tutorials used in training sessions to The Rockfish cluster at `ARCH`_, for more details:
 
 #. :guilabel:`HELP`: mail to help@rockfish.jhu.edu (ticketing system)
 #. `Portal`_
