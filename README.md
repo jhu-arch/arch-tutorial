@@ -6,7 +6,7 @@ Introduction and How-to on the Rockfish Cluster to the Advanced Research Computi
 
 ![](images/NSF.png)
 ![](images/DOD.png)
-![](images/jhu_logo.png height="400")
+![](images/jhu_logo.png)
 
 This is a software guide and tutorials used in training sessions to The Rockfish cluster at `ARCH`, for more details:
 
