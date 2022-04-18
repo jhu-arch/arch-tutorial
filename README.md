@@ -4,9 +4,9 @@ Introduction and How-to on the Rockfish Cluster to the Advanced Research Computi
 
 `ARCH` is supported by:
 
-![](images/NSF.png =width=21%)
-![](images/DOD.png =width=20%)
-![](images/jhu_logo.png =width=16%)
+![](images/NSF.png)
+![](images/DOD.png)
+![](images/jhu_logo.png)
 
 This is a software guide and tutorials used in training sessions to The Rockfish cluster at `ARCH`, for more details:
 
