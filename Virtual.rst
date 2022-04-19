@@ -195,7 +195,6 @@ Users can now activate the environment by the conda activate command with the di
 
   [userid@login03 conda]$ cd conda
   [userid@login03 conda]$ conda activate ./my_env
-  (/home/userid/conda/my_env) [userid@login03 conda]$
 
 Create the environment from the environment.yml
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -208,7 +207,8 @@ Using a prompt for the following steps:
 
   [userid@login03 ~]$ conda env create -f environment.yml
 
-The first line of the ``yml`` file sets the new environment's name. For details see :ref:`Creating an environment file manually <create-env-file-manually>`.
+.. tip::
+  The first line of the ``yml`` file sets the new `environment's name.
 
 #. Activate the new environment: ``conda activate myenv``
 
@@ -220,26 +220,28 @@ The first line of the ``yml`` file sets the new environment's name. For details 
 
 You can also use ``conda info --envs``.
 
-You can control where a conda environment lives by providing a path to a target directory when creating the environment.
+You can control where a conda environment, providing a path to a target directory when creating the environment.
 
 .. code::
 
   [userid@login03 ~]$ conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21
 
 You then activate an environment created with a prefix using the same
-command used to activate environments created by name::
+command used to activate environments created by name:
 
 .. code::
 
   [userid@login03 ~]$ conda activate ./envs
 
-Specifying a path to a subdirectory of your project directory when
-creating an environment has the following benefits:
+.. note::
 
-  * It makes it easy to tell if your project uses an isolated environment
-    by including the environment as a subdirectory.
-  * It makes your project more self-contained as everything, including
-    the required software, is contained in a single project directory.
+  Specifying a path to a subdirectory of your project directory when
+  creating an environment has the following benefits:
+
+    * It makes it easy to tell if your project uses an isolated environment
+      by including the environment as a subdirectory.
+    * It makes your project more self-contained as everything, including
+      the required software, is contained in a single project directory.
 
 An additional benefit of creating your project’s environment inside a
 subdirectory is that you can then use the same name for all your
@@ -249,8 +251,8 @@ folder, you’ll have to give each environment a different name.
 .. code-block:: console
 
   [userid@login03 ~]$ salloc -p a100 -c 2 --gres=gpu:1 -t 120 -A <PI-userid>_gpu srun --pty bash
-  [userid@gpu02 ~]$ mkdir ~/test-tf
-  [userid@gpu02 ~]$ cd ~/test-tf
+  [userid@gpu02 ~]$ mkdir -p ~/envs/tf_2.4.0
+  [userid@gpu02 ~]$ cd ~/envs/
   [userid@gpu02 ~]$ ml anaconda cuda/11.1.0 cudnn
   [userid@gpu02 ~]$ cat > environment.yaml << EOF
                     dependencies:
@@ -258,8 +260,8 @@ folder, you’ll have to give each environment a different name.
                      - pip:
                      - tensorflow==2.4.0
                     EOF
-  [userid@gpu02 ~]$ conda env update -p ./env_tf_2.4.0 --file environment.yaml
-  [userid@gpu02 ~]$ conda activate ./env_tf_2.4.0
+  [userid@gpu02 ~]$ conda env update -p ~/envs/tf_2.4.0 --file environment.yaml
+  [userid@gpu02 ~]$ conda activate ~/envs/tf_2.4.0
 
 .. note:
   Charge job to specified account (<PI-userid>_gpu.
