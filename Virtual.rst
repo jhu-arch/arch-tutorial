@@ -261,7 +261,7 @@ folder, you’ll have to give each environment a different name.
                      - pip:
                      - tensorflow==2.4.0
                     EOF
-  [userid@gpu02 ~]$ conda env update -p ~/envs/tf_2.4.0 --file environment.yaml
+  [userid@gpu02 ~]$ conda env create --prefix ~/envs/tf_2.4.0 --file environment.yaml
   [userid@gpu02 ~]$ conda activate ~/envs/tf_2.4.0
 
 .. note:
