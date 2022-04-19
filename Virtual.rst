@@ -217,12 +217,12 @@ Using a prompt for the following steps:
 
 #. Create the environment from the ``environment.yml`` file:
 
-.. code::
+  .. code::
 
-  [userid@login03 ~]$ conda env create -f environment.yml
+    [userid@login03 ~]$ conda env create -f environment.yml
 
-.. tip::
-  The first line of the ``yml`` file sets the new `environment's name.
+  .. tip::
+    The first line of the ``yml`` file sets the new `environment's name.
 
 #. Activate the new environment: ``conda activate myenv``
 
