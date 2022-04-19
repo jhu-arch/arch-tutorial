@@ -208,21 +208,19 @@ Using a prompt for the following steps:
 
   [userid@login03 ~]$ conda env create -f environment.yml
 
-  The first line of the ``yml`` file sets the new environment's
-     name. For details see :ref:`Creating an environment file manually
-     <create-env-file-manually>`.
+The first line of the ``yml`` file sets the new environment's name. For details see :ref:`Creating an environment file manually <create-env-file-manually>`.
 
+#. Activate the new environment: ``conda activate myenv``
 
-  #. Activate the new environment: ``conda activate myenv``
+#. Verify that the new environment was installed correctly:
 
-  #. Verify that the new environment was installed correctly:
+.. code::
 
-    $ conda env list
+  [userid@login03 ~]$ conda env list
 
-    You can also use ``conda info --envs``.
+You can also use ``conda info --envs``.
 
-You can control where a conda environment lives by providing a path
-to a target directory when creating the environment.
+You can control where a conda environment lives by providing a path to a target directory when creating the environment.
 
 .. code::
 
@@ -264,9 +262,7 @@ folder, you’ll have to give each environment a different name.
   [userid@gpu02 ~]$ conda activate ./env_tf_2.4.0
 
 .. note:
-  Charge job to specified account (<PI-userid>_gpu
-
-
+  Charge job to specified account (<PI-userid>_gpu.
 
 
 Conda-Pack
