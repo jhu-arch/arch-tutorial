@@ -215,18 +215,18 @@ Let's suppose you want to create a new environment, we can use the environment.y
 
 Using a prompt for the following steps:
 
-#. Create the environment from the ``environment.yml`` file:
+1. Create the environment from the ``environment.yml`` file:
 
-  .. code::
+.. code::
 
-    [userid@login03 ~]$ conda env create -f environment.yml
+  [userid@login03 ~]$ conda env create -f environment.yml
 
-  .. tip::
-    The first line of the ``yml`` file sets the new `environment's name.
+.. tip::
+  The first line of the ``yml`` file sets the new `environment's name.
 
-#. Activate the new environment: ``conda activate myenv``
+2 Activate the new environment: ``conda activate myenv``
 
-#. Verify that the new environment was installed correctly:
+3. Verify that the new environment was installed correctly:
 
 .. code::
 
