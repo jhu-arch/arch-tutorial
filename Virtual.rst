@@ -209,6 +209,7 @@ Using a prompt for the following steps:
 
 .. tip::
   The first line of the ``yml`` file sets the new `environment's name.
+  example: name: machine-learning-env
 
 #. Activate the new environment: ``conda activate myenv``
 
