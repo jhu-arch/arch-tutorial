@@ -80,10 +80,9 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
       for filename in glob.iglob(path+'/*'+ext):
           sample = os.path.basename(filename)[:-len(ext)]
 
-          if 'bulk' not in sample:
-              yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_R1.fastq.gz',
-                             'r2_in': SOURCE_DIR + '/' + sample + '_R2.fastq.gz'
-  		          }
+          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_R1.fastq.gz',
+                         'r2_in': SOURCE_DIR + '/' + sample + '_R2.fastq.gz'
+	          }
 
   SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
 
