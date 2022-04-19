@@ -287,7 +287,6 @@ Spack
 [![Read the Docs](https://readthedocs.org/projects/spack/badge/?version=latest)](https://spack.readthedocs.io)
 [![Slack](https://slack.spack.io/badge.svg)](https://slack.spack.io)
 
-
 Spack is simple package management tool. It was designed for large supercomputing centers. It is non-destructive: installing a new version does not break existing installations, so many configurations can coexist on the same system.
 
 Get spack from the `github repository
@@ -299,9 +298,6 @@ package:
    $ git clone -c feature.manyFiles=true https://github.com/spack/spack.git
    $ cd spack/bin
    $ ./spack install zlib
-
-If you're new to spack and want to start using it, see :doc:`getting_started`,
-or refer to the full manual below.
 
 Documentation
 ----------------
