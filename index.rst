@@ -47,7 +47,6 @@ This is an introduction and how-to software guide used in training sessions to T
 
   Software
   Slurm
-  Bill
 
 .. toctree::
   :maxdepth: 2
