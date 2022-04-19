@@ -277,6 +277,7 @@ On the target machine
   (my_env) $ source my_env/bin/deactivate
 
 Spack
+******
 ^^^^^
 
 [![Unit Tests](https://github.com/spack/spack/workflows/linux%20tests/badge.svg)](https://github.com/spack/spack/actions)
@@ -300,7 +301,7 @@ package:
    $ ./spack install zlib
 
 Documentation
-----------------
+^^^^^^^^^^^^^
 
 [**Full documentation**](https://spack.readthedocs.io/) is available, or
 run `spack help` or `spack help --all`.
@@ -308,7 +309,7 @@ run `spack help` or `spack help --all`.
 For a cheat sheet on Spack syntax, run `spack help --spec`.
 
 Tutorial
-----------------
+^^^^^^^^
 
 We maintain a
 [**hands-on tutorial**](https://spack.readthedocs.io/en/latest/tutorial.html).
