@@ -22,22 +22,22 @@ From: tensorflow/tensorflow:1.14.0-gpu-py3
   chmod +x /environment
 
   # default mount paths
-  mkdir /scratch /data
+  mkdir /scratch /data 
 
   export TZ==America/New_York
 
   ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
   # additional packages
-  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata 
   apt-get install -y python-tk
   apt-get install -y libsm6 libxext6
   apt-get install -y libmagic-dev
   apt-get install -y libsndfile1
-  pip install opencv-contrib-python
+  apt-get install -y python-opencv
+  pip install numpy  
   pip install wrapt==1.12.0
   pip install pyyaml
-
   pip install joblib==0.11.0
   pip install llvmlite==0.31.0
   pip install numba==0.44.1
@@ -64,17 +64,8 @@ From: tensorflow/tensorflow:1.14.0-gpu-py3
   pip install inflect==0.2.5
 
 %runscript
-  pip install pycwt
-  pip install unidecode
-  pip install inflect==0.2.5
-
-%runscript
- # executes with the singularity run command
- # delete this section to use existing docker ENTRYPOINT command
+  # executes with the singularity run command
+  # delete this section to use existing docker ENTRYPOINT command
 
 %test
- # test that script is a success  # executes with the singularity run command
- # delete this section to use existing docker ENTRYPOINT command
-
-%test
- # test that script is a success
+  # test that script is a success
