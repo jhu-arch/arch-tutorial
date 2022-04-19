@@ -278,15 +278,34 @@ On the target machine
 
 Spack
 ******
-^^^^^
 
-[![Unit Tests](https://github.com/spack/spack/workflows/linux%20tests/badge.svg)](https://github.com/spack/spack/actions)
-[![Bootstrapping](https://github.com/spack/spack/actions/workflows/bootstrap.yml/badge.svg)](https://github.com/spack/spack/actions/workflows/bootstrap.yml)
-[![macOS Builds (nightly)](https://github.com/spack/spack/workflows/macOS%20builds%20nightly/badge.svg?branch=develop)](https://github.com/spack/spack/actions?query=workflow%3A%22macOS+builds+nightly%22)
-[![codecov](https://codecov.io/gh/spack/spack/branch/develop/graph/badge.svg)](https://codecov.io/gh/spack/spack)
-[![Containers](https://github.com/spack/spack/actions/workflows/build-containers.yml/badge.svg)](https://github.com/spack/spack/actions/workflows/build-containers.yml)
-[![Read the Docs](https://readthedocs.org/projects/spack/badge/?version=latest)](https://spack.readthedocs.io)
-[![Slack](https://slack.spack.io/badge.svg)](https://slack.spack.io)
+.. image:: https://github.com/spack/spack/workflows/linux%20tests/badge.svg
+    :target:  https://github.com/spack/spack/actions
+    :alt: Unit Tests
+
+.. image:: https://github.com/spack/spack/actions/workflows/bootstrap.yml/badge.svg
+    :target:  https://github.com/spack/spack/actions/workflows/bootstrap.yml
+    :alt: Bootstrapping
+
+.. image:: https://github.com/spack/spack/workflows/macOS%20builds%20nightly/badge.svg?branch=develop
+    :target:  https://github.com/spack/spack/actions?query=workflow%3A%22macOS+builds+nightly%22
+    :alt: macOS Builds (nightly)
+
+.. image:: https://codecov.io/gh/spack/spack/branch/develop/graph/badge.svg
+    :target:  https://codecov.io/gh/spack/spack
+    :alt: codecov
+
+.. image:: https://github.com/spack/spack/actions/workflows/build-containers.yml/badge.svg
+    :target:  https://github.com/spack/spack/actions/workflows/build-containers.yml
+    :alt: Containers
+
+.. image:: https://readthedocs.org/projects/spack/badge/?version=latest
+    :target:  https://spack.readthedocs.io
+    :alt: Read the Docs
+
+.. image:: https://slack.spack.io/badge.svg
+    :target:  https://slack.spack.io
+    :alt: Slack
 
 Spack is simple package management tool. It was designed for large supercomputing centers. It is non-destructive: installing a new version does not break existing installations, so many configurations can coexist on the same system.
 
