@@ -276,6 +276,52 @@ On the target machine
   # Deactivate the environment to remove it from your path
   (my_env) $ source my_env/bin/deactivate
 
+Spack
+^^^^^
+
+[![Unit Tests](https://github.com/spack/spack/workflows/linux%20tests/badge.svg)](https://github.com/spack/spack/actions)
+[![Bootstrapping](https://github.com/spack/spack/actions/workflows/bootstrap.yml/badge.svg)](https://github.com/spack/spack/actions/workflows/bootstrap.yml)
+[![macOS Builds (nightly)](https://github.com/spack/spack/workflows/macOS%20builds%20nightly/badge.svg?branch=develop)](https://github.com/spack/spack/actions?query=workflow%3A%22macOS+builds+nightly%22)
+[![codecov](https://codecov.io/gh/spack/spack/branch/develop/graph/badge.svg)](https://codecov.io/gh/spack/spack)
+[![Containers](https://github.com/spack/spack/actions/workflows/build-containers.yml/badge.svg)](https://github.com/spack/spack/actions/workflows/build-containers.yml)
+[![Read the Docs](https://readthedocs.org/projects/spack/badge/?version=latest)](https://spack.readthedocs.io)
+[![Slack](https://slack.spack.io/badge.svg)](https://slack.spack.io)
+
+
+Spack is simple package management tool. It was designed for large supercomputing centers. It is non-destructive: installing a new version does not break existing installations, so many configurations can coexist on the same system.
+
+Get spack from the `github repository
+<https://github.com/spack/spack>`_ and install your first
+package:
+
+.. code-block:: console
+
+   $ git clone -c feature.manyFiles=true https://github.com/spack/spack.git
+   $ cd spack/bin
+   $ ./spack install zlib
+
+If you're new to spack and want to start using it, see :doc:`getting_started`,
+or refer to the full manual below.
+
+Documentation
+----------------
+
+[**Full documentation**](https://spack.readthedocs.io/) is available, or
+run `spack help` or `spack help --all`.
+
+For a cheat sheet on Spack syntax, run `spack help --spec`.
+
+Tutorial
+----------------
+
+We maintain a
+[**hands-on tutorial**](https://spack.readthedocs.io/en/latest/tutorial.html).
+It covers basic to advanced usage, packaging, developer features, and large HPC
+deployments.  You can do all of the exercises on your own laptop using a
+Docker container.
+
+
+
 
 .. _docs: https://conda.github.io/conda-pack/cli.html
 .. _conda-forge: https://conda-forge.org/
