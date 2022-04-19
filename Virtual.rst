@@ -222,7 +222,7 @@ Using a prompt for the following steps:
   [userid@login03 ~]$ conda env create -f environment.yml
 
 .. tip::
-  The first line of the ``yml`` file sets the new `environment's name.
+  The first line of the ``yml`` file sets the new environment's name.
 
 2. Activate the new environment: ``conda activate myenv``
 
@@ -419,7 +419,6 @@ We maintain a
 It covers basic to advanced usage, packaging, developer features, and large HPC
 deployments.  You can do all of the exercises on your own laptop using a
 Docker container.
-
 
 
 .. _conda-forge: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
