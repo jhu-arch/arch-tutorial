@@ -199,6 +199,20 @@ Users can now activate the environment by the conda activate command with the di
 Create the environment from the environment.yml
 """""""""""""""""""""""""""""""""""""""""""""""
 
+Let's suppose you want to create a new environment, we can use the environment.yml file to create it.
+
+.. code::
+
+  name: machine-learning-env
+
+  dependencies:
+    - ipython=7.13
+    - matplotlib=3.1
+    - pandas=1.0
+    - pip=20.0
+    - python=3.6
+    - scikit-learn=0.22
+
 Using a prompt for the following steps:
 
 #. Create the environment from the ``environment.yml`` file:
@@ -209,7 +223,6 @@ Using a prompt for the following steps:
 
 .. tip::
   The first line of the ``yml`` file sets the new `environment's name.
-  example: name: machine-learning-env
 
 #. Activate the new environment: ``conda activate myenv``
 
