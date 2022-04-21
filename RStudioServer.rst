@@ -50,6 +50,10 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
   The ``#SBATCH`` tags can be customized.
   Also, there is an R environment session into the R-Studio-Server.slurm.script, that user can change it to run this script using another R instead of inside the container (R 4.0.4).
 
+.. warning::
+
+  For run R-Studio-Server.slurm.script properly. Please, make sure you don't have the anaconda module loaded when you submit it. You should disable it ``$ module unload anaconda``.
+
 .. code-block:: console
 
   #!/bin/bash
