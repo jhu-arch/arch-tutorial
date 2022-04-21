@@ -66,14 +66,15 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
   #####################################
 
   # ---------------------------------------------------
-  #  R environment customized
+  #  R environment
   # ---------------------------------------------------
-  # This session is related to an R different from the container. The user can use one of these two methods below.
+  # This session is related to run this script using an R different from the container. The user can choice one of these two methods below.
+  #
   # Method 1: Using an R via the system module
   # Uncomment this Line
   # module load r/3.6.3
 
-  # Method 2: Using an R installed in a virtual environment, in this case conda.
+  # Method 2: Using an R installed in a custom virtual environment, in this case using conda.
   #
   # Example of how to install an R Version 3.6.6 with conda
   # $ conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid
@@ -88,8 +89,9 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
   # Uncomment this two instruction
   # export R_HOME=$CONDA_PREFIX/lib/R
 
-  # Uncomment this Line, need for both methods
+  # -- PLEASE REMOVE THIS LINE, IT IS REQUIRED FOR BOTH METHODS --
   # export SINGULARITY_BIND=${R_HOME}:/usr/local/lib/R
+
 
   # ---------------------------------------------------
   # R_LIBS_USER directives for multiple environments
@@ -98,6 +100,15 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
 
   export MY_LIBS=4.0.4
   export R_LIBS_USER=${HOME}/R/${MY_LIBS}
+
+
+  # ---------------------------------------------------
+  #  Singularity environment variables
+  # ---------------------------------------------------
+
+  # -- SHOULDN'T BE NECESSARY TO CHANGE ANYTHING BELOW THIS --
+
+  source .r-studio-variables
 
   cat 1>&2 <<END
   1. SSH tunnel from your workstation using the following command:
