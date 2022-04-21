@@ -52,8 +52,8 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
 
 .. warning::
 
-  For run the R-Studio-Server.slurm.script properly. Please, make sure you don't have the anaconda module loaded when you submit it.
-  
+  To run the R-Studio-Server.slurm.script properly. Please, make sure you don't have the anaconda module loaded when you submit it.
+
   You should disable it ``$ module unload anaconda``.
 
 .. code-block:: console
