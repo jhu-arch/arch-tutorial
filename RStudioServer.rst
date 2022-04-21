@@ -68,39 +68,36 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
   # ---------------------------------------------------
   #  R environment
   # ---------------------------------------------------
-  # This session is related to run this script using an R different from the container. The user can choice one of these two methods below.
+  # This session is to run this script using another R isntead of inside the container (R 4.0.4).
+
+  #  There are two ways to run it:
   #
-  # Method 1: Using an R via the system module
+  #     METHOD 1: Using an R via the system module
+
   # Uncomment this Line
   # module load r/3.6.3
 
-  # Method 2: Using an R installed in a custom virtual environment, in this case using conda.
+  #     METHOD 2: Using an R installed in a custom virtual environment, in this case using conda.
   #
-  # Example of how to install an R Version 3.6.6 with conda
-  # $ conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid
+  #     How to install an R version 3.6.6 sunig conda
+  #     $ module load anaconda && conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid && module unload anaconda
   #
-  # Uncomment these three instructions
-  # module load anaconda
-  # conda activate r_3.6.3
-  # module unload anaconda
-
-  # R_HOME and SINGULARITY_BIND variables are required for a customized environment
-  #
-  # Uncomment this two instruction
+  # Uncomment these two instructions
+  # module load anaconda && conda activate r_3.6.3 && module unload anaconda
   # export R_HOME=$CONDA_PREFIX/lib/R
 
-  # -- PLEASE REMOVE THIS LINE, IT IS REQUIRED FOR BOTH METHODS --
+  #   -- THIS LINE IS REQUIRED FOR BOTH METHODS --
+  #
+  # Uncomment this instruction
   # export SINGULARITY_BIND=${R_HOME}:/usr/local/lib/R
-
 
   # ---------------------------------------------------
   # R_LIBS_USER directives for multiple environments
   # ---------------------------------------------------
-  # Change the MY_LIBS variable related the libraries for your project.
+  # Change the MY_LIBS variable to use the libraries related with your project.
 
   export MY_LIBS=4.0.4
   export R_LIBS_USER=${HOME}/R/${MY_LIBS}
-
 
   # ---------------------------------------------------
   #  Singularity environment variables
