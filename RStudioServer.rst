@@ -44,33 +44,33 @@ After running ``r-studio-server.sh`` you will see details about the script creat
 
  	 $ scontrol show jobid <SLURM_JOB_ID>
 
-Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c 2 -m 8G -t 1-02:0 -p defq`` command.
+Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-server.sh -n 1 -c 2 -m 8G -t 1-02:0 -p defq`` command.
 
 .. tip::
   The ``#SBATCH`` tags can be customized.
 
-  There is a R environment session into the R-Studio-Server.slurm.script, that user can change it to run this script using another R instead of inside the container (R 4.0.4). 
+There is a R environment session into the R-Studio-Server.slurm.script, that user can change it to run this script using another R instead of inside the container (R 4.0.4).
 
 .. code-block:: console
 
   #!/bin/bash
   #####################################
-  #SBATCH --job-name=rstudio_container_$user
-  #SBATCH --time==1-02:0
+  #SBATCH --job-name=rstudio_container_rdesouz4
+  #SBATCH --time=1-02:0
   #SBATCH --partition=defq
   #SBATCH --signal=USR2
   #SBATCH --nodes=1
   #SBATCH --cpus-per-task=2
   #SBATCH --mem=8G
   #SBATCH --mail-type=END,FAIL
-  #SBATCH --mail-user=$user@jhu.edu
+  #SBATCH --mail-user=rdesouz4@jh.edu
   #SBATCH --output=rstudio-server.job.%j.out
   #####################################
 
   # ---------------------------------------------------
   #  R environment
   # ---------------------------------------------------
-  # This session is to run this script using another R isntead of inside the container (R 4.0.4).
+  # This session is to run this script using another R instead of inside the container (R 4.0.4).
 
   #  There are two ways to run it:
   #
@@ -109,30 +109,34 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
 
   source .r-studio-variables
 
+
+  export SINGULARITYENV_LDAP_HOST=ldapserver
+  export SINGULARITYENV_LDAP_USER_DN='uid=%s,dc=cm,dc=cluster'
+  export SINGULARITYENV_LDAP_CERT_FILE=/etc/rstudio/ca.pem
+
   cat 1>&2 <<END
+
   1. SSH tunnel from your workstation using the following command:
 
-  	ssh -N -L ${PORT}:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@login.rockfish.jhu.edu
+   ssh -N -L ${PORT}:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@login.rockfish.jhu.edu
 
   2. log in to RStudio Server in your web browser using the Rockfish cluster credentials (username and password) at:
 
-  	http://localhost:${PORT}
+   http://localhost:${PORT}
 
-  3. log in to RStudio Server using the following credentials:
+   user: ${SINGULARITYENV_USER}
+   password: < Rochkfish password >
 
-  	user: ${SINGULARITYENV_USER}
-  	password: <Rochkfish password>
+  3. When done using RStudio Server, terminate the job by:
 
-  4 . When done using RStudio Server, terminate the job by:
+   a. Exit the RStudio Session ("power" button in the top right corner of the RStudio window)
+   b. Issue the following command on the login node:
 
-  	a. Exit the RStudio Session ("power" button in the top right corner of the RStudio window)
-  	b. Issue the following command on the login node:
-
-  	scancel -f ${SLURM_JOB_ID}
+  scancel -f ${SLURM_JOB_ID}
   END
 
-  singularity run ${SINGULARITY_IMAGE} \
-      rserver --www-port ${PORT} --www-address=0.0.0.0 \
-            --auth-none 0 \
-            --auth-pam-helper-path=ldap_auth \
-            --rsession-path=/etc/rstudio/rsession.sh
+  singularity run ${SINGULARITY_CONTAINER} \
+  rserver --www-port ${PORT} --www-address=0.0.0.0 \
+          --auth-none 0 \
+          --auth-pam-helper-path=ldap_auth \
+          --rsession-path=/etc/rstudio/rsession.sh
