@@ -65,13 +65,39 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
   #SBATCH --output=rstudio-server.job.%j.out
   #####################################
 
-  # R_LIBS_USER directives for installing and using packages
+  # ---------------------------------------------------
+  #  R environment customized
+  # ---------------------------------------------------
+  # This session is related to an R different from the container. The user can use one of these two methods below.
+  # Method 1: Using an R via the system module
+  # Uncomment this Line
+  # module load r/3.6.3
 
-  export R_VERSION='4.0.4'
-  export R_LIBS_USER=${HOME}/R/rstudio/${R_VERSION}
+  # Method 2: Using an R installed in a virtual environment, in this case conda.
+  #
+  # Example of how to install an R Version 3.6.6 with conda
+  # $ conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid
+  #
+  # Uncomment these three instructions
+  # module load anaconda
+  # conda activate r_3.6.3
+  # module unload anaconda
 
-  # do not remove or change any lines below - include singularity environment variables
-  source /data/apps/helpers/.r-studio-server-variables
+  # R_HOME and SINGULARITY_BIND variables are required for a customized environment
+  #
+  # Uncomment this two instruction
+  # export R_HOME=$CONDA_PREFIX/lib/R
+
+  # Uncomment this Line, need for both methods
+  # export SINGULARITY_BIND=${R_HOME}:/usr/local/lib/R
+
+  # ---------------------------------------------------
+  # R_LIBS_USER directives for multiple environments
+  # ---------------------------------------------------
+  # Change the MY_LIBS variable related the libraries for your project.
+
+  export MY_LIBS=4.0.4
+  export R_LIBS_USER=${HOME}/R/${MY_LIBS}
 
   cat 1>&2 <<END
   1. SSH tunnel from your workstation using the following command:
