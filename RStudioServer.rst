@@ -14,7 +14,7 @@ Usage examples to start the RStudio service:
   $ r-studio-server.sh -c 2 -t 4:0:0 -p defq -e <userid>@jhu.edu
   $ r-studio-server.sh -c 24 -g 2 -p a100 -a <PI-userid>_gpu
 
-After running ``r-studio-server.sh`` you will see details about the script created, like this next code-block below.
+Executing the ``r-studio-server.sh`` you will a script called ``R-Studio-Server.slurm.script`` it looks like this code-block below.
 
 .. code-block:: console
 
