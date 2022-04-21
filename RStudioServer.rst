@@ -49,6 +49,8 @@ Example the R-Studio-Server slurm script created by ``r-studio-server.sh -n 1 -c
 .. tip::
   The ``#SBATCH`` tags can be customized.
 
+  There is a R environment session into the R-Studio-Server.slurm.script, that user can change it to run this script using another R instead of inside the container (R 4.0.4). 
+
 .. code-block:: console
 
   #!/bin/bash
