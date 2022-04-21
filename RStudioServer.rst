@@ -113,7 +113,6 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
 
   source .r-studio-variables
 
-
   export SINGULARITYENV_LDAP_HOST=ldapserver
   export SINGULARITYENV_LDAP_USER_DN='uid=%s,dc=cm,dc=cluster'
   export SINGULARITYENV_LDAP_CERT_FILE=/etc/rstudio/ca.pem
