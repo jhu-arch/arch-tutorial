@@ -49,7 +49,7 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
 .. tip::
   The ``#SBATCH`` tags can be customized.
 
-There is a R environment session into the R-Studio-Server.slurm.script, that user can change it to run this script using another R instead of inside the container (R 4.0.4).
+There is an R environment session into the R-Studio-Server.slurm.script, that user can change it to run this script using another R instead of inside the container (R 4.0.4).
 
 .. code-block:: console
 
