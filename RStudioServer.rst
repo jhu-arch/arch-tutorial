@@ -90,8 +90,8 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
   #     $ module load anaconda && conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid && module unload anaconda
   #
   # Uncomment these two instructions
-  # module load anaconda && conda activate r_3.6.3 && module unload anaconda
-  # export R_HOME=$CONDA_PREFIX/lib/R
+  # module load anaconda && conda activate r_3.6.3 && export VIRT_ENV=$CONDA_PREFIX && module unload anaconda
+  # export R_HOME=${VIRT_ENV}/lib/R
 
   #   -- THIS LINE IS REQUIRED FOR BOTH METHODS --
   #
