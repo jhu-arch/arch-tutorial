@@ -86,8 +86,11 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
 
   #     METHOD 2: Using an R installed in a custom virtual environment, in this case using conda.
   #
-  #     How to install an R version 3.6.6 sunig conda
+  #     How to install an R version 3.6.6 using conda env
   #     $ module load anaconda && conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid && module unload anaconda
+  #     How to remove conda envs
+  #     $ conda remove --name r_3.6.3 --all
+
   #
   # Uncomment these two instructions
   # module load anaconda && conda activate r_3.6.3 && export VIRT_ENV=$CONDA_PREFIX && module unload anaconda

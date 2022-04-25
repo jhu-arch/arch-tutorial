@@ -12,7 +12,7 @@ Python
   :target: https://python.readthedocs.io/en/latest/?badge=latest
   :alt: The Python programming language
 
-There are several python versions installed. Users can use ``module spider`. command to check the installed versions:
+There are several python versions installed. Users can use ``module spider``. command to check the installed versions:
 
 .. code-block:: console
 
@@ -65,7 +65,7 @@ Once enter the directory, users can run the ``python3 -m venv`` command to creat
 
 the environment will be created under the ``math-packages`` directory. You can use activate the environment by sourcing the ``activate`` script under the bin directory.
 
-Once it is activated, the name of the environment ``math-packages``will be displayed the prompt.
+Once it is activated, the name of the environment ``math-packages`` will be displayed the prompt.
 
 .. code-block:: console
 
