@@ -108,6 +108,8 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
       shell:
           '''
+      module load cutadapt/3.2
+
       export PATH=$HOME'/.local/bin:'$PATH
 
       R1_ADAPTER='AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
@@ -204,6 +206,8 @@ Burrows-Wheeler Alignment Tool
 
       shell:
           '''
+      module load bwa-mem/0.7.17 samtools/1.15.1
+
       export PATH=$HOME'/.local/bin:'$PATH
 
       GENOME='../../../../genome/hs37d5/names_as_hg19/bwa/_m/hs37d5_hg19.fa'
@@ -234,7 +238,6 @@ Remove duplicates
 
   SOURCE_DIR = '../../_m'
   EXT = '.bam'
-
 
   def sample_dict_iter(path, ext):
       for filename in glob.iglob(path+'/*'+ext):
@@ -316,6 +319,9 @@ Add tags
 
       shell:
           '''
+
+      module load samtools/1.15.1
+
       export PERL5LIB=$HOME'/perl5/lib/perl5/'
       export CONSENSUS='ATGTACCCTAAAACTTAGAGTATAATAAA'
       export PATH=$HOME'/.local/bin:'$PATH
@@ -387,6 +393,8 @@ Tabix
 
       shell:
           '''
+      module load tabix/1.13 samtools/1.15.1 bzip2/1.0.8
+
       export PATH=$HOME'/.local/bin:'$PATH
 
       TMP_DIR='tmp.{params.sample}'
@@ -394,7 +402,7 @@ Tabix
 
       export LC_ALL=C
 
-      ( samtools view {input} | ../_h/sam_to_tabix.py 2>{params.sample}.stderr | sort --temporary-directory=${{TMP_DIR}} --buffer-size=10G -k1,1 -k2,2n -k3,3n | bgzip -c > {output.bgz} )
+      ( samtools view {input} | ../_h/sam_to_tabix.py 2>{params.sample}.stderr | sort --temporary-directory=${{TMP_DIR}} --buffer-size=10G -k1,1 -k2,2n -k3,3n | bgzip2 -c > {output.bgz} )
 
       rmdir ${{TMP_DIR}}
 
