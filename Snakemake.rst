@@ -58,9 +58,19 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
   prefetch $sra_id
   fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
 
-  .. code-block:: python
+Then, to download sequence data files using SRA Toolkit, let's create a ``sra.tools.slurm.script``.
 
-    [userid@login03 sra]$ sbatch sra.tools.slurm.script
+.. code-block:: python
+
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabis
+  [userid@login03 ~]$ mkdir pipeline/_h
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/_h
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/_h
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/_h
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/_h
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabis/_h
+  [userid@login03 ~]$ cd pipeline/_h
+  [userid@login03 _h]$ sbatch sra.tools.slurm.script
 
 .. note::
   * **Writing Workflows** : "In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules."
