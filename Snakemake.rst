@@ -68,7 +68,6 @@ Then, let's create the pipeline directory structure to store the fastq files.
 
 .. code-block:: python
 
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabix
   [userid@login03 ~]$ mkdir pipeline/_h
   [userid@login03 ~]$ mkdir pipeline/cutadapt/_h
   [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/_h
