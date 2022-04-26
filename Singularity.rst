@@ -361,7 +361,7 @@ First, start a container (``step 5``), or keep the container running (``step 4``
 
 The last step you will be able to create a singularity container on Rockfish cluster.
 
-.. tips::
+.. tip::
   Root users can use a ``build`` option, instead of ``pull`` command.
 
   $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
