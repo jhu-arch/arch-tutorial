@@ -354,15 +354,20 @@ First, start a container (``step 5``), or keep the container running (``step 4``
   ...
   ...
 
-Root users
-^^^^^^^^^^
+9. Pull an image from docker hub
+"""""""""""""""""""""""""""""""""
 
-The next steps used to create a singularity container on Rockfish, after completing Non-root users steps.
+The next steps used to create a singularity container on Rockfish cluster.
+
+.. warning::
+  Root users can use a ``build`` option:
+  $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
 .. code-block:: console
 
   [userid@login03 ~]$ interact -c 2 -t 120
-  [userid@c010 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
+  [userid@c011 ~]$ sudo singularity pull nanopolish.sif docker://archrockfish/nanopolish:0.13.3
+
 
 .. warning::
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository, before tag an image referenced by ID (``step 3``).
