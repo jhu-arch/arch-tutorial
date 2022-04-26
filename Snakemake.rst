@@ -30,7 +30,8 @@ This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`the R
 We will use the Two classes of L1-associated somatic variants in human brain from Sallk Institute for Biological Studies dataset.
 
 .. note::
-  Bioproject: ``PRJEB10849`` SRA Study: ``ERP012147``
+  Bioproject: ``PRJEB10849`` SRA Study: ``ERP012147``.
+  
   https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=ERR1016570
 
 .. code-block:: python
