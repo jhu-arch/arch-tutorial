@@ -62,13 +62,13 @@ Then, to download sequence data files using SRA Toolkit, let's create a ``sra.to
 
 .. code-block:: python
 
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabis
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabix
   [userid@login03 ~]$ mkdir pipeline/_h
   [userid@login03 ~]$ mkdir pipeline/cutadapt/_h
   [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/_h
   [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/_h
   [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/_h
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabis/_h
+  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
   [userid@login03 ~]$ cd pipeline/_h
   [userid@login03 _h]$ sbatch sra.tools.slurm.script
 
