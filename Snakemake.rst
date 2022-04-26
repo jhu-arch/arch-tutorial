@@ -34,7 +34,7 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
 
   https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=ERR1016570
 
-to download sequence data files using SRA Toolkit, let's to create a ``sra.tools.slurm.script``.
+To download sequence data files using SRA Toolkit, we can create a ``sra.tools.slurm.script``.
 
 .. code-block:: python
 
@@ -61,7 +61,7 @@ to download sequence data files using SRA Toolkit, let's to create a ``sra.tools
   fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
 
 
-Then, let's create the pipeline directory structure and run the ``sra.tools.slurm.script`` to download dataset.
+Then, let's create the pipeline directory structure to store the fastq files.
 
 .. code-block:: python
 
