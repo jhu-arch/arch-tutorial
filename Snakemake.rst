@@ -31,7 +31,7 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
 
 .. note::
   Bioproject: ``PRJEB10849`` SRA Study: ``ERP012147``.
-  
+
   https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=ERR1016570
 
 .. code-block:: python
@@ -47,7 +47,6 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
   #SBATCH --error=Array_test.%A_%a.error
   #SBATCH --array=1-10
 
-  ml parallel/20200822
   ml sra-tools/3.0.0
 
   # samples correspond to Bioproject PRJEB10849
