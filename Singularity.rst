@@ -260,7 +260,7 @@ Run it will create a container and start a Bash session to a specified image usi
 
 .. code-block:: console
 
-  [userid@local ~]$ docker run --name -it 540135da7ceb bash
+  [userid@local ~]$ docker run -it 540135da7ceb bash
   root@421451a1f942:/opt/nanopolish#
 
   [userid@local ~]$ docker ps -all
