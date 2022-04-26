@@ -27,6 +27,41 @@ The `Snakemake`_ workflows management system is a tool to create reproducible an
 This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
+We will use the Two classes of L1-associated somatic variants in human brain from Sallk Institute for Biological Studies dataset.
+
+.. note::
+  Bioproject: ``PRJEB10849`` SRA Study: ``ERP012147``
+  https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=ERR1016570
+
+.. code-block:: python
+
+  #!/bin/bash
+
+  #SBATCH -J sra_tools
+  #SBATCH -p defq
+  #SBATCH -N 2
+  #SBATCH --time=2:00
+  #SBATCH --cpus-per-task=5
+  #SBATCH --output=Array_test.%A_%a.out
+  #SBATCH --error=Array_test.%A_%a.error
+  #SBATCH --array=1-10
+
+  ml parallel/20200822
+  ml sra-tools/3.0.0
+
+  # samples correspond to Bioproject PRJEB10849
+
+  sra_numbers=(ERR1016570 ERR1016571 ERR1016572 ERR1016573 ERR1016574 ERR1016575 ERR1016576 ERR1016577 ERR1016578 ERR1016579 )
+
+  sra_id=${sra_numbers[ $SLURM_ARRAY_TASK_ID - 1 ]}
+
+  prefetch $sra_id
+  fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
+
+  .. code-block:: python
+
+    [userid@login03 sra]$ sbatch sra.tools.slurm.script
+
 .. note::
   * **Writing Workflows** : "In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules."
 
@@ -73,15 +108,15 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   import os.path
   import itertools
 
-  SOURCE_DIR = '../../_m'
-  EXT = '_R2.fastq.gz'
+  SOURCE_DIR = '../../fastq'
+  EXT = '_pass_1.fastq.gz'
 
   def sample_dict_iter(path, ext):
       for filename in glob.iglob(path+'/*'+ext):
           sample = os.path.basename(filename)[:-len(ext)]
 
-          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_R1.fastq.gz',
-                         'r2_in': SOURCE_DIR + '/' + sample + '_R2.fastq.gz'
+          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
+                         'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
 	          }
 
   SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
@@ -174,13 +209,13 @@ Burrows-Wheeler Alignment Tool
   import itertools
 
   SOURCE_DIR = '../../_m'
-  EXT = '_R2.fastq.gz'
+  EXT = '_pass_1.fastq.gz'
 
   def sample_dict_iter(path, ext):
       for filename in glob.iglob(path+'/*'+ext):
           sample = os.path.basename(filename)[:-len(ext)]
-          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_R1.fastq.gz',
-  		       'r2_in': SOURCE_DIR + '/' + sample + '_R2.fastq.gz'
+          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
+  		                   'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
   		      }
 
   SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
