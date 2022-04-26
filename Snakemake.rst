@@ -64,7 +64,7 @@ To download sequence data files using SRA Toolkit, we can create a ``sra.tools.s
   fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
 
 
-Then, let's create the pipeline directory structure to store the fastq files.
+Then, let's create the pipeline directory structure to store the fastq files and run ``sra.tools.slurm.script``.
 
 .. code-block:: python
 
