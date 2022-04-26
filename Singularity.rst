@@ -355,12 +355,15 @@ First, start a container (``step 5``), or keep the container running (``step 4``
   ...
 
 9. Pull an image from docker hub
-"""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""
 
-The next steps used to create a singularity container on Rockfish cluster.
+  **Usage** : $ singularity pull [pull options...] [output file] <URI>
+
+The last step you will be able to create a singularity container on Rockfish cluster.
 
 .. warning::
-  Root users can use a ``build`` option:
+  Root users can use a ``build`` option, instead of ``pull`` command.
+  
   $ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
 .. code-block:: console
