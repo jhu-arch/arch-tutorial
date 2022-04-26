@@ -196,7 +196,7 @@ Burrows-Wheeler Alignment Tool
   rule bwamem:
       input:
           r1 = lambda x: SAMPLE_DICT[x.sample]['r1_in'],
-  	r2 = lambda x: SAMPLE_DICT[x.sample]['r2_in']
+  	      r2 = lambda x: SAMPLE_DICT[x.sample]['r2_in']
 
       output:
           '../_m/{sample}.bam'
