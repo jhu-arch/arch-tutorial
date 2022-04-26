@@ -57,7 +57,10 @@ To download sequence data files using SRA Toolkit, we can create a ``sra.tools.s
 
   sra_id=${sra_numbers[ $SLURM_ARRAY_TASK_ID - 1 ]}
 
+  # this will download the .sra files
   prefetch $sra_id
+
+  # this will extract the .sra files from above into a folder named 'fastq'
   fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
 
 
