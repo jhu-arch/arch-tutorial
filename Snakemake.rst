@@ -124,14 +124,44 @@ Cutadapt
 
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads. It helps with these trimming tasks by finding the adapter or primer sequences in an error-tolerant way.
 
+[rdesouz4@login03 cutadapt]$ vi _h/run
+[rdesouz4@login03 cutadapt]$ interact -c 1
+[rdesouz4@login03 cutadapt]$ rf sbatch -v .
+[rdesouz4@login03 cutadapt]$ chmod +x _h/run
+
+
+.. code-block:: python
+
+  [userid@login03 pipeline]$ cd cutadapt/
+  [userid@login03 pipeline]$ vi _h/run
+  [userid@login03 pipeline]$ chmod +x _h/run
+  [rdesouz4@login03 cutadapt]$ rf sbatch -v .
+  all: /home/rdesouz4/tmp/pipeline/cutadapt/_m/SUCCESS
+
+  .ONESHELL:
+  /home/rdesouz4/tmp/pipeline/cutadapt/_m/SUCCESS:
+  	echo -n "Start /home/rdesouz4/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
+  	mkdir /home/rdesouz4/tmp/pipeline/cutadapt/_m
+  	cd /home/rdesouz4/tmp/pipeline/cutadapt/_m
+  	sbatch ../_h/run > nohup.out 2>&1
+  	touch SUCCESS
+  	echo -n "End /home/rdesouz4/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
+
+
+  Start /home/rdesouz4/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
+  End /home/rdesouz4/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
+
+
 .. code-block:: python
 
   #!/bin/bash
 
-  SM_ARGS="--cpus-per-task {cluster.cpus-per-task} --mem-per-cpu {cluster.mem-per-cpu-mb} --job-name {cluster.job-name} --ntasks {cluster.ntasks} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}"
+  module snakemake
+
+  SM_ARGS="--cpus-per-task 1 --job-name cutadpat --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=cutadapt.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
-  "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
+  "exec" "snakemake" "--jobs" "101" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
 
   # Syntax to run it on computer
   #"exec" "snakemake" "--printshellcmds" "--snakefile" "$0" "--jobs" "20" "--latency-wait" "120"
@@ -144,12 +174,12 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   EXT = '_pass_1.fastq.gz'
 
   def sample_dict_iter(path, ext):
-      for filename in glob.iglob(path+'/*'+ext):
-          sample = os.path.basename(filename)[:-len(ext)]
+    for filename in glob.iglob(path+'/*'+ext):
+        sample = os.path.basename(filename)[:-len(ext)]
 
-          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
-                         'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
-	          }
+        yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
+                       'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
+          }
 
   SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
 
@@ -157,49 +187,49 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   shell.prefix("set -o pipefail; ")
 
   rule all:
-      input:
-          expand('../_m/{sample}_{suffix}.fastq.gz',
-  	       sample=SAMPLE_DICT.keys(),
-  	       suffix=['R1','R2'])
+    input:
+        expand('../_m/{sample}_{suffix}.fastq.gz',
+         sample=SAMPLE_DICT.keys(),
+         suffix=['R1','R2'])
 
   rule cutadapt:
-      input:
-          r1 = lambda x: SAMPLE_DICT[x.sample]['r1_in'],
-          r2 = lambda x: SAMPLE_DICT[x.sample]['r2_in']
-      output:
-          r1 = '../_m/{sample}_R1.fastq.gz',
-          r2 = '../_m/{sample}_R2.fastq.gz'
+    input:
+        r1 = lambda x: SAMPLE_DICT[x.sample]['r1_in'],
+        r2 = lambda x: SAMPLE_DICT[x.sample]['r2_in']
+    output:
+        r1 = '../_m/{sample}_R1.fastq.gz',
+        r2 = '../_m/{sample}_R2.fastq.gz'
 
-      params:
-          sample = '{sample}'
+    params:
+        sample = '{sample}'
 
-      shell:
-          '''
-      module load cutadapt/3.2
+    shell:
+        '''
+    module load cutadapt/3.2
 
-      export PATH=$HOME'/.local/bin:'$PATH
+    export PATH=$HOME'/.local/bin:'$PATH
 
-      R1_ADAPTER='AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
-      R2_ADAPTER='CAAGCAGAAGACGGCATACGAGANNNNNNNGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+    R1_ADAPTER='AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+    R2_ADAPTER='CAAGCAGAAGACGGCATACGAGANNNNNNNGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
 
-      NESTED_PRIMER='TAACTAACCTGCACAATGTGCAC'
+    NESTED_PRIMER='TAACTAACCTGCACAATGTGCAC'
 
-      R1_FRONT=${{R1_ADAPTER}}
-      R2_FRONT=${{R2_ADAPTER}}${{NESTED_PRIMER}}
-      R1_END=`rc ${{R2_FRONT}}`
-      R2_END=`rc ${{R1_FRONT}}`
+    R1_FRONT=${{R1_ADAPTER}}
+    R2_FRONT=${{R2_ADAPTER}}${{NESTED_PRIMER}}
+    R1_END=`rc ${{R2_FRONT}}`
+    R2_END=`rc ${{R1_FRONT}}`
 
-      QUALITY_BASE=33
-      QUALITY_CUTOFF=28
-      MINIMUM_LENGTH=36
-      ADAPTOR_OVERLAP=5
-      ADAPTOR_TIMES=4
+    QUALITY_BASE=33
+    QUALITY_CUTOFF=28
+    MINIMUM_LENGTH=36
+    ADAPTOR_OVERLAP=5
+    ADAPTOR_TIMES=4
 
-      cutadapt -j 0 --quality-base=${{QUALITY_BASE}} --quality-cutoff=${{QUALITY_CUTOFF}} --minimum-length=${{MINIMUM_LENGTH}} --overlap=${{ADAPTOR_OVERLAP}} --times=${{ADAPTOR_TIMES}} --front=${{R1_FRONT}} --adapter=${{R1_END}} --paired-output tmp.2.{params.sample}.fastq -o tmp.1.{params.sample}.fastq {input.r1} {input.r2} > {params.sample}_R1.cutadapt.out
+    cutadapt -j 0 --quality-base=${{QUALITY_BASE}} --quality-cutoff=${{QUALITY_CUTOFF}} --minimum-length=${{MINIMUM_LENGTH}} --overlap=${{ADAPTOR_OVERLAP}} --times=${{ADAPTOR_TIMES}} --front=${{R1_FRONT}} --adapter=${{R1_END}} --paired-output tmp.2.{params.sample}.fastq -o tmp.1.{params.sample}.fastq {input.r1} {input.r2} > {params.sample}_R1.cutadapt.out
 
-      cutadapt -j 0 --quality-base=${{QUALITY_BASE}} --quality-cutoff=${{QUALITY_CUTOFF}} --minimum-length=${{MINIMUM_LENGTH}} --overlap=${{ADAPTOR_OVERLAP}} --times=${{ADAPTOR_TIMES}} --front=${{R2_FRONT}} --adapter=${{R2_END}} --paired-output {output.r1} -o {output.r2} tmp.2.{params.sample}.fastq tmp.1.{params.sample}.fastq > {params.sample}_R2.cutadapt.out
+    cutadapt -j 0 --quality-base=${{QUALITY_BASE}} --quality-cutoff=${{QUALITY_CUTOFF}} --minimum-length=${{MINIMUM_LENGTH}} --overlap=${{ADAPTOR_OVERLAP}} --times=${{ADAPTOR_TIMES}} --front=${{R2_FRONT}} --adapter=${{R2_END}} --paired-output {output.r1} -o {output.r2} tmp.2.{params.sample}.fastq tmp.1.{params.sample}.fastq > {params.sample}_R2.cutadapt.out
 
-      rm -f tmp.2.{params.sample}.fastq tmp.1.{params.sample}.fastq
+    rm -f tmp.2.{params.sample}.fastq tmp.1.{params.sample}.fastq
 
   '''
 
