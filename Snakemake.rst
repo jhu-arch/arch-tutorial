@@ -34,7 +34,18 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
 
   https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=ERR1016570
 
-To download sequence data files using SRA Toolkit, we can create a ``sra.tools.slurm.script``.
+Then, let's create the pipeline directory structure to store this tutorial.
+
+.. code-block:: python
+
+    [userid@login03 ~]$ mkdir pipeline/_h
+    [userid@login03 ~]$ mkdir pipeline/cutadapt/_h
+    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/_h
+    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/_h
+    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/_h
+    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
+
+To download sequence data files using SRA Toolkit, you need create a ``run`` file into ``pipeline/_h`` folder.
 
 .. code-block:: python
 
@@ -42,40 +53,46 @@ To download sequence data files using SRA Toolkit, we can create a ``sra.tools.s
 
   #SBATCH -J sra_tools
   #SBATCH -p defq
-  #SBATCH -N 2
-  #SBATCH --time=2:00
-  #SBATCH --cpus-per-task=5
+  #SBATCH -N 1
+  #SBATCH --time=2:00:00
+  #SBATCH --cpus-per-task=1
   #SBATCH --output=Array_test.%A_%a.out
-  #SBATCH --error=Array_test.%A_%a.error
-  #SBATCH --array=1-10
+  #SBATCH --array=1-101
 
+  ml parallel/20200822
   ml sra-tools/3.0.0
 
   # samples correspond to Bioproject PRJEB10849
 
-  sra_numbers=(ERR1016570 ERR1016571 ERR1016572 ERR1016573 ERR1016574 ERR1016575 ERR1016576 ERR1016577 ERR1016578 ERR1016579 )
+  sra_numbers=($(echo {1016570..1016671}))
 
-  sra_id=${sra_numbers[ $SLURM_ARRAY_TASK_ID - 1 ]}
+  sra_id='ERR'${sra_numbers[ $SLURM_ARRAY_TASK_ID - 1 ]}
 
-  # this will download the .sra files
   prefetch $sra_id
+  fastq-dump --outdir . --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
 
-  # this will extract the .sra files from above into a folder named 'fastq'
-  fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
+  rm $sra_id -Rf
 
-
-Then, let's create the pipeline directory structure to store the fastq files and run ``sra.tools.slurm.script``.
+The  ``rf`` command will call the ``run`` script to retrieve SRA Normalized Format files with full base quality scores, and store them ``fastq`` files into ``_m`` folder.
 
 .. code-block:: python
 
-  [userid@login03 ~]$ mkdir pipeline/_h
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/_h
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/_h
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/_h
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/_h
-  [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
-  [userid@login03 ~]$ cd pipeline/_h
-  [userid@login03 _h]$ sbatch sra.tools.slurm.script
+  [userid@login03 ~]$ cd pipeline/
+  [userid@login03 pipeline]$ rf sbatch -v .
+  all: /home/userid/tmp/pipeline/_m/SUCCESS
+
+  .ONESHELL:
+  /home/userid/tmp/pipeline/_m/SUCCESS:
+  	echo -n "Start /home/userid/tmp/pipeline: "; date --rfc-3339=seconds
+  	mkdir /home/userid/tmp/pipeline/_m
+  	cd /home/userid/tmp/pipeline/_m
+  	sbatch ../_h/run > nohup.out 2>&1
+  	touch SUCCESS
+  	echo -n "End /home/userid/tmp/pipeline: "; date --rfc-3339=seconds
+
+  Start /home/userid/tmp/pipeline: 2022-04-27 16:14:52-04:00
+  End /home/userid/tmp/pipeline: 2022-04-27 16:14:52-04:00
+
 
 .. note::
   * **Writing Workflows** : "In Snakemake, `workflows`_ are specified as Snakefiles. Inspired by GNU Make, a `Snakefile`_ contains rules that denote how to create output files from input files. Dependencies between rules are handled implicitly, by matching filenames of input files against output files. Thereby wildcards can be used to write general rules."
@@ -123,7 +140,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   import os.path
   import itertools
 
-  SOURCE_DIR = '../../fastq'
+  SOURCE_DIR = '../../_m'
   EXT = '_pass_1.fastq.gz'
 
   def sample_dict_iter(path, ext):
