@@ -34,6 +34,9 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
 
   https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=ERR1016570
 
+Pipeline
+********
+
 Then, let's create the pipeline directory structure to store this tutorial.
 
 .. code-block:: python
@@ -44,6 +47,9 @@ Then, let's create the pipeline directory structure to store this tutorial.
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/_h
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/tags/_h
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
+
+SRA Toolkit
+***********
 
 To download sequence data files using SRA Toolkit, you need create a ``run`` file into ``pipeline/_h`` folder.
 
@@ -124,12 +130,6 @@ Cutadapt
     :alt: install with bioconda
 
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads. It helps with these trimming tasks by finding the adapter or primer sequences in an error-tolerant way.
-
-[rdesouz4@login03 cutadapt]$ vi _h/run
-[rdesouz4@login03 cutadapt]$ interact -c 1
-[rdesouz4@login03 cutadapt]$ rf sbatch -v .
-[rdesouz4@login03 cutadapt]$ chmod +x _h/run
-
 
 .. code-block:: python
 
