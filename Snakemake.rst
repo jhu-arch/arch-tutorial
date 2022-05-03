@@ -133,22 +133,22 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 .. code-block:: python
 
   [userid@login03 pipeline]$ cd cutadapt/
-  [userid@login03 pipeline]$ vi _h/run
-  [userid@login03 pipeline]$ chmod +x _h/run
-  [rdesouz4@login03 cutadapt]$ rf sbatch -v .
-  all: /home/rdesouz4/tmp/pipeline/cutadapt/_m/SUCCESS
+  [userid@login03 cutadapt]$ vi _h/run
+  [userid@login03 cutadapt]$ chmod +x _h/run
+  [userid@login03 cutadapt]$ rf sbatch -v .
+  all: /home/userid/tmp/pipeline/cutadapt/_m/SUCCESS
 
   .ONESHELL:
-  /home/rdesouz4/tmp/pipeline/cutadapt/_m/SUCCESS:
-  	echo -n "Start /home/rdesouz4/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
-  	mkdir /home/rdesouz4/tmp/pipeline/cutadapt/_m
-  	cd /home/rdesouz4/tmp/pipeline/cutadapt/_m
+  /home/userid/tmp/pipeline/cutadapt/_m/SUCCESS:
+  	echo -n "Start /home/userid/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
+  	mkdir /home/userid/tmp/pipeline/cutadapt/_m
+  	cd /home/userid/tmp/pipeline/cutadapt/_m
   	sbatch ../_h/run > nohup.out 2>&1
   	touch SUCCESS
-  	echo -n "End /home/rdesouz4/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
+  	echo -n "End /home/userid/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
 
-  Start /home/rdesouz4/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
-  End /home/rdesouz4/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
+  Start /home/userid/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
+  End /home/userid/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
 
 
 .. code-block:: python
@@ -157,7 +157,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
   module snakemake/7.6.0
 
-  SM_ARGS="--cpus-per-task=10 --job-name=cutadpat --partition=defq --time=2:00:00 --mail-user=rdesouz4@jhu.edu -mail-type=END,FAIL --output=cutadapt.job.%j.out"
+  SM_ARGS="--cpus-per-task=10 --job-name=cutadpat --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=cutadapt.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -259,7 +259,7 @@ Burrows-Wheeler Alignment Tool
 
   module snakemake/7.6.0
 
-  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=bwamem --nodes=10 --partition=defq --time=2:00:00 --mail-user=rdesouz4@jhu.edu -mail-type=END,FAIL --output=bwamem.job.%j.out"
+  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=bwamem --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=bwamem.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -322,7 +322,7 @@ Remove duplicates
 
   #!/bin/bash
 
-  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=rmdup --nodes=10 --partition=defq --time=2:00:00 --mail-user=rdesouz4@jhu.edu -mail-type=END,FAIL --output=rmdup.job.%j.out"
+  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=rmdup --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=rmdup.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -376,7 +376,7 @@ Add tags
 
   module snakemake/7.6.0
 
-  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=tags --nodes=10 --partition=defq --time=2:00:00 --mail-user=rdesouz4@jhu.edu -mail-type=END,FAIL --output=tags.job.%j.out"
+  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=tags --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=tags.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -447,7 +447,7 @@ Tabix
 
   module snakemake/7.6.0
 
-  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=tabix --nodes=10 --partition=defq --time=2:00:00 --mail-user=rdesouz4@jhu.edu -mail-type=END,FAIL --output=tabix.job.%j.out"
+  SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=tabix --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=tabix.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
