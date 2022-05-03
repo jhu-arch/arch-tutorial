@@ -36,7 +36,7 @@ Then, run ``rf --help`` and ``rf run --help`` to verify the installation.
 
 .. code-block:: console
 
-  [userid@login01 ~]$ pip3 install git+https://github.com/apuapaquola/rf.git --upgrade --user
+  [userid@login01 ~]$ pip3 install git+https://github.com/ricardojacomini/rf.git --upgrade --user
   [userid@login01 ~]$ rf --help
   [userid@login01 ~]$ rf run --help
 
