@@ -73,7 +73,7 @@ To download sequence data files using SRA Toolkit, you need create a ``run`` fil
 
   sra_id='ERR'${sra_numbers[ $SLURM_ARRAY_TASK_ID - 1 ]}
 
-  prefetch --max-size 100G $sra_id -f yes --verify no
+  prefetch --max-size 100G $sra_id --force yes --verify no
   fastq-dump --outdir . --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip ${sra_id}/${sra_id}.sra
 
   rm $sra_id -Rf
