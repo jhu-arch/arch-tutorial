@@ -147,7 +147,6 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   	touch SUCCESS
   	echo -n "End /home/rdesouz4/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
 
-
   Start /home/rdesouz4/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
   End /home/rdesouz4/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
 
@@ -156,12 +155,12 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
   #!/bin/bash
 
-  module snakemake
+  module snakemake/7.6.0
 
-  SM_ARGS="--cpus-per-task 1 --job-name cutadpat --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=cutadapt.job.%j.out"
+  SM_ARGS="--cpus-per-task 10 --job-name cutadpat --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=cutadapt.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
-  "exec" "snakemake" "--jobs" "101" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
+  "exec" "snakemake" "--jobs" "100" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
 
   # Syntax to run it on computer
   #"exec" "snakemake" "--printshellcmds" "--snakefile" "$0" "--jobs" "20" "--latency-wait" "120"
@@ -258,7 +257,9 @@ Burrows-Wheeler Alignment Tool
 
   #!/bin/bash
 
-  SM_ARGS="--cpus-per-task {cluster.cpus-per-task} --mem-per-cpu {cluster.mem-per-cpu-mb} --job-name {cluster.job-name} --ntasks {cluster.ntasks} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}"
+  module snakemake/7.6.0
+
+  SM_ARGS="--cpus-per-task 10 --mem-per-cpu=4GB --job-name bwamem --nodes 10 --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=bwamem.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -321,7 +322,7 @@ Remove duplicates
 
   #!/bin/bash
 
-  SM_ARGS="--cpus-per-task {cluster.cpus-per-task} --mem-per-cpu {cluster.mem-per-cpu-mb} --job-name {cluster.job-name} --ntasks {cluster.ntasks} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}"
+  SM_ARGS="--cpus-per-task 10 --mem-per-cpu=4GB --job-name rmdup --nodes 10 --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=rmdup.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -373,7 +374,9 @@ Add tags
 
   #!/bin/bash
 
-  SM_ARGS="--cpus-per-task {cluster.cpus-per-task} --mem-per-cpu {cluster.mem-per-cpu-mb} --job-name {cluster.job-name} --ntasks {cluster.ntasks} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}"
+  module snakemake/7.6.0
+
+  SM_ARGS="--cpus-per-task 10 --mem-per-cpu=4GB --job-name tags --nodes 10 --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=tags.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
@@ -442,7 +445,9 @@ Tabix
 
   #!/bin/bash
 
-  SM_ARGS="--cpus-per-task {cluster.cpus-per-task} --mem-per-cpu {cluster.mem-per-cpu-mb} --job-name {cluster.job-name} --ntasks {cluster.ntasks} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}"
+  module snakemake/7.6.0
+
+  SM_ARGS="--cpus-per-task 10 --mem-per-cpu=4GB --job-name tabix --nodes 10 --partition defq --time 2:00:00 --mail-user rdesouz4@jhu.edu --mail-type -mail-type=END,FAIL --output=tabix.job.%j.out"
 
   # Syntax to run it on Rockfish cluster
   "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
