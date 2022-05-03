@@ -38,12 +38,12 @@ Then, let's create the pipeline directory structure to store this tutorial.
 
 .. code-block:: python
 
-    [userid@login03 ~]$ mkdir pipeline/_h
-    [userid@login03 ~]$ mkdir pipeline/cutadapt/_h
-    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/_h
-    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/_h
-    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/_h
-    [userid@login03 ~]$ mkdir pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
+    [userid@login03 ~]$ mkdir -p pipeline/_h
+    [userid@login03 ~]$ mkdir -p pipeline/cutadapt/_h
+    [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/_h
+    [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/_h
+    [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/tags/_h
+    [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
 
 To download sequence data files using SRA Toolkit, you need create a ``run`` file into ``pipeline/_h`` folder.
 
