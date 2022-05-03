@@ -65,7 +65,6 @@ To download sequence data files using SRA Toolkit, you need create a ``run`` fil
   #SBATCH --output=Array_test.%A_%a.out
   #SBATCH --array=1-101
 
-  ml parallel/20200822
   ml sra-tools/3.0.0
 
   # samples correspond to Bioproject PRJEB10849
