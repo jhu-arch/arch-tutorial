@@ -78,6 +78,7 @@ The  ``rf`` command will call the ``run`` script to retrieve SRA Normalized Form
 .. code-block:: python
 
   [userid@login03 ~]$ cd pipeline/
+  [userid@login03 ~]$ chmod +x _h/run
   [userid@login03 pipeline]$ rf sbatch -v .
   all: /home/userid/tmp/pipeline/_m/SUCCESS
 
