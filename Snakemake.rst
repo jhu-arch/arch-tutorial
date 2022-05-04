@@ -134,36 +134,40 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
   [userid@login03 pipeline]$ cd cutadapt/
   [userid@login03 cutadapt]$ vi _h/run
-  [userid@login03 cutadapt]$ chmod +x _h/run
-  [userid@login03 cutadapt]$ rf sbatch -v .
-  all: /home/userid/pipeline/cutadapt/_m/SUCCESS
-
-  .ONESHELL:
-  /home/userid/pipeline/cutadapt/_m/SUCCESS:
-  	echo -n "Start /home/userid/pipeline/cutadapt: "; date --rfc-3339=seconds
-  	mkdir /home/userid/pipeline/cutadapt/_m
-  	cd /home/userid/pipeline/cutadapt/_m
-  	sbatch ../_h/run > nohup.out 2>&1
-  	touch SUCCESS
-  	echo -n "End /home/userid/pipeline/cutadapt: "; date --rfc-3339=seconds
-
-  Start /home/userid/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
-  End /home/userid/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
-
-
-.. code-block:: python
 
   #!/bin/bash
 
+  #SBATCH -J cutadapt
+  #SBATCH -p defq
+  #SBATCH --time=2:00:00
+  #SBATCH --cpus-per-task=10
+  #SBATCH --output=cutadapt.job.%j.out
+
   module load snakemake/7.6.0
 
-  SM_ARGS="--cpus-per-task=10 --job-name=cutadpat --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=cutadapt.job.%j.out"
-
   # Syntax to run it on Rockfish cluster
-  "exec" "snakemake" "--jobs" "200" "--snakefile" "$0" "--latency-wait" "120" "--cluster" "sbatch $SM_ARGS"
+  snakemake --jobs 200 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
-  # Syntax to run it on computer
-  #"exec" "snakemake" "--printshellcmds" "--snakefile" "$0" "--jobs" "20" "--latency-wait" "120"
+
+  [userid@login03 cutadapt]$ chmod +x _h/run
+
+So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in string object, it will return its reverse.
+
+.. code-block:: python
+  [userid@login03 cutadapt]$ vi ~/.local/bin/rc
+
+  #!/bin/bash
+  if [ ! -z "$1" ]; then
+      echo "$1" | tr "[ATGCatgc]" "[TACGtacg]" | rev
+  else
+      echo ""
+      echo "usage: rc DNASEQUENCE"
+      echo ""
+  fi
+
+  [userid@login03 cutadapt]$ chmod +x  ~/.local/bin/rc
+
+.. code-block:: python
 
   import glob
   import os.path
@@ -231,6 +235,15 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
     rm -f tmp.2.{params.sample}.fastq tmp.1.{params.sample}.fastq
 
   '''
+
+  [userid@login03 cutadapt]$ vi snakemake.slurm.script
+
+
+.. code-block:: python
+
+  [userid@login03 cutadapt]$ rf sbatch .
+Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
+End /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
 
 Burrows-Wheeler Alignment Tool
 ******************************
