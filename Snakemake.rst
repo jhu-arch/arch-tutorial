@@ -21,10 +21,7 @@ Snakemake Workflows
 
 The `Snakemake`_ workflows management system is a tool to create reproducible and scalable data analyses.
 
-.. warning::
-  The $SM_ARGS env variable used in the scripts below is still under evaluation.
-
-This tutorial presents a bioinformatics pipeline using Snakemake and :ref:`the Reproducibility Framework (RF)
+This tutorial presents a bioinformatics pipeline using ``Snakemake`` and :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
 We will use the Two classes of L1-associated somatic variants in human brain from Sallk Institute for Biological Studies dataset.
