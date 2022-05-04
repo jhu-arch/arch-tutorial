@@ -375,6 +375,7 @@ Burrows-Wheeler Alignment Tool
   [userid@login03 cutadapt]$ cd bwamem
   [userid@login03 bwamem]$ vi _h/run
 
+
 .. code-block:: python
 
   #!/bin/bash
@@ -395,6 +396,7 @@ bwamem snakemake.slurm.script
 .. code-block:: console
 
   [userid@login03 bwamem]$ vi _h/snakemake.slurm.script
+
 
 .. code-block:: python
 
@@ -454,6 +456,7 @@ Remove duplicates
   [userid@login03 cutadapt]$ cd rmdup
   [userid@login03 rmdup]$ vi _h/run
 
+
 .. code-block:: python
 
   #!/bin/bash
@@ -475,6 +478,7 @@ rmdup snakemake.slurm.script
 .. code-block:: console
 
   [userid@login03 rmdup]$ vi _h/snakemake.slurm.script
+
 
 .. code-block:: python
 
@@ -523,6 +527,7 @@ Add tags
   [userid@login03 rmdup]$ cd tags
   [userid@login03 tags]$ vi _h/run
 
+
 .. code-block:: python
 
   #!/bin/bash
@@ -544,6 +549,7 @@ tags snakemake.slurm.script
 .. code-block:: console
 
   [userid@login03 tags]$ vi _h/snakemake.slurm.script
+
 
 .. code-block:: python
 
@@ -608,6 +614,7 @@ Tabix
 
   [userid@login03 tags]$ cd tabix
   [userid@login03 tabix]$ vi _h/run
+
 
 .. code-block:: console
 
