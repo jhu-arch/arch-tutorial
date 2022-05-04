@@ -63,23 +63,24 @@ A directory structure like this is expected to run our pipeline.
               └── chromsizes      ready to run
 
 Once the scripts are ready to run, as is the case with the genome step. Just run the ``rf`` command recursively using the ``-r`` tag.
+
 .. code-block:: console
 
-    [userid@login03 pipeline]$ cd genome/
-    [userid@login03 genome]$ rf sbatch -r .
+  [userid@login03 pipeline]$ cd genome/
+  [userid@login03 genome]$ rf sbatch -r .
 
-    Start /home/userid/pipeline/genome/hg19: 2022-05-04 17:30:53-04:00
-    End /home/userid/pipeline/genome/hg19: 2022-05-04 17:30:53-04:00
-    Start /home/userid/pipeline/genome/hg19/bwa: 2022-05-04 17:30:53-04:00
-    End /home/userid/pipeline/genome/hg19/bwa: 2022-05-04 17:30:53-04:00
-    Start /home/userid/pipeline/genome/hg19/chromsizes: 2022-05-04 17:30:53-04:00
-    End /home/userid/pipeline/genome/hg19/chromsizes: 2022-05-04 17:30:53-04:00
+  Start /home/userid/pipeline/genome/hg19: 2022-05-04 17:30:53-04:00
+  End /home/userid/pipeline/genome/hg19: 2022-05-04 17:30:53-04:00
+  Start /home/userid/pipeline/genome/hg19/bwa: 2022-05-04 17:30:53-04:00
+  End /home/userid/pipeline/genome/hg19/bwa: 2022-05-04 17:30:53-04:00
+  Start /home/userid/pipeline/genome/hg19/chromsizes: 2022-05-04 17:30:53-04:00
+  End /home/userid/pipeline/genome/hg19/chromsizes: 2022-05-04 17:30:53-04:00
 
-    [rdesouz4@login03 genome]$ rf status
-    .                           no _h
-    └── hg19                     done
-        ├── bwa                  done
-        └── chromsizes           done
+  [rdesouz4@login03 genome]$ rf status
+  .                           no _h
+  └── hg19                     done
+      ├── bwa                  done
+      └── chromsizes           done
 
 SRA Toolkit
 ***********
@@ -638,7 +639,7 @@ tags snakemake.slurm.script
       export CONSENSUS='ATGTACCCTAAAACTTAGAGTATAATAAA'
       export PATH=$HOME'/.local/bin:'$PATH
 
-      GENOME='../../../../../../genome/hs37d5/names_as_hg19/_m/hs37d5_hg19.fa'
+      GENOME='../../../genome/bwa/_m/hg19.fa'
 
       PREFIX_LENGTH=`perl -e 'print length($ENV{{CONSENSUS}})+2'`
       R1_FLANK_LENGTH=750
