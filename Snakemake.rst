@@ -51,13 +51,15 @@ A directory structure like this is expected to run our pipeline.
 .. code-block:: console
 
   [userid@login03 pipeline]$ rf status
-  .                                   done  (step already performed)
+  .                                   done  (step already done)
   └── cutadapt                        done
-      ├── bwamem              ready to run  (step with the run file, but not performed yet)
+      ├── bwamem              ready to run  (step with the run file, but not performed)
       │   └── rmdup          no run script
       │       └── tags       no run script  (step without the run file)
       │           └── tabix  no run script
-      └── genome              ready to run  (step with the run file, but not performed yet)
+      └── genome              ready to run  (step with the run file, but not performed)
+          └── hg19            ready to run
+              └── bwa         ready to run
 
 
 SRA Toolkit
