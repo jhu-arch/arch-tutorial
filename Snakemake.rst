@@ -329,7 +329,7 @@ Also, it is possible to see the outputs for each sample processed, just monitori
 
 .. code-block:: console
 
-  [rdesouz4@login02 _m]$ cat slurm-4157147.out
+  [userid@login02 _m]$ cat slurm-4157147.out
 
   Building DAG of jobs...
   Using shell: /usr/bin/bash
