@@ -151,6 +151,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in string object, it will return its reverse.
 
 .. code-block:: console
+
   [userid@login03 cutadapt]$ vi ~/.local/bin/rc
 
   #!/bin/bash
@@ -164,6 +165,9 @@ So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in
 
   [userid@login03 cutadapt]$ chmod +x  ~/.local/bin/rc
   [userid@login03 cutadapt]$ vi _h/snakemake.slurm.script
+
+cutadapt snakemake.slurm.script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -321,7 +325,6 @@ To monitoring all submitted processed jobs, ``tail -f`` on the file called ``cut
   Finished job 87.
   5 of 102 steps (5%) done
 
-
 Also, it is possible to see the outputs for each sample processed, just monitoring the file called ``slurm-<snakejobid>.out``.
 
 .. code-block:: console
@@ -384,6 +387,11 @@ Burrows-Wheeler Alignment Tool
 
   # Syntax to run it on Rockfish cluster
   snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
+
+bwamem snakemake.slurm.script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
 
   [userid@login03 bwamem]$ vi _h/snakemake.slurm.script
 
@@ -456,6 +464,9 @@ Remove duplicates
   # Syntax to run it on Rockfish cluster
   snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
+rmdup snakemake.slurm.script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
   [userid@login03 rmdup]$ vi _h/snakemake.slurm.script
 
   import glob
@@ -516,7 +527,12 @@ Add tags
   # Syntax to run it on Rockfish cluster
   snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
-    [userid@login03 tags]$ vi _h/snakemake.slurm.script
+tags snakemake.slurm.script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+  [userid@login03 tags]$ vi _h/snakemake.slurm.script
 
   import glob
   import os.path
@@ -592,6 +608,11 @@ Tabix
 
   # Syntax to run it on Rockfish cluster
   snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
+
+tabix snakemake.slurm.script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
 
   [userid@login03 tabix]$ vi _h/snakemake.slurm.script
 
