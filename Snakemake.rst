@@ -155,7 +155,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
   #!/bin/bash
 
-  module snakemake/7.6.0
+  module load snakemake/7.6.0
 
   SM_ARGS="--cpus-per-task=10 --job-name=cutadpat --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=cutadapt.job.%j.out"
 
@@ -257,7 +257,7 @@ Burrows-Wheeler Alignment Tool
 
   #!/bin/bash
 
-  module snakemake/7.6.0
+  module load snakemake/7.6.0
 
   SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=bwamem --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=bwamem.job.%j.out"
 
@@ -374,7 +374,7 @@ Add tags
 
   #!/bin/bash
 
-  module snakemake/7.6.0
+  module load snakemake/7.6.0
 
   SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=tags --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=tags.job.%j.out"
 
@@ -445,7 +445,7 @@ Tabix
 
   #!/bin/bash
 
-  module snakemake/7.6.0
+  module load snakemake/7.6.0
 
   SM_ARGS="--cpus-per-task=10 --mem-per-cpu=4GB --job-name=tabix --nodes=10 --partition=defq --time=2:00:00 --mail-user=userid@jhu.edu -mail-type=END,FAIL --output=tabix.job.%j.out"
 
