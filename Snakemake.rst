@@ -127,7 +127,7 @@ Cutadapt
 
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads. It helps with these trimming tasks by finding the adapter or primer sequences in an error-tolerant way.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 pipeline]$ cd cutadapt/
   [userid@login03 cutadapt]$ vi _h/run
@@ -150,7 +150,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
 
 So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in string object, it will return its reverse.
 
-.. code-block:: python
+.. code-block:: console
   [userid@login03 cutadapt]$ vi ~/.local/bin/rc
 
   #!/bin/bash
@@ -234,17 +234,17 @@ So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in
 
   '''
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 cutadapt]$ rf sbatch .
 
-Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
-End /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
+  Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
+  End /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
 
 Monitoring the submitted jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: python
+.. code-block:: console
 
   [rdesouz4@login02 _m]$ sqme
       USER   ACCOUNT        JOBID PARTITION       NAME NODES  CPUS TIME_LIMIT     TIME NODELIST ST REASON
@@ -257,7 +257,7 @@ Monitoring the submitted jobs
 
 To monitoring all submitted processed jobs, ``tail -f`` on the file called ``cutadapt.job.<JOBID>.out``.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 cutadapt]$ cat _m/cutadapt.job.4157046.out
 
@@ -324,7 +324,7 @@ To monitoring all submitted processed jobs, ``tail -f`` on the file called ``cut
 
 Also, it is possible to see the outputs for each sample processed, just monitoring the file called ``slurm-<snakejobid>.out``.
 
-.. code-block:: python
+.. code-block:: console
 
   [rdesouz4@login02 _m]$ cat slurm-4157147.out
 
