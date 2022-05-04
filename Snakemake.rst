@@ -261,65 +261,65 @@ To monitoring all submitted processed jobs, ``tail -f`` on the file called ``cut
 
   [userid@login03 cutadapt]$ cat _m/cutadapt.job.4157046.out
 
-Building DAG of jobs...
-Using shell: /usr/bin/bash
-Provided cluster nodes: 200
-Job stats:
-job         count    min threads    max threads
---------  -------  -------------  -------------
-all             1              1              1
-cutadapt      101              1              1
-total         102              1              1
+  Building DAG of jobs...
+  Using shell: /usr/bin/bash
+  Provided cluster nodes: 200
+  Job stats:
+  job         count    min threads    max threads
+  --------  -------  -------------  -------------
+  all             1              1              1
+  cutadapt      101              1              1
+  total         102              1              1
 
-Select jobs to execute...
+  Select jobs to execute...
 
-[Wed May  4 14:48:20 2022]
-rule cutadapt:
-    input: ../../_m/ERR1016599_pass_1.fastq.gz, ../../_m/ERR1016599_pass_2.fastq.gz
-    output: ../_m/ERR1016599_R1.fastq.gz, ../_m/ERR1016599_R2.fastq.gz
-    jobid: 26
-    wildcards: sample=ERR1016599
-    resources: mem_mb=1709, disk_mb=1709, tmpdir=/tmp
+  [Wed May  4 14:48:20 2022]
+  rule cutadapt:
+      input: ../../_m/ERR1016599_pass_1.fastq.gz, ../../_m/ERR1016599_pass_2.fastq.gz
+      output: ../_m/ERR1016599_R1.fastq.gz, ../_m/ERR1016599_R2.fastq.gz
+      jobid: 26
+      wildcards: sample=ERR1016599
+      resources: mem_mb=1709, disk_mb=1709, tmpdir=/tmp
 
-Submitted job 26 with external jobid '4157048'.
+  Submitted job 26 with external jobid '4157048'.
 
-[Wed May  4 14:48:20 2022]
-rule cutadapt:
-    input: ../../_m/ERR1016661_pass_1.fastq.gz, ../../_m/ERR1016661_pass_2.fastq.gz
-    output: ../_m/ERR1016661_R1.fastq.gz, ../_m/ERR1016661_R2.fastq.gz
-    jobid: 86
-    wildcards: sample=ERR1016661
-    resources: mem_mb=3245, disk_mb=3245, tmpdir=/tmp
+  [Wed May  4 14:48:20 2022]
+  rule cutadapt:
+      input: ../../_m/ERR1016661_pass_1.fastq.gz, ../../_m/ERR1016661_pass_2.fastq.gz
+      output: ../_m/ERR1016661_R1.fastq.gz, ../_m/ERR1016661_R2.fastq.gz
+      jobid: 86
+      wildcards: sample=ERR1016661
+      resources: mem_mb=3245, disk_mb=3245, tmpdir=/tmp
 
-........
-........
-........
-........
+  ........
+  ........
+  ........
+  ........
 
-[Wed May  4 14:48:30 2022]
-rule cutadapt:
-    input: ../../_m/ERR1016581_pass_1.fastq.gz, ../../_m/ERR1016581_pass_2.fastq.gz
-    output: ../_m/ERR1016581_R1.fastq.gz, ../_m/ERR1016581_R2.fastq.gz
-    jobid: 85
-    wildcards: sample=ERR1016581
-    resources: mem_mb=1891, disk_mb=1891, tmpdir=/tmp
+  [Wed May  4 14:48:30 2022]
+  rule cutadapt:
+      input: ../../_m/ERR1016581_pass_1.fastq.gz, ../../_m/ERR1016581_pass_2.fastq.gz
+      output: ../_m/ERR1016581_R1.fastq.gz, ../_m/ERR1016581_R2.fastq.gz
+      jobid: 85
+      wildcards: sample=ERR1016581
+      resources: mem_mb=1891, disk_mb=1891, tmpdir=/tmp
 
-Submitted job 85 with external jobid '4157148'.
-[Wed May  4 14:49:33 2022]
-Finished job 37.
-1 of 102 steps (1%) done
-[Wed May  4 14:50:31 2022]
-Finished job 30.
-2 of 102 steps (2%) done
-[Wed May  4 14:51:35 2022]
-Finished job 16.
-3 of 102 steps (3%) done
-[Wed May  4 14:51:48 2022]
-Finished job 25.
-4 of 102 steps (4%) done
-[Wed May  4 14:51:49 2022]
-Finished job 87.
-5 of 102 steps (5%) done
+  Submitted job 85 with external jobid '4157148'.
+  [Wed May  4 14:49:33 2022]
+  Finished job 37.
+  1 of 102 steps (1%) done
+  [Wed May  4 14:50:31 2022]
+  Finished job 30.
+  2 of 102 steps (2%) done
+  [Wed May  4 14:51:35 2022]
+  Finished job 16.
+  3 of 102 steps (3%) done
+  [Wed May  4 14:51:48 2022]
+  Finished job 25.
+  4 of 102 steps (4%) done
+  [Wed May  4 14:51:49 2022]
+  Finished job 87.
+  5 of 102 steps (5%) done
 
 
 Also, it is possible to see the outputs for each sample processed, just monitoring the file called ``slurm-<snakejobid>.out``.
@@ -328,23 +328,23 @@ Also, it is possible to see the outputs for each sample processed, just monitori
 
   [rdesouz4@login02 _m]$ cat slurm-4157147.out
 
-Building DAG of jobs...
-Using shell: /usr/bin/bash
-Provided cores: 1 (use --cores to define parallelism)
-Rules claiming more threads will be scaled down.
-Select jobs to execute...
+  Building DAG of jobs...
+  Using shell: /usr/bin/bash
+  Provided cores: 1 (use --cores to define parallelism)
+  Rules claiming more threads will be scaled down.
+  Select jobs to execute...
 
-[Wed May  4 14:48:37 2022]
-rule cutadapt:
-    input: ../../_m/ERR1016667_pass_1.fastq.gz, ../../_m/ERR1016667_pass_2.fastq.gz
-    output: ../_m/ERR1016667_R1.fastq.gz, ../_m/ERR1016667_R2.fastq.gz
-    jobid: 0
-    wildcards: sample=ERR1016667
-    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp
+  [Wed May  4 14:48:37 2022]
+  rule cutadapt:
+      input: ../../_m/ERR1016667_pass_1.fastq.gz, ../../_m/ERR1016667_pass_2.fastq.gz
+      output: ../_m/ERR1016667_R1.fastq.gz, ../_m/ERR1016667_R2.fastq.gz
+      jobid: 0
+      wildcards: sample=ERR1016667
+      resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp
 
-[Wed May  4 14:51:25 2022]
-Finished job 0.
-1 of 1 steps (100%) done
+  [Wed May  4 14:51:25 2022]
+  Finished job 0.
+  1 of 1 steps (100%) done
 
 Burrows-Wheeler Alignment Tool
 ******************************
@@ -372,66 +372,66 @@ Burrows-Wheeler Alignment Tool
   [userid@login03 cutadapt]$ cd bwamem
   [userid@login03 bwamem]$ vi _h/run
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -J bwamem
-#SBATCH -p defq
-#SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=1
-#SBATCH --output=bwamem.job.job.%j.out
+  #SBATCH -J bwamem
+  #SBATCH -p defq
+  #SBATCH --time=2:00:00
+  #SBATCH --cpus-per-task=1
+  #SBATCH --output=bwamem.job.job.%j.out
 
-module load snakemake/7.6.0
+  module load snakemake/7.6.0
 
-# Syntax to run it on Rockfish cluster
-snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
+  # Syntax to run it on Rockfish cluster
+  snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
   [userid@login03 bwamem]$ vi _h/snakemake.slurm.script
 
-import glob
-import os.path
-import itertools
+  import glob
+  import os.path
+  import itertools
 
-SOURCE_DIR = '../../_m'
-EXT = '_pass_1.fastq.gz'
+  SOURCE_DIR = '../../_m'
+  EXT = '_pass_1.fastq.gz'
 
-def sample_dict_iter(path, ext):
-    for filename in glob.iglob(path+'/*'+ext):
-        sample = os.path.basename(filename)[:-len(ext)]
-        yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
-		                   'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
-		      }
+  def sample_dict_iter(path, ext):
+      for filename in glob.iglob(path+'/*'+ext):
+          sample = os.path.basename(filename)[:-len(ext)]
+          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
+  		                   'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
+  		      }
 
-SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
+  SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
 
-#insure errors propogate along pipe'd shell commands
-shell.prefix("set -o pipefail; ")
+  #insure errors propogate along pipe'd shell commands
+  shell.prefix("set -o pipefail; ")
 
-rule all:
-    input:
-        expand('../_m/{sample}.bam',
-	       sample=SAMPLE_DICT.keys())
+  rule all:
+      input:
+          expand('../_m/{sample}.bam',
+  	       sample=SAMPLE_DICT.keys())
 
-rule bwamem:
-    input:
-        r1 = lambda x: SAMPLE_DICT[x.sample]['r1_in'],
-	      r2 = lambda x: SAMPLE_DICT[x.sample]['r2_in']
+  rule bwamem:
+      input:
+          r1 = lambda x: SAMPLE_DICT[x.sample]['r1_in'],
+  	      r2 = lambda x: SAMPLE_DICT[x.sample]['r2_in']
 
-    output:
-        '../_m/{sample}.bam'
+      output:
+          '../_m/{sample}.bam'
 
-    params:
-        sample = '{sample}'
+      params:
+          sample = '{sample}'
 
-    shell:
-        '''
-    module load bwa-mem/0.7.17 samtools/1.15.1
+      shell:
+          '''
+      module load bwa-mem/0.7.17 samtools/1.15.1
 
-    export PATH=$HOME'/.local/bin:'$PATH
+      export PATH=$HOME'/.local/bin:'$PATH
 
-    GENOME='../../../../genome/hs37d5/names_as_hg19/bwa/_m/hs37d5_hg19.fa'
+      GENOME='../../../../genome/hs37d5/names_as_hg19/bwa/_m/hs37d5_hg19.fa'
 
-    bwa mem -T 19 -t 4 ${{GENOME}} {input.r1} {input.r2} 2> {params.sample}.stderr | samtools view -S -b - > {output}
-'''
+      bwa mem -T 19 -t 4 ${{GENOME}} {input.r1} {input.r2} 2> {params.sample}.stderr | samtools view -S -b - > {output}
+  '''
 
 Remove duplicates
 *****************
@@ -443,54 +443,54 @@ Remove duplicates
   [userid@login03 cutadapt]$ cd rmdup
   [userid@login03 rmdup]$ vi _h/run
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -J rmdup
-#SBATCH -p defq
-#SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=1
-#SBATCH --output=rmdup.job.job.%j.out
+  #SBATCH -J rmdup
+  #SBATCH -p defq
+  #SBATCH --time=2:00:00
+  #SBATCH --cpus-per-task=1
+  #SBATCH --output=rmdup.job.job.%j.out
 
-module load snakemake/7.6.0
+  module load snakemake/7.6.0
 
-# Syntax to run it on Rockfish cluster
-snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
+  # Syntax to run it on Rockfish cluster
+  snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
   [userid@login03 rmdup]$ vi _h/snakemake.slurm.script
 
-import glob
-import os.path
-import itertools
+  import glob
+  import os.path
+  import itertools
 
-SOURCE_DIR = '../../_m'
-EXT = '.bam'
+  SOURCE_DIR = '../../_m'
+  EXT = '.bam'
 
-def sample_dict_iter(path, ext):
-    for filename in glob.iglob(path+'/*'+ext):
-        sample = os.path.basename(filename)[:-len(ext)]
-        yield sample, {'filename': filename}
+  def sample_dict_iter(path, ext):
+      for filename in glob.iglob(path+'/*'+ext):
+          sample = os.path.basename(filename)[:-len(ext)]
+          yield sample, {'filename': filename}
 
 
-SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
+  SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
 
-#insure errors propogate along pipe'd shell commands
-shell.prefix("set -o pipefail; ")
+  #insure errors propogate along pipe'd shell commands
+  shell.prefix("set -o pipefail; ")
 
-rule all:
-    input:
-        expand('../_m/{sample}.bam', sample=SAMPLE_DICT.keys())
+  rule all:
+      input:
+          expand('../_m/{sample}.bam', sample=SAMPLE_DICT.keys())
 
-rule process_one_sample:
-    input:
-        lambda x: SAMPLE_DICT[x.sample]['filename']
+  rule process_one_sample:
+      input:
+          lambda x: SAMPLE_DICT[x.sample]['filename']
 
-    output:
-        '../_m/{sample}.bam'
-    log:
-        stderr = '{sample}.stderr',
-        stdout = '{sample}.stdout'
-    shell:
-        '../_h/slavseq_rmdup.pl {input} {output}'
+      output:
+          '../_m/{sample}.bam'
+      log:
+          stderr = '{sample}.stderr',
+          stdout = '{sample}.stdout'
+      shell:
+          '../_h/slavseq_rmdup.pl {input} {output}'
 
 
 Add tags
@@ -503,72 +503,72 @@ Add tags
   [userid@login03 rmdup]$ cd tags
   [userid@login03 tags]$ vi _h/run
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -J tags
-#SBATCH -p defq
-#SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=1
-#SBATCH --output=tags.job.job.%j.out
+  #SBATCH -J tags
+  #SBATCH -p defq
+  #SBATCH --time=2:00:00
+  #SBATCH --cpus-per-task=1
+  #SBATCH --output=tags.job.job.%j.out
 
-module load snakemake/7.6.0
+  module load snakemake/7.6.0
 
-# Syntax to run it on Rockfish cluster
-snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
+  # Syntax to run it on Rockfish cluster
+  snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
-  [userid@login03 tags]$ vi _h/snakemake.slurm.script
+    [userid@login03 tags]$ vi _h/snakemake.slurm.script
 
-import glob
-import os.path
-import itertools
+  import glob
+  import os.path
+  import itertools
 
-SOURCE_DIR = '../../_m'
-EXT = '.bam'
+  SOURCE_DIR = '../../_m'
+  EXT = '.bam'
 
-def sample_dict_iter(path, ext):
-    for filename in glob.iglob(path+'/*'+ext):
-        sample = os.path.basename(filename)[:-len(ext)]
-        yield sample, {'filename': SOURCE_DIR + '/' + sample + '.bam'}
+  def sample_dict_iter(path, ext):
+      for filename in glob.iglob(path+'/*'+ext):
+          sample = os.path.basename(filename)[:-len(ext)]
+          yield sample, {'filename': SOURCE_DIR + '/' + sample + '.bam'}
 
 
-SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
+  SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
 
-#insure errors propogate along pipe'd shell commands
-shell.prefix("set -o pipefail; ")
+  #insure errors propogate along pipe'd shell commands
+  shell.prefix("set -o pipefail; ")
 
-rule all:
-    input:
-        expand('../_m/{sample}.bam',
-               sample=SAMPLE_DICT.keys())
+  rule all:
+      input:
+          expand('../_m/{sample}.bam',
+                 sample=SAMPLE_DICT.keys())
 
-rule tags:
-    input:
-        '../../_m/{sample}.bam'
+  rule tags:
+      input:
+          '../../_m/{sample}.bam'
 
-    output:
-        '../_m/{sample}.bam'
+      output:
+          '../_m/{sample}.bam'
 
-    params:
-        sample = '{sample}'
+      params:
+          sample = '{sample}'
 
-    shell:
-        '''
+      shell:
+          '''
 
-    module load samtools/1.15.1
+      module load samtools/1.15.1
 
-    export PERL5LIB=$HOME'/perl5/lib/perl5/'
-    export CONSENSUS='ATGTACCCTAAAACTTAGAGTATAATAAA'
-    export PATH=$HOME'/.local/bin:'$PATH
+      export PERL5LIB=$HOME'/perl5/lib/perl5/'
+      export CONSENSUS='ATGTACCCTAAAACTTAGAGTATAATAAA'
+      export PATH=$HOME'/.local/bin:'$PATH
 
-    GENOME='../../../../../../genome/hs37d5/names_as_hg19/_m/hs37d5_hg19.fa'
+      GENOME='../../../../../../genome/hs37d5/names_as_hg19/_m/hs37d5_hg19.fa'
 
-    PREFIX_LENGTH=`perl -e 'print length($ENV{{CONSENSUS}})+2'`
-    R1_FLANK_LENGTH=750
-    R2_FLANK_LENGTH=${{PREFIX_LENGTH}}
-    SOFT_CLIP_LENGTH_THRESHOLD=5
+      PREFIX_LENGTH=`perl -e 'print length($ENV{{CONSENSUS}})+2'`
+      R1_FLANK_LENGTH=750
+      R2_FLANK_LENGTH=${{PREFIX_LENGTH}}
+      SOFT_CLIP_LENGTH_THRESHOLD=5
 
-    (samtools view -h {input} | ../_h/add_tags_hts.pl --genome_fasta_file ${{GENOME}} --prefix_length ${{PREFIX_LENGTH}} --consensus ${{CONSENSUS}} --r1_flank_length ${{R1_FLANK_LENGTH}} --r2_flank_length ${{R2_FLANK_LENGTH}} --soft_clip_length_threshold ${{SOFT_CLIP_LENGTH_THRESHOLD}} | samtools view -S -b - > {output}) 2> {params.sample}.stderr
-'''
+      (samtools view -h {input} | ../_h/add_tags_hts.pl --genome_fasta_file ${{GENOME}} --prefix_length ${{PREFIX_LENGTH}} --consensus ${{CONSENSUS}} --r1_flank_length ${{R1_FLANK_LENGTH}} --r2_flank_length ${{R2_FLANK_LENGTH}} --soft_clip_length_threshold ${{SOFT_CLIP_LENGTH_THRESHOLD}} | samtools view -S -b - > {output}) 2> {params.sample}.stderr
+  '''
 
 Tabix
 *****
@@ -580,77 +580,76 @@ Tabix
   [userid@login03 tags]$ cd tabix
   [userid@login03 tabix]$ vi _h/run
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -J tabix
-#SBATCH -p defq
-#SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=1
-#SBATCH --output=tabix.job.job.%j.out
+  #SBATCH -J tabix
+  #SBATCH -p defq
+  #SBATCH --time=2:00:00
+  #SBATCH --cpus-per-task=1
+  #SBATCH --output=tabix.job.job.%j.out
 
-module load snakemake/7.6.0
+  module load snakemake/7.6.0
 
-# Syntax to run it on Rockfish cluster
-snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
+  # Syntax to run it on Rockfish cluster
+  snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
   [userid@login03 tabix]$ vi _h/snakemake.slurm.script
 
-import glob
-import os.path
-import itertools
-import os
-import sys
-import warnings
-import subprocess
+  import glob
+  import os.path
+  import itertools
+  import os
+  import sys
+  import warnings
+  import subprocess
 
-SOURCE_DIR = '../../_m'
-EXT = '.bam'
+  SOURCE_DIR = '../../_m'
+  EXT = '.bam'
 
-def sample_dict_iter(path, ext):
-    for filename in glob.iglob(path+'/*'+ext):
-        sample = os.path.basename(filename)[:-len(ext)]
-        yield sample, {'filename': SOURCE_DIR + '/' + sample + '.bam'}
+  def sample_dict_iter(path, ext):
+      for filename in glob.iglob(path+'/*'+ext):
+          sample = os.path.basename(filename)[:-len(ext)]
+          yield sample, {'filename': SOURCE_DIR + '/' + sample + '.bam'}
 
-SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
+  SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
 
-#insure errors propogate along pipe'd shell commands
-shell.prefix("set -o pipefail; ")
+  #insure errors propogate along pipe'd shell commands
+  shell.prefix("set -o pipefail; ")
 
-rule all:
-    input:
-        expand('../_m/{sample}.{ext}',
-               sample=SAMPLE_DICT.keys(),
-	       ext=['bgz', 'bgz.tbi'])
+  rule all:
+      input:
+          expand('../_m/{sample}.{ext}',
+                 sample=SAMPLE_DICT.keys(),
+  	       ext=['bgz', 'bgz.tbi'])
 
-rule tabix:
-    input:
-        '../../_m/{sample}.bam'
+  rule tabix:
+      input:
+          '../../_m/{sample}.bam'
 
-    output:
-        bgz = '../_m/{sample}.bgz',
-        tbi = '../_m/{sample}.bgz.tbi'
+      output:
+          bgz = '../_m/{sample}.bgz',
+          tbi = '../_m/{sample}.bgz.tbi'
 
-    params:
-        sample = '{sample}'
+      params:
+          sample = '{sample}'
 
-    shell:
-        '''
-    module load tabix/1.13 samtools/1.15.1 bzip2/1.0.8
+      shell:
+          '''
+      module load tabix/1.13 samtools/1.15.1 bzip2/1.0.8
 
-    export PATH=$HOME'/.local/bin:'$PATH
+      export PATH=$HOME'/.local/bin:'$PATH
 
-    TMP_DIR='tmp.{params.sample}'
-    mkdir ${{TMP_DIR}}
+      TMP_DIR='tmp.{params.sample}'
+      mkdir ${{TMP_DIR}}
 
-    export LC_ALL=C
+      export LC_ALL=C
 
-    ( samtools view {input} | ../_h/sam_to_tabix.py 2>{params.sample}.stderr | sort --temporary-directory=${{TMP_DIR}} --buffer-size=10G -k1,1 -k2,2n -k3,3n | bgzip2 -c > {output.bgz} )
+      ( samtools view {input} | ../_h/sam_to_tabix.py 2>{params.sample}.stderr | sort --temporary-directory=${{TMP_DIR}} --buffer-size=10G -k1,1 -k2,2n -k3,3n | bgzip2 -c > {output.bgz} )
 
-    rmdir ${{TMP_DIR}}
+      rmdir ${{TMP_DIR}}
 
-    tabix -s 1 -b 2 -e 3 -0 {output.bgz}
-
-'''
+      tabix -s 1 -b 2 -e 3 -0 {output.bgz}
+  '''
 
 Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
