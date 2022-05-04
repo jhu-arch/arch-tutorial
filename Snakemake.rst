@@ -632,7 +632,6 @@ tags snakemake.slurm.script
 
       shell:
           '''
-
       module load samtools/1.15.1
 
       export PERL5LIB=$HOME'/perl5/lib/perl5/'
