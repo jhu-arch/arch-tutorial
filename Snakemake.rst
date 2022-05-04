@@ -476,7 +476,7 @@ bwamem snakemake.slurm.script
 
       export PATH=$HOME'/.local/bin:'$PATH
 
-      GENOME='../../../../genome/hs37d5/names_as_hg19/bwa/_m/hs37d5_hg19.fa'
+      GENOME='../../../../genome/bwa/_m/hg19.fa'
 
       bwa mem -T 19 -t 4 ${{GENOME}} {input.r1} {input.r2} 2> {params.sample}.stderr | samtools view -S -b - > {output}
   '''
@@ -638,7 +638,7 @@ tags snakemake.slurm.script
       export CONSENSUS='ATGTACCCTAAAACTTAGAGTATAATAAA'
       export PATH=$HOME'/.local/bin:'$PATH
 
-      GENOME='../../../genome/bwa/_m/hg19.fa'
+      GENOME='../../../../../../genome/bwa/_m/hg19.fa'
 
       PREFIX_LENGTH=`perl -e 'print length($ENV{{CONSENSUS}})+2'`
       R1_FLANK_LENGTH=750
