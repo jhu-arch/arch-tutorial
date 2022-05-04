@@ -140,7 +140,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   #SBATCH -J cutadapt
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=10
+  #SBATCH --cpus-per-task=1
   #SBATCH --output=cutadapt.job.%j.out
 
   module load snakemake/7.6.0
@@ -244,6 +244,24 @@ So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in
 Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
 End /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
 
+Monitoring the submitted jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+  [rdesouz4@login02 _m]$ sqme
+      USER   ACCOUNT        JOBID PARTITION       NAME NODES  CPUS TIME_LIMIT     TIME NODELIST ST REASON
+  rdesouz4   rfadmin      4157118 defq      snakejob.c     1     1    1:00:00    21:15     c221 R None
+  rdesouz4   rfadmin      4157146 defq      snakejob.c     1     1    1:00:00    21:15     c301 R None
+  rdesouz4   rfadmin      4157061 defq      snakejob.c     1     1    1:00:00    21:26     c157 R None
+  rdesouz4   rfadmin      4157072 defq      snakejob.c     1     1    1:00:00    21:26     c132 R None
+  rdesouz4   rfadmin      4157102 defq      snakejob.c     1     1    1:00:00    21:26     c303 R None
+  rdesouz4   rfadmin      4157046 defq        cutadapt     1     1    2:00:00    21:28     c124 R None
+
+To monitoring all submitted processed jobs, ``tail -f`` on the file called ``cutadapt.job.<JOBID>.out``.
+
+.. code-block:: python
+
   [userid@login03 cutadapt]$ cat _m/cutadapt.job.4157046.out
 
 Building DAG of jobs...
@@ -306,6 +324,31 @@ Finished job 25.
 Finished job 87.
 5 of 102 steps (5%) done
 
+
+Also, it is possible to see the outputs for each sample processed, just monitoring the file called ``slurm-<snakejobid>.out``.
+
+.. code-block:: python
+
+  [rdesouz4@login02 _m]$ cat slurm-4157147.out
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Wed May  4 14:48:37 2022]
+rule cutadapt:
+    input: ../../_m/ERR1016667_pass_1.fastq.gz, ../../_m/ERR1016667_pass_2.fastq.gz
+    output: ../_m/ERR1016667_R1.fastq.gz, ../_m/ERR1016667_R2.fastq.gz
+    jobid: 0
+    wildcards: sample=ERR1016667
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp
+
+[Wed May  4 14:51:25 2022]
+Finished job 0.
+1 of 1 steps (100%) done
+
 Burrows-Wheeler Alignment Tool
 ******************************
 
@@ -337,7 +380,7 @@ Burrows-Wheeler Alignment Tool
 #SBATCH -J bwamem
 #SBATCH -p defq
 #SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=10
+#SBATCH --cpus-per-task=1
 #SBATCH --output=bwamem.job.job.%j.out
 
 module load snakemake/7.6.0
@@ -394,7 +437,7 @@ rule bwamem:
 '''
 
 Remove duplicates
-***************
+*****************
 
 `rmdup`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to read .bam input files and apply samtools software to treat paired-end reads and single-end reads.
 
@@ -408,7 +451,7 @@ Remove duplicates
 #SBATCH -J rmdup
 #SBATCH -p defq
 #SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=10
+#SBATCH --cpus-per-task=1
 #SBATCH --output=rmdup.job.job.%j.out
 
 module load snakemake/7.6.0
@@ -454,7 +497,7 @@ rule process_one_sample:
 
 
 Add tags
-***************
+********
 
 `tags`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into bam files.
 
@@ -468,7 +511,7 @@ Add tags
 #SBATCH -J tags
 #SBATCH -p defq
 #SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=10
+#SBATCH --cpus-per-task=1
 #SBATCH --output=tags.job.job.%j.out
 
 module load snakemake/7.6.0
@@ -531,7 +574,7 @@ rule tags:
 '''
 
 Tabix
-***************
+*****
 
 `Tabix`_ indexes a TAB-delimited genome position file in.tab.bgz and creates an index file (in.tab.bgz.tbi or in.tab.bgz.csi) when region is absent from the command-line.
 
@@ -545,7 +588,7 @@ Tabix
 #SBATCH -J tabix
 #SBATCH -p defq
 #SBATCH --time=2:00:00
-#SBATCH --cpus-per-task=10
+#SBATCH --cpus-per-task=1
 #SBATCH --output=tabix.job.job.%j.out
 
 module load snakemake/7.6.0
