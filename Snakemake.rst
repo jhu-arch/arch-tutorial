@@ -145,9 +145,6 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   # Syntax to run it on Rockfish cluster
   snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
-
-  [userid@login03 cutadapt]$ chmod +x _h/run
-
 So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in string object, it will return its reverse.
 
 .. code-block:: console
@@ -163,7 +160,7 @@ So, we need create a script to perform the rev_comp_seq. Given a DNA sequence in
       echo ""
   fi
 
-  [userid@login03 cutadapt]$ chmod +x  ~/.local/bin/rc
+  [userid@login03 cutadapt]$ chmod +x ~/.local/bin/rc
   [userid@login03 cutadapt]$ vi _h/snakemake.slurm.script
 
 cutadapt snakemake.slurm.script
@@ -240,7 +237,7 @@ cutadapt snakemake.slurm.script
 
 .. code-block:: console
 
-  [userid@login03 cutadapt]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 cutadapt]$ chmod +x _h/run
   [userid@login03 cutadapt]$ rf sbatch .
 
   Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
@@ -449,7 +446,7 @@ bwamem snakemake.slurm.script
 
 .. code-block:: console
 
-  [userid@login03 bwamem]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 bwamem]$ chmod +x _h/run
   [userid@login03 bwamem]$ rf sbatch .
 
 Remove duplicates
@@ -524,7 +521,7 @@ rmdup snakemake.slurm.script
 
 .. code-block:: console
 
-  [userid@login03 rmdup]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 rmdup]$ chmod +x _h/run
   [userid@login03 rmdup]$ rf sbatch .
 
 Add tags
@@ -617,7 +614,7 @@ tags snakemake.slurm.script
 
 .. code-block:: console
 
-  [userid@login03 tags]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 tags]$ chmod +x _h/run
   [userid@login03 tags]$ rf sbatch .
 
 Tabix
@@ -713,7 +710,7 @@ tabix snakemake.slurm.script
 
 .. code-block:: console
 
-  [userid@login03 tabix]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 tabix]$ chmod +x _h/run
   [userid@login03 tabix]$ rf sbatch .
 
 
