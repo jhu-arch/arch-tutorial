@@ -85,19 +85,19 @@ The  ``rf`` command will call the ``run`` script to retrieve SRA Normalized Form
   [userid@login03 ~]$ cd pipeline/
   [userid@login03 ~]$ chmod +x _h/run
   [userid@login03 pipeline]$ rf sbatch -v .
-  all: /home/userid/tmp/pipeline/_m/SUCCESS
+  all: /home/userid/pipeline/_m/SUCCESS
 
   .ONESHELL:
-  /home/userid/tmp/pipeline/_m/SUCCESS:
-  	echo -n "Start /home/userid/tmp/pipeline: "; date --rfc-3339=seconds
-  	mkdir /home/userid/tmp/pipeline/_m
-  	cd /home/userid/tmp/pipeline/_m
+  /home/userid/pipeline/_m/SUCCESS:
+  	echo -n "Start /home/userid/pipeline: "; date --rfc-3339=seconds
+  	mkdir /home/userid/pipeline/_m
+  	cd /home/userid/pipeline/_m
   	sbatch ../_h/run > nohup.out 2>&1
   	touch SUCCESS
-  	echo -n "End /home/userid/tmp/pipeline: "; date --rfc-3339=seconds
+  	echo -n "End /home/userid/pipeline: "; date --rfc-3339=seconds
 
-  Start /home/userid/tmp/pipeline: 2022-04-27 16:14:52-04:00
-  End /home/userid/tmp/pipeline: 2022-04-27 16:14:52-04:00
+  Start /home/userid/pipeline: 2022-04-27 16:14:52-04:00
+  End /home/userid/pipeline: 2022-04-27 16:14:52-04:00
 
 
 .. note::
@@ -136,19 +136,19 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   [userid@login03 cutadapt]$ vi _h/run
   [userid@login03 cutadapt]$ chmod +x _h/run
   [userid@login03 cutadapt]$ rf sbatch -v .
-  all: /home/userid/tmp/pipeline/cutadapt/_m/SUCCESS
+  all: /home/userid/pipeline/cutadapt/_m/SUCCESS
 
   .ONESHELL:
-  /home/userid/tmp/pipeline/cutadapt/_m/SUCCESS:
-  	echo -n "Start /home/userid/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
-  	mkdir /home/userid/tmp/pipeline/cutadapt/_m
-  	cd /home/userid/tmp/pipeline/cutadapt/_m
+  /home/userid/pipeline/cutadapt/_m/SUCCESS:
+  	echo -n "Start /home/userid/pipeline/cutadapt: "; date --rfc-3339=seconds
+  	mkdir /home/userid/pipeline/cutadapt/_m
+  	cd /home/userid/pipeline/cutadapt/_m
   	sbatch ../_h/run > nohup.out 2>&1
   	touch SUCCESS
-  	echo -n "End /home/userid/tmp/pipeline/cutadapt: "; date --rfc-3339=seconds
+  	echo -n "End /home/userid/pipeline/cutadapt: "; date --rfc-3339=seconds
 
-  Start /home/userid/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
-  End /home/userid/tmp/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
+  Start /home/userid/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
+  End /home/userid/pipeline/cutadapt: 2022-04-27 16:47:18-04:00
 
 
 .. code-block:: python
