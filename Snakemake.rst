@@ -62,6 +62,24 @@ A directory structure like this is expected to run our pipeline.
               ├── bwa             ready to run
               └── chromsizes      ready to run
 
+Once the scripts are ready to run, as is the case with the genome step. Just run the ``rf`` command recursively using the ``-r`` tag.
+.. code-block:: console
+
+    [userid@login03 pipeline]$ cd genome/
+    [userid@login03 genome]$ rf sbatch -r .
+
+    Start /home/userid/pipeline/genome/hg19: 2022-05-04 17:30:53-04:00
+    End /home/userid/pipeline/genome/hg19: 2022-05-04 17:30:53-04:00
+    Start /home/userid/pipeline/genome/hg19/bwa: 2022-05-04 17:30:53-04:00
+    End /home/userid/pipeline/genome/hg19/bwa: 2022-05-04 17:30:53-04:00
+    Start /home/userid/pipeline/genome/hg19/chromsizes: 2022-05-04 17:30:53-04:00
+    End /home/userid/pipeline/genome/hg19/chromsizes: 2022-05-04 17:30:53-04:00
+
+    [rdesouz4@login03 genome]$ rf status
+    .                           no _h
+    └── hg19                     done
+        ├── bwa                  done
+        └── chromsizes           done
 
 SRA Toolkit
 ***********
