@@ -240,6 +240,7 @@ cutadapt snakemake.slurm.script
 
 .. code-block:: console
 
+  [userid@login03 cutadapt]$ chmod +x _h/snakemake.slurm.script
   [userid@login03 cutadapt]$ rf sbatch .
 
   Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
@@ -446,6 +447,11 @@ bwamem snakemake.slurm.script
       bwa mem -T 19 -t 4 ${{GENOME}} {input.r1} {input.r2} 2> {params.sample}.stderr | samtools view -S -b - > {output}
   '''
 
+.. code-block:: console
+
+  [userid@login03 bwamem]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 bwamem]$ rf sbatch .
+
 Remove duplicates
 *****************
 
@@ -516,6 +522,10 @@ rmdup snakemake.slurm.script
       shell:
           '../_h/slavseq_rmdup.pl {input} {output}'
 
+.. code-block:: console
+
+  [userid@login03 rmdup]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 rmdup]$ rf sbatch .
 
 Add tags
 ********
@@ -604,6 +614,11 @@ tags snakemake.slurm.script
 
       (samtools view -h {input} | ../_h/add_tags_hts.pl --genome_fasta_file ${{GENOME}} --prefix_length ${{PREFIX_LENGTH}} --consensus ${{CONSENSUS}} --r1_flank_length ${{R1_FLANK_LENGTH}} --r2_flank_length ${{R2_FLANK_LENGTH}} --soft_clip_length_threshold ${{SOFT_CLIP_LENGTH_THRESHOLD}} | samtools view -S -b - > {output}) 2> {params.sample}.stderr
   '''
+
+.. code-block:: console
+
+  [userid@login03 tags]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 tags]$ rf sbatch .
 
 Tabix
 *****
@@ -695,6 +710,12 @@ tabix snakemake.slurm.script
 
       tabix -s 1 -b 2 -e 3 -0 {output.bgz}
   '''
+
+.. code-block:: console
+
+  [userid@login03 tabix]$ chmod +x _h/snakemake.slurm.script
+  [userid@login03 tabix]$ rf sbatch .
+
 
 Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
