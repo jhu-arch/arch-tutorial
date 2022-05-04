@@ -250,14 +250,14 @@ Monitoring the submitted jobs
 
 .. code-block:: console
 
-  [rdesouz4@login02 _m]$ sqme
-      USER   ACCOUNT        JOBID PARTITION       NAME NODES  CPUS TIME_LIMIT     TIME NODELIST ST REASON
-  rdesouz4   rfadmin      4157118 defq      snakejob.c     1     1    1:00:00    21:15     c221 R None
-  rdesouz4   rfadmin      4157146 defq      snakejob.c     1     1    1:00:00    21:15     c301 R None
-  rdesouz4   rfadmin      4157061 defq      snakejob.c     1     1    1:00:00    21:26     c157 R None
-  rdesouz4   rfadmin      4157072 defq      snakejob.c     1     1    1:00:00    21:26     c132 R None
-  rdesouz4   rfadmin      4157102 defq      snakejob.c     1     1    1:00:00    21:26     c303 R None
-  rdesouz4   rfadmin      4157046 defq        cutadapt     1     1    2:00:00    21:28     c124 R None
+  [userid@login02 _m]$ sqme
+    USER   ACCOUNT        JOBID PARTITION       NAME NODES  CPUS TIME_LIMIT     TIME NODELIST ST REASON
+  userid   rfadmin      4157118 defq      snakejob.c     1     1    1:00:00    21:15     c221 R None
+  userid   rfadmin      4157146 defq      snakejob.c     1     1    1:00:00    21:15     c301 R None
+  userid   rfadmin      4157061 defq      snakejob.c     1     1    1:00:00    21:26     c157 R None
+  userid   rfadmin      4157072 defq      snakejob.c     1     1    1:00:00    21:26     c132 R None
+  userid   rfadmin      4157102 defq      snakejob.c     1     1    1:00:00    21:26     c303 R None
+  userid   rfadmin      4157046 defq        cutadapt     1     1    2:00:00    21:28     c124 R None
 
 To monitoring all submitted processed jobs, ``tail -f`` on the file called ``cutadapt.job.<JOBID>.out``.
 
