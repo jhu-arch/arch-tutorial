@@ -245,8 +245,8 @@ cutadapt snakemake.slurm.script
   Start /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
   End /home/userid/pipeline/cutadapt: 2022-05-04 14:35:06-04:00
 
-Monitoring the submitted jobs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Monitoring submitted jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
