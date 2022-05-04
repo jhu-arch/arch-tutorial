@@ -58,7 +58,7 @@ A directory structure like this is expected to run our pipeline.
       │       └── tags       no run script  (step without the run file)
       │           └── tabix  no run script
       └── genome                         no _h
-          └── hg19                ready to run 
+          └── hg19                ready to run
               ├── bwa             ready to run
               └── chromsizes      ready to run
 
