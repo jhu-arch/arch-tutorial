@@ -36,7 +36,7 @@ Pipeline
 
 Then, let's create the pipeline directory structure to store this tutorial.
 
-.. code-block:: python
+.. code-block:: console
 
     [userid@login03 ~]$ mkdir -p pipeline/_h
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/_h
@@ -44,6 +44,19 @@ Then, let's create the pipeline directory structure to store this tutorial.
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/_h
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/tags/_h
     [userid@login03 ~]$ mkdir -p pipeline/cutadapt/bwamem/rmdup/tags/tabix/_h
+
+A directory structure like this is expected to run our pipeline.
+
+.. code-block:: console
+
+    [userid@login03 pipeline]$ rf status
+    .                                   done   (step already performed)
+    └── cutadapt                        done
+        └── bwamem              ready to run   (step with the run file, but not performed yet)
+            ├── genome          ready to run
+            └── rmdup          no run script   (step without the run file)
+                └── tags       no run script
+                    └── tabix  no run script
 
 SRA Toolkit
 ***********
