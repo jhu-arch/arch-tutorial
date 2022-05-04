@@ -34,7 +34,7 @@ We will use the Two classes of L1-associated somatic variants in human brain fro
 Pipeline
 ********
 
-Then, let's create the pipeline directory structure to store this tutorial.
+Then, let's create the `pipeline`_ directory structure to store this tutorial.
 
 .. code-block:: console
 
@@ -792,7 +792,7 @@ You run one level at a time, or you can use the ``-r`` option for recursive. It 
 .. warning::
   The ``rf`` command is validated to run in interactive mode, so far.
 
-
+.. _pipeline: https://github.com/jhu-arch/arch-tutorial/tree/main/pipeline
 .. _Cutadapt: https://cutadapt.readthedocs.io/en/stable/
 .. _BWA: http://bio-bwa.sourceforge.net/bwa.shtml
 .. _rmdup: https://github.com/apuapaquola/slavseq_rf/blob/master/pipeline/fastq/cutadapt/bwamem/rmdup/_h/slavseq_rmdup.pl
