@@ -370,10 +370,12 @@ Burrows-Wheeler Alignment Tool
 
 `BWA`_ is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 cutadapt]$ cd bwamem
   [userid@login03 bwamem]$ vi _h/run
+
+.. code-block:: python
 
   #!/bin/bash
 
@@ -390,10 +392,11 @@ Burrows-Wheeler Alignment Tool
 
 bwamem snakemake.slurm.script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 bwamem]$ vi _h/snakemake.slurm.script
+
+.. code-block:: python
 
   import glob
   import os.path
@@ -446,10 +449,12 @@ Remove duplicates
 
 `rmdup`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to read .bam input files and apply samtools software to treat paired-end reads and single-end reads.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 cutadapt]$ cd rmdup
   [userid@login03 rmdup]$ vi _h/run
+
+.. code-block:: python
 
   #!/bin/bash
 
@@ -467,7 +472,11 @@ Remove duplicates
 rmdup snakemake.slurm.script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. code-block:: console
+
   [userid@login03 rmdup]$ vi _h/snakemake.slurm.script
+
+.. code-block:: python
 
   import glob
   import os.path
@@ -509,10 +518,12 @@ Add tags
 
 `tags`_ is a script part of the SLAV-Seq protocol written by Apuã Paquola, coded in Perl to add the custom flags into bam files.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 rmdup]$ cd tags
   [userid@login03 tags]$ vi _h/run
+
+.. code-block:: python
 
   #!/bin/bash
 
@@ -530,9 +541,11 @@ Add tags
 tags snakemake.slurm.script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 tags]$ vi _h/snakemake.slurm.script
+
+.. code-block:: python
 
   import glob
   import os.path
@@ -591,10 +604,12 @@ Tabix
 
 `Tabix`_ indexes a TAB-delimited genome position file in.tab.bgz and creates an index file (in.tab.bgz.tbi or in.tab.bgz.csi) when region is absent from the command-line.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 tags]$ cd tabix
   [userid@login03 tabix]$ vi _h/run
+
+.. code-block:: console
 
   #!/bin/bash
 
@@ -612,9 +627,11 @@ Tabix
 tabix snakemake.slurm.script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 tabix]$ vi _h/snakemake.slurm.script
+
+.. code-block:: python
 
   import glob
   import os.path
