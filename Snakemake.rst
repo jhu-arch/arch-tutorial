@@ -440,13 +440,13 @@ bwamem snakemake.slurm.script
   import itertools
 
   SOURCE_DIR = '../../_m'
-  EXT = '_pass_1.fastq.gz'
+  EXT = '_R1.fastq.gz'
 
   def sample_dict_iter(path, ext):
       for filename in glob.iglob(path+'/*'+ext):
           sample = os.path.basename(filename)[:-len(ext)]
-          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_pass_1.fastq.gz',
-  		                   'r2_in': SOURCE_DIR + '/' + sample + '_pass_2.fastq.gz'
+          yield sample, {'r1_in': SOURCE_DIR + '/' + sample + '_R1.fastq.gz',
+  		                   'r2_in': SOURCE_DIR + '/' + sample + '_R2.fastq.gz'
   		      }
 
   SAMPLE_DICT = {k:v for k,v in sample_dict_iter(SOURCE_DIR, EXT)}
