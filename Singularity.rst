@@ -369,7 +369,7 @@ The last step you will be able to create a singularity container on Rockfish clu
 .. code-block:: console
 
   [userid@login03 ~]$ interact -c 2 -t 120
-  [userid@c011 ~]$ sudo singularity pull nanopolish.sif docker://archrockfish/nanopolish:0.13.3
+  [userid@c011 ~]$ sudo singularity build nanopolish.sif docker://archrockfish/nanopolish:0.13.3
 
 .. warning::
   You need to create a repository and assign who are the `contributors`_ with permission to upload an image to this repository, before tag an image referenced by ID (``step 3``).
