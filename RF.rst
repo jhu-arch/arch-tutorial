@@ -47,6 +47,7 @@ To support the framework functionalities, it is necessary to install the tree co
 .. code-block:: console
 
   [userid@login01 ~]$ curl -OL https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh
+  [userid@login01 ~]$ sh install_tree_non_root.sh
   [userid@login01 ~]$ rm install_tree_non_root.sh (optional)
   [userid@login01 ~]$ rf status
   [userid@login01 ~]$ rf status -p
