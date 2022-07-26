@@ -137,7 +137,7 @@ Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ scrip
 
 .. code-block:: console
 
-  [userid@login01 bedtools]$ _h/run
+  [userid@login01 bedtools]$ vi _h/run
   [userid@login01 bedtools]$ chmod +x _h/run
 
 If you return a level (repro directory) and check the execution status of this pipeline (``rf status``), you can see that level 1 (repro) is done, and level 2 (``bedtools``) is ready to run. It is important to mind will be run the ``bedtoots`` via container (singularity).
