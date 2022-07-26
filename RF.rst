@@ -132,10 +132,12 @@ Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ scrip
 
   #!/bin/bash
   set -o errexit -euo pipefail
+  ml bedtools/2.30.0
+  bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
 
 .. code-block:: console
 
-  [userid@login01 bedtools]$ bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
+  [userid@login01 bedtools]$ _h/run
   [userid@login01 bedtools]$ chmod +x _h/run
 
 If you return a level (repro directory) and check the execution status of this pipeline (``rf status``), you can see that level 1 (repro) is done, and level 2 (``bedtools``) is ready to run. It is important to mind will be run the ``bedtoots`` via container (singularity).
