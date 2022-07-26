@@ -28,7 +28,7 @@ A Snakemake workflow is defined by specifying rules in a Snakefile. The rules de
 This tutorial presents a bioinformatics pipeline using ``Snakemake`` and :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
-We will use the Two classes of L1-associated somatic variants in human brain from Sallk Institute for Biological Studies dataset.
+It will used the two classes of L1-associated somatic variants in the human brain from Salk Institute for Biological Studies dataset.
 
 .. note::
   Bioproject: ``PRJEB10849`` SRA Study: ``ERP012147``.
