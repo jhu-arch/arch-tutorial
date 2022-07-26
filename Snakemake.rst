@@ -24,6 +24,7 @@ The `Snakemake`_ workflows management system is a tool to create reproducible an
 The Snakemake language extends the Python language, adding syntactic structures for rule definition and additional controls. All added syntactic structures begin with a keyword followed by a code block that is either in the same line or indented and consists of multiple lines. The resulting syntax resembles that of original Python constructs.
 
 A Snakemake workflow is defined by specifying rules in a Snakefile. The rules decompose the workflow into small steps by specifying how to create sets of output files from sets of input files. It will automatically determine the dependencies between the rules by matching file names.
+
 This tutorial presents a bioinformatics pipeline using ``Snakemake`` and :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
