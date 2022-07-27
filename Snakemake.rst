@@ -759,7 +759,7 @@ Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 
 .. code-block:: python
 
-    ├── pipeline                           no _h
+    ├── pipeline                         no _h
       ├── cutadapt                ready to run
       │   └── bwamem             no run script
       │       └── rmdup          no run script
