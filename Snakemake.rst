@@ -759,31 +759,16 @@ Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 
 .. code-block:: python
 
-    ├── pipeline
-    │   └── cutadapt
-    │       ├── _h
-    │       │   ├── rename_cutadapt.sh
-    │       │   └── run
-    │       └── bwamem
-    │           ├── _h
-    │           │   ├── check_ok.sh
-    │           │   ├── run
-    │           │   ├── run.hg19
-    │           │   └── run.hs37d5
-    │           └── rmdup
-    │               ├── _h
-    │               │   ├── run
-    │               │   ├── slavseq_rmdup.pl
-    │               │   └── slavseq_rmdup_hts.pl
-    │               └── tags
-    │                   ├── _h
-    │                   │   ├── add_tags.pl
-    │                   │   ├── add_tags_hts.pl
-    │                   │   └── run
-    │                   └── tabix
-    │                       └── _h
-    │                           ├── run
-    │                           └── sam_to_tabix.py
+    ├── pipeline                           no _h
+      ├── cutadapt                ready to run
+      │   └── bwamem             no run script
+      │       └── rmdup          no run script
+      │           └── tags       no run script
+      │               └── tabix  no run script
+      └── genome                         no _h
+          └── hg19                ready to run
+              ├── bwa             ready to run
+              └── chromsizes      ready to run
 
 You run one level at a time, or you can use the ``-r`` option for recursive. It will perform the ``rf`` command, once the level 1 is finishes, it will run next level, so consecutively.
 
