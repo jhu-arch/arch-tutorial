@@ -46,9 +46,7 @@ To support the framework functionalities, it is necessary to install the tree co
 
 .. code-block:: console
 
-  [userid@login01 ~]$ curl -OL https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh
-  [userid@login01 ~]$ sh install_tree_non_root.sh
-  [userid@login01 ~]$ rm install_tree_non_root.sh (optional)
+  [userid@login01 ~]$ curl -s https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh | bash
   [userid@login01 ~]$ rf status
   [userid@login01 ~]$ rf status -p
 
@@ -84,7 +82,7 @@ The division of human-generated data ( ``_h`` ) from machine-generated data ( ``
 
 In the current implementation, it is used ``git`` for ``_h`` and ``git-annex`` for ``_m``.
 
-The ``rf`` command provides a wrapper for some operations that involve more than one call to git or git-annex. Users can collaborate and share analyses trees in a similar they can do with code.
+The ``rf`` command provides a wrapper for a few operations that involve more than one call to git or git-annex. Users can collaborate and share analyses trees in a similar they can do with code.
 
 The version control is not covered in this tutorial, see the `Preprint`_ for more details.
 
@@ -104,27 +102,27 @@ Let’s create a simple run file to learn how ``rf`` works. Then, change the per
 
 .. code-block:: console
 
-  1.  [userid@login01 ~]$ mkdir tutorials/repro/_h -p
-  2.  [userid@login01 ~]$ cd tutorials/repro/
-  3.  [userid@login01 repro]$ echo "date > date.txt" > _h/run
-  4.  [userid@login01 repro]$ rf status
-  5.  [userid@login01 repro]$  .  no run script
-  6.  [userid@login01 repro]$ chmod +x _h/run
-  7.  [userid@login01 repro]$ rf status
-  8.  [userid@login01 repro]$  .   ready to run
-  9.  [userid@login01 repro]$ git init .
-  10. [userid@login01 repro]$ rf run .          # use: ( nohup rf run . & ) to 11. run the rf immune to hangups
-  12. [userid@login01 repro]$ rf status
-  13. [userid@login01 repro]$  .           done
-  14. [userid@login01 repro]$ ls _m/*
-  15. [userid@login01 repro]$  _m/date.txt  _m/nohup.out  _m/SUCCESS
+  1.  [userid@login01 ~]$ mkdir tutorial/_h -p
+  2.  [userid@login01 ~]$ cd tutorial/
+  3.  [userid@login01 tutorial]$ echo "date > date.txt" > _h/run
+  4.  [userid@login01 tutorial]$ rf status
+  5.  [userid@login01 tutorial]$  .  no run script
+  6.  [userid@login01 tutorial]$ chmod +x _h/run
+  7.  [userid@login01 tutorial]$ rf status
+  8.  [userid@login01 tutorial]$  .   ready to run
+  9.  [userid@login01 tutorial]$ git init .
+  10. [userid@login01 tutorial]$ rf run .          # use: ( nohup rf run . & ) to 11. run the rf immune to hangups
+  12. [userid@login01 tutorial]$ rf status
+  13. [userid@login01 tutorial]$  .           done
+  14. [userid@login01 tutorial]$ ls _m/*
+  15. [userid@login01 tutorial]$  _m/date.txt  _m/nohup.out  _m/SUCCESS
 
 **Tutorial 1.2** : Runs driver scripts to generate the _m directories (results/contents) via containers
 
 .. code-block:: console
 
-  [userid@login01 repro]$ mkdir -p bedtools/_h
-  [userid@login01 repro]$ cd bedtools/
+  [userid@login01 tutorial]$ mkdir -p bedtools/_h
+  [userid@login01 tutorial]$ cd bedtools/
 
 Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ script as follows:
 
@@ -132,7 +130,7 @@ Let's fire up our text editor (vim/nano/emacs) and type in our `bedtools`_ scrip
 
   #!/bin/bash
   set -o errexit -euo pipefail
-  ml bedtools/2.30.0
+
   bedtools genomecov -i ../_h/exons.bed -g ../_h/genome.txt -bg > out.tsv
 
 .. code-block:: console
@@ -147,12 +145,31 @@ If you return a level (repro directory) and check the execution status of this p
 
 .. code-block:: console
 
+  [userid@login01 bedtools]$ export BIND=$(realpath .)/_m
+  [userid@login01 bedtools]$ export IMG=../_h/ubuntu_bedtools.sif
+  [userid@login01 bedtools]$ rf run --container_image=${IMG} --volume=${BIND} -v .
+  all: /home/userid/tutorial/bedtools/_m/SUCCESS
+
+  .ONESHELL:
+  /home/userid/tutorial/bedtools/_m/SUCCESS:
+  	echo -n "Start /home/userid/tutorial/bedtools: "; date --rfc-3339=seconds
+  	mkdir /home/userid/tutorial/bedtools/_m
+  	cd /home/userid/tutorial/bedtools/_m
+  	singularity exec --bind '/home/userid/tutorial/bedtools/_m' '../_h/ubuntu_bedtools.sif' bash -c 'cd "/home/userid/tutorial/bedtools/_m" && ../_h/run > nohup.out 2>&1'
+  	touch SUCCESS
+  	echo -n "End /home/userid/tutorial/bedtools: "; date --rfc-3339=seconds
+
+
+  Start /home/userid/tutorial/bedtools: 2022-07-27 15:58:52-04:00
+  End /home/userid/tutorial/bedtools: 2022-07-27 16:04:16-04:00
+
   [userid@login01 bedtools]$ cd ..
-  [userid@login01 repro]$ rf status
-  [userid@login01 repro]$    .                      done      (level 1 of the pipeline)
-  [userid@login01 repro]$    └── bedtools   ready to run      (level 2 of the pipeline)
+  [userid@login01 tutorial]$ rf status
+  [userid@login01 tutorial]$    .                      done      (level 1 of the pipeline)
+  [userid@login01 tutorial]$    └── bedtools           done      (level 2 of the pipeline)
 
 .. warning::
-  The ``rf`` command is validated to run in interactive mode, so far.
+  To run ``rf`` command using singularity image it is necessary to enable interactive mode on Rockfish.
+  See :ref:`Singularity container <singularity_container>` session how building a Singularity Container Image from definitions file.
 
 .. _bedtools: https://bedtools.readthedocs.io/en/latest/

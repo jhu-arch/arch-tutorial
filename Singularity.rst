@@ -23,8 +23,9 @@ Bootstrapping a `singularity container`_ allows using a file called ``definition
 
 .. code-block:: console
 
-  [userid@local ~]$ cd bedtools/
-  [userid@local ~]$ vi _h/ubuntu_bedtools.def
+  [userid@login01 ~]$ mkdir tutorial/container/_h -p
+  [userid@login01 ~]$ cd tutorial/container/
+  [userid@container ~]$ vi _h/ubuntu_bedtools.def
 
 Let’s first create a container with Ubuntu 20.10 and the `bedtools`_ command (toolset). Below are the contents of how the definitions file should look like.
 
@@ -44,13 +45,13 @@ Now let’s use this definition file as a starting point to build the ``ubuntu_b
 
 .. code-block:: console
 
-  [userid@local ~]$ sudo singularity build _h/ubuntu_bedtools.sif _h/ubuntu_bedtools.def
+  [userid@container ~]$ sudo singularity build _h/ubuntu_bedtools.sif _h/ubuntu_bedtools.def
 
 Now let’s enter the new container and look around.
 
 .. code-block:: console
 
-  [userid@local ~]$ singularity shell ubuntu_bedtools.sif
+  [userid@container ~]$ singularity shell ubuntu_bedtools.sif
 
   Singularity>
   Singularity> bedtools --version
@@ -78,10 +79,10 @@ Docker images, opening up access to a large number of existing container images 
 
 .. code-block:: console
 
-  [userid@local ~]$ mkdir ~/images_singularity
-  [userid@local ~]$ cd images_singularity/
-  [userid@local ~]$ singularity pull docker://ubuntu:latest
-  [userid@local ~]$ singularity shell ubuntu_latest.sif
+  [userid@container ~]$ mkdir ~/singularity
+  [userid@container ~]$ cd ~/singularity/
+  [userid@singularity ~]$ singularity pull docker://ubuntu:latest
+  [userid@singularity ~]$ singularity shell ubuntu_latest.sif
 
 However, you will not be able to change this image on Rockfish cluster, because there is no partition SIF writable, see :ref:`fakeroot option <fakeroot_option>`.
 
