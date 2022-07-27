@@ -25,6 +25,8 @@ EOF
 
 chmod +x ~/.local/bin/rc
 
+mkdir $HOME/snakemake_rf_training/; cd $HOME/snakemake_rf_training/
+
 git init
 git remote add -f origin https://github.com/ricardojacomini/arch-tutorial.git
 
