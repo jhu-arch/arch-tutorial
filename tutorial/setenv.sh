@@ -4,7 +4,7 @@
 
 # NOTE:
 #      1. singularity containers cannot run from a scratch folder
-#      2. Volume path (singularity BIND) must be absolute 
+#      2. Volume path (singularity BIND) must be absolute
 
 salloc -J interact -N 1-1 -n 4 --time=1:00:00 -p defq srun --pty bash
 
@@ -14,8 +14,8 @@ curl -s https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/inst
 
 cat > ~/.local/bin/rc << EOF
 #!/bin/bash
-if [ ! -z "$1" ]; then
-    echo "$1" | tr "[ATGCatgc]" "[TACGtacg]" | rev
+if [ ! \$# -eq 0  ]; then
+    echo "\$1" | tr "[ATGCatgc]" "[TACGtacg]" | rev
 else
     echo ""
     echo "usage: rc DNASEQUENCE"
