@@ -38,6 +38,7 @@ echo "tutorial/*" >> .git/info/sparse-checkout
 # fetch the files from the remote Git repository
 git pull origin main
 
-# More details used in this tutorial can be found in How to do Reproducible Research:
+# How to do Reproducible Research,
+# see more details used in this tutorial in:
 
 # http://marcc.rtfd.io
