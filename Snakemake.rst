@@ -99,7 +99,7 @@ To download sequence data files using SRA Toolkit, you need create a ``run`` fil
   #SBATCH -p defq
   #SBATCH -N 1
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=1
+  #login01SBATCH --cpus-per-task=4
   #SBATCH --output=Array_test.%A_%a.out
   #SBATCH --array=1-101
 
@@ -178,7 +178,7 @@ Cutadapt finds and removes adapter sequences, primers, poly-A tails and other ty
   #SBATCH -J cutadapt
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=1
+  #login01SBATCH --cpus-per-task=4
   #SBATCH --output=cutadapt.job.%j.out
 
   module load snakemake/7.6.0
@@ -422,7 +422,7 @@ Burrows-Wheeler Alignment Tool
   #SBATCH -J bwamem
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=1
+  #login01SBATCH --cpus-per-task=4
   #SBATCH --output=bwamem.job.job.%j.out
 
   module load snakemake/7.6.0
@@ -508,7 +508,7 @@ Remove duplicates
   #SBATCH -J rmdup
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=1
+  #login01SBATCH --cpus-per-task=4
   #SBATCH --output=rmdup.job.job.%j.out
 
   module load snakemake/7.6.0
@@ -583,7 +583,7 @@ Add tags
   #SBATCH -J tags
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=1
+  #login01SBATCH --cpus-per-task=4
   #SBATCH --output=tags.job.job.%j.out
 
   module load snakemake/7.6.0
@@ -675,7 +675,7 @@ Tabix
   #SBATCH -J tabix
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #SBATCH --cpus-per-task=1
+  #login01SBATCH --cpus-per-task=4
   #SBATCH --output=tabix.job.job.%j.out
 
   module load snakemake/7.6.0
