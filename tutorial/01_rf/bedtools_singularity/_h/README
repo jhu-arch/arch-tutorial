@@ -5,6 +5,6 @@
 #      2. Volume path must be absolute
 
 export BIND=$(realpath .)/_m
-export CONTAINER=../_h/ubuntu_bedtools.sif
+export IMAGE=../_h/ubuntu_bedtools.sif
 
-rf run --container_image=${CONTAINER} --volume=${BIND}  -v .
+rf run --container_image=${IMAGE} --volume=${BIND}  -v .
