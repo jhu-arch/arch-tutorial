@@ -42,3 +42,7 @@ git pull origin main
 # see more details used in this tutorial in:
 
 # http://marcc.rtfd.io
+
+# https://snakemake.readthedocs.io/en/v3.10.1/getting_started/examples.html
+# https://snakemake.readthedocs.io/en/stable/tutorial/basics.html
+

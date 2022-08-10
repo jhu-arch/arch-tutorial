@@ -13,10 +13,10 @@ module load gcc
 VERSION=2.4.0
 APP_NAME=openjpeg
 
-# set it to FALSE to install it on Rockfish as an external package
+# set to FALSE to install it on Rockfish as an external package
 EVAL=true
 
-if ${EVAL} ; then
+if [ ${EVAL} ] ; then
     # Installation in user home
     PREFIX=${HOME}'/softwares_compiled/'${APP_NAME}'/'$VERSION
     if [ ! -d "${PREFIX}" ]; then mkdir -p ${PREFIX}; fi
