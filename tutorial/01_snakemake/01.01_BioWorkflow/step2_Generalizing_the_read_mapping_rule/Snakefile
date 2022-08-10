@@ -1,9 +1,9 @@
 # First load the modules
 #        module load snakemake bwa-mem
 #
-# usage: $ snakemake -np sorted_reads/B.bam
-#          snakemake -np mapped_reads/A.bam mapped_reads/B.bam
-#          snakemake -np mapped_reads/{A,B}.bam
+# usage: $ snakemake -np ../sorted_reads/B.bam
+#          snakemake -np ../mapped_reads/A.bam ../mapped_reads/B.bam
+#          snakemake -np ../mapped_reads/{A,B}.bam
 
 
 rule bwa_map:

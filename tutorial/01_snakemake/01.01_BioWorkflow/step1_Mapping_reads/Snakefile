@@ -1,8 +1,8 @@
 # First load the modules
 #        module load snakemake bwa-mem
 #
-# usage: $ snakemake -np mapped_reads/A.bam
-#          snakemake --cores 1 mapped_reads/A.bam
+# usage: $ snakemake -np ../mapped_reads/A.bam
+#          snakemake --cores 1 ../mapped_reads/A.bam
 
 
 rule bwa_map:
