@@ -9,6 +9,7 @@
 salloc -J interact -N 1-1 -n 4 --time=1:00:00 -p defq srun --pty bash
 
 pip3 install git+https://github.com/ricardojacomini/rf.git --upgrade --user --force
+pip3 install graphviz --user
 
 curl -s https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh | bash
 
@@ -37,8 +38,6 @@ echo "tutorial/*" >> .git/info/sparse-checkout
 
 # fetch the files from the remote Git repository
 git pull origin main
-
-pip3 install graphviz --user
 
 # How to do Reproducible Research,
 # see more details used in this tutorial in:
