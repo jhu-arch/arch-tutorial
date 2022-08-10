@@ -1,5 +1,5 @@
-#!/bin/bash
-
+# First load the modules
+#        module load snakemake samtools
 #
 # usage: $ snakemake -np mapped_reads/B.bam
 #          snakemake -np mapped_reads/A.bam mapped_reads/B.bam
@@ -13,7 +13,6 @@ rule samtools_sort:
         "../sorted_reads/{sample}.bam"
     shell:
     '''
-        module load samtools
 
         samtools sort -T sorted_reads/{wildcards.sample} -O bam {input} > {output}
     '''

@@ -1,6 +1,5 @@
-#!/bin/bash
-
-# First load the snakemake module
+# First load the modules
+#        module load snakemake bwa-mem
 #
 # usage: $ snakemake -np mapped_reads/A.bam
 #          snakemake --cores 1 mapped_reads/A.bam
@@ -13,8 +12,4 @@ rule bwa_map:
     output:
         "../mapped_reads/A.bam"
     shell:
-    '''
-        module load bwa-mem
-
-        bwa mem {input} | samtools view -Sb - > {output}
-'''
+        "bwa mem {input} | samtools view -Sb - > {output}"
