@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# First load the snakemake module
 #
 # usage: $ snakemake -np mapped_reads/A.bam
 #          snakemake --cores 1 mapped_reads/A.bam
