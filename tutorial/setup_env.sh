@@ -38,6 +38,8 @@ echo "tutorial/*" >> .git/info/sparse-checkout
 # fetch the files from the remote Git repository
 git pull origin main
 
+pip3 install graphviz --user
+
 # How to do Reproducible Research,
 # see more details used in this tutorial in:
 
@@ -45,4 +47,3 @@ git pull origin main
 
 # https://snakemake.readthedocs.io/en/v3.10.1/getting_started/examples.html
 # https://snakemake.readthedocs.io/en/stable/tutorial/basics.html
-
