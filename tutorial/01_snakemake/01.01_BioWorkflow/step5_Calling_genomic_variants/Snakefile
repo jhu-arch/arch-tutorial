@@ -1,6 +1,6 @@
 
 # First load the module
-#        module load snakemake 
+#        module load snakemake
 
 SAMPLES = ["A", "B"]
 
@@ -18,7 +18,7 @@ rule bwa_map:
         "mapped_reads/{sample}.bam"
     shell:
         '''
-    module load bwa-mem
+    module load bwa-mem samtools
     bwa mem {input} | samtools view -Sb - > {output}
 '''
 
@@ -59,8 +59,9 @@ rule bcftools_call:
         "calls/all.vcf"
     shell:
         '''
-    module load bcftools samtools
-    samtools mpileup -g -f {input.fa} {input.bam} | bcftools call -mv - > {output}
+    module load bcftools
+    bcftools mpileup -f {input.fa} {input.bam} |
+    bcftools call -mv - > {output}
 '''
 
 # Step 6: Writing a report

@@ -1,9 +1,9 @@
 # First load the module
 #        module load snakemake
 #
-# usage: $ snakemake -np ../mapped_reads/B.bam
-#          snakemake -np ../mapped_reads/A.bam ../mapped_reads/B.bam
-#          snakemake -np ../mapped_reads/{A,B}.bam
+# usage: $ snakemake -np ../sorted_reads/B.bam
+#          snakemake -np ../sorted_reads/A.bam ../mapped_reads/B.bam
+#          snakemake -np ../sorted_reads/{A,B}.bam
 
 
 rule samtools_sort:
