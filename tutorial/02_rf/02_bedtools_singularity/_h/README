@@ -7,4 +7,4 @@
 export BIND=$(realpath .)/_m
 export IMAGE=../_h/ubuntu_bedtools.sif
 
-rf run --container_image=${IMAGE} --volume=${BIND}  -v .
+nohup rf run --container_image=${IMAGE} --volume=${BIND}  -v . &
