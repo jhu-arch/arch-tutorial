@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # create this module use need install rf
-# pip install git+git://github.com/ricardojacomini/rf.git --upgrade --user
+# pip install git+git://github.com/ricardojacomini/rf.git --upgrade --force
 #
 # usage: rf run .
 
