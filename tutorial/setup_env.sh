@@ -8,7 +8,14 @@
 
 salloc -J interact -N 1-1 -n 4 --time=1:00:00 -p defq srun --pty bash
 
-pip3 install git+https://github.com/ricardojacomini/rf.git --upgrade --user --force
+ml python/3.9.0
+python3 -m venv ~/venvs/rf_snakemake_trainning
+
+source ~/venvs/rf_snakemake_trainning/bin/activate
+
+python3 -m pip install --upgrade pip
+
+pip3 install git+https://github.com/ricardojacomini/rf.git --upgrade --force
 pip3 install graphviz --user
 
 curl -s https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh | bash
