@@ -59,3 +59,5 @@ cd $DIR
 echo "Copying the env script"
 
 sh env.sh
+
+echo "Done!"
