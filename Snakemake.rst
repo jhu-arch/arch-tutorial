@@ -105,7 +105,7 @@ To download sequence data files using SRA Toolkit, you need create a ``run`` fil
 
   ml sra-tools/3.0.0
 
-  # samples correspond to Bioproject PRJEB10849
+  # Bioproject PRJEB10849 samples
 
   sra_numbers=($(echo {1016570..1016671}))
 
