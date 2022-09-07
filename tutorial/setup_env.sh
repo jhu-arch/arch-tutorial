@@ -51,5 +51,8 @@ git pull origin main
 
 # http://marcc.rtfd.io
 
-# https://snakemake.readthedocs.io/en/v3.10.1/getting_started/examples.html
-# https://snakemake.readthedocs.io/en/stable/tutorial/basics.html
+https://marcc.rtfd.io/RF.html
+https://marcc.readthedocs.io/Snakemake.html
+
+https://snakemake.readthedocs.io/en/v3.10.1/getting_started/examples.html
+https://snakemake.readthedocs.io/en/stable/tutorial/basics.html
