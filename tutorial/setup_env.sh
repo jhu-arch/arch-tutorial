@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is an How to do Reproducible Research sessions into The Rockfish cluster.
+# This is an How to do Reproducible Research into The Rockfish cluster.
 
 # NOTE:
 #      1. singularity containers cannot run from a scratch folder
@@ -16,7 +16,7 @@ source ~/venvs/rf_snakemake_trainning/bin/activate
 python3 -m pip install --upgrade pip
 
 pip3 install git+https://github.com/ricardojacomini/rf.git --upgrade --force
-pip3 install graphviz --upgrade 
+pip3 install graphviz --upgrade
 
 curl -s https://raw.githubusercontent.com/ricardojacomini/rf/master/scripts/install_tree_non_root.sh | bash
 
