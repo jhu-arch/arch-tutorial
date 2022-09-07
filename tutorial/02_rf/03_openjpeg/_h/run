@@ -60,8 +60,7 @@ echo "Copying the env script"
 
 sh env.sh
 
-echo -e "To test run: "
-
-echo $PREFIX"/env.sh"
+echo -e "To test source the follow file: "
+echo -e "source $PREFIX/env.sh"
 
 echo "Done!"
