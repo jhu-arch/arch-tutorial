@@ -4,7 +4,8 @@
 #
 # usage: $ snakemake -n
 #          snakemake -np
-#          snakemake --cores 4 
+#          snakemake --cores 4
+#          snakemake -n  
 
 SAMPLES = ["A", "B"]
 
