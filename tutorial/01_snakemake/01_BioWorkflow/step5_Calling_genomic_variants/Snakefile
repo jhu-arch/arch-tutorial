@@ -1,6 +1,10 @@
 
 # First load the module
 #        module load snakemake
+#
+# usage: $ snakemake -n
+#          snakemake -np
+#          snakemake --cores 4 
 
 SAMPLES = ["A", "B"]
 

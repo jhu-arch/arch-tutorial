@@ -1,4 +1,7 @@
 # First load the module
+#
+#  https://snakemake.readthedocs.io/en/stable/tutorial/basics.html 
+#
 #        module load snakemake
 #
 #   --dry-run, --dryrun, -n
