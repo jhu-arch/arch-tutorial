@@ -1,5 +1,3 @@
-module load gcc
-
 VERSION=2.4.0
 APP_NAME=openjpeg
 PREFIX=${HOME}'/softwares_compiled/'${APP_NAME}'/'$VERSION
