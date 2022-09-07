@@ -1,1 +1,1 @@
-nohup rf sbatch -r . &
+nohup rf sbatch . &
