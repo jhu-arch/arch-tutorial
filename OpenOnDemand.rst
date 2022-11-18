@@ -7,7 +7,7 @@ A Rockfish account is necessary to use OOD. Also, a campus network connection or
 
 |ood1|
 
-Once authenticated you will then be at the main page.
+Once authenticated you will be at the main page.
 
 |ood2|
 
