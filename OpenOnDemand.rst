@@ -26,6 +26,7 @@ Interactive Apps (Plugins)
 
 Interactive Apps provide a means for a user to launch and connect to an interactive batch job running a local web server (called Interactive App sessions) through the OnDemand portal (e.g., Abaqus/CAE, RStudio, Jupyter Lab and Notebook, MATLAB, Linux remote desktops) on Rockfish cluster. They are considered Dashboard App Plugins and not Passenger apps such as the Dashboard App, Shell App, Files App, and etc.
 
+
 |ood5|
 
 Remote Desktop
@@ -54,13 +55,34 @@ Once Slurm Scheduler is ready to use the requested resource, click Launch.
 
 |ood10|
 
+|ood11|
 So, if you have any problems starting this an app, look at Session ID: this case: (229e55a1-9808-4015-bb91-1ee36ffc3cc4), then open output.log file for more details.
 
 Jupyter Lab / Notebook
 **********************t
-This tutorial will walk you through creating an interactive Jupyter app that your users will use to launch a Jupyter Notebook Server within a batch job on a compute node. The user will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
+This app will launch a `Jupyter`_ on one or more nodes, creating an interactive session that users will be able to launch a Jupyter Server within a batch job on a compute node. They will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
+`GPU`_ specification is optional for the partitions that have them
+
+.. _Jupyter: https://jupyter.org/
+
+.. _GPU: https://www.arch.jhu.edu/user-guide/
+
+|ood12|
+
+:guilabel:`defq` Standard Compute These are standard HPC machines. Rockfish has 648 of these nodes with 48 cores and 192 GB of memory. All compute nodes have 192 GB of RAM. Chosing "defq" as the node type will decrease your wait time.
+:guilabel:`bigmem`Large Memory These are HPC machines with very large amounts of memory. Rockfish has 23 bigmem nodes with 48 cores and 1.5 TB of RAM.
+:guilabel:`GPU` Enabled These are HPC machines with GPUs. Rockfish has 17 nodes with 4 NVIDIA Tesla `A100`_ GPU and 1 node with 4 NVIDIA Tesla `V100`_ GPUs.
+
+They have the same CPU and memory characteristics of standard compute.
+
+.. _A100: https://www.nvidia.com/en-us/data-center/a100/
+.. _V100: https://www.nvidia.com/en-us/data-center/v100/
+
+|ood13|
 
 You can use ipkernel and add multiple envs and select it inside Jupyter, just following the next instructions.
+
+|ood14|
 
 In a terminal console on Rockfish cluster you can:
 
@@ -114,33 +136,33 @@ Install Jupyter kernel
   :width: 80 %
 
 .. |ood7| image:: images/ood7.png
-  :alt: Remote
+  :alt: Jupyter_Desktop
   :width: 80 %
 
 .. |ood8| image:: images/ood8.png
-  :alt: Remote
+  :alt: Queue
   :width: 80 %
 
 .. |ood9| image:: images/ood9.png
-  :alt: Remote
+  :alt: Starting
   :width: 80 %
 
 .. |ood10| image:: images/ood10.png
-  :alt: Remote
+  :alt: Launch
   :width: 80 %
 
 .. |ood11| image:: images/ood11.png
-  :alt: Remote
+  :alt: Desktop
   :width: 80 %
 
 .. |ood12| image:: images/ood12.png
-  :alt: Remote
+  :alt: Jupyter_Form
   :width: 80 %
 
-.. |ood12| image:: images/ood12.png
-  :alt: Remote
+.. |ood13| image:: images/ood13.png
+  :alt: Node
   :width: 80 %
 
-.. |ood12| image:: images/ood12.png
-  :alt: Remote
+.. |ood14| image:: images/ood14.png
+  :alt: Jupyter
   :width: 80 %
