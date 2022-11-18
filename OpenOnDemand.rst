@@ -21,10 +21,11 @@ all from within the web browser.
 
 |ood4|
 
-Interactive Apps
-****************
+Interactive Apps (Plugins)
+**************************
 
-Open OnDemand offers a few interactive applications for a user to use: Abaqus/CAE, RStudio, Jupyter Lab and Notebook, MATLAB, Linux remote desktops on Rockfish cluster.
+Interactive Apps provide a means for a user to launch and connect to an interactive batch job running a local web server (called Interactive App sessions) through the OnDemand portal (e.g., Abaqus/CAE, RStudio, Jupyter Lab and Notebook, MATLAB, Linux remote desktops) on Rockfish cluster. They are considered Dashboard App Plugins and not Passenger apps such as the Dashboard App, Shell App, Files App, and etc.
+
 |ood5|
 
 Remote Desktop
@@ -41,6 +42,52 @@ You will next see a form to specify the resources you’d like for the job.
 |ood6|
 
 You will next see a form to specify the resources you’d like for the job. Specifically the duration of the job (wall time), the number of cpus (cores), node type, etc. Below we ask for five hours and 2 cores. We also optionally specify a standard compute defq  with 4 Gb memory each cpu. If you wish you can also receive an email notification for when the job starts. Once you have filled out the form click Launch.
+
+|ood7|
+
+Once you launch the job, you will be presented with a notification that your job has been queued. Depending on the resources requested, your job should be scheduled within minutes. Then you will see the option to launch your session. Choose your display settings and click the launch button for your particular application, in this case Launch Remote Desktop.
+
+|ood8|
+|ood9|
+
+Once Slurm Scheduler is ready to use the requested resource, click Launch.
+
+|ood10|
+
+So, if you have any problems starting this an app, look at Session ID: this case: (229e55a1-9808-4015-bb91-1ee36ffc3cc4), then open output.log file for more details.
+
+Jupyter Lab / Notebook
+**********************t
+This tutorial will walk you through creating an interactive Jupyter app that your users will use to launch a Jupyter Notebook Server within a batch job on a compute node. The user will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
+
+You can use ipkernel and add multiple envs and select it inside Jupyter, just following the next instructions.
+
+In a terminal console on Rockfish cluster you can:
+
+Change to the proper version of python or conda
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ ## For Python Virtual environment
+
+      $ module load python; source <myenv>/bin/activate
+
+ ## For Conda environment
+
+      $ module load anaconda; conda activate <myenv>
+
+ then:
+
+      (myenv)$ pip install ipykernel
+
+Install Jupyter kernel
+^^^^^^^^^^^^^^^^^^^^^^
+      (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
+
+ Listing all the available environments (kernels)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      (myenv)$ jupyter kernelspec list
+
+
 
 .. |ood1| image:: images/ood1.png
   :alt: Login
@@ -60,12 +107,40 @@ You will next see a form to specify the resources you’d like for the job. Spec
 
 .. |ood5| image:: images/ood5.png
   :alt: Interactive
-  :width: 25 %
+  :width: 15 %
 
 .. |ood6| image:: images/ood6.png
   :alt: Remote
   :width: 80 %
 
 .. |ood7| image:: images/ood7.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood8| image:: images/ood8.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood9| image:: images/ood9.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood10| image:: images/ood10.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood11| image:: images/ood11.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood12| image:: images/ood12.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood12| image:: images/ood12.png
+  :alt: Remote
+  :width: 80 %
+
+.. |ood12| image:: images/ood12.png
   :alt: Remote
   :width: 80 %
