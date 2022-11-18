@@ -21,8 +21,8 @@ Along the top are a pull-down menus for a File Browser, a Job Composer, a shell,
 
 .. |ood2| image:: images/ood2.png
   :alt: Authenticated
-  :width: 70 %
+  :width: 80 %
 
 .. |ood3| image:: images/ood3.png
   :alt: Message
-  :width: 70 %
+  :width: 80 %
