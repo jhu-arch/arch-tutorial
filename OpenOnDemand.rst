@@ -9,6 +9,9 @@ A Rockfish account is necessary to use OOD. Also, a campus network connection or
 
 Authenticate you will then be at the main page.
 
+|ood2|
+
+|ood3|
 
 
 Along the top are a pull-down menus for a File Browser, a Job Composer, a shell, and a list of Interactive Apps.
@@ -16,4 +19,12 @@ Along the top are a pull-down menus for a File Browser, a Job Composer, a shell,
 
 .. |ood1| image:: images/ood1.png
   :alt: Login
+  :width: 60 %
+
+.. |ood2| image:: images/ood2.png
+  :alt: Authenticated
+  :width: 60 %
+
+.. |ood2| image:: images/ood3.png
+  :alt: Message
   :width: 60 %
