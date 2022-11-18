@@ -16,4 +16,4 @@ Along the top are a pull-down menus for a File Browser, a Job Composer, a shell,
 
 .. |ood1| image:: images/ood1.png
   :alt: Login
-  :width: 31 %
+  :width: 60 %
