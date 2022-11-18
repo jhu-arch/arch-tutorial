@@ -15,7 +15,6 @@ Once authenticated you will be at the main page.
 
 Along the top are a pull-down menus for a File Browser, a Job Composer, a shell, and a list of Interactive Apps.
 
-
 .. |ood1| image:: images/ood1.png
   :alt: Login
   :width: 70 %
