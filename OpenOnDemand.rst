@@ -13,18 +13,20 @@ Authenticate you will then be at the main page.
 
 |ood3|
 
-
 Along the top are a pull-down menus for a File Browser, a Job Composer, a shell, and a list of Interactive Apps.
 
 
 .. |ood1| image:: images/ood1.png
   :alt: Login
-  :width: 60 %
+  :width: 70 %
+  :align="center"
 
 .. |ood2| image:: images/ood2.png
   :alt: Authenticated
-  :width: 60 %
+  :width: 70 %
+  :align="center"
 
 .. |ood3| image:: images/ood3.png
   :alt: Message
-  :width: 60 %
+  :width: 70 %
+  :align="center"
