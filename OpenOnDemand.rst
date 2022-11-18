@@ -26,7 +26,6 @@ Interactive Apps (Plugins)
 
 Interactive Apps provide a means for a user to launch and connect to an interactive batch job running a local web server (called Interactive App sessions) through the OnDemand portal (e.g., Abaqus/CAE, RStudio, Jupyter Lab and Notebook, MATLAB, Linux remote desktops) on Rockfish cluster. They are considered Dashboard App Plugins and not Passenger apps such as the Dashboard App, Shell App, Files App, and etc.
 
-
 |ood5|
 
 Remote Desktop
@@ -125,7 +124,7 @@ Install Jupyter kernel
 
 .. |ood4| image:: images/ood4.png
   :alt: File
-  :width: 80 %
+  :width: 90 %
 
 .. |ood5| image:: images/ood5.png
   :alt: Interactive
