@@ -18,14 +18,11 @@ Along the top are a pull-down menus for a File Browser, a Job Composer, a shell,
 .. |ood1| image:: images/ood1.png
   :alt: Login
   :width: 70 %
-  :align: center
 
 .. |ood2| image:: images/ood2.png
   :alt: Authenticated
   :width: 70 %
-  :align: center
 
 .. |ood3| image:: images/ood3.png
   :alt: Message
   :width: 70 %
-  :align: center
