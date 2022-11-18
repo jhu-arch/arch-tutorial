@@ -52,6 +52,7 @@ The Advanced Research Computing at Hopkins (  :guilabel:`ARCH` ) – formerly kn
   :maxdepth: 2
   :caption: Common Tasks and Workflows
 
+  OpenOnDemand
   Linux
   RStudioServer
   JupyterLab
