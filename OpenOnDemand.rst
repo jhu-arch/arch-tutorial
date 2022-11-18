@@ -58,7 +58,8 @@ Once Slurm Scheduler is ready to use the requested resource, click Launch.
 So, if you have any problems starting this an app, look at Session ID: this case: (229e55a1-9808-4015-bb91-1ee36ffc3cc4), then open output.log file for more details.
 
 Jupyter Lab / Notebook
-**********************t
+**********************
+
 This app will launch a `Jupyter`_ on one or more nodes, creating an interactive session that users will be able to launch a Jupyter Server within a batch job on a compute node. They will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
 `GPU`_ specification is optional for the partitions that have them
 
@@ -128,7 +129,7 @@ Install Jupyter kernel
 
 .. |ood5| image:: images/ood5.png
   :alt: Interactive
-  :width: 15 %
+  :width: 30 %
 
 .. |ood6| image:: images/ood6.png
   :alt: Remote
@@ -136,7 +137,7 @@ Install Jupyter kernel
 
 .. |ood7| image:: images/ood7.png
   :alt: Jupyter_Desktop
-  :width: 80 %
+  :width: 60 %
 
 .. |ood8| image:: images/ood8.png
   :alt: Queue
