@@ -60,7 +60,7 @@ You will next see a form to specify the resources you’d like for the job. Spec
 
 .. |ood5| image:: images/ood5.png
   :alt: Interactive
-  :width: 50 %
+  :width: 25 %
 
 .. |ood6| image:: images/ood6.png
   :alt: Remote
