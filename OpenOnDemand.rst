@@ -107,8 +107,10 @@ Install Jupyter kernel
 ^^^^^^^^^^^^^^^^^^^^^^
       (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
 
- Listing all the available environments (kernels)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ List kernels
+^^^^^^^^^^^^^
+Listing all the available environments (kernels)
+
       (myenv)$ jupyter kernelspec list
 
 
