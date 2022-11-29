@@ -164,7 +164,7 @@ e-mail to help@rockfish.jhu.edu (ticketing system)
 
 .. |ood8| image:: images/ood8.png
   :alt: Queue
-  :width: 60 %
+  :width: 80 %
 
 .. |ood9| image:: images/ood9.png
   :alt: Starting
@@ -176,7 +176,7 @@ e-mail to help@rockfish.jhu.edu (ticketing system)
 
 .. |ood11| image:: images/ood11.png
   :alt: Desktop
-  :width: 80 %
+  :width: 100 %
 
 .. |ood12| image:: images/ood12.png
   :alt: Jupyter_Form
@@ -188,4 +188,4 @@ e-mail to help@rockfish.jhu.edu (ticketing system)
 
 .. |ood14| image:: images/ood14.png
   :alt: Jupyter
-  :width: 90 %
+  :width: 100 %
