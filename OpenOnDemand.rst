@@ -143,7 +143,7 @@ Install Jupyter kernel
 
 .. |ood8| image:: images/ood8.png
   :alt: Queue
-  :width: 80 %
+  :width: 60 %
 
 .. |ood9| image:: images/ood9.png
   :alt: Starting
@@ -159,12 +159,12 @@ Install Jupyter kernel
 
 .. |ood12| image:: images/ood12.png
   :alt: Jupyter_Form
-  :width: 80 %
+  :width: 60 %
 
 .. |ood13| image:: images/ood13.png
   :alt: Node
-  :width: 80 %
+  :width: 60 %
 
 .. |ood14| image:: images/ood14.png
   :alt: Jupyter
-  :width: 80 %
+  :width: 90 %
