@@ -132,7 +132,7 @@ HELP
 
 e-mail to help@rockfish.jhu.edu (ticketing system)
 
-https://portal.rockfish.jhu.edu/
+
 
 .. |ood1| image:: images/ood1.png
   :alt: Login
