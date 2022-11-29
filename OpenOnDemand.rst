@@ -142,11 +142,11 @@ e-mail to help@rockfish.jhu.edu (ticketing system)
 
 .. |ood2| image:: images/ood2.png
   :alt: Authenticated
-  :width: 80 %
+  :width: 100 %
 
 .. |ood3| image:: images/ood3.png
   :alt: Message
-  :width: 80 %
+  :width: 100 %
 
 .. |ood4| image:: images/ood4.png
   :alt: File
