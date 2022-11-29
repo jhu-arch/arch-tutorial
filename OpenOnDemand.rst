@@ -154,7 +154,7 @@ e-mail to help@rockfish.jhu.edu (ticketing system)
 
 .. |ood6| image:: images/ood6.png
   :alt: Remote
-  :width: 80 %
+  :width: 100 %
 
 .. |ood7| image:: images/ood7.png
   :alt: Jupyter_Desktop
