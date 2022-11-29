@@ -1,9 +1,11 @@
 Open OnDemand
 ##############
 
-Open OnDemand (OOD) is an NSF-funded open-source HPC portal. It is a way for all our users to access the Rockfish cluster HPC resources via a web interface. It is a web-portal that provides a shell, file browser, and graphical interface for applications such as IGV, Matlab, ParaView, Jupyter and RStudio Server, etc.
+Open OnDemand (`OOD`_) is an NSF-funded open-source HPC portal. It is a way for all our users to access the Rockfish cluster HPC resources via a web interface. It is a web-portal that provides a shell, file browser, and graphical interface for applications such as IGV, Matlab, ParaView, Jupyter and RStudio Server, etc.
 
-A Rockfish account is necessary to use OOD. Also, a campus network connection or VPN is required to access the OOD portal.
+.. _OOD: https://portal.rockfish.jhu.edu
+
+A Rockfish account is necessary to use OOD. Also, a campus network connection or VPN is required to access the `OOD`_ portal.
 
 |ood1|
 
@@ -31,7 +33,7 @@ Interactive Apps provide a means for a user to launch and connect to an interact
 Remote Desktop
 ****************
 
-Once in awhile, it is helpful to use a graphical interface to access data or certain programs. In this case, users have typically utilized VNC or X11 forwarding. Both of these tools have complications, either in complexity of setup or in performance. The Remote Desktop option from OOD simplifies the configuration of a VNC desktop session on a compute node.
+Once in awhile, it is helpful to use a graphical interface to access data or certain programs. In this case, users have typically utilized VNC or X11 forwarding. Both of these tools have complications, either in complexity of setup or in performance. The Remote Desktop option from OOD simplifies the configuration of a VNC desktop session in a compute node.
 
 First request the desktop application, i.e. anything under Desktops or GUIs, which you would like to use. Here we choose the Desktop.
 
@@ -60,7 +62,7 @@ So, if you have any problems starting this an app, look at Session ID: this case
 Jupyter Lab / Notebook
 **********************
 
-This app will launch a `Jupyter`_ on one or more nodes, creating an interactive session that users will be able to launch a Jupyter Server within a batch job on a compute node. They will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
+This app will launch a `Jupyter`_ on one or more nodes, creating an interactive session that users will be able to launch a Jupyter Server within a batch job in a compute node. They will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
 `GPU`_ specification is optional for the partitions that have them
 
 .. _Jupyter: https://jupyter.org/
