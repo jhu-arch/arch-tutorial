@@ -120,14 +120,14 @@ Troubleshooting
 Bad Request
 ^^^^^^^^^^^
 
-#### Message: Your browser sent a request that this server could not understand.
+** Message **: Your browser sent a request that this server could not understand.
 Size of a request header field exceeds server limit.
 
-#### Solution: Clear browser cookies
+** _Solution_ **: Clear browser cookies
 
-#### Message: Requested resource does not exist.
+** Message **: Requested resource does not exist.
 
-#### Solution: Enter URL https://portal.rockfish.jhu.edu/
+** _Solution_ **: Enter URL https://portal.rockfish.jhu.edu/
 
 HELP
 ****
