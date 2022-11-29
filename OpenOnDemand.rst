@@ -71,9 +71,9 @@ This app will launch a `Jupyter`_ on one or more nodes, creating an interactive 
 
 |ood12|
 
-:guilabel:`defq` Standard Compute These are standard HPC machines. Rockfish has 648 of these nodes with 48 cores and 192 GB of memory. All compute nodes have 192 GB of RAM. Chosing "defq" as the node type will decrease your wait time.
-:guilabel:`bigmem`Large Memory These are HPC machines with very large amounts of memory. Rockfish has 23 bigmem nodes with 48 cores and 1.5 TB of RAM.
-:guilabel:`GPU` Enabled These are HPC machines with GPUs. Rockfish has 17 nodes with 4 NVIDIA Tesla `A100`_ GPU and 1 node with 4 NVIDIA Tesla `V100`_ GPUs.
+:guilabel: `defq` Standard Compute These are standard HPC machines. Rockfish has 648 of these nodes with 48 cores and 192 GB of memory. All compute nodes have 192 GB of RAM. Chosing "defq" as the node type will decrease your wait time.
+:guilabel: `bigmem` Large Memory These are HPC machines with very large amounts of memory. Rockfish has 23 bigmem nodes with 48 cores and 1.5 TB of RAM.
+:guilabel: `GPU` Enabled These are HPC machines with GPUs. Rockfish has 17 nodes with 4 NVIDIA Tesla `A100`_ GPU and 1 node with 4 NVIDIA Tesla `V100`_ GPUs.
 
 They have the same CPU and memory characteristics of standard compute.
 
