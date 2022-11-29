@@ -85,6 +85,9 @@ They have the same CPU and memory characteristics of standard compute.
 
 |ood13|
 
+Add multiple environments
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 You can use ipkernel and add multiple envs and select it inside Jupyter, just following the next instructions.
 
 |ood14|
