@@ -39,10 +39,6 @@ First request the desktop application, i.e. anything under Desktops or GUIs, whi
 
 |ood6|
 
-You will next see a form to specify the resources you’d like for the job.
-
-|ood6|
-
 You will next see a form to specify the resources you’d like for the job. Specifically the duration of the job (wall time), the number of cpus (cores), node type, etc. Below we ask for five hours and 2 cores. We also optionally specify a standard compute defq  with 4 Gb memory each cpu. If you wish you can also receive an email notification for when the job starts. Once you have filled out the form click Launch.
 
 |ood7|
