@@ -86,7 +86,7 @@ You can use ipkernel and add multiple envs and select it inside Jupyter, just fo
 
 |ood14|
 
-In a terminal console on Rockfish cluster:
+In a terminal console on Rockfish cluster run these commands:
 
 Change to the proper version of python or conda
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
