@@ -107,13 +107,32 @@ Install Jupyter kernel
 ^^^^^^^^^^^^^^^^^^^^^^
       (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
 
- List kernels
-^^^^^^^^^^^^^
 Listing all the available environments (kernels)
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       (myenv)$ jupyter kernelspec list
 
+Troubleshooting
+***************
 
+
+Bad Request
+^^^^^^^^^^^
+
+#### Message: Your browser sent a request that this server could not understand.
+Size of a request header field exceeds server limit.
+
+#### Solution: Clear browser cookies
+
+#### Message: Requested resource does not exist.
+
+#### Solution: Enter URL https://portal.rockfish.jhu.edu/
+
+HELP
+****
+
+e-mail to help@rockfish.jhu.edu (ticketing system)
+
+https://portal.rockfish.jhu.edu/
 
 .. |ood1| image:: images/ood1.png
   :alt: Login
