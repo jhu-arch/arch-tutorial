@@ -1,6 +1,11 @@
 Open OnDemand
 ##############
 
+HELP
+****
+
+e-mail to help@rockfish.jhu.edu (ticketing system)
+
 Open OnDemand (`OOD`_) is an NSF-funded open-source HPC portal. It is a way for all our users to access the Rockfish cluster HPC resources via a web interface. It is a web-portal that provides a shell, file browser, and graphical interface for applications such as IGV, Matlab, ParaView, Jupyter and RStudio Server, etc.
 
 .. _OOD: https://portal.rockfish.jhu.edu
@@ -109,6 +114,7 @@ Listing all the available environments (kernels)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       (myenv)$ jupyter kernelspec list
 
+
 Troubleshooting
 ***************
 
@@ -125,10 +131,6 @@ Size of a request header field exceeds server limit.
 
  ** _Solution_ ** : Enter URL https://portal.rockfish.jhu.edu/
 
-HELP
-****
-
-e-mail to help@rockfish.jhu.edu (ticketing system)
 
 
 
