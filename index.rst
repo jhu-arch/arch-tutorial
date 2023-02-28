@@ -66,6 +66,7 @@ The Advanced Research Computing at Hopkins (  :guilabel:`ARCH` ) – formerly kn
   Snakemake
   Singularity
   Virtual
+  Shorts
 
 .. |pic1| image:: images/NSF.png
   :alt: NFS
