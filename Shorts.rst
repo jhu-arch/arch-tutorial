@@ -16,6 +16,7 @@ Here's an example of how to create a virtual Python environment using the built-
 2. Enter the following command to create a new virtual environment:
 
 .. code-block:: console
+    
   module load python/3.8.6
   python3 -m venv myenv
 
