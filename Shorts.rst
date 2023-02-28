@@ -6,7 +6,6 @@ They are straight to the point tutorials on Rockfish.
 Python virtual environment
 **************************
 
-
 .. image:: https://readthedocs.org/projects/python/badge/?version=latest
   :target: https://python.readthedocs.io/en/latest/?badge=latest
   :alt: The Python programming language
@@ -15,7 +14,7 @@ Here's an example of how to create a virtual Python environment using the built-
 
 For more details, see. :ref:`Virtual Environment <virtual-env>`.
 
-1. Open your terminal or command prompt and navigate to the directory where you want to create the virtual environment.
+1. Connect to Rockfish terminal and navigate to the directory where you want to create the virtual environment.
 2. Enter the following command to create a new virtual environment:
 
 .. code-block:: console
@@ -66,20 +65,20 @@ Anaconda virtual environment
 
 Here's an example of how to create a new Conda environment using the conda create command:
 
-1. Open your terminal or command prompt.
+1. Connect to Rockfish terminal.
 2. Enter the following command to create a new Conda environment named myenv:
 
 .. code-block:: console
 
- module load anaconda
- conda create --name myenv
+  module load anaconda
+  conda create --name myenv
 
 You can also specify which version of Python you want to use by including the version number after the environment name. 
 For example, to create a new environment named myenv with Python 3.9, you would enter:
 
 .. code-block:: console
 
- conda create --name myenv python=3.9
+  conda create --name myenv python=3.9
 
 3. Activate the new environment.
 
