@@ -13,7 +13,7 @@ Python virtual environment
 
 Here's an example of how to create a virtual Python environment using the built-in venv module in Python 3:
 
-For more details and explanation, see. :ref:`Virtual Environment <virtual-env>`.
+For more details, see. :ref:`Virtual Environment <virtual-env>`.
 
 1. Open your terminal or command prompt and navigate to the directory where you want to create the virtual environment.
 2. Enter the following command to create a new virtual environment:
