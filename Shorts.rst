@@ -1,7 +1,7 @@
 Short Tutorials
 ###############
 
-They  are straight to the point tutorials, for more details and explanation, see. :ref:`Virtual Environment <virtual-env>`.
+They are straight to the point tutorials, for more details and explanation, see. :ref:`Virtual Environment <virtual-env>`.
 
 Python virtual environment
 **************************
