@@ -1,4 +1,4 @@
-.. _virtual_env:
+.. _virtual-env:
 
 Virtual Environment
 ###################
