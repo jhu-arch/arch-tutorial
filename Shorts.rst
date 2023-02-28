@@ -1,7 +1,7 @@
 Short Tutorials
 ###############
 
-They they are straight to the point tutorials, for more details and explanation, see. `Virtual Environment <virtual_env>`.
+They they are straight to the point tutorials, for more details and explanation, see. :ref:`Virtual Environment <virtual_env>`.
 
 
 There are ``Python`` and ``Anaconda`` installed on Rockfish cluster. The environments and packages that can be installed using ``pip`` and/or ``conda``. They differ in how dependency relationships within an environment are performed.
