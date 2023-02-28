@@ -64,7 +64,7 @@ Jupyter Lab / Notebook
 **********************
 
 This app will launch a `Jupyter`_ on one or more nodes, creating an interactive session that users will be able to launch a Jupyter Server within a batch job in a compute node. They will then be able to connect to the running server through their browser and take advantage of the resources provided within the batch job.
-`GPU`_ specification is optional for the partitions that have them
+`GPU`_ specification is optional for the partitions that have them.
 
 .. _Jupyter: https://jupyter.org/
 
@@ -72,11 +72,11 @@ This app will launch a `Jupyter`_ on one or more nodes, creating an interactive 
 
 |ood12|
 
- :guilabel:`Defq` Standard Compute These are standard HPC machines. Rockfish has 648 of these nodes with 48 cores and 192 GB of memory. All compute nodes have 192 GB of RAM. Chosing "defq" as the node type will decrease your wait time.
+ :guilabel:`Defq` Standard Compute these are standard HPC machines. Rockfish has nodes with 48 cores and 192 GB of memory. All compute nodes have 192 GB of RAM. Chosing "defq" as the node type will decrease your wait time.
 
- :guilabel:`Bigmem` Large Memory These are HPC machines with very large amounts of memory. Rockfish has 23 bigmem nodes with 48 cores and 1.5 TB of RAM.
+ :guilabel:`Bigmem` Large Memory these are HPC machines with very large amounts of memory. Rockfish has also bigmem nodes with 48 cores and 1.5 TB of RAM.
 
- :guilabel:`GPU` Enabled These are HPC machines with GPUs. Rockfish has 17 nodes with 4 NVIDIA Tesla `A100`_ GPU and 1 node with 4 NVIDIA Tesla `V100`_ GPUs.
+ :guilabel:`GPU` these are HPC machines with GPUs. Rockfish has nodes with 4 NVIDIA Tesla `A100`_ GPU and NVIDIA Tesla `V100`_ GPUs.
 
 They have the same CPU and memory characteristics of standard compute.
 
