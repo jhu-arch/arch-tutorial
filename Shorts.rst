@@ -106,7 +106,7 @@ That's it! You've now created a new Conda environment and installed a package in
 
 
 How to use python vend and conda env in slurm script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+****************************************************
 
 To use a virtual environment created with either venv or conda in a Slurm script, you need to activate the environment before running your Python script. 
 
