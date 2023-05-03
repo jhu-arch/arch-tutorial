@@ -71,8 +71,8 @@ Now as a root user inside the container. Note also the addition of the ``--writa
 .. warning::
    The ``--fakeroot`` option provided in Singularity version 3.6.x (for use with the singularity ``build``, ``shell``, and ``exec`` commands) is not supported on Rockfish systems for security reasons.
 
-How to building a Singularity Image from Docker Hub
-******************************************************
+How to build a Singularity Image from Docker Hub
+************************************************
 
 Singularity can also use containers directly from Docker images. You can ``shell``, ``import``, ``run``, and ``exec`` Docker images directly from the ``Docker Registry``. This feature was included because developers have been using Docker and scientists have already put many resources into creating Docker images.
 Docker images, opening up access to a large number of existing container images available on Docker Hub and other registries.
