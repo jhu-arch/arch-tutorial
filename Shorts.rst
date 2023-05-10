@@ -1,10 +1,10 @@
 Short Tutorials
-###############
+======================
 
 They are straight to the point tutorials on Rockfish.
 
 Python virtual environment
-**************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://readthedocs.org/projects/python/badge/?version=latest
   :target: https://python.readthedocs.io/en/latest/?badge=latest
@@ -45,7 +45,7 @@ This will create a new virtual environment named myenv in the current directory.
 That's it! You've now created a virtual Python environment and installed a package inside it.
 
 Anaconda virtual environment
-****************************
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://copr.fedorainfracloud.org/coprs/g/rhinstaller/Anaconda/package/anaconda/status_image/last_build.png
     :alt: Build status
@@ -178,7 +178,7 @@ Additionally, make sure to adjust the module load commands for any other modules
 
 
 How to load R submodules on Rockfish cluster
-=============================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In general, the ``module load`` command is used to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as ``PATH`` or ``LD_LIBRARY_PATH``, to make the software package available to the user.
 
