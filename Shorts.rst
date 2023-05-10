@@ -180,8 +180,7 @@ Additionally, make sure to adjust the module load commands for any other modules
 How to load Rockfish R submodules into an R session or R-Studio environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning::
-  These procedures can be executed in an R session and can be easily reproduced in various environments, such as R-Studio, R Script, or Slurm script.
+This tutorial will guide you through the process of loading Rockfish R submodules in an R session. These procedures also can be easily reproduced in various environments, such as R-Studio, R Script, or Slurm script.
 
 In general, the ``module load`` command is used to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as ``PATH`` or ``LD_LIBRARY_PATH``, to make the software package available to the user.
 
