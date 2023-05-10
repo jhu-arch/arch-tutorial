@@ -325,8 +325,9 @@ How to load R submodules and install Rsamtools package in R session
 
  > library(Rsamtools)
 
- How to load R submodules and and list in R session
-----------------------------------------------------
+
+How to load and and list submodule in R session
+------------------------------------------------
 
 .. code-block:: console
 
