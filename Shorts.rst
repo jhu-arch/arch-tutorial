@@ -309,7 +309,7 @@ How to load R submodules and install Rsamtools in R session
  
 .. tip::
     Loading the r/4.0.2 will make R submodules available in the R session. 
-    **Note**: It won't work if you use a different R version loaded in the terminal.
+    **Note**: It won't work if you use a different R version loaded in the terminal. Change the version as needed.
 
 .. code-block:: console
 
