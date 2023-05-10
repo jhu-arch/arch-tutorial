@@ -313,17 +313,17 @@ How to load R submodules and install Rsamtools package in R session
 
 .. code-block:: console
 
- > module("load", "r-curl/4.3")
- > module("load","libjpeg")
- > module("load","libpng")
- > module("load","bzip2")
- > module("load","curl")
+    > module("load", "r-curl/4.3")
+    > module("load","libjpeg")
+    > module("load","libpng")
+    > module("load","bzip2")
+    > module("load","curl")
 
- > if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
- > BiocManager::install("Rsamtools",dependencies=TRUE, force=TRUE)
+    > if (!require("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+    > BiocManager::install("Rsamtools",dependencies=TRUE, force=TRUE)
 
- > library(Rsamtools)
+    > library(Rsamtools)
 
 
 How to load and and list submodule in R session
