@@ -280,7 +280,7 @@ However, if the ``ggplot2`` package is not installed, you need to install it usi
 
 This command will install the ``ggplot2`` package into the R session, making its functions and data available for use.
 
-How to load tidyverse R submodules in R session
+How to load tidyverse R submodule in R session
 ------------------------------------------------
 
 .. code-block:: console
@@ -291,8 +291,8 @@ How to load tidyverse R submodules in R session
   > module("load", "r-tidyverse")
   > library(tidyverse)
 
-How to load R submodules and install Rsamtools in R session
-------------------------------------------------------------
+How to load R submodules and install Rsamtools package in R session
+---------------------------------------------------------------------
 
 .. code-block:: console
 
