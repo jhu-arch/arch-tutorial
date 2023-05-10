@@ -227,8 +227,10 @@ Also, the easy way is to source the ``lmod.R`` script which will provide additio
 How to load R submodules available in the system in R session
 --------------------------------------------------------------
 
+the ``lmod.R`` script help to loads and executes submodules available in the system in R session.
+
 .. note::
-   This script is available in the `` /data/apps/helpers/`` directory on Rockfish.
+   This script is available in the `` /data/apps/helpers/`` directory on Rockfish. It will change the ``R_LIBS_USER`` variable in R returning the paths where R looks for installed packages, the same way  ``module load`` do in the terminal setting the environment. When R searches for a package that has been loaded or installed, it will search in each of the directories listed by **.libPaths()** until it finds the package it is looking for.
 
 Here is an example of how to use the ``lmod.R`` script to load a submodule for ``R/4.0.2``:
 
@@ -244,14 +246,14 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 
 .. code-block:: console
 
-  > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
+  > source("/data/apps/helpers/lmod.R")
 
 .. tip::
     You can also use the **source()** function to load the ``lmod.R`` script from a different directory. For example:
   
-    source("/data/apps/helpers/lmod.R")
+    source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
 
-4. After you have loaded the ``lmod.R`` script, you can use the **lmod()** function to load the desired submodule. For example, if you wanted to load the **ggplot2** package, which is a popular package for data visualization in R, you would type the following command:
+4. After you have sourced the ``lmod.R`` script, you can use the **lmod()** function to load the desired submodule. For example, if you wanted to load the **ggplot2** package, which is a popular package for data visualization in R, you would type the following command:
 
 .. code-block:: console
 
@@ -268,7 +270,7 @@ This command loads the ``ggplot2`` package into the R session, making its functi
 
 This command removes the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages.
 
-Overall, loading submodules in R/4.0.2 is a matter of using the **lmod()** function to load R packages within the R command line interface. The specific packages and submodules you load will depend on your specific needs and goals.
+Overall, loading submodules in R/4.0.2 is a matter of using the **lmod.R** function to load R packages within the R command line interface. The specific packages and submodules you load will depend on your specific needs and goals.
 
 However, if the ``ggplot2`` package is not installed, you need to install it using the **install.packages()** command. For example:
 
@@ -305,9 +307,6 @@ How to load R submodules and install Rsamtools in R session
   > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
   > module("load", "r/4.0.2")          
  
-.. warning::
-    It is needed to load R module in R session and make submodules available in R session. Load R modules in R session, change version as needed.
-
 .. code-block:: console
 
  > module("load", "r-curl/4.3")
