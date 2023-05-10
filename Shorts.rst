@@ -178,8 +178,8 @@ Additionally, make sure to adjust the module load commands for any other modules
 .. _Anaconda: https://anaconda.org
 
 
-How to load R submodules 
-************************
+How to load R submodules on Rockfish cluster
+********************************************
 
 In general, the module load command is used in a Linux or Unix environment to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as PATH or LD_LIBRARY_PATH, to make the software package available to the user.
 
