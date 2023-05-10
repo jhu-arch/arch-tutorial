@@ -354,7 +354,9 @@ How to load and and list submodule in R session
     For example:
 
     > module("avail") 
+
     > module("spider","r-")
+    
     > module("list")
 
     This command lists all of the available modules in the current Lmod system. Running this command can be useful if you are not sure which module you need to load for a particular task.
