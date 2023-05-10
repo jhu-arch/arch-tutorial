@@ -262,7 +262,8 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
   > module("load", "r/4.0.2")
   > module("load", "ggplot2")
 
-This command loads the ``ggplot2`` package into the R session, making its functions and data available for use.
+
+The first load command will load the R module making Rockfish R submodules available to the next command, and the second load command will load the ``ggplot2`` package into the R session, making its functions and data available for use.
 
 5. After you have finished using the submodule, you can unload it from the R session using the **lmod()** function. For example:
 
