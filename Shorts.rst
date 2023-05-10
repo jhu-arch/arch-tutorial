@@ -181,9 +181,9 @@ Additionally, make sure to adjust the module load commands for any other modules
 How to load R submodules on Rockfish cluster
 ********************************************
 
-In general, the module load command is used in a Linux or Unix environment to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as PATH or LD_LIBRARY_PATH, to make the software package available to the user.
+In general, the ``module load`` is used to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as ``PATH`` or ``LD_LIBRARY_PATH``, to make the software package available to the user.
 
-For instance, in this specific case, the module load command can be used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
+For instance, in this specific case, the ``module load`` command is being used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
 
 .. note::
    R is an open-source programming language and software environment that is commonly used for statistical computing, data analysis, and visualization. By loading version ``4.0.2`` of ``R`` into the shell session, the user can run R scripts and commands, use R packages, and access other R-related functionality from within the terminal.
