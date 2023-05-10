@@ -106,9 +106,8 @@ Alternatively, you can use pip to install packages:
 
 That's it! You've now created a new Conda environment and installed a package inside it.
 
-
 How to use python vend and conda env in slurm script
-****************************************************
+-----------------------------------------------------
 
 To use a virtual environment created with either venv or conda in a Slurm script, you need to activate the environment before running your Python script. 
 
@@ -179,14 +178,14 @@ Additionally, make sure to adjust the module load commands for any other modules
 
 
 How to load R submodules on Rockfish cluster
-********************************************
+=============================================
 
-In general, the ``module load`` is used to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as ``PATH`` or ``LD_LIBRARY_PATH``, to make the software package available to the user.
+In general, the ``module load`` command is used to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as ``PATH`` or ``LD_LIBRARY_PATH``, to make the software package available to the user.
 
 For instance, in this specific case, the ``module load`` command is being used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
 
 .. note::
-   R is an open-source programming language and software environment that is commonly used for statistical computing, data analysis, and visualization. By loading version ``4.0.2`` of ``R`` into the shell session, the user can run R scripts and commands, use R packages, and access other R-related functionality from within the terminal.
+   `R`_ is an open-source programming language and software environment that is commonly used for statistical computing, data analysis, and visualization. By loading version ``4.0.2`` of ``R`` into the shell session, the user can run R scripts and commands, use R packages, and access other R-related functionality from within the terminal.
 
 Here is an example of how to load a submodule for ``R/4.0.2``:
 
@@ -196,7 +195,7 @@ Here is an example of how to load a submodule for ``R/4.0.2``:
 
   [userid@local ~]$ module load r/4.0.2
 
-2. Next, you would start an `R`_ session by typing **R** at the command line. This will open the R command line interface.
+2. Next, you would start an **R session** by typing **R** at the command line. This will open the R command line interface.
 
 3. Once you are in the **R** command line interface, you can use the **library()** function to load the desired submodule. For example, if you wanted to load the **ggplot2** package, which is a popular package for data visualization in R, you would type the following command:
 
@@ -206,28 +205,27 @@ Here is an example of how to load a submodule for ``R/4.0.2``:
 
 This command loads the ``ggplot2`` package into the R session, making its functions and data available for use.
 
-4. After you have finished using the submodule, you can unload it from the R session using the **detach()** function. For example:
+4. After you have finished using the submodule, you can unload it from the R session using the **detach()** function, to remove the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages. 
 
 .. code-block:: console
 
   > detach("package:ggplot2", unload=TRUE)
 
-This command removes the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages.
-
 Overall, loading submodules in R/4.0.2 is a matter of using the **library()** function to load R packages within the R command line interface. The specific packages and submodules you load will depend on your specific needs and goals.
 
-However, if the ``ggplot2`` package is not installed, you need to install it using the **install.packages()** command. For example:
+However, if the ``ggplot2`` package is not installed or not available, you will need to install it using the **install.packages()** command.
 
 .. code-block:: console
 
   > install.packages("ggplot2")
 
-This command will install the ``ggplot2`` package into the R session, making its functions and data available for use.
+This command will install the ``ggplot2`` package into the R session, making its functions and data available for use. 
 
-How to load R submodules available in the system in R seession
-***************************************************************
+Also, the easy way is to source the ``lmod.R`` script which will provide additional functionality for managing R modules in the **R session**, explained in the next section.
 
-We can use ``lmod.R`` script. A custom script that was developed to provide additional functionality for managing R modules in **R seession**.
+
+How to load R submodules available in the system in R session
+--------------------------------------------------------------
 
 .. note::
    This script is available in the `` /data/apps/helpers/`` directory on Rockfish.
@@ -280,8 +278,9 @@ However, if the ``ggplot2`` package is not installed, you need to install it usi
 
 This command will install the ``ggplot2`` package into the R session, making its functions and data available for use.
 
-How to load tidyverse R submodules in R seession
-*************************************************
+How to load tidyverse R submodules in R session
+------------------------------------------------
+
 .. code-block:: console
 
   [userid@local ~]$ module load r/4.0.2   
@@ -290,8 +289,8 @@ How to load tidyverse R submodules in R seession
   > module("load", "r-tidyverse")
   > library(tidyverse)
 
-How to load R submodules and install Rsamtools in R seession
-*************************************************************
+How to load R submodules and install Rsamtools in R session
+------------------------------------------------------------
 
 .. code-block:: console
 
