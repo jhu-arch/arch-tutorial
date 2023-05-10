@@ -300,13 +300,17 @@ How to load R submodules and install Rsamtools in R session
   [userid@local ~]$ R
 
 .. warning::
-    If you are using a different version of R, you will need to change the version in the module load command, change version as needed.
+    The **lmod.R** only works with **r/3.6.3** or **r/4.0.2**.
 
 .. code-block:: console
 
   > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
   > module("load", "r/4.0.2")          
  
+.. tip::
+    Loading the r/4.0.2 will make R submodules available in the R session. 
+    **Note**: It won't work if you use a different R version loaded in the terminal.
+
 .. code-block:: console
 
  > module("load", "r-curl/4.3")
