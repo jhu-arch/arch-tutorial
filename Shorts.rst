@@ -176,3 +176,151 @@ Additionally, make sure to adjust the module load commands for any other modules
 .. _conda-forge: https://conda-forge.org/
 .. _conda-pack: https://conda.github.io/conda-pack/
 .. _Anaconda: https://anaconda.org
+
+
+How to load R submodules 
+************************
+
+In general, the module load command is used in a Linux or Unix environment to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as PATH or LD_LIBRARY_PATH, to make the software package available to the user.
+
+For instance, in this specific case, the module load command can be used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
+
+.. note::
+   R is an open-source programming language and software environment that is commonly used for statistical computing, data analysis, and visualization. By loading version ``4.0.2`` of ``R`` into the shell session, the user can run R scripts and commands, use R packages, and access other R-related functionality from within the terminal.
+
+Here is an example of how to load a submodule for ``R/4.0.2``:
+
+1. First, you would need to log in to a system where R/4.0.2 is installed and load the R module using the module load command.
+
+.. code-block:: console
+
+  [userid@local ~]$ module load r/4.0.2
+
+2. Next, you would start an `R`_ session by typing **R** at the command line. This will open the R command line interface.
+
+3. Once you are in the **R** command line interface, you can use the **library()** function to load the desired submodule. For example, if you wanted to load the **ggplot2** package, which is a popular package for data visualization in R, you would type the following command:
+
+.. code-block:: console
+
+  > library(ggplot2)
+
+This command loads the ``ggplot2`` package into the R session, making its functions and data available for use.
+
+4. After you have finished using the submodule, you can unload it from the R session using the **detach()** function. For example:
+
+.. code-block:: console
+
+  > detach("package:ggplot2", unload=TRUE)
+
+This command removes the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages.
+
+Overall, loading submodules in R/4.0.2 is a matter of using the **library()** function to load R packages within the R command line interface. The specific packages and submodules you load will depend on your specific needs and goals.
+
+However, if the ``ggplot2`` package is not installed, you need to install it using the **install.packages()** command. For example:
+
+.. code-block:: console
+
+  > install.packages("ggplot2")
+
+This command will install the ``ggplot2`` package into the R session, making its functions and data available for use.
+
+How to load R submodules available in the system in R seession
+***************************************************************
+
+We can use ``lmod.R`` script. A custom script that was developed to provide additional functionality for managing R modules in **R seession**.
+
+.. note::
+   This script is available in the `` /data/apps/helpers/`` directory on Rockfish.
+
+Here is an example of how to use the ``lmod.R`` script to load a submodule for ``R/4.0.2``:
+
+1. First, you would need to log in to a system where R/4.0.2 is installed and load the R module using the module load command.
+
+.. code-block:: console
+
+  [userid@local ~]$ module load r/4.0.2
+
+2. Next, you would start an `R`_ session by typing **R** at the command line. This will open the R command line interface.
+
+3. Once you are in the **R** command line interface, you can use the **source()** function to load the ``lmod.R`` script. For example:
+
+.. code-block:: console
+
+  > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
+
+.. tip::
+    You can also use the **source()** function to load the ``lmod.R`` script from a different directory. For example:
+  
+    source("/data/apps/helpers/lmod.R")
+
+4. After you have loaded the ``lmod.R`` script, you can use the **lmod()** function to load the desired submodule. For example, if you wanted to load the **ggplot2** package, which is a popular package for data visualization in R, you would type the following command:
+
+.. code-block:: console
+
+  > module("load", "r/4.0.2")
+  > module("load", "ggplot2")
+
+This command loads the ``ggplot2`` package into the R session, making its functions and data available for use.
+
+5. After you have finished using the submodule, you can unload it from the R session using the **lmod()** function. For example:
+
+.. code-block:: console
+
+  > module("unload", "ggplot2")
+
+This command removes the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages.
+
+Overall, loading submodules in R/4.0.2 is a matter of using the **lmod()** function to load R packages within the R command line interface. The specific packages and submodules you load will depend on your specific needs and goals.
+
+However, if the ``ggplot2`` package is not installed, you need to install it using the **install.packages()** command. For example:
+
+.. code-block:: console
+
+  > install.packages("ggplot2")
+
+This command will install the ``ggplot2`` package into the R session, making its functions and data available for use.
+
+How to load tidyverse R submodules in R seession
+*************************************************
+.. code-block:: console
+
+  [userid@local ~]$ module load r/4.0.2   
+  [userid@local ~]$ R
+ 
+  > module("load", "r-tidyverse")
+  > library(tidyverse)
+
+How to load R submodules and install Rsamtools in R seession
+*************************************************************
+
+.. code-block:: console
+
+  [userid@local ~]$ module load r/4.0.2   
+  [userid@local ~]$ R
+
+.. warning::
+    If you are using a different version of R, you will need to change the version in the module load command, change version as needed.
+
+.. code-block:: console
+
+  > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
+  > module("load", "r/4.0.2")          
+ 
+.. warning::
+    It is needed to load R module in R session and make submodules available in R session. Load R modules in R session, change version as needed.
+
+.. code-block:: console
+
+ > module("load", "r-curl/4.3")
+ > module("load","libjpeg")
+ > module("load","libpng")
+ > module("load","bzip2")
+ > module("load","curl")
+
+ > if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+ > BiocManager::install("Rsamtools",dependencies=TRUE, force=TRUE)
+
+ > library(Rsamtools)
+
+.. _R: https://www.r-project.org/
