@@ -182,14 +182,14 @@ How to load R submodules on Rockfish cluster
 
 In general, the ``module load`` command is used to load a specific software package or application into the current shell session. This command modifies the system's environment variables, such as ``PATH`` or ``LD_LIBRARY_PATH``, to make the software package available to the user.
 
-For instance, in this specific case, the ``module load`` command is being used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
-
 .. note::
    `R`_ is an open-source programming language and software environment that is commonly used for statistical computing, data analysis, and visualization. By loading version ``4.0.2`` of ``R`` into the shell session, the user can run R scripts and commands, use R packages, and access other R-related functionality from within the terminal.
 
+For instance, in this specific case, the ``module load`` command is being used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
+
 Here is an example of how to load a submodule for ``R/4.0.2``:
 
-1. First, you would need to log in to a system where R/4.0.2 is installed and load the R module using the module load command.
+1. First, you would need to log in to a system where R/4.0.2 is installed and load the R module.
 
 .. code-block:: console
 
@@ -230,7 +230,7 @@ How to load R submodules available in the system in R session
 the ``lmod.R`` script help to loads and executes submodules available in the system in R session.
 
 .. note::
-   This script is available in the `` /data/apps/helpers/`` directory on Rockfish. It will change the ``R_LIBS_USER`` variable in R returning the paths where R looks for installed packages, the same way  ``module load`` do in the terminal setting the environment. When R searches for a package that has been loaded or installed, it will search in each of the directories listed by **.libPaths()** until it finds the package it is looking for.
+   This script is available in the /data/apps/helpers/ directory on Rockfish. It will change the **R_LIBS_USER** variable in R returning the paths where R looks for installed packages, the same way **module load** do in the terminal. When R searches for a package that has been loaded or installed, it will search in each of the directories listed by **.libPaths()** until it finds the package it is looking for.
 
 Here is an example of how to use the ``lmod.R`` script to load a submodule for ``R/4.0.2``:
 
