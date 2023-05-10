@@ -325,4 +325,37 @@ How to load R submodules and install Rsamtools package in R session
 
  > library(Rsamtools)
 
+ How to load R submodules and and list in R session
+----------------------------------------------------
+
+.. code-block:: console
+
+  [userid@local ~]$ module load r/3.6.3   
+  [userid@local ~]$ R
+
+  > module("load","r-ggplot2/3.2.0")
+  > module("list")
+
+  Currently Loaded Modules:
+    1) gcc/9.3.0         10) r-lazyeval/0.2.2   19) r-magrittr/1.5      28) r-rcolorbrewer/1.1-2  37) r-ellipsis/0.3.0
+    2) openmpi/3.1.6     11) r-mass/7.3-51.5    20) r-stringi/1.4.3     29) r-viridislite/0.3.0   38) r-zeallot/0.1.0
+    3) slurm/19.05.7     12) r-lattice/0.20-38  21) r-stringr/1.4.0     30) r-scales/1.0.0        39) r-vctrs/0.2.0
+    4) helpers/0.1.1     13) r-matrix/1.2-17    22) r-reshape2/1.4.3    31) r-assertthat/0.2.1    40) r-pillar/1.4.2
+    5) git/2.28.0        14) r-nlme/3.1-141     23) r-rlang/0.4.6       32) r-crayon/1.3.4        41) r-pkgconfig/2.0.2
+    6) standard/2020.10  15) r-mgcv/1.8-28      24) r-labeling/0.3      33) r-fansi/0.4.0         42) r-tibble/2.1.3
+    7) r/3.6.3           16) r-rcpp/1.0.4.6     25) r-colorspace/1.4-1  34) r-cli/2.0.2           43) r-withr/2.2.0
+    8) r-digest/0.6.25   17) r-plyr/1.8.4       26) r-munsell/0.5.0     35) r-utf8/1.1.4          44) r-ggplot2/3.2.0
+    9) r-gtable/0.3.0    18) r-glue/1.4.1       27) r-r6/2.4.0          36) r-backports/1.1.4
+  >
+
+.. tip::
+    You can also use the **module()** function to list all of the available modules in the current Lmod system. 
+    For example:
+
+    > module("avail") 
+    > module("spider","r-")
+    > module("list")
+
+    This command lists all of the available modules in the current Lmod system. Running this command can be useful if you are not sure which module you need to load for a particular task.
+
 .. _R: https://www.r-project.org/
