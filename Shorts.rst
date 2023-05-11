@@ -215,7 +215,7 @@ This command loads the ``ggplot2`` package into the R session, making its functi
 
 Overall, loading submodules in R/4.0.2 is a matter of using the **library()** function to load R packages within the R command line interface. The specific packages and submodules you load will depend on your specific needs and goals.
 
-However, if the ``ggplot2`` package is not installed or not available, you will need to install it using the **install.packages()** command.
+However, if the ``ggplot2`` package is not installed or not available in the system, you need install it using the **install.packages()** command, this procedures will store the package/library in the user's home directory (**R_LIBS_USER**), and it will be available for use in the R session.
 
 .. code-block:: console
 
