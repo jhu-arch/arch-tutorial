@@ -40,7 +40,7 @@ This will create a new virtual environment named myenv in the current directory.
 
 .. code-block:: console
 
-  deactivate  
+  deactivate
 
 That's it! You've now created a virtual Python environment and installed a package inside it.
 
@@ -73,7 +73,7 @@ Here's an example of how to create a new Conda environment using the conda creat
   module load anaconda
   conda create --name myenv
 
-You can also specify which version of Python you want to use by including the version number after the environment name. 
+You can also specify which version of Python you want to use by including the version number after the environment name.
 For example, to create a new environment named myenv with Python 3.9, you would enter:
 
 .. code-block:: console
@@ -109,7 +109,7 @@ That's it! You've now created a new Conda environment and installed a package in
 How to use python vend and conda env in slurm script
 -----------------------------------------------------
 
-To use a virtual environment created with either venv or conda in a Slurm script, you need to activate the environment before running your Python script. 
+To use a virtual environment created with either venv or conda in a Slurm script, you need to activate the environment before running your Python script.
 
 Here's how to do that:
 
@@ -166,7 +166,7 @@ Using a virtual environment created with conda:
     # Deactivate the virtual environment
     conda deactivate
 
-Replace /path/to/env with the path to your virtual environment directory, and myscript.py with the name of your Python script. 
+Replace /path/to/env with the path to your virtual environment directory, and myscript.py with the name of your Python script.
 
 Additionally, make sure to adjust the module load commands for any other modules or dependencies your Python script requires.
 
@@ -187,7 +187,7 @@ In general, the ``module load`` command is used to load a specific software pack
 .. note::
    `R`_ is an open-source programming language and software environment that is commonly used for statistical computing, data analysis, and visualization. By loading version ``4.0.2`` of ``R`` into the shell session, the user can run R scripts and commands, use R packages, and access other R-related functionality from within the terminal.
 
-For instance, in this specific case, the ``module load`` command is being used to load version 4.0.2 of the R programming language into the current shell session on Rockfish. 
+For instance, in this specific case, the ``module load`` command is being used to load version 4.0.2 of the R programming language into the current shell session on Rockfish.
 
 Here is an example of how to load a submodule for ``R/4.0.2``:
 
@@ -207,7 +207,7 @@ Here is an example of how to load a submodule for ``R/4.0.2``:
 
 This command loads the ``ggplot2`` package into the R session, making its functions and data available for use.
 
-4. After you have finished using the submodule, you can unload it from the R session using the **detach()** function, to remove the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages. 
+4. After you have finished using the submodule, you can unload it from the R session using the **detach()** function, to remove the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages.
 
 .. code-block:: console
 
@@ -251,7 +251,7 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 
 .. tip::
     You can also use the **source()** function to load the ``lmod.R`` script from a different directory. For example:
-  
+
     source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
 
     The file.path function in base R offers a convenient way to define a file path, Sys.getenv("R_LIBS_USER") returns the path store into R_LIBS_USER variable, and R_LIBS_USER is an environment variable that defines the location of the user's personal R library directory.
@@ -264,7 +264,7 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
   > module("load", "ggplot2")
 
 
-The first load command will load the R module making Rockfish R submodules available to the next command, and the second load command will load the ``ggplot2`` package into the R session, making its functions and data available for use.
+The first load command will load the R module making R submodules available to the next command, and the second load command will load the ``ggplot2`` package into the R session, making its functions and data available for use.
 
 5. After you have finished using the submodule, you can unload it from the R session using the **lmod()** function. For example:
 
@@ -289,9 +289,9 @@ How to load tidyverse R submodule in R session
 
 .. code-block:: console
 
-  [userid@local ~]$ module load r/4.0.2   
+  [userid@local ~]$ module load r/4.0.2
   [userid@local ~]$ R
- 
+
   > module("load", "r-tidyverse")
   > library(tidyverse)
 
@@ -300,7 +300,7 @@ How to load R submodules and install Rsamtools package in R session
 
 .. code-block:: console
 
-  [userid@local ~]$ module load r/4.0.2   
+  [userid@local ~]$ module load r/4.0.2
   [userid@local ~]$ R
 
 .. warning::
@@ -309,10 +309,10 @@ How to load R submodules and install Rsamtools package in R session
 .. code-block:: console
 
   > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
-  > module("load", "r/4.0.2")          
- 
+  > module("load", "r/4.0.2")
+
 .. tip::
-    Loading the r/4.0.2 will make R submodules available in the R session. 
+    Loading the r/4.0.2 will make R submodules available in the R session.
     **Note**: It won't work if you use a different R version loaded in the terminal. Change the version as needed.
 
 .. code-block:: console
@@ -337,7 +337,7 @@ In this example we will load the **ggplot2** submodule and list all the submodul
 
 .. code-block:: console
 
-  [userid@local ~]$ module load r/3.6.3   
+  [userid@local ~]$ module load r/3.6.3
   [userid@local ~]$ R
 
   > module("load","r-ggplot2/3.2.0")
@@ -356,13 +356,13 @@ In this example we will load the **ggplot2** submodule and list all the submodul
   >
 
 .. tip::
-    Also, you can use the **module()** function to list all of the available modules in the current Lmod system. 
+    Also, you can use the **module()** function to list all of the available modules in the current Lmod system.
     For example:
 
-    > module("avail") 
+    > module("avail")
 
     > module("spider","r-")
-    
+
     > module("list")
 
     This command lists all of the available modules in the current Lmod system. Running this command can be useful if you are not sure which module you need to load for a particular task.
