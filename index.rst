@@ -57,6 +57,7 @@ The Advanced Research Computing at Hopkins (  :guilabel:`ARCH` ) – formerly kn
   RStudioServer
   JupyterLab
   Parallel
+  Rpackages
 
 .. toctree::
   :maxdepth: 2
