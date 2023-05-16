@@ -147,7 +147,6 @@ There are many ananconda installed on the Rockfish cluster. Once loaded a anacon
 
 Users are suggested to use conda environments for installing and running packages.
 
-
 For example, to create an environment called ``my_tensorflow``, execute ``conda create --name my_tensorflow -y``. Also, for example, to create an environment called ``my_conda``, execute the command with ``-p`` option.
 
 .. code-block:: console
@@ -225,6 +224,10 @@ Using a prompt for the following steps:
 
 .. tip::
   The first line of the ``yml`` file sets the new environment's name.
+
+  If you have created your environment, you can use the –file flag with the conda install command as:
+
+  conda install --file requirements.txt
 
 2. Activate the new environment: ``conda activate myenv``
 
