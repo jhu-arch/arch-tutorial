@@ -317,7 +317,6 @@ How to load R submodules and install Rsamtools package in R session
 
 .. code-block:: console
 
-    > module("load","r-curl/4.3")
     > module("load","libjpeg")
     > module("load","libpng")
     > module("load","bzip2")
