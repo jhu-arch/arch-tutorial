@@ -26,15 +26,15 @@ To install a common R package then try this:
 
 .. code-block:: console
 
-  $ module load r/4.0.2
-  $ R
+  [userid@local ~]$ module load r/4.0.2
+  [userid@local ~]$ R
   > install.packages("<package-name>")
 
-  e.g.,
+e.g.,
 
 .. code-block:: console
 
-  install.packages("hdf5r")
+  > install.packages("hdf5r")
 
 VERSION 3.6.3 vs. 4.0.2
 ^^^^^^^^^^^^^^^^^^^^^^^
