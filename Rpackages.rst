@@ -19,7 +19,7 @@ OpenOnDemand portal link:
 
   https://portal.rockfish.jhu.edu/
 
-QUICK RUN
+Quick Run
 *********
 
 To install a common R package then try this:
