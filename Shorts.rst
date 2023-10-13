@@ -427,7 +427,7 @@ To submit a Slurm job, you can save the script to a file (e.g., ``my_job.slurm``
 
 The provided script is a Slurm job script written in Bash for submitting a job array to a Slurm cluster. Here's a breakdown of the script:
 
-submitting a matlab job array to a Slurm cluster
+Submitting a matlab job array to a Slurm cluster
 ------------------------------------------------
 
 .. code-block:: console
@@ -435,7 +435,7 @@ submitting a matlab job array to a Slurm cluster
   #!/bin/bash -l
   #SBATCH --job-name=job-array2        # Job name
   #SBATCH --time=1:1:0                 # Maximum runtime (D-HH:MM:SS)
-  #SBATCH --array=1-20                # Defines a job array from task ID 1 to 20
+  #SBATCH --array=1-20                 # Defines a job array from task ID 1 to 20
   #SBATCH --ntasks=1                   # Number of tasks (in this case, one task per array element)
   #SBATCH -p defq                      # Partition or queue name
   #SBATCH --reservation=Training       # Reservation name
@@ -473,7 +473,47 @@ To submit this job array script to the Slurm scheduler, save it to a file (e.g.,
   [userid@local ~]$ sbatch job_array_script.sh
 
 .. note::
+  The scheduler will take care of running the job array with the specified parameters.
 
-The scheduler will take care of running the job array with the specified parameters.
+How to run job array task with a step size
+-------------------------------------------
 
+When using **#SBATCH --array=1-100%10**, it defines a job array where the task IDs range from 1 to 100, and each job array element runs every 10 task IDs. This means that you will have a total of 10 job instances, each running a subset of the task IDs from 1 to 100. Here's an example script using this array configuration:
 
+.. code-block:: console
+
+  #!/bin/bash -l
+  #SBATCH --job-name=job-array-example
+  #SBATCH --time=1:0:0
+  #SBATCH --array=1-100%10  # Job array from task ID 1 to 100, with a step size of 10
+  #SBATCH --ntasks-per-node=1
+  #SBATCH --partition=defq
+  #SBACTH --mail-type=end
+  #SBATCH --mail-user=userid@jhu.edu
+  #SBATCH --reservation=Training
+
+  ml intel/2022.2
+
+  # Your executable or script goes here
+  # Example: Running a Python script
+  # python my_script.py $SLURM_ARRAY_TASK_ID
+
+  # In this example, each job instance will execute the script with a different SLURM_ARRAY_TASK_ID.
+
+In this script:
+
+  * ``#SBATCH --array=1-100%10`` defines a job array with task IDs ranging from 1 to 100, where each job instance will run a subset of 10 consecutive task IDs. So, you'll have 10 job instances with ``SLURM_ARRAY_TASK_ID`` values like 1, 11, 21, ..., 91.
+  * The ``ml intel/2022.2`` line loads the Intel compiler module, which can be used for compilation if your job requires it.
+  * The actual job commands, such as running an executable or script, should be placed below the comments. In this example, I've left a placeholder comment indicating how you might run a Python script with the ``SLURM_ARRAY_TASK_ID``. You should replace it with the actual commands or scripts you want to execute for your job.
+
+To submit this job array to the Slurm scheduler, save it to a file (e.g., ``job_array_example.sh``) and then submit it using the sbatch command:
+
+.. code-block:: console
+
+  [userid@local ~]$ sbatch job_array_example.sh
+
+.. note::
+  The scheduler will create 10 job instances, each running a subset of task IDs according to the specified array configuration.
+
+Hot to run a mixed MPI/OpenMP program
+-------------------------------------
