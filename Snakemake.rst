@@ -508,7 +508,7 @@ Remove duplicates
   #SBATCH -J rmdup
   #SBATCH -p defq
   #SBATCH --time=2:00:00
-  #login01SBATCH --cpus-per-task=4
+  #SBATCH --cpus-per-task=4
   #SBATCH --output=rmdup.job.job.%j.out
 
   module load snakemake/7.6.0

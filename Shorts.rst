@@ -427,8 +427,9 @@ To submit a Slurm job, you can save the script to a file (e.g., ``my_job.slurm``
 
 The provided script is a Slurm job script written in Bash for submitting a job array to a Slurm cluster. Here's a breakdown of the script:
 
-Submitting a matlab job array to a Slurm cluster
-------------------------------------------------
+How to run a matlab job array
+-----------------------------
+
 
 .. code-block:: console
 
@@ -517,3 +518,29 @@ To submit this job array to the Slurm scheduler, save it to a file (e.g., ``job_
 
 Hot to run a mixed MPI/OpenMP program
 -------------------------------------
+
+To submit a Slurm job script for running a mixed MPI/OpenMP program on a high-performance computing (HPC) cluster. This script combines both message-passing parallelism (MPI) and shared-memory parallelism (OpenMP). Here's a breakdown of the script:
+
+.. code-block:: console
+
+  #!/bin/bash -l
+  #SBATCH --job-name=omp-job         # Job name
+  #SBATCH --time=1:0:0               # Maximum runtime (1 hour)
+  #SBATCH --nodes=2                  # Number of nodes requested
+  #SBATCH --ntasks-per-node=1        # Number of MPI tasks per node
+  #SBATCH --cpus-per-task=4          # Number of CPU cores per task
+  #SBATCH --partition=defq           # Partition or queue name
+  #SBACTH --mail-type=end             # Email notification type (end of job)
+  #SBATCH --mail-user=$USER@jhu.edu  # Email address for notifications (using the user's environment variable)
+  #SBATCH --reservation=Training      # Reservation name
+
+  ml intel/2022.2  # Load the Intel compiler module with version 2022.2
+
+  # Compile the code using Intel and mix MPI/OpenMP
+  echo "mpiicc -qopenmp -o hello-mix.x hello-world-mix.c"
+
+  # How to compile
+  # mpiicc -qopenmp -o hello-mix.x hello-world-mix.c
+
+  # Run the code
+  mpirun -np 2 ./hello-mix.x  # Run the mixed MPI/OpenMP program with 2 MPI processes
