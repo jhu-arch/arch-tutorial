@@ -40,8 +40,6 @@ The Advanced Research Computing at Hopkins (  :guilabel:`ARCH` ) – formerly kn
    :caption: Connect and transfer to Rockfish
 
    Connecting_to_Rockfish
-#   Storage_Allocations
-#   Allocation_and_Account_Management
 
 .. toctree::
   :maxdepth: 2
