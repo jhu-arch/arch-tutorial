@@ -1,6 +1,9 @@
 Rockfish Cluster Software Guide
 ###############################
 
+.. warning::
+   These notes are a collection of personal insights by Ricardo S. Jacomini and do not constitute an official ARCH guide
+
 This is an introduction and how-to software guide used in training sessions to The Rockfish cluster at `ARCH`_, for more details:
 
 #. :guilabel:`HELP`: mail to help@rockfish.jhu.edu (ticketing system)
