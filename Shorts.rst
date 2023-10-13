@@ -45,7 +45,7 @@ This will create a new virtual environment named myenv in the current directory.
 That's it! You've now created a virtual Python environment and installed a package inside it.
 
 Anaconda virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://copr.fedorainfracloud.org/coprs/g/rhinstaller/Anaconda/package/anaconda/status_image/last_build.png
     :alt: Build status
@@ -172,7 +172,7 @@ Additionally, make sure to adjust the module load commands for any other modules
 
 .. _conda-forge: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 .. _docs: https://conda.github.io/conda-pack/cli.html
-.. _conda-forge: https://conda-forge.org/
+.. _conda-forge2: https://conda-forge.org/
 .. _conda-pack: https://conda.github.io/conda-pack/
 .. _Anaconda: https://anaconda.org
 
@@ -424,8 +424,7 @@ To submit a Slurm job, you can save the script to a file (e.g., ``my_job.slurm``
   [userid@local ~]$ sbatch my_job.slurm
 
 .. note::
-
-The provided script is a Slurm job script written in Bash for submitting a job array to a Slurm cluster. Here's a breakdown of the script:
+  The provided script is a Slurm job script written in Bash for submitting a job array to a Slurm cluster. Here's a breakdown of the script:
 
 How to run a matlab job array
 -----------------------------

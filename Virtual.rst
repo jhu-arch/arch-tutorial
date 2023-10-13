@@ -425,9 +425,8 @@ It covers basic to advanced usage, packaging, developer features, and large HPC
 deployments.  You can do all of the exercises on your own laptop using a
 Docker container.
 
-
 .. _conda-forge: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 .. _docs: https://conda.github.io/conda-pack/cli.html
-.. _conda-forge: https://conda-forge.org/
+.. _conda-forge2: https://conda-forge.org/
 .. _conda-pack: https://conda.github.io/conda-pack/
 .. _Anaconda: https://anaconda.org

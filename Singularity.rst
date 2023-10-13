@@ -1,6 +1,6 @@
 .. _singularity_container:
 Singularity container
-######################
+#####################
 
 .. image:: https://readthedocs.org/projects/singularity-user-docs/badge/?version=latest
    :target: https://singularity-user-docs.readthedocs.io/en/latest/?badge=latest
