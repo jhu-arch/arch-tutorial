@@ -1,15 +1,15 @@
 Using R on the Rockfish
-~~~~~~~~~~~~~~~~~~~~~~~
+=======================
 
 Running RStudio via Your Web Browser
-************************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please go through the following link where all the information is available to start RStudio Server via web browser.
 
   https://www.arch.jhu.edu/user-guide/#elementor-tab-title-1606
 
 Research Computing OnDemand
-***************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RStudio is available on OpenOnDemand portal. You will need to use a VPN to connect from off-campus (PulseSecure VPN).  To begin a session, click on "Interactive Apps" and then "RStudio Server". For more details see the User Guide from ARCH website. Following link is helpful.
 
@@ -20,7 +20,7 @@ OpenOnDemand portal link:
   https://portal.rockfish.jhu.edu/
 
 Quick Run
-*********
+~~~~~~~~~
 
 To install a common R package then try this:
 
@@ -37,7 +37,7 @@ e.g.,
   > install.packages("hdf5r")
 
 VERSION 3.6.3 vs. 4.0.2
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 As of now, the default version of R on Rockfish is 4.0.2. To use another version 3.6.3, run the following command on the command line or in your Slurm script:
 
@@ -71,11 +71,8 @@ We have other modules are available on Rockfish which have their own R.
   module load Seurat/4.1.1 (R-version is 4.1.3)
   module load edgeR/3.38.1 (R-version is 4.2.0)
 
-  Installing R Packages
-  """""""""""""""""""""
-
-  From the source file:
-  """""""""""""""""""""
+Installing R Packages From the source file:
+-------------------------------------------
 
 .. code-block:: console
 
@@ -126,7 +123,7 @@ Check the installed version of the package
   > packageVersion("myRPackage")
 
 Using Conda
-"""""""""""
+-----------
 
 Creating the Conda environment is another way to install R-packages and for R itself. You can search for these packages on anaconda.org.
 For example, create a Conda environment that includes r-hdf5r and other packages:
@@ -153,6 +150,7 @@ e.g.
 Note that a Conda environment composed of R-packages comes with its own R executable. Make sure that you are loading the anaconda module and activate the environment.
 
 Install R-packages in your local library to any path
+----------------------------------------------------
 
 .. code-block:: console
 
