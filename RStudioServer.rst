@@ -56,7 +56,7 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
 
   You should disable it ``$ module unload anaconda``.
 
-.. code-block:: console
+.. code-block:: shell
 
   #!/bin/bash
   #####################################

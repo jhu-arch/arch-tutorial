@@ -118,7 +118,7 @@ To download sequence data files using SRA Toolkit, you need create a ``run`` fil
 
 The  ``rf`` command will call the ``run`` script to retrieve SRA Normalized Format files with full base quality scores, and store them ``fastq`` files into ``_m`` folder.
 
-.. code-block:: python
+.. code-block:: console
 
   [userid@login03 ~]$ cd pipeline/
   [userid@login03 ~]$ chmod +x _h/run
@@ -757,9 +757,9 @@ tabix snakemake.slurm.script
 Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 <Reproducibility-Framework>`.
 
-.. code-block:: python
+.. code-block:: console
 
-    ├── pipeline                         no _h
+    ├── pipeline                          no _h
       ├── cutadapt                 ready to run
       │    └── bwamem             no run script
       │        └── rmdup          no run script
