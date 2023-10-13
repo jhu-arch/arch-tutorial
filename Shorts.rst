@@ -404,8 +404,8 @@ A basic example of a Slurm script
 
 Here's an explanation of the key Slurm directives in the script:
 
-* **#SBATCH**: These lines are comments in a Slurm script and specify various options for the job.
-* **--job-name:** A name for your job.
+* **#SBATCH** These lines are comments in a Slurm script and specify various options for the job.
+* **--job-name** A name for your job.
 * **--output** and **--error:** The paths to the standard output and error log files.
 * **--partition:** The name of the Slurm partition or queue where the job should run.
 * **--nodes:** The number of nodes needed for the job.
@@ -544,14 +544,14 @@ Here's what the script does:
 
 1.It specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the MPI job:
 
-* **--job-name**: Specifies a name for the job.
-* **--time**: Sets the maximum runtime for the job to 1 hour.
-* **--nodes**: Requests 1 compute node for the job.
-* **--ntasks-per-node**: Specifies that there will be 4 MPI tasks per node.
-* **--partition**: Specifies the Slurm partition or queue where the job should run (in this case, ``defq``).
-* **--mail-type**: Requests email notifications at the end of the job.
-* **--mail-user**: Specifies the email address where notifications will be sent.
-* **--reservation**: Associates the job with a reservation named "Training."
+* **--job-name** Specifies a name for the job.
+* **--time** Sets the maximum runtime for the job to 1 hour.
+* **--nodes** Requests 1 compute node for the job.
+* **--ntasks-per-node** Specifies that there will be 4 MPI tasks per node.
+* **--partition** Specifies the Slurm partition or queue where the job should run (in this case, ``defq``).
+* **--mail-type** Requests email notifications at the end of the job.
+* **--mail-user** Specifies the email address where notifications will be sent.
+* **--reservation** Associates the job with a reservation named "Training."
 
 2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
 3. It compiles the MPI program named ``hello-mpi.c`` using the ``mpiicc`` compiler and generates an executable named "hello-mpi.x."
@@ -599,15 +599,15 @@ Here's what the script does:
 
 1. The script specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the mixed MPI/OpenMP job:
 
-* **--job-name**: Specifies a name for the job.
-* **--time**: Sets the maximum runtime for the job to 1 hour.
-* **--nodes**: Requests 2 compute nodes for the job.
-* **--ntasks-per-node**: Specifies that there will be 1 MPI task per node.
-* **--cpus-per-task**: Specifies that each MPI task will use 4 CPU cores.
-* **--partition**: Specifies the Slurm partition or queue where the job should run (in this case, "defq").
-* **--mail-type**: Requests email notifications at the end of the job.
-* **--mail-user**: Uses the ``$USER`` environment variable to specify the email address where notifications will be sent. This assumes that the user's email is in the format ``username@jhu.edu``.
-* **--reservation**: Associates the job with a reservation named ``Training``.
+* **--job-name** Specifies a name for the job.
+* **--time** Sets the maximum runtime for the job to 1 hour.
+* **--nodes** Requests 2 compute nodes for the job.
+* **--ntasks-per-node** Specifies that there will be 1 MPI task per node.
+* **--cpus-per-task** Specifies that each MPI task will use 4 CPU cores.
+* **--partition** Specifies the Slurm partition or queue where the job should run (in this case, "defq").
+* **--mail-type** Requests email notifications at the end of the job.
+* **--mail-user** Uses the ``$USER`` environment variable to specify the email address where notifications will be sent. This assumes that the user's email is in the format ``username@jhu.edu``.
+* **--reservation** Associates the job with a reservation named ``Training``.
 
 2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
 3. It echoes the compilation command that will be used (``mpiicc -qopenmp -o hello-mix.x hello-world-mix.c``). This is commented out because it's not actually compiling the code in the script, but you can uncomment it and run it outside the script.
