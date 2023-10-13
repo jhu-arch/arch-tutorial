@@ -34,15 +34,14 @@ The Advanced Research Computing at Hopkins (  :guilabel:`ARCH` ) – formerly kn
    HPC_Terminology
    Allocation
    Hardware_Resources
-   Allocation_and_Account_Management
 
 .. toctree::
    :maxdepth: 2
    :caption: Connect and transfer to Rockfish
 
    Connecting_to_Rockfish
-   Storage_Allocations
-   Allocation_and_Account_Management
+#   Storage_Allocations
+#   Allocation_and_Account_Management
 
 .. toctree::
   :maxdepth: 2
