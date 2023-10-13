@@ -91,7 +91,7 @@ SRA Toolkit
 
 To download sequence data files using SRA Toolkit, you need create a ``run`` file into ``pipeline/_h`` folder.
 
-.. code-block:: python
+.. code-block:: console
 
   #!/bin/bash
 
@@ -576,7 +576,7 @@ Add tags
   [userid@login03 tags]$ vi _h/run
 
 
-.. code-block:: python
+.. code-block:: console
 
   #!/bin/bash
 
@@ -592,7 +592,7 @@ Add tags
   snakemake --jobs 101 --latency-wait 240 --cluster 'sbatch --parsable --distribution=arbitrary' --snakefile ../_h/snakemake.slurm.script
 
 tags snakemake.slurm.script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -760,15 +760,15 @@ Once you coded the pipeline, just run :ref:`the Reproducibility Framework (RF)
 .. code-block:: python
 
     ├── pipeline                         no _h
-      ├── cutadapt                ready to run
-      │   └── bwamem             no run script
-      │       └── rmdup          no run script
-      │           └── tags       no run script
-      │               └── tabix  no run script
-      └── genome                         no _h
-          └── hg19                ready to run
-              ├── bwa             ready to run
-              └── chromsizes      ready to run
+      ├── cutadapt                 ready to run
+      │    └── bwamem             no run script
+      │        └── rmdup          no run script
+      │          └── tags         no run script
+      │               └── tabix   no run script
+      └── genome                          no _h
+          └── hg19                 ready to run
+              ├── bwa              ready to run
+              └── chromsizes       ready to run
 
 You run one level at a time, or you can use the ``-r`` option for recursive. It will perform the ``rf`` command, once the level 1 is finishes, it will run next level, so consecutively.
 
