@@ -58,92 +58,92 @@ Example the R-Studio-Server.slurm.script created by this syntax ``r-studio-serve
 
 .. code-block:: console
 
-  #!/bin/bash
-  #####################################
-  #SBATCH --job-name=rstudio_container_rdesouz4
-  #SBATCH --time=1-02:0
-  #SBATCH --partition=defq
-  #SBATCH --signal=USR2
-  #SBATCH --nodes=1
-  #SBATCH --cpus-per-task=2
-  #SBATCH --mem=8G
-  #SBATCH --mail-type=END,FAIL
-  #SBATCH --mail-user=rdesouz4@jh.edu
-  #SBATCH --output=rstudio-server.job.%j.out
-  #####################################
+    #!/bin/bash
+    #####################################
+    #SBATCH --job-name=rstudio_container_rdesouz4
+    #SBATCH --time=1-02:0
+    #SBATCH --partition=defq
+    #SBATCH --signal=USR2
+    #SBATCH --nodes=1
+    #SBATCH --cpus-per-task=2
+    #SBATCH --mem=8G
+    #SBATCH --mail-type=END,FAIL
+    #SBATCH --mail-user=rdesouz4@jh.edu
+    #SBATCH --output=rstudio-server.job.%j.out
+    #####################################
 
-  # ---------------------------------------------------
-  #  R environment
-  # ---------------------------------------------------
-  # This session is to run this script using another R instead of inside the container (R 4.0.4).
+    # ---------------------------------------------------
+    #  R environment
+    # ---------------------------------------------------
+    # This session is to run this script using another R instead of inside the container (R 4.0.4).
 
-  #  There are two ways to run it:
-  #
-  #     METHOD 1: Using an R via the system module
+    #  There are two ways to run it:
+    #
+    #     METHOD 1: Using an R via the system module
 
-  # Uncomment this Line
-  # module load r/3.6.3
+    # Uncomment this Line
+    # module load r/3.6.3
 
-  #     METHOD 2: Using an R installed in a custom virtual environment, in this case using conda.
-  #
-  #     How to install an R version 3.6.6 using conda env
-  #     $ module load anaconda && conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid && module unload anaconda
-  #     How to remove conda envs
-  #     $ conda remove --name r_3.6.3 --all
+    #     METHOD 2: Using an R installed in a custom virtual environment, in this case using conda.
+    #
+    #     How to install an R version 3.6.6 using conda env
+    #     $ module load anaconda && conda create -n r_3.6.3 -c conda-forge r-base=3.6.3 libuuid && module unload anaconda
+    #     How to remove conda envs
+    #     $ conda remove --name r_3.6.3 --all
 
-  #
-  # Uncomment these two instructions
-  # module load anaconda && conda activate r_3.6.3 && export VIRT_ENV=$CONDA_PREFIX && module unload anaconda
-  # export R_HOME=${VIRT_ENV}/lib/R
+    #
+    # Uncomment these two instructions
+    # module load anaconda && conda activate r_3.6.3 && export VIRT_ENV=$CONDA_PREFIX && module unload anaconda
+    # export R_HOME=${VIRT_ENV}/lib/R
 
-  #   -- THIS LINE IS REQUIRED FOR BOTH METHODS --
-  #
-  # Uncomment this instruction
-  # export SINGULARITY_BIND=${R_HOME}:/usr/local/lib/R
+    #   -- THIS LINE IS REQUIRED FOR BOTH METHODS --
+    #
+    # Uncomment this instruction
+    # export SINGULARITY_BIND=${R_HOME}:/usr/local/lib/R
 
-  # ---------------------------------------------------
-  # R_LIBS_USER directives for multiple environments
-  # ---------------------------------------------------
-  # Change the MY_LIBS variable to use the libraries related with your project.
+    # ---------------------------------------------------
+    # R_LIBS_USER directives for multiple environments
+    # ---------------------------------------------------
+    # Change the MY_LIBS variable to use the libraries related with your project.
 
-  export MY_LIBS=4.0.4
-  export R_LIBS_USER=${HOME}/R/${MY_LIBS}
+    export MY_LIBS=4.0.4
+    export R_LIBS_USER=${HOME}/R/${MY_LIBS}
 
-  # ---------------------------------------------------
-  #  Singularity environment variables
-  # ---------------------------------------------------
+    # ---------------------------------------------------
+    #  Singularity environment variables
+    # ---------------------------------------------------
 
-  # -- SHOULDN'T BE NECESSARY TO CHANGE ANYTHING BELOW THIS --
+    # -- SHOULDN'T BE NECESSARY TO CHANGE ANYTHING BELOW THIS --
 
-  source .r-studio-variables
+    source .r-studio-variables
 
-  export SINGULARITYENV_LDAP_HOST=ldapserver
-  export SINGULARITYENV_LDAP_USER_DN='uid=%s,dc=cm,dc=cluster'
-  export SINGULARITYENV_LDAP_CERT_FILE=/etc/rstudio/ca.pem
+    export SINGULARITYENV_LDAP_HOST=ldapserver
+    export SINGULARITYENV_LDAP_USER_DN='uid=%s,dc=cm,dc=cluster'
+    export SINGULARITYENV_LDAP_CERT_FILE=/etc/rstudio/ca.pem
 
-  cat 1>&2 <<END
+    cat 1>&2 <<END
 
-  1. SSH tunnel from your workstation using the following command:
+    1. SSH tunnel from your workstation using the following command:
 
-   ssh -N -L ${PORT}:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@login.rockfish.jhu.edu
+    ssh -N -L ${PORT}:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@login.rockfish.jhu.edu
 
-  2. log in to RStudio Server in your web browser using the Rockfish cluster credentials (username and password) at:
+    2. log in to RStudio Server in your web browser using the Rockfish cluster credentials (username and password) at:
 
-   http://localhost:${PORT}
+    http://localhost:${PORT}
 
-   user: ${SINGULARITYENV_USER}
-   password: < Rochkfish password >
+    user: ${SINGULARITYENV_USER}
+    password: < Rochkfish password >
 
-  3. When done using RStudio Server, terminate the job by:
+    3. When done using RStudio Server, terminate the job by:
 
-   a. Exit the RStudio Session ("power" button in the top right corner of the RStudio window)
-   b. Issue the following command on the login node:
+    a. Exit the RStudio Session ("power" button in the top right corner of the RStudio window)
+    b. Issue the following command on the login node:
 
-  scancel -f ${SLURM_JOB_ID}
-  END
+    scancel -f ${SLURM_JOB_ID}
+    END
 
-  singularity run ${SINGULARITY_CONTAINER} \
-  rserver --www-port ${PORT} --www-address=0.0.0.0 \
-          --auth-none 0 \
-          --auth-pam-helper-path=ldap_auth \
-          --rsession-path=/etc/rstudio/rsession.sh
+    singularity run ${SINGULARITY_CONTAINER} \
+    rserver --www-port ${PORT} --www-address=0.0.0.0 \
+            --auth-none 0 \
+            --auth-pam-helper-path=ldap_auth \
+            --rsession-path=/etc/rstudio/rsession.sh
