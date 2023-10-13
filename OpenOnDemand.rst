@@ -94,44 +94,45 @@ You can use ipkernel and add multiple envs and select it inside Jupyter, just fo
 
 In a terminal console on Rockfish cluster run these commands:
 
-Change to the proper version of python or conda
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
 
- ## For Python Virtual environment
+  Change to the proper version of python or conda
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      $ module load python; source <myenv>/bin/activate
+  ## For Python Virtual environment
 
- ## For Conda environment
+        $ module load python; source <myenv>/bin/activate
 
-      $ module load anaconda; conda activate <myenv>
+  ## For Conda environment
 
- then:
+        $ module load anaconda; conda activate <myenv>
 
-      (myenv)$ pip install ipykernel
+  then:
 
-Install Jupyter kernel
-^^^^^^^^^^^^^^^^^^^^^^
-      (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
+        (myenv)$ pip install ipykernel
 
-Listing all the available environments (kernels)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      (myenv)$ jupyter kernelspec list
+  Install Jupyter kernel
+  ^^^^^^^^^^^^^^^^^^^^^^
+        (myenv)$ ipython kernel install --user --name=<any_name_for_kernel> --display-name "Python (myenv)"
+
+  Listing all the available environments (kernels)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (myenv)$ jupyter kernelspec list
 
 
 Troubleshooting
 ***************
 
-
 Bad Request
 ^^^^^^^^^^^
 
- **Message** : Your browser sent a request that this server could not understand. Size of a request header field exceeds server limit.
+ * Message : Your browser sent a request that this server could not understand. Size of a request header field exceeds server limit.
 
- **_Solution_** : Clear cache and cookies in your web browser.
+ **Solution** : Clear cache and cookies in your web browser.
 
- **Message** : Requested resource does not exist.
+ * Message : Requested resource does not exist.
 
- **_Solution_** : Enter URL https://portal.rockfish.jhu.edu/
+ **Solution** : Enter URL https://portal.rockfish.jhu.edu/
 
 
 .. |ood1| image:: images/ood1.png
