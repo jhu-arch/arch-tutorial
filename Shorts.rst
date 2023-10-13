@@ -524,14 +524,14 @@ Here's a breakdown of the script:
 .. code-block:: console
 
   #!/bin/bash -l
-  #SBATCH --job-name=mpi-job        # Job name
-  #SBATCH --time=1:0:0              # Maximum runtime (1 hour)
-  #SBATCH --nodes=1                 # Number of nodes requested
-  #SBATCH --ntasks-per-node=4       # Number of MPI tasks per node
-  #SBATCH --partition=defq          # Partition or queue name
-  #SBACTH --mail-type=end            # Email notification type (end of job)
-  #SBATCH --mail-user=userid@jhu.edu # Email address for notifications
-  #SBATCH --reservation=Training    # Reservation name
+  #SBATCH --job-name=mpi-job          # Job name
+  #SBATCH --time=1:0:0                # Maximum runtime (1 hour)
+  #SBATCH --nodes=1                   # Number of nodes requested
+  #SBATCH --ntasks-per-node=4         # Number of MPI tasks per node
+  #SBATCH --partition=defq            # Partition or queue name
+  #SBACTH --mail-type=end             # Email notification type (end of job)
+  #SBATCH --mail-user=userid@jhu.edu  # Email address for notifications
+  #SBATCH --reservation=Training      # Reservation name
 
   ml intel/2022.2  # Load the Intel compiler module with version 2022.2
 
@@ -573,14 +573,14 @@ To submit a Slurm job script for running a mixed MPI/OpenMP program on a high-pe
 .. code-block:: console
 
   #!/bin/bash -l
-  #SBATCH --job-name=omp-job         # Job name
-  #SBATCH --time=1:0:0               # Maximum runtime (1 hour)
-  #SBATCH --nodes=2                  # Number of nodes requested
-  #SBATCH --ntasks-per-node=1        # Number of MPI tasks per node
-  #SBATCH --cpus-per-task=4          # Number of CPU cores per task
-  #SBATCH --partition=defq           # Partition or queue name
+  #SBATCH --job-name=omp-job          # Job name
+  #SBATCH --time=1:0:0                # Maximum runtime (1 hour)
+  #SBATCH --nodes=2                   # Number of nodes requested
+  #SBATCH --ntasks-per-node=1         # Number of MPI tasks per node
+  #SBATCH --cpus-per-task=4           # Number of CPU cores per task
+  #SBATCH --partition=defq            # Partition or queue name
   #SBACTH --mail-type=end             # Email notification type (end of job)
-  #SBATCH --mail-user=$USER@jhu.edu  # Email address for notifications (using the user's environment variable)
+  #SBATCH --mail-user=$USER@jhu.edu   # Email address for notifications (using the user's environment variable)
   #SBATCH --reservation=Training      # Reservation name
 
   ml intel/2022.2  # Load the Intel compiler module with version 2022.2
