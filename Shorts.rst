@@ -595,6 +595,7 @@ To submit a Slurm job script for running a mixed MPI/OpenMP program on a high-pe
 Here's what the script does:
 
 1. The script specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the mixed MPI/OpenMP job:
+
 * **--job-name**: Specifies a name for the job.
 * **--time**: Sets the maximum runtime for the job to 1 hour.
 * **--nodes**: Requests 2 compute nodes for the job.
@@ -604,6 +605,7 @@ Here's what the script does:
 * **--mail-type**: Requests email notifications at the end of the job.
 * **--mail-user**: Uses the ``$USER`` environment variable to specify the email address where notifications will be sent. This assumes that the user's email is in the format ``username@jhu.edu``.
 * **--reservation**: Associates the job with a reservation named ``Training``.
+
 2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
 3. It echoes the compilation command that will be used (``mpiicc -qopenmp -o hello-mix.x hello-world-mix.c``). This is commented out because it's not actually compiling the code in the script, but you can uncomment it and run it outside the script.
 4. Finally, it runs the mixed MPI/OpenMP program using the ``mpirun`` command with 2 MPI processes. The program is expected to use OpenMP for shared-memory parallelism.
