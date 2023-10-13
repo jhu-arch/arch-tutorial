@@ -20,6 +20,7 @@ sphinx:
    configuration: conf.py
    fail_on_warning: true
 
+
 # https://docs.readthedocs.io/en/stable/config-file/v2.html
 # If using Sphinx, optionally build your docs in additional formats such as PDF
 formats:
@@ -28,6 +29,6 @@ formats:
     - htmlzip
 
 # Optionally declare the Python requirements required to build your docs
-# python:
-#   install:
-#   - requirements: docs/requirements.txt
+python:
+   install:
+   - requirements: requirements.txt
