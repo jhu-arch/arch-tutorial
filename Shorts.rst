@@ -368,8 +368,8 @@ In this example we will load the **ggplot2** submodule and list all the submodul
 .. _R: https://www.r-project.org/
 
 
-How to run Slurm script is used to submit and manage jobs in a high-performance computing (HPC)  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to code a Slurm script 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A Slurm script is used to submit and manage jobs in a high-performance computing (HPC) environment that uses the Slurm workload manager. Slurm is a popular open-source resource management and job scheduling system used on many HPC clusters and supercomputers. 
 
