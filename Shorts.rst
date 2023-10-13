@@ -475,3 +475,4 @@ To submit this job array script to the Slurm scheduler, save it to a file (e.g.,
 .. note::
 
 The scheduler will take care of running the job array with the specified parameters.
+
