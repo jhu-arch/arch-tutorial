@@ -235,7 +235,7 @@ The ``lmod.R`` script helps to load Rockfish R submodules available in the syste
 
 Here is an example of how to use the ``lmod.R`` script to load a submodule for ``R/4.0.2``:
 
-1. First, you would need to log in to a system where R/4.0.2 is installed and load the R module using the module load command.
+1. First, you would need to log into a system where R/4.0.2 is installed and load the R module using the module load command.
 
 .. code-block:: console
 
@@ -262,7 +262,6 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 
   > module("load", "r/4.0.2")
   > module("load", "ggplot2")
-
 
 The first load command will load the R module making R submodules available to the next command, and the second load command will load the ``ggplot2`` package into the R session, making its functions and data available for use.
 
@@ -367,3 +366,112 @@ In this example we will load the **ggplot2** submodule and list all the submodul
     This command lists all of the available modules in the current Lmod system. Running this command can be useful if you are not sure which module you need to load for a particular task.
 
 .. _R: https://www.r-project.org/
+
+
+How to run Slurm script is used to submit and manage jobs in a high-performance computing (HPC)  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A Slurm script is used to submit and manage jobs in a high-performance computing (HPC) environment that uses the Slurm workload manager. Slurm is a popular open-source resource management and job scheduling system used on many HPC clusters and supercomputers. 
+
+A basic example of a Slurm script
+---------------------------------
+
+.. code-block:: console
+
+  #!/bin/bash
+  #SBATCH --job-name=my_job_name        # Job name
+  #SBATCH --output=output.txt           # Standard output file
+  #SBATCH --error=error.txt             # Standard error file
+  #SBATCH --partition=partition_name    # Partition or queue name
+  #SBATCH --nodes=1                     # Number of nodes
+  #SBATCH --ntasks=1                    # Number of tasks
+  #SBATCH --cpus-per-task=1             # Number of CPU cores per task
+  #SBATCH --mem=1G                      # Memory allocation per node
+  #SBATCH --time=1:00:00                # Maximum runtime (D-HH:MM:SS)
+  #SBATCH --mail-type=END               # Send email at job completion
+  #SBATCH --mail-user=your@email.com    # Email address for notifications
+
+  # Load necessary modules (if needed)
+  # module load module_name
+
+  # Your job commands go here
+  # For example:
+  # python my_script.py
+
+  # Optionally, you can include cleanup commands here (e.g., after the job finishes)
+  # For example:
+  # rm some_temp_file.txt
+
+Here's an explanation of the key Slurm directives in the script:
+
+#SBATCH: These lines are comments in a Slurm script and specify various options for the job.
+**--job-name:** A name for your job.
+**--output** and **--error:** The paths to the standard output and error log files.
+**--partition:** The name of the Slurm partition or queue where the job should run.
+**--nodes:** The number of nodes needed for the job.
+**--ntasks:** The number of tasks or processes to run.
+**--cpus-per-task:** The number of CPU cores allocated to each task.
+**--mem:** The memory allocation per node.
+**--time:** The maximum runtime for the job.
+**--mail-type** and **--mail-user:** Email notification settings.
+
+After the ``#SBATCH`` directives, you can load any necessary modules or execute your job's commands. In the example, it's assumed that you will run a Python script named ``my_script.py``. You can replace this with your specific job commands.
+
+To submit a Slurm job, you can save the script to a file (e.g., ``my_job.slurm``) and then use the ``sbatch`` command to submit the job:
+
+.. code-block:: console
+
+  [userid@local ~]$ sbatch my_job.slurm
+
+.. note::
+
+The provided script is a Slurm job script written in Bash for submitting a job array to a Slurm cluster. Here's a breakdown of the script:
+
+submitting a matlab job array to a Slurm cluster
+------------------------------------------------
+
+.. code-block:: console
+
+  #!/bin/bash -l
+  #SBATCH --job-name=job-array2        # Job name
+  #SBATCH --time=1:1:0                 # Maximum runtime (D-HH:MM:SS)
+  #SBATCH --array=1-20                # Defines a job array from task ID 1 to 20
+  #SBATCH --ntasks=1                   # Number of tasks (in this case, one task per array element)
+  #SBATCH -p defq                      # Partition or queue name
+  #SBATCH --reservation=Training       # Reservation name
+  #SBATCH                              # This is an empty line to separate Slurm directives from the job commands
+
+  # run your job
+
+  echo "Start Job $SLURM_ARRAY_TASK_ID on $HOSTNAME"  # Display job start information
+
+  sleep 10  # Sleep for 10 seconds
+
+  export alpha=1  # Set an environment variable alpha to 1
+  export beta=2   # Set an environment variable beta to 2
+
+  module load matlab  # Load the Matlab module
+
+  matlab -nodisplay -singleCompThread -r "myRand($SLURM_ARRAY_TASK_ID, $alpha, $beta), pause(20), exit"
+  # Run a Matlab script with parameters: $SLURM_ARRAY_TASK_ID, $alpha, and $beta, and then exit
+
+This script is designed to run a job array, where a job is executed 20 times with different values of ``$SLURM_ARRAY_TASK_ID``, which ranges from 1 to 20.
+
+Here's what the script does:
+
+  * The script specifies Slurm directives at the beginning of the file. These directives provide instructions to the Slurm scheduler for managing the job array, such as the job name, maximum runtime, array definition, number of tasks, partition, and reservation.
+  * After the Slurm directives, the script contains actual job commands. It starts by echoing a message indicating the start of the job with the current task ID and the hostname where the job is running.
+  * It then ``sleeps`` for 10 seconds using the sleep command.
+  * Two environment variables, ``alpha`` and ``beta``, are exported with values 1 and 2, respectively.
+  * The Matlab module is loaded with the ``module load`` command.
+  * Finally, Matlab is invoked with the specified parameters using the ``-r`` flag. The ``myRand`` Matlab function is called with the current ``$SLURM_ARRAY_TASK_ID``, ``$alpha``, and ``$beta``. It also includes a pause(20) to pause execution for 20 seconds and then exits.
+
+To submit this job array script to the Slurm scheduler, save it to a file (e.g., ``job_array_script.sh``) and then submit it using the ``sbatch`` command:
+
+.. code-block:: console
+
+  [userid@local ~]$ sbatch job_array_script.sh
+
+.. note::
+
+The scheduler will take care of running the job array with the specified parameters.
