@@ -555,7 +555,8 @@ Here's what the script does:
 
 2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
 3. It compiles the MPI program named ``hello-mpi.c`` using the ``mpiicc`` compiler and generates an executable named "hello-mpi.x."
-4. Finally, it runs the MPI program using the mpirun command with 4 MPI processes. The standard output of the program is redirected to a log file named "my-mpi.log."
+4. Finally, it runs the MPI program using the mpirun command with 4 MPI processes. The standard output of the program is redirected to a log file named ``my-mpi.log``.
+
 To submit this MPI job to the Slurm scheduler, save it to a file (e.g., ``mpi_job_script.sh``) and then submit it using the sbatch command:
 
 .. code-block:: console
@@ -611,6 +612,7 @@ Here's what the script does:
 2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
 3. It echoes the compilation command that will be used (``mpiicc -qopenmp -o hello-mix.x hello-world-mix.c``). This is commented out because it's not actually compiling the code in the script, but you can uncomment it and run it outside the script.
 4. Finally, it runs the mixed MPI/OpenMP program using the ``mpirun`` command with 2 MPI processes. The program is expected to use OpenMP for shared-memory parallelism.
+
 To submit this mixed MPI/OpenMP job to the Slurm scheduler, save it to a file (e.g., ``mpi_omp_job_script.sh``) and then submit it using the sbatch command:
 
 
