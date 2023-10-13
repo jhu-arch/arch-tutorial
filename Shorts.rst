@@ -404,16 +404,16 @@ A basic example of a Slurm script
 
 Here's an explanation of the key Slurm directives in the script:
 
-#SBATCH: These lines are comments in a Slurm script and specify various options for the job.
-**--job-name:** A name for your job.
-**--output** and **--error:** The paths to the standard output and error log files.
-**--partition:** The name of the Slurm partition or queue where the job should run.
-**--nodes:** The number of nodes needed for the job.
-**--ntasks:** The number of tasks or processes to run.
-**--cpus-per-task:** The number of CPU cores allocated to each task.
-**--mem:** The memory allocation per node.
-**--time:** The maximum runtime for the job.
-**--mail-type** and **--mail-user:** Email notification settings.
+* **#SBATCH**: These lines are comments in a Slurm script and specify various options for the job.
+* **--job-name:** A name for your job.
+* **--output** and **--error:** The paths to the standard output and error log files.
+* **--partition:** The name of the Slurm partition or queue where the job should run.
+* **--nodes:** The number of nodes needed for the job.
+* **--ntasks:** The number of tasks or processes to run.
+* **--cpus-per-task:** The number of CPU cores allocated to each task.
+* **--mem:** The memory allocation per node.
+* **--time:** The maximum runtime for the job.
+* **--mail-type** and **--mail-user:** Email notification settings.
 
 After the ``#SBATCH`` directives, you can load any necessary modules or execute your job's commands. In the example, it's assumed that you will run a Python script named ``my_script.py``. You can replace this with your specific job commands.
 
@@ -428,7 +428,6 @@ To submit a Slurm job, you can save the script to a file (e.g., ``my_job.slurm``
 
 How to run a matlab job array
 -----------------------------
-
 
 .. code-block:: console
 
@@ -515,7 +514,56 @@ To submit this job array to the Slurm scheduler, save it to a file (e.g., ``job_
 .. note::
   The scheduler will create 10 job instances, each running a subset of task IDs according to the specified array configuration.
 
-Hot to run a mixed MPI/OpenMP program
+How to run an MPI (Message Passing Interface) program
+------------------------------------------------------
+
+To perform a Slurm job script for running an MPI (Message Passing Interface) program on a high-performance computing (HPC) Rockfish Cluster. 
+
+Here's a breakdown of the script:
+
+.. code-block:: console
+
+  #!/bin/bash -l
+  #SBATCH --job-name=mpi-job        # Job name
+  #SBATCH --time=1:0:0              # Maximum runtime (1 hour)
+  #SBATCH --nodes=1                 # Number of nodes requested
+  #SBATCH --ntasks-per-node=4       # Number of MPI tasks per node
+  #SBATCH --partition=defq          # Partition or queue name
+  #SBACTH --mail-type=end            # Email notification type (end of job)
+  #SBATCH --mail-user=userid@jhu.edu # Email address for notifications
+  #SBATCH --reservation=Training    # Reservation name
+
+  ml intel/2022.2  # Load the Intel compiler module with version 2022.2
+
+  # compile
+  mpiicc -o hello-mpi.x hello-mpi.c  # Compile the MPI program from source code
+
+  mpirun -np 4 ./hello-mpi.x > my-mpi.log  # Run the MPI program with 4 MPI processes, redirecting output to a log file
+
+Here's what the script does:
+
+1.It specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the MPI job:
+* **--job-name**: Specifies a name for the job.
+* **--time**: Sets the maximum runtime for the job to 1 hour.
+* **--nodes**: Requests 1 compute node for the job.
+* **--ntasks-per-node**: Specifies that there will be 4 MPI tasks per node.
+* **--partition**: Specifies the Slurm partition or queue where the job should run (in this case, ``defq``).
+* **--mail-type*: Requests email notifications at the end of the job.
+* **--mail-user**: Specifies the email address where notifications will be sent.
+* **--reservation**: Associates the job with a reservation named "Training."
+2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
+3. It compiles the MPI program named ``hello-mpi.c`` using the ``mpiicc`` compiler and generates an executable named "hello-mpi.x."
+4. Finally, it runs the MPI program using the mpirun command with 4 MPI processes. The standard output of the program is redirected to a log file named "my-mpi.log."
+To submit this MPI job to the Slurm scheduler, save it to a file (e.g., ``mpi_job_script.sh``) and then submit it using the sbatch command:
+
+.. code-block:: console
+
+  [userid@local ~]$ sbatch mpi_job_script.sh
+
+.. note::
+  The scheduler will allocate resources and run the MPI program with the specified parameters.
+
+How to run a mixed MPI/OpenMP program
 -------------------------------------
 
 To submit a Slurm job script for running a mixed MPI/OpenMP program on a high-performance computing (HPC) cluster. This script combines both message-passing parallelism (MPI) and shared-memory parallelism (OpenMP). Here's a breakdown of the script:
@@ -543,3 +591,28 @@ To submit a Slurm job script for running a mixed MPI/OpenMP program on a high-pe
 
   # Run the code
   mpirun -np 2 ./hello-mix.x  # Run the mixed MPI/OpenMP program with 2 MPI processes
+
+Here's what the script does:
+
+1. The script specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the mixed MPI/OpenMP job:
+* **--job-name**: Specifies a name for the job.
+* **--time**: Sets the maximum runtime for the job to 1 hour.
+* **--nodes**: Requests 2 compute nodes for the job.
+* **--ntasks-per-node**: Specifies that there will be 1 MPI task per node.
+* **--cpus-per-task**: Specifies that each MPI task will use 4 CPU cores.
+* **--partition**: Specifies the Slurm partition or queue where the job should run (in this case, "defq").
+* **--mail-type**: Requests email notifications at the end of the job.
+* **--mail-user**: Uses the ``$USER`` environment variable to specify the email address where notifications will be sent. This assumes that the user's email is in the format ``username@jhu.edu``.
+* **--reservation**: Associates the job with a reservation named ``Training``.
+2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
+3. It echoes the compilation command that will be used (``mpiicc -qopenmp -o hello-mix.x hello-world-mix.c``). This is commented out because it's not actually compiling the code in the script, but you can uncomment it and run it outside the script.
+4. Finally, it runs the mixed MPI/OpenMP program using the ``mpirun`` command with 2 MPI processes. The program is expected to use OpenMP for shared-memory parallelism.
+To submit this mixed MPI/OpenMP job to the Slurm scheduler, save it to a file (e.g., ``mpi_omp_job_script.sh``) and then submit it using the sbatch command:
+
+
+.. code-block:: console
+
+  [userid@local ~]$ sbatch mpi_omp_job_script.sh
+
+.. note::
+  The scheduler will allocate resources and run the mixed MPI/OpenMP program with the specified parameters.
