@@ -543,14 +543,16 @@ Here's a breakdown of the script:
 Here's what the script does:
 
 1.It specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the MPI job:
+
 * **--job-name**: Specifies a name for the job.
 * **--time**: Sets the maximum runtime for the job to 1 hour.
 * **--nodes**: Requests 1 compute node for the job.
 * **--ntasks-per-node**: Specifies that there will be 4 MPI tasks per node.
 * **--partition**: Specifies the Slurm partition or queue where the job should run (in this case, ``defq``).
-* **--mail-type*: Requests email notifications at the end of the job.
+* **--mail-type**: Requests email notifications at the end of the job.
 * **--mail-user**: Specifies the email address where notifications will be sent.
 * **--reservation**: Associates the job with a reservation named "Training."
+
 2. The script loads the Intel compiler module with version 2022.2 using the ``ml`` command. This is done to ensure that the correct compiler environment is set up for compilation.
 3. It compiles the MPI program named ``hello-mpi.c`` using the ``mpiicc`` compiler and generates an executable named "hello-mpi.x."
 4. Finally, it runs the MPI program using the mpirun command with 4 MPI processes. The standard output of the program is redirected to a log file named "my-mpi.log."
