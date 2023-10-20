@@ -368,10 +368,10 @@ In this example we will load the **ggplot2** submodule and list all the submodul
 .. _R: https://www.r-project.org/
 
 
-How to code a Slurm script 
+How to create a Slurm script 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Slurm script is used to submit and manage jobs in a high-performance computing (HPC) environment that uses the Slurm workload manager. Slurm is a popular open-source resource management and job scheduling system used on many HPC clusters and supercomputers. 
+ Slurm scripts are used to submit and manage jobs in a high-performance computing (HPC) environment that uses the Slurm workload manager. Slurm is a popular open-source resource management and job scheduling application used on many HPC clusters and supercomputers. 
 
 A basic example of a Slurm script
 ---------------------------------
@@ -384,9 +384,8 @@ A basic example of a Slurm script
   #SBATCH --error=error.txt             # Standard error file
   #SBATCH --partition=partition_name    # Partition or queue name
   #SBATCH --nodes=1                     # Number of nodes
-  #SBATCH --ntasks=1                    # Number of tasks
+  #SBATCH --ntasks-per-node=1           # Number of tasks per node
   #SBATCH --cpus-per-task=1             # Number of CPU cores per task
-  #SBATCH --mem=1G                      # Memory allocation per node
   #SBATCH --time=1:00:00                # Maximum runtime (D-HH:MM:SS)
   #SBATCH --mail-type=END               # Send email at job completion
   #SBATCH --mail-user=your@email.com    # Email address for notifications
@@ -409,11 +408,13 @@ Here's an explanation of the key Slurm directives in the script:
 * **--output** and **--error:** The paths to the standard output and error log files.
 * **--partition:** The name of the Slurm partition or queue where the job should run.
 * **--nodes:** The number of nodes needed for the job.
-* **--ntasks:** The number of tasks or processes to run.
+* **--ntasks-per-node:** The number of tasks per node or processes to run.
 * **--cpus-per-task:** The number of CPU cores allocated to each task.
-* **--mem:** The memory allocation per node.
 * **--time:** The maximum runtime for the job.
 * **--mail-type** and **--mail-user:** Email notification settings.
+
+.. note::
+  Please avoid to use --ntasks, on Rockfish no need to set --mem. That will be set automatically as you set number of cores, 4 GB per core.
 
 After the ``#SBATCH`` directives, you can load any necessary modules or execute your job's commands. In the example, it's assumed that you will run a Python script named ``my_script.py``. You can replace this with your specific job commands.
 
@@ -435,7 +436,7 @@ How to run a matlab job array
   #SBATCH --job-name=job-array2        # Job name
   #SBATCH --time=1:1:0                 # Maximum runtime (D-HH:MM:SS)
   #SBATCH --array=1-20                 # Defines a job array from task ID 1 to 20
-  #SBATCH --ntasks=1                   # Number of tasks (in this case, one task per array element)
+  #SBATCH --ntasks-per-node=1          # Number of tasks (in this case, one task per array element)
   #SBATCH -p defq                      # Partition or queue name
   #SBATCH --reservation=Training       # Reservation name
   #SBATCH                              # This is an empty line to separate Slurm directives from the job commands
@@ -515,7 +516,7 @@ To submit this job array to the Slurm scheduler, save it to a file (e.g., ``job_
   The scheduler will create 10 job instances, each running a subset of task IDs according to the specified array configuration.
 
 How to run an MPI (Message Passing Interface) program
-------------------------------------------------------
+-----------------------------------------------------
 
 To perform a Slurm job script for running an MPI (Message Passing Interface) program on a high-performance computing (HPC) Rockfish Cluster. 
 
@@ -542,7 +543,7 @@ Here's a breakdown of the script:
 
 Here's what the script does:
 
-1.It specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the MPI job:
+1. It specifies various Slurm directives at the beginning of the script. These directives provide instructions to the Slurm scheduler for managing the MPI job:
 
 * **--job-name** Specifies a name for the job.
 * **--time** Sets the maximum runtime for the job to 1 hour.
