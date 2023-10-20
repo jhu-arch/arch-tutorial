@@ -414,7 +414,7 @@ Here's an explanation of the key Slurm directives in the script:
 * **--mail-type** and **--mail-user:** Email notification settings.
 
 .. note::
-  Please avoid to use --ntasks on Rockfish no need to set --mem. That will be set automatically as you set number of cores, 4 GB per core.
+  Please avoid to use --ntasks on Rockfish also, no need to set --mem. That will be set automatically as you set number of cores, 4 GB per core.
 
 After the ``#SBATCH`` directives, you can load any necessary modules or execute your job's commands. In the example, it's assumed that you will run a Python script named ``my_script.py``. You can replace this with your specific job commands.
 
