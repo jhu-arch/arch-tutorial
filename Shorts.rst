@@ -369,7 +369,7 @@ In this example we will load the **ggplot2** submodule and list all the submodul
 
 
 How to create a Slurm script 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  Slurm scripts are used to submit and manage jobs in a high-performance computing (HPC) environment that uses the Slurm workload manager. Slurm is a popular open-source resource management and job scheduling application used on many HPC clusters and supercomputers. 
 
