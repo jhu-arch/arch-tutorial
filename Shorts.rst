@@ -252,7 +252,7 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 .. tip::
     You can also use the **source()** function to load the ``lmod.R`` script from a different directory. For example:
 
-    source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
+    source("/data/apps/helpers/lmod.R")
 
     The file.path function in base R offers a convenient way to define a file path, Sys.getenv("R_LIBS_USER") returns the path store into R_LIBS_USER variable, and R_LIBS_USER is an environment variable that defines the location of the user's personal R library directory.
 
@@ -261,7 +261,7 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 .. code-block:: console
 
   > module("load", "r/4.0.2")
-  > module("load", "ggplot2")
+  > module("load", "r-ggplot2")
 
 The first load command will load the R module making R submodules available to the next command, and the second load command will load the ``ggplot2`` package into the R session, making its functions and data available for use.
 
@@ -269,7 +269,7 @@ The first load command will load the R module making R submodules available to t
 
 .. code-block:: console
 
-  > module("unload", "ggplot2")
+  > module("unload", "r-ggplot2")
 
 This command removes the ``ggplot2`` package from the R session, freeing up memory and preventing conflicts with other packages.
 
@@ -307,7 +307,7 @@ How to load R submodules and install Rsamtools package in R session
 
 .. code-block:: console
 
-  > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
+  > source("/data/apps/helpers/lmod.R")
   > module("load", "r/4.0.2")
 
 .. tip::
