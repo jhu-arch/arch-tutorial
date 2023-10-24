@@ -254,8 +254,8 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 
     > source("/data/apps/helpers/lmod.R")
 
-    or
-    
+     or
+
     > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
     
     The file.path function in base R offers a convenient way to define a file path, Sys.getenv("R_LIBS_USER") returns the path store into R_LIBS_USER variable, and R_LIBS_USER is an environment variable that defines the location of the user's personal R library directory.
