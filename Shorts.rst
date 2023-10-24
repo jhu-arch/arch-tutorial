@@ -518,7 +518,7 @@ To submit this job array to the Slurm scheduler, save it to a file (e.g., ``job_
 How to run an MPI (Message Passing Interface) program
 -----------------------------------------------------
 
-To perform a Slurm job script for running an MPI (Message Passing Interface) program on a high-performance computing (HPC) Rockfish Cluster. 
+To perform a Slurm script for running an MPI (Message Passing Interface) program on a high-performance computing (HPC) Rockfish Cluster. 
 
 Here's a breakdown of the script:
 
