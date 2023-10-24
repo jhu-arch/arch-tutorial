@@ -248,8 +248,6 @@ Here is an example of how to use the ``lmod.R`` script to load a submodule for `
 .. code-block:: console
 
   > source("/data/apps/helpers/lmod.R")
-or
-  > source(file.path(Sys.getenv("R_LIBS_USER"), "lmod.R"))
 
 .. tip::
     You can also use the **source()** function to load the ``lmod.R`` script from a different directory. For example:
