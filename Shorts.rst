@@ -530,7 +530,7 @@ Here's a breakdown of the script:
 
   #!/bin/bash -l
   #SBATCH --job-name=mpi-job          # Job name
-  #SBATCH --time=1:0:0                # Maximum runtime (1 hour)
+  #SBATCH --time=10:00:00             # Maximum runtime (1 hour)
   #SBATCH --nodes=1                   # Number of nodes requested
   #SBATCH --ntasks-per-node=4         # Number of MPI tasks per node
   #SBATCH --partition=defq            # Partition or queue name
