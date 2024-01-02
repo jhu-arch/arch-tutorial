@@ -534,7 +534,7 @@ Here's a breakdown of the script:
   #SBATCH --nodes=1                   # Number of nodes requested
   #SBATCH --ntasks-per-node=4         # Number of MPI tasks per node
   #SBATCH --partition=defq            # Partition or queue name
-  #SBACTH --mail-type=end             # Email notification type (end of job)
+  #SBATCH --mail-type=end             # Email notification type (end of job)
   #SBATCH --mail-user=userid@jhu.edu  # Email address for notifications
   #SBATCH --reservation=Training      # Reservation name
 
