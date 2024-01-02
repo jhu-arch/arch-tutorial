@@ -585,7 +585,7 @@ To submit a Slurm job script for running a mixed MPI/OpenMP program on a high-pe
   #SBATCH --ntasks-per-node=1         # Number of MPI tasks per node
   #SBATCH --cpus-per-task=4           # Number of CPU cores per task
   #SBATCH --partition=defq            # Partition or queue name
-  #SBACTH --mail-type=end             # Email notification type (end of job)
+  #SBATCH --mail-type=end             # Email notification type (end of job)
   #SBATCH --mail-user=$USER@jhu.edu   # Email address for notifications (using the user's environment variable)
   #SBATCH --reservation=Training      # Reservation name
 
