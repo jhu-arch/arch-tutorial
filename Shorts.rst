@@ -492,7 +492,7 @@ When using **#SBATCH --array=1-100%10**, it defines a job array where the task I
   #SBATCH --array=1-100%10  # Job array from task ID 1 to 100, with a step size of 10
   #SBATCH --ntasks-per-node=1
   #SBATCH --partition=defq
-  #SBACTH --mail-type=end
+  #SBATCH --mail-type=end
   #SBATCH --mail-user=userid@jhu.edu
   #SBATCH --reservation=Training
 
